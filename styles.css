@@ -1,3 +1,7 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -10,6 +14,7 @@ body {
   margin: 0;
   background: #02070d;
   color: #f5f7fb;
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -18,90 +23,103 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 
-/* ==================================================
-   MAIN APP
-   ================================================== */
+/* =========================================================
+   APP
+   ========================================================= */
 
 .app {
   width: min(100%, 720px);
-  margin: auto;
   min-height: 100vh;
 
+  margin: 0 auto;
+
   padding:
-    12px
+    4px
     22px
-    calc(120px + env(safe-area-inset-bottom));
+    calc(105px + env(safe-area-inset-bottom));
 
   background:
     radial-gradient(
-      circle at 50% 0,
-      #0b1a29 0,
-      #04101c 28%,
-      #02070d 70%
+      circle at 50% 0%,
+      #0a1928 0%,
+      #06121f 30%,
+      #02070d 72%
     );
-
-  overflow: hidden;
 }
 
 
-/* ==================================================
+/* =========================================================
    HEADER
-   ================================================== */
+   ========================================================= */
 
 .topbar {
-  height: 88px;
+  height: 78px;
 
   display: flex;
   align-items: center;
-  gap: 18px;
+
+  gap: 14px;
 }
 
 
 .icon-btn {
-  background: none;
   border: 0;
-  color: #f6f8fb;
+  background: transparent;
+  color: #ffffff;
 }
 
 
 .menu-btn {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   gap: 6px;
-  padding: 8px;
+
+  padding: 7px 4px;
 }
 
 
 .menu-btn span {
-  height: 3px;
-  width: 31px;
+  display: block;
 
-  background: #f4f7fa;
-  border-radius: 3px;
+  width: 34px;
+  height: 3px;
+
+  border-radius: 4px;
+
+  background: #f5f7fa;
 }
 
 
 .brand {
+  flex: 1;
+
   display: flex;
   align-items: center;
 
-  gap: 14px;
-  flex: 1;
+  gap: 12px;
+
+  min-width: 0;
 }
 
 
 .brand-mark {
-  width: 55px;
-  height: 55px;
+  width: 54px;
+  height: 54px;
+
+  flex: 0 0 54px;
 
   border-radius: 50%;
 
@@ -111,42 +129,62 @@ body {
   background:
     linear-gradient(
       145deg,
-      #d71832,
-      #8d091b
+      #df1734,
+      #9c071d
     );
 
-  font-size: 28px;
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 900;
+
+  box-shadow:
+    0 6px 18px rgba(191, 12, 42, .25);
 }
 
 
 .brand-title {
-  font-size: 25px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 850;
 
-  letter-spacing: .2px;
-  line-height: 1.05;
+  line-height: 1;
+
+  white-space: nowrap;
 }
 
 
 .brand-sub {
-  font-size: 24px;
-  font-weight: 800;
+  margin-top: 4px;
 
-  color: #2189ff;
-  line-height: 1.05;
+  font-size: 22px;
+  font-weight: 850;
+
+  line-height: 1;
+
+  color: #2389ff;
+
+  white-space: nowrap;
 }
 
 
 .bell {
   position: relative;
 
-  font-size: 31px;
-  width: 46px;
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 43px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 29px;
 }
 
 
 .bell-shape {
   display: block;
+
   transform: rotate(180deg);
 }
 
@@ -157,80 +195,82 @@ body {
   width: 9px;
   height: 9px;
 
+  top: 6px;
+  right: 5px;
+
   border-radius: 50%;
 
-  background: #ff4d5a;
-
-  right: 6px;
-  top: 7px;
+  background: #ff4c5c;
 }
 
 
-/* ==================================================
-   COMMON CARDS
-   ================================================== */
+/* =========================================================
+   COMMON PANELS
+   ========================================================= */
 
 .alert-card,
 .updated,
 .panel,
 .safety {
-  border: 1px solid #203449;
+  border: 1px solid #20364b;
+
+  border-radius: 17px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(10, 25, 39, .92),
-      rgba(4, 14, 24, .9)
+      rgba(9, 25, 39, .96),
+      rgba(3, 13, 23, .96)
     );
 
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.03),
-    0 8px 25px rgba(0,0,0,.16);
-
-  border-radius: 17px;
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 8px 25px rgba(0,0,0,.15);
 }
 
 
-/* ==================================================
-   FLOOD ALERT
-   ================================================== */
+/* =========================================================
+   FLASH FLOOD ALERT
+   ========================================================= */
 
 .alert-card {
+  min-height: 152px;
+
   display: flex;
   align-items: center;
 
   gap: 14px;
 
-  padding: 16px 18px;
+  padding: 14px 16px;
 
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 
   background:
     linear-gradient(
-      90deg,
-      #24141a,
-      #1d1118
+      100deg,
+      #241219,
+      #1d1017
     );
 }
 
 
 .alert-icon {
-  flex: none;
-
   width: 55px;
   height: 55px;
 
-  border-radius: 50%;
+  flex: 0 0 55px;
 
   display: grid;
   place-items: center;
 
-  background: #d83a49;
+  border-radius: 50%;
 
-  color: white;
+  background: #dc394c;
+
+  color: #ffffff;
 
   font-size: 39px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 
@@ -243,34 +283,41 @@ body {
 .alert-copy b {
   display: block;
 
-  color: #ff5960;
+  margin-bottom: 7px;
 
-  font-size: 17px;
+  color: #ff5963;
 
-  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: 850;
 }
 
 
 .alert-copy span {
-  font-size: 14px;
-  line-height: 1.35;
+  display: block;
 
-  color: #e8e9ed;
+  color: #eceef2;
+
+  font-size: 13px;
+
+  line-height: 1.45;
 }
 
 
 .pill {
   border: 0;
 
-  border-radius: 25px;
+  border-radius: 30px;
 
-  padding: 14px 18px;
+  padding: 13px 15px;
 
-  color: #fff;
+  color: #ffffff;
 
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 850;
 
   white-space: nowrap;
+
+  cursor: pointer;
 }
 
 
@@ -278,76 +325,90 @@ body {
   background:
     linear-gradient(
       180deg,
-      #bd3b4a,
-      #862331
+      #c53c4e,
+      #97283a
     );
-
-  font-size: 13px;
 }
 
 
 .danger b {
-  font-size: 24px;
-  margin-left: 9px;
+  margin-left: 7px;
+
+  font-size: 21px;
 }
 
 
-/* ==================================================
+/* =========================================================
    LAST UPDATED
-   ================================================== */
+   ========================================================= */
 
 .updated {
-  height: 54px;
-
-  padding: 0 17px;
+  min-height: 58px;
 
   display: flex;
   align-items: center;
 
-  gap: 11px;
+  gap: 10px;
 
-  color: #aeb9c6;
-
-  font-size: 14px;
+  padding: 8px 16px;
 
   margin-bottom: 14px;
+
+  color: #adb9c6;
+
+  font-size: 13px;
+
+  line-height: 1.25;
 }
 
 
 .clock {
-  font-size: 25px;
+  flex: 0 0 auto;
+
+  font-size: 23px;
+}
+
+
+.updated strong {
+  color: #b8c4d0;
 }
 
 
 .live {
   margin-left: auto;
 
-  color: #38e95e;
+  flex: 0 0 auto;
 
+  color: #39e75b;
+
+  font-size: 17px;
   font-weight: 900;
+
+  text-align: center;
 }
 
 
 .live i {
-  display: inline-block;
+  display: block;
 
   width: 9px;
   height: 9px;
 
+  margin: 4px auto 0;
+
   border-radius: 50%;
 
-  background: #31df55;
-
-  margin-left: 4px;
+  background: #30df54;
 }
 
 
-/* ==================================================
+/* =========================================================
    PANELS
-   ================================================== */
+   ========================================================= */
 
 .panel {
-  padding: 16px;
+  padding: 14px;
+
   margin-bottom: 14px;
 }
 
@@ -357,97 +418,111 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 13px;
+  gap: 10px;
 
-  gap: 12px;
+  margin-bottom: 11px;
 }
 
 
 .panel-head h2 {
-  font-size: 16px;
-
   margin: 0;
 
+  color: #f6f8fb;
+
+  font-size: 16px;
   font-weight: 850;
 
-  letter-spacing: .2px;
+  letter-spacing: .15px;
 }
 
 
-.panel-head span,
-.panel-head button {
+.panel-head span {
+  color: #aeb9c5;
+
   font-size: 12px;
-  color: #b6c1cc;
+
+  text-align: right;
 }
 
 
 .panel-head a,
 .panel-head button {
-  color: #278cff;
-
-  text-decoration: none;
-
-  background: none;
   border: 0;
 
   padding: 0;
 
-  font-weight: 700;
+  background: transparent;
+
+  color: #2589ff;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  cursor: pointer;
 }
 
 
-/* ==================================================
-   OVERVIEW STATISTICS
-   ================================================== */
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
 
 .stats {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(2, 1fr);
 
   gap: 10px;
 }
 
 
 .stat {
-  min-height: 194px;
+  min-height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #263c50;
 
   border-radius: 15px;
 
-  border: 1px solid #24394e;
+  padding: 10px 7px;
 
   text-align: center;
 
-  padding: 13px 6px 10px;
-
   background:
-    rgba(11, 24, 37, .85);
+    rgba(7, 21, 33, .92);
 }
 
 
 .stat.deaths {
-  border-color: #4d2630;
+  border-color: #522833;
 }
 
 
 .stat.missing {
-  border-color: #493522;
+  border-color: #4c3824;
 }
 
 
 .stat.rescued {
-  border-color: #1c493c;
+  border-color: #20503e;
 }
 
 
 .stat.affected {
-  border-color: #1e3c5c;
+  border-color: #1e405f;
 }
 
 
 .stat-icon {
-  height: 43px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
 
   font-size: 27px;
   font-weight: 900;
@@ -457,31 +532,35 @@ body {
 .stat strong {
   display: block;
 
-  font-size: 29px;
+  margin-top: 1px;
 
-  line-height: 1.1;
+  color: #f6f8fb;
 
-  margin-top: 4px;
+  font-size: 28px;
+  font-weight: 850;
+
+  line-height: 1.05;
 }
 
 
 .stat > b {
   display: block;
 
-  font-size: 12px;
+  margin-top: 5px;
 
-  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 850;
 }
 
 
 .stat small {
   display: block;
 
-  font-size: 12px;
+  margin-top: 7px;
 
-  margin-top: 11px;
+  font-size: 11px;
 
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 
@@ -495,7 +574,7 @@ body {
 .deaths .stat-icon,
 .deaths > b,
 .deaths small {
-  color: #ff4d59;
+  color: #ff4e5b;
 }
 
 
@@ -509,13 +588,13 @@ body {
 .rescued .stat-icon,
 .rescued > b,
 .rescued small {
-  color: #4edb5d;
+  color: #4bdd5d;
 }
 
 
 .affected .stat-icon,
 .affected > b {
-  color: #2589ff;
+  color: #268aff;
 }
 
 
@@ -524,14 +603,14 @@ body {
 }
 
 
-/* ==================================================
+/* =========================================================
    MAP
-   ================================================== */
+   ========================================================= */
 
 .map-wrap {
   position: relative;
 
-  height: 240px;
+  height: 220px;
 
   overflow: hidden;
 
@@ -551,20 +630,20 @@ body {
 
 
 .country {
-  fill: #0c1723;
+  fill: #0b1724;
 
-  stroke: #8290a0;
+  stroke: #81909e;
 
   stroke-width: 2;
 }
 
 
 .zone {
-  stroke: #1f3140;
+  stroke: #1e3140;
 
   stroke-width: 1.2;
 
-  opacity: .9;
+  opacity: .92;
 }
 
 
@@ -579,51 +658,51 @@ body {
 
 
 .mod-zone {
-  fill: #cda51e;
+  fill: #cda51f;
 }
 
 
 .low-zone {
-  fill: #3d8c4e;
+  fill: #3d8b4d;
 }
 
 
 .district-lines path {
   fill: none;
 
-  stroke: #778c98;
+  stroke: #778b98;
 
   stroke-width: 1;
 }
 
 
-/* ==================================================
+/* =========================================================
    MAP LEGEND
-   ================================================== */
+   ========================================================= */
 
 .legend {
   position: absolute;
 
+  top: 10px;
   left: 7px;
-  top: 12px;
 
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 8px;
 
-  padding: 12px 10px;
+  padding: 10px;
 
-  background:
-    rgba(5,16,28,.88);
-
-  border: 1px solid #22384d;
+  border: 1px solid #22384c;
 
   border-radius: 9px;
 
-  font-size: 12px;
+  background:
+    rgba(4, 15, 26, .9);
 
-  color: #d8e0e8;
+  color: #d6dfe7;
+
+  font-size: 11px;
 }
 
 
@@ -631,13 +710,13 @@ body {
   display: flex;
   align-items: center;
 
-  gap: 8px;
+  gap: 7px;
 }
 
 
 .legend i {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 
   border-radius: 50%;
 }
@@ -663,30 +742,29 @@ body {
 }
 
 
-/* ==================================================
+/* =========================================================
    MAP LABELS
-   ================================================== */
+   ========================================================= */
 
 .label {
   position: absolute;
 
-  padding: 5px 8px;
+  padding: 4px 7px;
+
+  border: 1px solid;
 
   border-radius: 5px;
 
-  color: #fff;
+  color: #ffffff;
 
-  font-size: 11px;
-
-  font-weight: 700;
-
-  border: 1px solid;
+  font-size: 10px;
+  font-weight: 750;
 }
 
 
 .rasuwa {
   left: 48%;
-  top: 20px;
+  top: 18px;
 
   background: #8c2430;
   border-color: #ff4656;
@@ -694,8 +772,8 @@ body {
 
 
 .sindhu {
-  left: 62%;
-  top: 57px;
+  left: 61%;
+  top: 52px;
 
   background: #8d4c18;
   border-color: #f07c1e;
@@ -703,8 +781,8 @@ body {
 
 
 .dolakha {
-  left: 79%;
-  top: 91px;
+  left: 78%;
+  top: 84px;
 
   background: #796619;
   border-color: #d9b727;
@@ -712,8 +790,8 @@ body {
 
 
 .kath {
-  left: 44%;
-  top: 176px;
+  left: 43%;
+  top: 163px;
 
   background: #20374d;
   border-color: #5b86ad;
@@ -729,42 +807,42 @@ body {
   display: flex;
   align-items: center;
 
-  gap: 9px;
+  gap: 8px;
 
-  background:
-    rgba(5,16,28,.9);
-
-  padding: 7px;
+  padding: 6px;
 
   border: 1px solid #22384d;
 
   border-radius: 9px;
+
+  background:
+    rgba(5, 16, 28, .92);
 }
 
 
 .district-count strong {
-  font-size: 22px;
-
-  background: #102743;
-
-  padding: 6px 10px;
+  padding: 5px 9px;
 
   border-radius: 6px;
 
-  color: #fff;
+  background: #102743;
+
+  color: #ffffff;
+
+  font-size: 20px;
 }
 
 
 .district-count span {
-  font-size: 11px;
-
   color: #b8c2cd;
+
+  font-size: 10px;
 }
 
 
-/* ==================================================
+/* =========================================================
    RECENT UPDATES
-   ================================================== */
+   ========================================================= */
 
 .timeline {
   position: relative;
@@ -772,33 +850,33 @@ body {
 
 
 .time-row {
+  position: relative;
+
+  min-height: 53px;
+
   display: grid;
 
   grid-template-columns:
-    57px 12px 46px 1fr;
+    53px 11px 42px 1fr;
 
   align-items: center;
 
-  gap: 9px;
-
-  min-height: 56px;
-
-  position: relative;
+  gap: 8px;
 }
 
 
 .time-row time {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 
 .time-row .dot {
-  width: 10px;
-  height: 10px;
-
-  border-radius: 50%;
+  width: 9px;
+  height: 9px;
 
   z-index: 2;
+
+  border-radius: 50%;
 }
 
 
@@ -822,7 +900,7 @@ body {
 
   position: absolute;
 
-  left: 61px;
+  left: 58px;
 
   top: 0;
   bottom: 0;
@@ -834,25 +912,25 @@ body {
 
 
 .time-row:first-child:before {
-  top: 28px;
+  top: 27px;
 }
 
 
 .time-row:last-child:before {
-  bottom: 28px;
+  bottom: 27px;
 }
 
 
 .event {
-  width: 46px;
-  height: 46px;
-
-  border-radius: 10px;
+  width: 42px;
+  height: 42px;
 
   display: grid;
   place-items: center;
 
-  font-size: 24px;
+  border-radius: 9px;
+
+  font-size: 21px;
 }
 
 
@@ -875,9 +953,9 @@ body {
 
 
 .time-row b {
-  font-size: 13px;
-
   display: block;
+
+  font-size: 12px;
 
   line-height: 1.25;
 }
@@ -886,17 +964,17 @@ body {
 .time-row small {
   display: block;
 
+  margin-top: 2px;
+
   color: #9da8b4;
 
-  font-size: 12px;
-
-  margin-top: 2px;
+  font-size: 11px;
 }
 
 
-/* ==================================================
-   RELIEF EFFORTS
-   ================================================== */
+/* =========================================================
+   RELIEF
+   ========================================================= */
 
 .relief-grid {
   display: grid;
@@ -907,59 +985,59 @@ body {
 
 
 .relief-grid > div {
+  padding: 2px 3px;
+
   text-align: center;
 
   border-right: 1px solid #26394a;
-
-  padding: 3px 4px;
 }
 
 
 .relief-grid > div:last-child {
-  border: 0;
+  border-right: 0;
 }
 
 
 .relief-grid span {
   display: block;
 
+  height: 32px;
+
   color: #2589ff;
 
-  font-size: 29px;
-
-  height: 37px;
+  font-size: 25px;
 }
 
 
 .relief-grid strong {
   display: block;
 
-  font-size: 25px;
+  font-size: 22px;
 }
 
 
 .relief-grid small {
-  font-size: 11px;
-
   color: #c1c9d2;
 
-  line-height: 1.3;
+  font-size: 10px;
+
+  line-height: 1.25;
 }
 
 
-/* ==================================================
+/* =========================================================
    SAFETY
-   ================================================== */
+   ========================================================= */
 
 .safety {
   display: flex;
   align-items: center;
 
-  gap: 9px;
+  gap: 8px;
 
-  padding: 11px 12px;
+  padding: 10px 11px;
 
-  margin: 0 0 15px;
+  margin-bottom: 12px;
 
   background:
     linear-gradient(
@@ -968,92 +1046,94 @@ body {
       #09234a
     );
 
-  font-size: 12px;
-
   color: #d9e1e9;
+
+  font-size: 11px;
 }
 
 
 .safety > span {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 
-  border-radius: 50%;
+  flex: 0 0 32px;
 
   display: grid;
   place-items: center;
 
+  border-radius: 50%;
+
   background: #0c5fc2;
 
-  font-size: 22px;
+  font-size: 20px;
 }
 
 
 .safety button {
   margin-left: auto;
 
-  background: #0c5fc2;
-
   border: 0;
-
-  color: white;
 
   border-radius: 20px;
 
-  padding: 9px 13px;
+  padding: 8px 11px;
 
-  font-size: 11px;
+  background: #0c5fc2;
 
-  font-weight: 800;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 850;
 
   white-space: nowrap;
 }
 
 
-/* ==================================================
-   FIXED BOTTOM NAVIGATION
-   ================================================== */
+/* =========================================================
+   BOTTOM NAVIGATION
+   ========================================================= */
 
 .bottom-nav {
   position: fixed;
 
-  bottom: 0;
   left: 50%;
+  bottom: 0;
 
   transform: translateX(-50%);
 
   width: min(100%, 720px);
 
   height:
-    calc(78px + env(safe-area-inset-bottom));
+    calc(
+      74px +
+      env(safe-area-inset-bottom)
+    );
 
   display: grid;
 
   grid-template-columns:
     repeat(5, 1fr);
 
-  background:
-    rgba(6,18,31,.96);
-
-  backdrop-filter: blur(18px);
-
-  border-top: 1px solid #1d3144;
-
   padding-bottom:
     env(safe-area-inset-bottom);
 
-  z-index: 10;
+  border-top: 1px solid #1d3144;
+
+  background:
+    rgba(5, 18, 31, .97);
+
+  backdrop-filter: blur(18px);
+
+  z-index: 100;
 }
 
 
 .bottom-nav button {
   border: 0;
 
-  background: none;
+  background: transparent;
 
   color: #8792a0;
-
-  font-size: 11px;
 
   display: flex;
   flex-direction: column;
@@ -1061,14 +1141,23 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: 5px;
+  gap: 4px;
+
+  font-size: 10px;
+
+  cursor: pointer;
 }
 
 
 .bottom-nav button span {
-  font-size: 26px;
+  height: 27px;
 
-  height: 29px;
+  font-size: 25px;
+}
+
+
+.bottom-nav button b {
+  font-size: 10px;
 }
 
 
@@ -1085,36 +1174,38 @@ body {
 }
 
 
-/* ==================================================
+/* =========================================================
    TOAST
-   ================================================== */
+   ========================================================= */
 
 .toast {
   position: fixed;
 
   left: 50%;
-  bottom: 92px;
+  bottom: 90px;
 
   transform:
     translate(-50%, 15px);
 
   opacity: 0;
 
-  background: #132437;
-
-  border: 1px solid #2d4d6b;
-
-  color: #fff;
+  z-index: 200;
 
   padding: 10px 15px;
 
+  border: 1px solid #2d4d6b;
+
   border-radius: 22px;
+
+  background: #132437;
+
+  color: #ffffff;
 
   font-size: 12px;
 
-  transition: .25s;
-
-  z-index: 20;
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
 }
 
 
@@ -1126,53 +1217,66 @@ body {
 }
 
 
-/* ==================================================
+/* =========================================================
    MOBILE
-   ================================================== */
+   ========================================================= */
 
 @media (max-width: 520px) {
 
   .app {
-    padding-top: 8px;
+    padding-top: 2px;
 
     padding-left: 22px;
     padding-right: 22px;
 
     padding-bottom:
       calc(
-        122px +
+        105px +
         env(safe-area-inset-bottom)
       );
   }
 
 
-  .brand-title {
-    font-size: 22px;
+  .topbar {
+    height: 74px;
   }
 
 
-  .brand-sub {
+  .brand-title {
     font-size: 21px;
   }
 
 
-  .stats {
-    gap: 8px;
+  .brand-sub {
+    font-size: 20px;
   }
 
 
-  .stat {
-    min-height: 188px;
-  }
+  .brand-mark {
+    width: 52px;
+    height: 52px;
 
-
-  .stat strong {
-    font-size: 25px;
+    flex-basis: 52px;
   }
 
 
   .alert-card {
-    padding: 14px;
+    min-height: 148px;
+
+    padding: 13px;
+  }
+
+
+  .alert-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+
+  .alert-copy b {
+    font-size: 15px;
   }
 
 
@@ -1182,25 +1286,47 @@ body {
 
 
   .danger {
-    padding: 12px 10px;
+    padding: 12px 11px;
+
+    font-size: 11px;
+  }
+
+
+  .updated {
+    min-height: 56px;
   }
 
 
   .panel {
-    padding: 15px;
+    padding: 14px;
+  }
+
+
+  .stats {
+    gap: 9px;
+  }
+
+
+  .stat {
+    min-height: 142px;
+  }
+
+
+  .stat strong {
+    font-size: 27px;
   }
 
 
   .map-wrap {
-    height: 225px;
+    height: 220px;
   }
 
 }
 
 
-/* ==================================================
-   SMALL PHONES
-   ================================================== */
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 390px) {
 
@@ -1210,56 +1336,132 @@ body {
   }
 
 
+  .topbar {
+    gap: 10px;
+  }
+
+
+  .menu-btn {
+    width: 43px;
+    flex-basis: 43px;
+  }
+
+
+  .menu-btn span {
+    width: 31px;
+  }
+
+
+  .brand {
+    gap: 9px;
+  }
+
+
   .brand-mark {
-    width: 48px;
-    height: 48px;
+    width: 47px;
+    height: 47px;
+
+    flex-basis: 47px;
+
+    font-size: 23px;
   }
 
 
   .brand-title {
-    font-size: 19px;
-  }
-
-
-  .brand-sub {
     font-size: 18px;
   }
 
 
+  .brand-sub {
+    font-size: 17px;
+  }
+
+
+  .bell {
+    width: 37px;
+    flex-basis: 37px;
+  }
+
+
+  .alert-card {
+    min-height: 145px;
+
+    gap: 9px;
+
+    padding: 11px;
+  }
+
+
   .alert-icon {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+
+    font-size: 34px;
   }
 
 
   .alert-copy b {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
   .alert-copy span {
-    font-size: 11px;
+    font-size: 10.5px;
   }
 
 
   .danger {
+    padding: 10px 8px;
+
+    font-size: 9px;
+  }
+
+
+  .panel-head h2 {
+    font-size: 15px;
+  }
+
+
+  .panel-head span,
+  .panel-head a,
+  .panel-head button {
     font-size: 10px;
   }
 
 
-  .stats {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .stat {
+    min-height: 138px;
+
+    padding: 8px 5px;
   }
 
 
-  .stat {
-    min-height: 150px;
+  .stat-icon {
+    height: 34px;
+
+    font-size: 24px;
+  }
+
+
+  .stat strong {
+    font-size: 25px;
+  }
+
+
+  .stat > b {
+    font-size: 11px;
   }
 
 
   .stat small {
-    margin-top: 7px;
+    font-size: 10px;
+  }
+
+
+  .map-wrap {
+    height: 205px;
   }
 
 
@@ -1267,17 +1469,31 @@ body {
     grid-template-columns:
       repeat(2, 1fr);
 
-    gap: 10px;
+    gap: 9px;
   }
 
 
-  .relief-grid > div:nth-child(2) {
-    border: 0;
+  .relief-grid > div {
+    border-right: 0;
   }
 
 
-  .map-wrap {
-    height: 210px;
+  .relief-grid span {
+    height: 30px;
+  }
+
+
+  .relief-grid strong {
+    font-size: 21px;
+  }
+
+
+  .bottom-nav {
+    height:
+      calc(
+        72px +
+        env(safe-area-inset-bottom)
+      );
   }
 
 }

@@ -1,180 +1,28 @@
 {
-  "last_updated": "2026-08-27T09:45:00Z",
-  "data_version": "1.0",
-  "situation_summary": "Flash floods along the Bhotekoshi River in Rasuwa and Sindhupalchok districts have caused significant casualties and displacement. Rescue operations continue amid monsoon conditions.",
+  "last_updated": "2026-05-28T09:40:00+05:45",
+
   "stats": {
+
     "deaths": {
-      "value": 274,
-      "range_note": "Range reported: 270–353 across sources.",
-      "source": "NDRRMA (via ReliefWeb)",
-      "source_url": "https://reliefweb.int/report/nepal/nepal-flood-2026-situation-report-4"
-    },
-    "missing": {
-      "value": 142,
-      "range_note": "Range: 130–150 unaccounted.",
-      "source": "Local district authorities",
-      "source_url": "https://example.com/district-report"
-    },
-    "rescued": {
-      "value": 3050,
-      "range_note": "Includes evacuated residents.",
-      "source": "Nepal Army / Red Cross",
-      "source_url": "https://reliefweb.int/report/nepal/rescue-operations-continue"
-    },
-    "foreign_nationals": {
-      "value": 37,
-      "range_note": "Confirmed affected; nationalities not fully disclosed.",
-      "source": "Embassy advisories",
-      "source_url": "https://example.com/foreign-affected"
-    }
-  },
-  "death_toll_history": [
-    { "timestamp": "2026-08-27T06:00:00Z", "deaths": 180 },
-    { "timestamp": "2026-08-27T07:30:00Z", "deaths": 215 },
-    { "timestamp": "2026-08-27T08:45:00Z", "deaths": 248 },
-    { "timestamp": "2026-08-27T09:45:00Z", "deaths": 274 }
-  ],
-  "timeline": [
-    {
-      "timestamp": "2026-08-27T09:30:00Z",
-      "title": "Helicopter rescues resume in Barhabise",
-      "description": "Nepal Army helicopters evacuated 45 stranded residents from rooftops near Barhabise.",
-      "source": "Nepal Army Spokesperson",
-      "source_url": "https://example.com/army-update",
-      "alert": true
-    },
-    {
-      "timestamp": "2026-08-27T08:15:00Z",
-      "title": "Bridge collapse cuts off Tatopani",
-      "description": "A suspension bridge over the Bhotekoshi collapsed, isolating Tatopani village.",
-      "source": "Local media",
-      "source_url": "https://example.com/bridge-collapse",
-      "alert": false
-    },
-    {
-      "timestamp": "2026-08-27T07:00:00Z",
-      "title": "Death toll revised upward",
-      "description": "District officials confirm 248 deaths; number expected to rise as more areas accessible.",
-      "source": "NDRRMA",
-      "source_url": "https://example.com/ndrrma-update",
-      "alert": true
-    },
-    {
-      "timestamp": "2026-08-27T05:45:00Z",
-      "title": "First light reveals scale of damage",
-      "description": "Aerial surveys show widespread landslides and submerged settlements along the river corridor.",
+      "value": 193,
       "source": "ReliefWeb",
-      "source_url": "https://reliefweb.int/report/nepal/initial-assessment",
-      "alert": false
+      "source_url": "https://reliefweb.int/"
     },
-    {
-      "timestamp": "2026-08-26T22:30:00Z",
-      "title": "Monsoon downpour triggers flash floods",
-      "description": "Heavy rainfall caused the Bhotekoshi River to overflow, sweeping away houses and vehicles.",
-      "source": "Meteorological Department",
-      "source_url": "https://example.com/weather-warning",
-      "alert": true
+
+    "missing": {
+      "value": 68,
+      "source": "ReliefWeb"
+    },
+
+    "rescued": {
+      "value": 1426,
+      "source": "ReliefWeb"
+    },
+
+    "affected_population": {
+      "value": "125K+",
+      "source": "Dashboard snapshot"
     }
-  ],
-  "district_breakdown": [
-    {
-      "district": "Rasuwa",
-      "deaths": 154,
-      "missing": 89,
-      "households_affected": 2100,
-      "infrastructure_damage": "7 bridges, 18 km road washed away"
-    },
-    {
-      "district": "Sindhupalchok",
-      "deaths": 120,
-      "missing": 53,
-      "households_affected": 1850,
-      "infrastructure_damage": "5 bridges, 12 km road damaged"
-    },
-    {
-      "district": "Dolakha (neighbouring)",
-      "deaths": 0,
-      "missing": 0,
-      "households_affected": 340,
-      "infrastructure_damage": "Landslides blocking roads"
-    }
-  ],
-  "relief_tracker": {
-    "last_updated": "2026-08-27T09:40:00Z",
-    "groups": {
-      "rescue": {
-        "title": "Rescue & Evacuation",
-        "items": [
-          {
-            "type": "Aerial rescue",
-            "detail": "Nepal Army deployed 6 helicopters; 450 evacuated.",
-            "source": "Army Spokesperson",
-            "source_url": "https://example.com/army-rescue"
-          },
-          {
-            "type": "Ground search",
-            "detail": "Police and Red Cross teams searching missing persons.",
-            "source": "Red Cross",
-            "source_url": "https://example.com/redcross"
-          }
-        ]
-      },
-      "aid": {
-        "title": "Aid & Shelter",
-        "items": [
-          {
-            "type": "Temporary camps",
-            "detail": "3 camps established in Barhabise and Tatopani, housing 1200 people.",
-            "source": "NDRRMA",
-            "source_url": "https://example.com/camps"
-          },
-          {
-            "type": "Food distribution",
-            "detail": "WFP providing rice, lentils, and water purification tablets.",
-            "source": "WFP",
-            "source_url": "https://example.com/wfp"
-          }
-        ]
-      },
-      "infrastructure": {
-        "title": "Infrastructure Restoration",
-        "items": [
-          {
-            "type": "Temporary bridge",
-            "detail": "Bailey bridge being installed at Khadichaur.",
-            "source": "Department of Roads",
-            "source_url": "https://example.com/roads"
-          },
-          {
-            "type": "Power restoration",
-            "detail": "Electricity expected to be restored in 48 hours in affected areas.",
-            "source": "Nepal Electricity Authority",
-            "source_url": "https://example.com/nea"
-          }
-        ]
-      }
-    }
-  },
-  "sources": [
-    {
-      "name": "ReliefWeb",
-      "url": "https://reliefweb.int/disaster/fl-2026-000123-npl"
-    },
-    {
-      "name": "GDACS",
-      "url": "https://www.gdacs.org/report.aspx?eventid=100123"
-    },
-    {
-      "name": "NDRRMA Nepal",
-      "url": "https://ndrrma.gov.np/"
-    },
-    {
-      "name": "Nepal Army",
-      "url": "https://www.nepalarmy.mil.np/"
-    },
-    {
-      "name": "Local Media (Kantipur)",
-      "url": "https://kathmandupost.com/"
-    }
-  ]
-}
+
+  }
+} 

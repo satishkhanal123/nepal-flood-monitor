@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Flood Monitor — Bhotekoshi/Rasuwa 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-shell" id="dashboard-shell">
+        <!-- STALE DATA BADGE (hidden by default) -->
+        <div class="stale-badge" id="staleBadge" role="alert" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 1L15 14H1L8 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M8 6V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="8" cy="11.5" r="0.75" fill="currentColor" />
+            </svg>
+            <span>Data may be delayed — last update exceeds 30 minutes</span>
+            <button class="stale-dismiss" id="staleDismiss" aria-label="Dismiss warning">&times;</button>
+        </div>
+
+        <!-- HEADER -->
+        <header class="site-header" role="banner">
+            <div class="header-top">
+                <div class="live-indicator-group">
+                    <span class="live-dot" id="liveDot" aria-hidden="true"></span>
+                    <span class="live-label">LIVE</span>
+                    <span class="live-separator">•</span>
+                    <span class="last-updated" id="lastUpdated">Loading…</span>
+                </div>
+                <div class="header-actions">
+                    <span class="revision-badge" id="revisionBadge">v1.0</span>
+                </div>
+            </div>
+            <h1 class="site-title">Bhotekoshi Flash Flood — Situation Monitor</h1>
+            <p class="site-summary" id="siteSummary">Loading situation summary…</p>
+        </header>
+
+        <!-- HEADLINE STATS -->
+        <section class="headline-stats" aria-label="Headline statistics" id="headlineStats">
+            <div class="stat-card" data-stat="deaths">
+                <div class="stat-label">Confirmed Deaths</div>
+                <div class="stat-value" id="statDeaths">—</div>
+                <div class="stat-range" id="statDeathsRange"></div>
+                <div class="stat-source" id="statDeathsSource"></div>
+            </div>
+            <div class="stat-card" data-stat="missing">
+                <div class="stat-label">Missing Persons</div>
+                <div class="stat-value" id="statMissing">—</div>
+                <div class="stat-range" id="statMissingRange"></div>
+                <div class="stat-source" id="statMissingSource"></div>
+            </div>
+            <div class="stat-card" data-stat="rescued">
+                <div class="stat-label">Rescued / Evacuated</div>
+                <div class="stat-value" id="statRescued">—</div>
+                <div class="stat-range" id="statRescuedRange"></div>
+                <div class="stat-source" id="statRescuedSource"></div>
+            </div>
+            <div class="stat-card" data-stat="foreign_nationals">
+                <div class="stat-label">Foreign Nationals Affected</div>
+                <div class="stat-value" id="statForeign">—</div>
+                <div class="stat-range" id="statForeignRange"></div>
+                <div class="stat-source" id="statForeignSource"></div>
+            </div>
+        </section>
+
+        <!-- SPARKLINE + TREND -->
+        <section class="sparkline-section" aria-label="Death toll trend">
+            <div class="sparkline-header">
+                <span class="sparkline-label">Death toll trajectory</span>
+                <span class="sparkline-note">rolling history from data snapshots</span>
+            </div>
+            <div class="sparkline-container" id="sparklineContainer">
+                <!-- SVG sparkline injected by JS -->
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="timeline-section" aria-label="Event timeline">
+            <div class="section-header">
+                <h2 class="section-title">Timeline</h2>
+                <span class="entry-count" id="timelineCount">0 entries</span>
+            </div>
+            <div class="timeline-spine" id="timelineSpine" role="list">
+                <!-- Timeline entries injected by JS -->
+            </div>
+        </section>
+
+        <!-- DISTRICT BREAKDOWN -->
+        <section class="district-section" aria-label="District breakdown">
+            <div class="section-header">
+                <h2 class="section-title">District Impact Breakdown</h2>
+                <span class="sort-hint">Click column headers to sort</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="district-table" id="districtTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="district" class="sortable" tabindex="0" aria-sort="none">District <span class="sort-arrow" aria-hidden="true"></span></th>
+                            <th data-sort="deaths" class="sortable" tabindex="0" aria-sort="none">Deaths <span class="sort-arrow" aria-hidden="true"></span></th>
+                            <th data-sort="missing" class="sortable" tabindex="0" aria-sort="none">Missing <span class="sort-arrow" aria-hidden="true"></span></th>
+                            <th data-sort="households" class="sortable" tabindex="0" aria-sort="none">Households Affected <span class="sort-arrow" aria-hidden="true"></span></th>
+                            <th data-sort="infrastructure" class="sortable" tabindex="0" aria-sort="none">Infrastructure Damage <span class="sort-arrow" aria-hidden="true"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="districtBody">
+                        <!-- District rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- RELIEF TRACKER -->
+        <section class="relief-section" aria-label="Response and relief tracker">
+            <div class="section-header">
+                <h2 class="section-title">Response &amp; Relief Tracker</h2>
+                <span class="relief-updated" id="reliefUpdated"></span>
+            </div>
+            <div class="relief-grid" id="reliefGrid">
+                <!-- Relief groups injected by JS -->
+            </div>
+        </section>
+
+        <!-- SOURCE FEED -->
+        <section class="source-section" aria-label="Source feed">
+            <div class="section-header">
+                <h2 class="section-title">Source Feed</h2>
+                <span class="source-count" id="sourceCount">0 sources</span>
+            </div>
+            <ul class="source-list" id="sourceList">
+                <!-- Sources injected by JS -->
+            </ul>
+        </section>
+
+        <!-- DATA QUALITY FOOTER -->
+        <footer class="data-footer" role="contentinfo">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">About This Dashboard</h3>
+                    <p class="footer-text">
+                        This is an independent monitoring dashboard tracking the 2026 Bhotekoshi/Rasuwa flash flood event.
+                        It is <strong>not</strong> an official government source.
+                        For authoritative figures, refer to the
+                        <a href="https://drrportal.gov.np/" target="_blank" rel="noopener noreferrer">Nepal Disaster Risk Reduction Portal</a>
+                        and the
+                        <a href="https://ndrrma.gov.np/" target="_blank" rel="noopener noreferrer">National Disaster Risk Reduction and Management Authority (NDRRMA)</a>.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Update Cadence</h3>
+                    <p class="footer-text">
+                        Data auto-refreshes every <strong>45 seconds</strong> from the JSON snapshot.
+                        The snapshot itself is updated by a scheduled Node.js script pulling from public APIs
+                        (ReliefWeb, GDACS, Wikipedia). See the README for scheduling instructions.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Data Integrity</h3>
+                    <p class="footer-text">
+                        Every figure carries source attribution. Where sources disagree, a range is shown.
+                        Stale data is flagged prominently. Figures may be revised as verification continues.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Built with HTML / CSS / Vanilla JS — No frameworks.</span>
+                <span id="footerTimestamp">Loading data timestamp…</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

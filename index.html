@@ -1,177 +1,526 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nepal Flood Monitor — Bhotekoshi/Rasuwa 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#06111d">
+  <meta name="description" content="Nepal Flood Live Monitor dashboard">
+
+  <title>Nepal Flood Live Monitor</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="dashboard-shell" id="dashboard-shell">
-        <!-- STALE DATA BADGE (hidden by default) -->
-        <div class="stale-badge" id="staleBadge" role="alert" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 1L15 14H1L8 1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                <path d="M8 6V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                <circle cx="8" cy="11.5" r="0.75" fill="currentColor" />
-            </svg>
-            <span>Data may be delayed — last update exceeds 30 minutes</span>
-            <button class="stale-dismiss" id="staleDismiss" aria-label="Dismiss warning">&times;</button>
+
+  <main class="app">
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+
+        <div>
+          <div class="brand-title">NEPAL FLOOD</div>
+          <div class="brand-sub">LIVE MONITOR</div>
+        </div>
+      </div>
+
+      <button class="icon-btn bell" aria-label="Alerts">
+        <span class="bell-shape">♧</span>
+        <i></i>
+      </button>
+
+    </header>
+
+
+    <!-- FLOOD ALERT -->
+    <section class="alert-card">
+
+      <div class="alert-icon">!</div>
+
+      <div class="alert-copy">
+        <b>FLASH FLOOD ALERT</b>
+
+        <span>
+          Heavy rain continues in central &amp; eastern Nepal.<br>
+          Avoid riverbanks and low-lying areas.
+        </span>
+      </div>
+
+      <button class="pill danger" data-action="alerts">
+        VIEW ALERTS <b>›</b>
+      </button>
+
+    </section>
+
+
+    <!-- LAST UPDATED -->
+    <section class="updated">
+
+      <span class="clock">◷</span>
+
+      <span>
+        Last Updated:
+        <strong id="updatedAt">
+          May 28, 2026 • 09:40 AM NPT
+        </strong>
+      </span>
+
+      <span class="live">
+        LIVE <i></i>
+      </span>
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+    <section class="panel overview">
+
+      <div class="panel-head">
+
+        <h2>OVERVIEW</h2>
+
+        <span>
+          Source:
+          <a href="#sources">
+            ReliefWeb, GDACS, Wikipedia
+          </a>
+        </span>
+
+      </div>
+
+
+      <div class="stats">
+
+        <article class="stat deaths">
+
+          <div class="stat-icon">♟+</div>
+
+          <strong id="deaths">193</strong>
+
+          <b>DEATHS</b>
+
+          <small>
+            ↗ +23<br>
+            <em>vs yesterday</em>
+          </small>
+
+        </article>
+
+
+        <article class="stat missing">
+
+          <div class="stat-icon">●?</div>
+
+          <strong id="missing">68</strong>
+
+          <b>MISSING</b>
+
+          <small>
+            ↗ +8<br>
+            <em>vs yesterday</em>
+          </small>
+
+        </article>
+
+
+        <article class="stat rescued">
+
+          <div class="stat-icon">♣</div>
+
+          <strong id="rescued">1,426</strong>
+
+          <b>RESCUED</b>
+
+          <small>
+            ↗ +214<br>
+            <em>vs yesterday</em>
+          </small>
+
+        </article>
+
+
+        <article class="stat affected">
+
+          <div class="stat-icon">♣</div>
+
+          <strong id="affected">125K+</strong>
+
+          <b>AFFECTED</b>
+
+          <small>
+            Population<br>
+            Affected
+          </small>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- AFFECTED DISTRICTS -->
+    <section class="panel districts">
+
+      <div class="panel-head">
+
+        <h2>AFFECTED DISTRICTS</h2>
+
+        <button data-action="map">
+          VIEW ALL ›
+        </button>
+
+      </div>
+
+
+      <div class="map-wrap">
+
+        <div class="legend">
+
+          <span>
+            <i class="sev"></i>
+            Severe
+          </span>
+
+          <span>
+            <i class="high"></i>
+            High
+          </span>
+
+          <span>
+            <i class="mod"></i>
+            Moderate
+          </span>
+
+          <span>
+            <i class="low"></i>
+            Low
+          </span>
+
         </div>
 
-        <!-- HEADER -->
-        <header class="site-header" role="banner">
-            <div class="header-top">
-                <div class="live-indicator-group">
-                    <span class="live-dot" id="liveDot" aria-hidden="true"></span>
-                    <span class="live-label">LIVE</span>
-                    <span class="live-separator">•</span>
-                    <span class="last-updated" id="lastUpdated">Loading…</span>
-                </div>
-                <div class="header-actions">
-                    <span class="revision-badge" id="revisionBadge">v1.0</span>
-                </div>
-            </div>
-            <h1 class="site-title">Bhotekoshi Flash Flood — Situation Monitor</h1>
-            <p class="site-summary" id="siteSummary">Loading situation summary…</p>
-        </header>
 
-        <!-- HEADLINE STATS -->
-        <section class="headline-stats" aria-label="Headline statistics" id="headlineStats">
-            <div class="stat-card" data-stat="deaths">
-                <div class="stat-label">Confirmed Deaths</div>
-                <div class="stat-value" id="statDeaths">—</div>
-                <div class="stat-range" id="statDeathsRange"></div>
-                <div class="stat-source" id="statDeathsSource"></div>
-            </div>
-            <div class="stat-card" data-stat="missing">
-                <div class="stat-label">Missing Persons</div>
-                <div class="stat-value" id="statMissing">—</div>
-                <div class="stat-range" id="statMissingRange"></div>
-                <div class="stat-source" id="statMissingSource"></div>
-            </div>
-            <div class="stat-card" data-stat="rescued">
-                <div class="stat-label">Rescued / Evacuated</div>
-                <div class="stat-value" id="statRescued">—</div>
-                <div class="stat-range" id="statRescuedRange"></div>
-                <div class="stat-source" id="statRescuedSource"></div>
-            </div>
-            <div class="stat-card" data-stat="foreign_nationals">
-                <div class="stat-label">Foreign Nationals Affected</div>
-                <div class="stat-value" id="statForeign">—</div>
-                <div class="stat-range" id="statForeignRange"></div>
-                <div class="stat-source" id="statForeignSource"></div>
-            </div>
-        </section>
+        <svg
+          class="nepal-map"
+          viewBox="0 0 680 240"
+          role="img"
+          aria-label="Affected districts map"
+        >
 
-        <!-- SPARKLINE + TREND -->
-        <section class="sparkline-section" aria-label="Death toll trend">
-            <div class="sparkline-header">
-                <span class="sparkline-label">Death toll trajectory</span>
-                <span class="sparkline-note">rolling history from data snapshots</span>
-            </div>
-            <div class="sparkline-container" id="sparklineContainer">
-                <!-- SVG sparkline injected by JS -->
-            </div>
-        </section>
+          <path
+            class="country"
+            d="M55 132
+               C110 111 160 119 204 103
+               C249 87 289 93 326 76
+               C365 59 405 66 443 79
+               C478 90 515 85 548 99
+               C581 113 618 112 649 129
+               L633 177
+               C581 173 548 185 502 171
+               C458 159 420 177 378 166
+               C337 156 302 174 258 159
+               C211 143 169 156 121 149
+               C95 145 73 148 55 132Z"
+          />
 
-        <!-- TIMELINE -->
-        <section class="timeline-section" aria-label="Event timeline">
-            <div class="section-header">
-                <h2 class="section-title">Timeline</h2>
-                <span class="entry-count" id="timelineCount">0 entries</span>
-            </div>
-            <div class="timeline-spine" id="timelineSpine" role="list">
-                <!-- Timeline entries injected by JS -->
-            </div>
-        </section>
+          <path
+            class="zone severe-zone"
+            d="M286 91 L354 76 L370 121 L325 139 L283 125Z"
+          />
 
-        <!-- DISTRICT BREAKDOWN -->
-        <section class="district-section" aria-label="District breakdown">
-            <div class="section-header">
-                <h2 class="section-title">District Impact Breakdown</h2>
-                <span class="sort-hint">Click column headers to sort</span>
-            </div>
-            <div class="table-wrapper">
-                <table class="district-table" id="districtTable">
-                    <thead>
-                        <tr>
-                            <th data-sort="district" class="sortable" tabindex="0" aria-sort="none">District <span class="sort-arrow" aria-hidden="true"></span></th>
-                            <th data-sort="deaths" class="sortable" tabindex="0" aria-sort="none">Deaths <span class="sort-arrow" aria-hidden="true"></span></th>
-                            <th data-sort="missing" class="sortable" tabindex="0" aria-sort="none">Missing <span class="sort-arrow" aria-hidden="true"></span></th>
-                            <th data-sort="households" class="sortable" tabindex="0" aria-sort="none">Households Affected <span class="sort-arrow" aria-hidden="true"></span></th>
-                            <th data-sort="infrastructure" class="sortable" tabindex="0" aria-sort="none">Infrastructure Damage <span class="sort-arrow" aria-hidden="true"></span></th>
-                        </tr>
-                    </thead>
-                    <tbody id="districtBody">
-                        <!-- District rows injected by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
+          <path
+            class="zone high-zone"
+            d="M354 76 L423 81 L443 126 L370 121Z"
+          />
 
-        <!-- RELIEF TRACKER -->
-        <section class="relief-section" aria-label="Response and relief tracker">
-            <div class="section-header">
-                <h2 class="section-title">Response &amp; Relief Tracker</h2>
-                <span class="relief-updated" id="reliefUpdated"></span>
-            </div>
-            <div class="relief-grid" id="reliefGrid">
-                <!-- Relief groups injected by JS -->
-            </div>
-        </section>
+          <path
+            class="zone high-zone"
+            d="M423 81 L491 91 L478 145 L443 126Z"
+          />
 
-        <!-- SOURCE FEED -->
-        <section class="source-section" aria-label="Source feed">
-            <div class="section-header">
-                <h2 class="section-title">Source Feed</h2>
-                <span class="source-count" id="sourceCount">0 sources</span>
-            </div>
-            <ul class="source-list" id="sourceList">
-                <!-- Sources injected by JS -->
-            </ul>
-        </section>
+          <path
+            class="zone mod-zone"
+            d="M491 91 L548 101 L531 157 L478 145Z"
+          />
 
-        <!-- DATA QUALITY FOOTER -->
-        <footer class="data-footer" role="contentinfo">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-title">About This Dashboard</h3>
-                    <p class="footer-text">
-                        This is an independent monitoring dashboard tracking the 2026 Bhotekoshi/Rasuwa flash flood event.
-                        It is <strong>not</strong> an official government source.
-                        For authoritative figures, refer to the
-                        <a href="https://drrportal.gov.np/" target="_blank" rel="noopener noreferrer">Nepal Disaster Risk Reduction Portal</a>
-                        and the
-                        <a href="https://ndrrma.gov.np/" target="_blank" rel="noopener noreferrer">National Disaster Risk Reduction and Management Authority (NDRRMA)</a>.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-title">Update Cadence</h3>
-                    <p class="footer-text">
-                        Data auto-refreshes every <strong>45 seconds</strong> from the JSON snapshot.
-                        The snapshot itself is updated by a scheduled Node.js script pulling from public APIs
-                        (ReliefWeb, GDACS, Wikipedia). See the README for scheduling instructions.
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-title">Data Integrity</h3>
-                    <p class="footer-text">
-                        Every figure carries source attribution. Where sources disagree, a range is shown.
-                        Stale data is flagged prominently. Figures may be revised as verification continues.
-                    </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>Built with HTML / CSS / Vanilla JS — No frameworks.</span>
-                <span id="footerTimestamp">Loading data timestamp…</span>
-            </div>
-        </footer>
-    </div>
+          <path
+            class="zone low-zone"
+            d="M370 121 L443 126 L455 166 L378 159Z"
+          />
 
-    <script src="app.js"></script>
+          <path
+            class="zone low-zone"
+            d="M455 166 L531 157 L548 177 L491 174Z"
+          />
+
+          <g class="district-lines">
+
+            <path d="M325 139L378 159L443 126" />
+            <path d="M443 126L478 145L491 174" />
+            <path d="M370 121L378 159" />
+            <path d="M478 145L531 157" />
+
+          </g>
+
+        </svg>
+
+
+        <div class="label rasuwa">
+          Rasuwa
+        </div>
+
+        <div class="label sindhu">
+          Sindhupalchok
+        </div>
+
+        <div class="label dolakha">
+          Dolakha
+        </div>
+
+        <div class="label kath">
+          Kathmandu
+        </div>
+
+
+        <div class="district-count">
+
+          <strong>14</strong>
+
+          <span>
+            Districts<br>
+            Affected
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RECENT UPDATES -->
+    <section class="panel updates">
+
+      <div class="panel-head">
+
+        <h2>RECENT UPDATES</h2>
+
+        <button data-action="timeline">
+          VIEW TIMELINE ›
+        </button>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="time-row">
+
+          <time>9:20 AM</time>
+
+          <i class="dot red"></i>
+
+          <div class="event redbox">
+            ≋
+          </div>
+
+          <div>
+
+            <b>
+              Bhotekoshi River water level still above danger mark
+            </b>
+
+            <small>
+              Rasuwa District
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="time-row">
+
+          <time>8:45 AM</time>
+
+          <i class="dot orange"></i>
+
+          <div class="event orangebox">
+            ☁
+          </div>
+
+          <div>
+
+            <b>
+              Heavy rainfall continues in central &amp; eastern regions
+            </b>
+
+            <small>
+              Meteorological Forecast
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="time-row">
+
+          <time>8:10 AM</time>
+
+          <i class="dot green"></i>
+
+          <div class="event greenbox">
+            ♣
+          </div>
+
+          <div>
+
+            <b>
+              More rescue teams deployed in Sindhupalchok
+            </b>
+
+            <small>
+              Nepal Police
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RELIEF EFFORTS -->
+    <section class="panel relief">
+
+      <div class="panel-head">
+
+        <h2>RELIEF EFFORTS</h2>
+
+        <button data-action="relief">
+          VIEW DETAILS ›
+        </button>
+
+      </div>
+
+
+      <div class="relief-grid">
+
+        <div>
+          <span>⌂</span>
+          <strong>126</strong>
+          <small>
+            Relief Camps<br>
+            Active
+          </small>
+        </div>
+
+
+        <div>
+          <span>▰</span>
+          <strong>342</strong>
+          <small>
+            Rescue Teams<br>
+            Deployed
+          </small>
+        </div>
+
+
+        <div>
+          <span>✚</span>
+          <strong>18.7K</strong>
+          <small>
+            Relief Supplies<br>
+            Distributed
+          </small>
+        </div>
+
+
+        <div>
+          <span>♣</span>
+          <strong>52K+</strong>
+          <small>
+            People Assisted
+          </small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SAFETY -->
+    <section class="safety">
+
+      <span>♢</span>
+
+      <b>Stay safe.</b>
+
+      Follow official updates and local authorities.
+
+      <button data-action="safety">
+        SAFETY TIPS ›
+      </button>
+
+    </section>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+
+      <button
+        class="active"
+        data-action="dashboard"
+      >
+        <span>⌂</span>
+        <b>Dashboard</b>
+      </button>
+
+
+      <button data-action="map">
+        <span>◇</span>
+        <b>Map</b>
+      </button>
+
+
+      <button data-action="alerts">
+        <span>△</span>
+        <b>Alerts</b>
+      </button>
+
+
+      <button data-action="relief">
+        <span>▣</span>
+        <b>Resources</b>
+      </button>
+
+
+      <button data-action="more">
+        <span>•••</span>
+        <b>More</b>
+      </button>
+
+    </nav>
+
+  </main>
+
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+
 </body>
 </html>

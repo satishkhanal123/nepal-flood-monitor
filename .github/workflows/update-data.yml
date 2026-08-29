@@ -1,0 +1,106 @@
+name: Update Nepal Flood Data
+
+on:
+
+  # Allows us to run the workflow manually
+  workflow_dispatch:
+
+  # Run every 15 minutes
+  schedule:
+    - cron: "*/15 * * * *"
+
+
+# Give GitHub Actions permission to update
+# data.json in the repository.
+
+permissions:
+  contents: write
+
+
+jobs:
+
+  update-data:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ------------------------------------------------------
+      # 1. Download repository
+      # ------------------------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # ------------------------------------------------------
+      # 2. Install Python
+      # ------------------------------------------------------
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.12"
+
+
+      # ------------------------------------------------------
+      # 3. Install Python packages
+      # ------------------------------------------------------
+
+      - name: Install dependencies
+        run: |
+
+          python -m pip install --upgrade pip
+
+          pip install playwright
+
+
+      # ------------------------------------------------------
+      # 4. Install Chromium
+      # ------------------------------------------------------
+
+      - name: Install Chromium
+        run: |
+
+          playwright install --with-deps chromium
+
+
+      # ------------------------------------------------------
+      # 5. Run collector
+      # ------------------------------------------------------
+
+      - name: Fetch DHM data
+        run: |
+
+          python update_data.py
+
+
+      # ------------------------------------------------------
+      # 6. Check generated JSON
+      # ------------------------------------------------------
+
+      - name: Validate data.json
+        run: |
+
+          python -m json.tool data.json > /dev/null
+
+          echo "data.json is valid JSON."
+
+
+      # ------------------------------------------------------
+      # 7. Commit updated data
+      # ------------------------------------------------------
+
+      - name: Commit updated data
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data.json
+
+          git diff --cached --quiet || git commit -m "Update live Nepal flood data"
+
+          git push

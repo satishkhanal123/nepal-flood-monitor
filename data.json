@@ -1,28 +1,8 @@
-{
-  "last_updated": "2026-05-28T09:40:00+05:45",
-
-  "stats": {
-
-    "deaths": {
-      "value": 193,
-      "source": "ReliefWeb",
-      "source_url": "https://reliefweb.int/"
-    },
-
-    "missing": {
-      "value": 68,
-      "source": "ReliefWeb"
-    },
-
-    "rescued": {
-      "value": 1426,
-      "source": "ReliefWeb"
-    },
-
-    "affected_population": {
-      "value": "125K+",
-      "source": "Dashboard snapshot"
-    }
-
-  }
-} 
+nepal-flood-2026/
+├── index.html
+├── update_data.py
+├── requirements.txt
+├── data.json          ← here
+└── .github/
+    └── workflows/
+        └── update-data.yml

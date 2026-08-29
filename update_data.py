@@ -3,24 +3,48 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
+import requests
+from bs4 import BeautifulSoup
 
 
 # ============================================================
-# CONFIG
+# CONFIGURATION
 # ============================================================
 
-DHM_RIVER_URL = "https://dhm.gov.np/hydrology/river-watch"
-DHM_RAIN_URL = "https://dhm.gov.np/hydrology/rainfall-watch-map"
+DHM_HOME_URL = "https://www.dhm.gov.np/"
 
 OUTPUT_FILE = Path(__file__).with_name("data.json")
 
+TIMEOUT = 30
+
+
+# Stations used by our dashboard
 TARGET_RIVERS = {
-    "Karnali": "Chisapani",
-    "Narayani": "Devghat",
-    "Kankai": "Mainachuli",
-    "Babai": "Chepang",
-    "Mahakali": "Parigaon",
+    "Karnali": {
+        "station": "Chisapani",
+        "warning": 10.0,
+        "danger": 10.8,
+    },
+    "Narayani": {
+        "station": "Devghat",
+        "warning": 7.3,
+        "danger": 9.0,
+    },
+    "Kankai": {
+        "station": "Mainachuli",
+        "warning": 3.8,
+        "danger": 4.3,
+    },
+    "Babai": {
+        "station": "Chepang",
+        "warning": 5.5,
+        "danger": 6.8,
+    },
+    "Mahakali": {
+        "station": "Parigaon",
+        "warning": 6.8,
+        "danger": 8.0,
+    },
 }
 
 
@@ -28,19 +52,19 @@ TARGET_RIVERS = {
 # HELPERS
 # ============================================================
 
-def clean(text):
-    """Clean extra spaces and line breaks."""
-    return re.sub(r"\s+", " ", (text or "")).strip()
+def clean_text(text):
+    """Remove extra spaces and line breaks."""
+    return re.sub(r"\s+", " ", text or "").strip()
 
 
-def to_number(text):
-    """Extract the first number from a string."""
-    if not text:
+def to_number(value):
+    """Convert text to float when possible."""
+    if value is None:
         return None
 
-    text = text.replace(",", "")
+    value = str(value).strip()
 
-    match = re.search(r"-?\d+(?:\.\d+)?", text)
+    match = re.search(r"-?\d+(?:\.\d+)?", value)
 
     if not match:
         return None
@@ -51,148 +75,380 @@ def to_number(text):
         return None
 
 
+def format_number(value):
+    """Return an integer when possible, otherwise one decimal."""
+    if value is None:
+        return None
+
+    if float(value).is_integer():
+        return int(value)
+
+    return round(float(value), 1)
+
+
+def get_status(level, warning, danger):
+    """Calculate river warning status."""
+    if level is None:
+        return "UNKNOWN"
+
+    if level >= danger:
+        return "DANGER"
+
+    if level >= warning:
+        return "WATCH"
+
+    return "NORMAL"
+
+
 # ============================================================
-# RIVER DATA
+# FETCH DHM
 # ============================================================
 
-def get_river_data(page):
+def fetch_dhm_homepage():
+    print("Opening DHM homepage...")
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 "
+            "(Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 "
+            "(KHTML, like Gecko) "
+            "Chrome/131.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+    }
+
+    response = requests.get(
+        DHM_HOME_URL,
+        headers=headers,
+        timeout=TIMEOUT,
+    )
+
+    response.raise_for_status()
+
+    print(f"DHM response: HTTP {response.status_code}")
+
+    return response.text
+
+
+# ============================================================
+# PARSE RAINFALL
+# ============================================================
+
+def extract_max_rainfall(text):
     """
-    Read current river observations from DHM River Watch.
+    Extract the maximum 24-hour rainfall shown by DHM.
+
+    Example:
+        Max 24hr: 117 mm Gobre
     """
 
-    page.wait_for_timeout(5000)
+    patterns = [
+        r"Max\s*24\s*hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
+        r"Max\s*24hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
+        r"Max\s*24\s*hour\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
+    ]
 
-    rivers = []
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
 
-    rows = page.locator("table tbody tr").all()
+        if match:
+            amount = to_number(match.group(1))
+            station = clean_text(match.group(2))
 
-    for row in rows:
+            return {
+                "value_mm": format_number(amount),
+                "station": station,
+                "source": "DHM rainfall monitoring",
+            }
 
-        cells = [
-            clean(cell.inner_text())
-            for cell in row.locator("td").all()
-        ]
+    print("WARNING: Could not find Max 24hr rainfall.")
 
-        if len(cells) < 7:
+    return {
+        "value_mm": None,
+        "station": None,
+        "source": "DHM rainfall monitoring",
+    }
+
+
+# ============================================================
+# PARSE RIVER LEVELS
+# ============================================================
+
+def extract_river_levels(text):
+    """
+    Extract the target river readings from the DHM homepage.
+
+    DHM currently exposes lines similar to:
+
+    Karnali at Chisapani WL: 7.2 m WR: 10.0 m DL: 10.8 m
+    """
+
+    results = {}
+
+    for basin, config in TARGET_RIVERS.items():
+
+        station = config["station"]
+
+        # Try the most common DHM format.
+        pattern = (
+            rf"{re.escape(basin)}"
+            rf"(?:\s+River)?"
+            rf"\s+at\s+"
+            rf"{re.escape(station)}"
+            rf"\s+WL\s*:\s*"
+            rf"([0-9]+(?:\.[0-9]+)?)"
+            rf"\s*m"
+            rf"\s*WR\s*:\s*"
+            rf"([0-9]+(?:\.[0-9]+)?)"
+            rf"\s*m"
+            rf"\s*DL\s*:\s*"
+            rf"([0-9]+(?:\.[0-9]+)?)"
+            rf"\s*m"
+        )
+
+        match = re.search(pattern, text, re.IGNORECASE)
+
+        if not match:
+            print(
+                f"WARNING: Could not find "
+                f"{basin} at {station}."
+            )
+
+            results[basin] = {
+                "basin": basin,
+                "station": station,
+                "water_level_m": None,
+                "warning_level_m": config["warning"],
+                "danger_level_m": config["danger"],
+                "status": "UNKNOWN",
+                "source": "DHM River Watch",
+            }
+
             continue
 
-        try:
-            station = cells[2]
+        water_level = to_number(match.group(1))
+        warning_level = to_number(match.group(2))
+        danger_level = to_number(match.group(3))
 
-            matched_river = None
-            matched_station = None
+        status = get_status(
+            water_level,
+            warning_level,
+            danger_level,
+        )
 
-            for river_name, station_name in TARGET_RIVERS.items():
+        results[basin] = {
+            "basin": basin,
+            "station": station,
+            "water_level_m": format_number(water_level),
+            "warning_level_m": format_number(warning_level),
+            "danger_level_m": format_number(danger_level),
+            "status": status,
+            "source": "DHM River Watch",
+        }
 
-                if station_name.lower() in station.lower():
+        print(
+            f"{basin} at {station}: "
+            f"{water_level} m "
+            f"(Warning {warning_level} m / "
+            f"Danger {danger_level} m)"
+        )
 
-                    matched_river = river_name
-                    matched_station = station_name
-
-                    break
-
-            if not matched_river:
-                continue
-
-            current = to_number(cells[4])
-            warning = to_number(cells[5])
-            danger = to_number(cells[6])
-
-            trend = ""
-            status = ""
-
-            if len(cells) > 7:
-                trend = cells[7]
-
-            if len(cells) > 8:
-                status = cells[8]
-
-            rivers.append(
-                {
-                    "name": matched_river,
-                    "station": matched_station,
-                    "value": current,
-                    "warning": warning,
-                    "danger": danger,
-                    "trend": trend,
-                    "status": status,
-                }
-            )
-
-        except Exception as error:
-
-            print(
-                f"Could not parse river row: {error}"
-            )
-
-    return rivers
+    return results
 
 
 # ============================================================
-# RAINFALL DATA
+# DETERMINE DASHBOARD WARNING
 # ============================================================
 
-def get_max_rainfall(page):
+def calculate_overall_warning(rivers):
     """
-    Find the highest 24-hour rainfall value
-    currently shown by DHM.
+    Overall dashboard warning:
+
+    DANGER -> if any river is above danger
+    WATCH  -> if any river is above warning
+    NORMAL -> if all known readings are below warning
+    UNKNOWN -> if no readings are available
     """
 
-    page.wait_for_timeout(5000)
+    statuses = [
+        item["status"]
+        for item in rivers.values()
+        if item.get("status")
+    ]
 
-    best = None
+    if "DANGER" in statuses:
+        return "DANGER"
 
-    rows = page.locator("table tbody tr").all()
+    if "WATCH" in statuses:
+        return "WATCH"
 
-    for row in rows:
+    if "NORMAL" in statuses:
+        return "NORMAL"
 
-        cells = [
-            clean(cell.inner_text())
-            for cell in row.locator("td").all()
-        ]
+    return "UNKNOWN"
 
-        if len(cells) < 5:
-            continue
 
-        try:
+# ============================================================
+# FIND HIGHEST RIVER LEVEL
+# ============================================================
 
-            station = cells[2]
+def find_max_river(rivers):
+    valid = [
+        item
+        for item in rivers.values()
+        if item.get("water_level_m") is not None
+    ]
 
-            # DHM rainfall tables contain several
-            # rainfall periods. The final numeric field
-            # is treated as the 24-hour value.
+    if not valid:
+        return {
+            "value_m": None,
+            "basin": None,
+            "station": None,
+        }
 
-            candidates = []
+    highest = max(
+        valid,
+        key=lambda item: item["water_level_m"],
+    )
 
-            for cell in cells[4:]:
+    return {
+        "value_m": highest["water_level_m"],
+        "basin": highest["basin"],
+        "station": highest["station"],
+    }
 
-                value = to_number(cell)
 
-                if value is not None:
-                    candidates.append(value)
+# ============================================================
+# BUILD DATA.JSON
+# ============================================================
 
-            if not candidates:
-                continue
+def build_data(rainfall, rivers):
+    now = datetime.now(timezone.utc)
 
-            rainfall_24h = candidates[-1]
+    overall_warning = calculate_overall_warning(rivers)
 
-            if (
-                best is None
-                or rainfall_24h > best["value"]
-            ):
+    max_river = find_max_river(rivers)
 
-                best = {
-                    "value": rainfall_24h,
-                    "station": station,
-                }
+    data = {
+        "updated_at": now.isoformat(),
+        "updated_at_npt": now.astimezone().isoformat(),
 
-        except Exception as error:
+        "status": "LIVE",
 
-            print(
-                f"Could not parse rainfall row: {error}"
-            )
+        "sources": {
+            "rainfall": "DHM",
+            "river": "DHM",
+            "casualties": "NDRRMA / Nepal Police",
+            "damage": "NDRRMA / Nepal Police",
+        },
 
-    return best
+        "rainfall": {
+            "max_24h_mm": rainfall["value_mm"],
+            "station": rainfall["station"],
+            "source": rainfall["source"],
+        },
+
+        "river": {
+            "max_level_m": max_river["value_m"],
+            "basin": max_river["basin"],
+            "station": max_river["station"],
+            "overall_warning": overall_warning,
+        },
+
+        "rivers": rivers,
+
+        # ----------------------------------------------------
+        # These are intentionally NOT invented.
+        # They remain null until we have a trusted live source.
+        # ----------------------------------------------------
+
+        "impact": {
+            "confirmed_deaths": None,
+            "missing_persons": None,
+            "injured_persons": None,
+            "source": "NDRRMA / Nepal Police",
+        },
+
+        "damage": {
+            "homes_damaged": None,
+            "bridges_damaged": None,
+            "source": "NDRRMA / Nepal Police",
+        },
+    }
+
+    return data
+
+
+# ============================================================
+# VALIDATE DATA
+# ============================================================
+
+def validate_data(data):
+    if not isinstance(data, dict):
+        raise RuntimeError("Generated data is not an object.")
+
+    if "updated_at" not in data:
+        raise RuntimeError("Missing updated_at.")
+
+    if "rainfall" not in data:
+        raise RuntimeError("Missing rainfall section.")
+
+    if "river" not in data:
+        raise RuntimeError("Missing river section.")
+
+    if "rivers" not in data:
+        raise RuntimeError("Missing rivers section.")
+
+    if not data["rivers"]:
+        raise RuntimeError("No river data was collected.")
+
+    valid_rivers = [
+        river
+        for river in data["rivers"].values()
+        if river.get("water_level_m") is not None
+    ]
+
+    if not valid_rivers:
+        raise RuntimeError(
+            "DHM returned no valid target river readings."
+        )
+
+    return True
+
+
+# ============================================================
+# SAFE WRITE
+# ============================================================
+
+def write_data(data):
+    """
+    Write data.json only after validation succeeds.
+    """
+
+    validate_data(data)
+
+    temporary_file = OUTPUT_FILE.with_suffix(".tmp")
+
+    with open(
+        temporary_file,
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(
+            data,
+            file,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+    temporary_file.replace(OUTPUT_FILE)
+
+    print()
+    print(f"Successfully wrote: {OUTPUT_FILE}")
+    print()
 
 
 # ============================================================
@@ -201,168 +457,69 @@ def get_max_rainfall(page):
 
 def main():
 
-    fetched_at = (
-        datetime.now(timezone.utc)
-        .astimezone()
-        .isoformat(timespec="seconds")
-    )
+    print("========================================")
+    print("NEPAL FLOOD 2026 DATA COLLECTION")
+    print("========================================")
+    print()
 
     print("Starting DHM data collection...")
-    print(f"Timestamp: {fetched_at}")
+    print()
 
-    with sync_playwright() as playwright:
+    html = fetch_dhm_homepage()
 
-        browser = playwright.chromium.launch(
-            headless=True
-        )
+    soup = BeautifulSoup(html, "html.parser")
 
-        # ----------------------------------------------------
-        # RIVER WATCH
-        # ----------------------------------------------------
-
-        river_page = browser.new_page()
-
-        print("Opening DHM River Watch...")
-
-        river_page.goto(
-            DHM_RIVER_URL,
-            wait_until="domcontentloaded",
-            timeout=90000,
-        )
-
-        rivers = get_river_data(river_page)
-
-        # ----------------------------------------------------
-        # RAINFALL WATCH
-        # ----------------------------------------------------
-
-        rainfall_page = browser.new_page()
-
-        print("Opening DHM Rainfall Watch...")
-
-        rainfall_page.goto(
-            DHM_RAIN_URL,
-            wait_until="domcontentloaded",
-            timeout=90000,
-        )
-
-        rainfall = get_max_rainfall(
-            rainfall_page
-        )
-
-        browser.close()
-
-    # ========================================================
-    # VALIDATION
-    # ========================================================
-
-    if not rivers:
-
-        raise RuntimeError(
-            "DHM River Watch returned no matching "
-            "target stations."
-        )
-
-    if rainfall is None:
-
-        raise RuntimeError(
-            "DHM Rainfall Watch returned no "
-            "24-hour rainfall data."
-        )
+    # Convert the page into clean text.
+    text = clean_text(soup.get_text(" ", strip=True))
 
     print()
-    print("DHM data successfully collected.")
-    print(f"River stations: {len(rivers)}")
-    print(
-        f"Maximum rainfall: "
-        f"{rainfall['value']} mm "
-        f"at {rainfall['station']}"
-    )
+    print("Parsing rainfall...")
+    rainfall = extract_max_rainfall(text)
 
-    # ========================================================
-    # DATA.JSON
-    # ========================================================
+    print()
+    print("Parsing river levels...")
+    rivers = extract_river_levels(text)
 
-    data = {
+    print()
+    print("Building dashboard data...")
 
-        "updated": fetched_at,
-
-        "rain": {
-            "value": rainfall["value"],
-            "station": rainfall["station"],
-        },
-
-        "rivers": rivers,
-
-        # These remain empty until we verify
-        # official live sources for them.
-
-        "deaths": None,
-        "missing": None,
-        "injured": None,
-
-        "homes": None,
-        "bridges": None,
-
-        "teams": None,
-        "rescued": None,
-        "vehicles": None,
-        "relief": None,
-
-        "affectedDistricts": None,
-
-        "weather": [],
-
-        "ticker": (
-            "Live DHM rainfall and river "
-            "observations successfully updated."
-        ),
-
-        "sources": {
-
-            "dhm": {
-
-                "status": "live",
-
-                "updated": fetched_at,
-
-                "riverWatch": DHM_RIVER_URL,
-
-                "rainfallWatch": DHM_RAIN_URL,
-            }
-        },
-    }
-
-    # ========================================================
-    # SAFE WRITE
-    # ========================================================
-
-    temporary_file = OUTPUT_FILE.with_suffix(
-        ".tmp"
-    )
-
-    temporary_file.write_text(
-        json.dumps(
-            data,
-            ensure_ascii=False,
-            indent=2,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-
-    # Only replace data.json after successful
-    # collection and JSON creation.
-
-    temporary_file.replace(
-        OUTPUT_FILE
+    data = build_data(
+        rainfall,
+        rivers,
     )
 
     print()
+    print("Validating data...")
+
+    validate_data(data)
+
+    print()
+    print("Writing data.json...")
+
+    write_data(data)
+
+    print("========================================")
+    print("UPDATE SUCCESSFUL")
+    print("========================================")
+    print()
+
     print(
-        f"Updated: {OUTPUT_FILE}"
+        f"Max 24h rainfall: "
+        f"{data['rainfall']['max_24h_mm']} mm "
+        f"{data['rainfall']['station'] or ''}"
+    )
+
+    print(
+        f"Highest river: "
+        f"{data['river']['max_level_m']} m "
+        f"{data['river']['station'] or ''}"
+    )
+
+    print(
+        f"Overall warning: "
+        f"{data['river']['overall_warning']}"
     )
 
 
 if __name__ == "__main__":
-    main()
+    main() 

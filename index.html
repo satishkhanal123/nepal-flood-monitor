@@ -6,476 +6,2980 @@
 <meta name="theme-color" content="#031525">
 <meta name="description" content="Nepal Flood 2026 live situation dashboard using official DHM, NDRRMA and Nepal Police data.">
 <title>Nepal Flood 2026 | Live Situation Dashboard</title>
+
 <style>
-:root{--bg:#020b14;--panel:#071d31;--panel2:#092842;--line:#2a5575;--text:#f4f7fa;--muted:#b9c8d5;--cyan:#23b9f2;--blue:#36a7ff;--yellow:#ffc32e;--red:#ff3f43;--green:#48cf75;--orange:#ff8b25;--purple:#a779ff;--shadow:0 10px 28px rgba(0,0,0,.35)}
-*{box-sizing:border-box}html,body{margin:0;background:#020912;color:var(--text);font-family:Arial,Helvetica,sans-serif}body{min-height:100vh}.app{width:min(100%,1180px);margin:auto;background:linear-gradient(180deg,#061a2c,#020b14);min-height:100vh;box-shadow:0 0 60px #000}
-.header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid #27465d;background:#06192a}.brand{display:flex;align-items:center;gap:14px}.flag{width:36px;height:42px}.title{font-size:27px;font-weight:900;letter-spacing:.3px}.hamb{font-size:32px;color:#b9c7d2;line-height:1}.meta{height:39px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:13px;border-bottom:1px solid #203b50;background:#051524}.live{display:flex;align-items:center;gap:8px}.dot{width:10px;height:10px;background:#42d36f;border-radius:50%;box-shadow:0 0 8px #42d36f}.sep{opacity:.4;margin:0 10px}
-.hero{margin:10px 14px 0;border:1px solid #315671;border-radius:9px;overflow:hidden;position:relative;background:#071725;box-shadow:var(--shadow)}.map{width:100%;aspect-ratio:2.05/1;display:block;object-fit:cover;object-position:center}.mapShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),transparent 45%,rgba(0,0,0,.22))}.legend{position:absolute;right:12px;top:14px;background:rgba(4,20,34,.94);border:1px solid #31536a;border-radius:7px;padding:12px 14px;font-size:13px;min-width:180px}.legend h4{margin:0 0 9px;font-size:13px}.grad{height:12px;border-radius:2px;background:linear-gradient(90deg,#236fba,#3cc4cc,#d2dc45,#ffbe1f,#ff5b23,#d72b2b);margin:6px 0}.legendrow{display:flex;gap:9px;align-items:center;margin-top:8px}.swatch{width:16px;height:10px;display:inline-block}.flood{background:#e33a35}.river{height:2px;background:#27baf3}.station{width:12px;height:12px;border-radius:50%;background:#24b9f2}.warn{font-size:16px;color:#ffc400}.affected{position:absolute;left:12px;bottom:12px;background:rgba(4,20,34,.94);border:1px solid #31536a;border-radius:7px;padding:10px 13px;min-width:255px}.affected strong{font-size:22px;color:#ffb528}.affected small{color:#b8c7d5}.bar{height:8px;background:#19384f;border-radius:20px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1e8ee5,#46c2ff);border-radius:20px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 14px}.card{background:linear-gradient(180deg,#092943,#061a2c);border:1px solid #315671;border-radius:8px;box-shadow:var(--shadow);padding:15px}.metric{display:grid;grid-template-columns:72px 1fr;gap:13px;align-items:center;min-height:130px}.metricIcon{width:64px;height:64px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;font-size:30px}.metric:nth-child(2) .metricIcon{border-color:var(--yellow)}.metric:nth-child(3) .metricIcon{border-color:var(--red)}.label{font-size:15px;color:#cbd7e1;letter-spacing:.4px}.value{font-size:39px;font-weight:900;line-height:1.05;margin:5px 0}.blue{color:#28b7ff}.yellow{color:#ffc32e}.red{color:#ff4b4f}.sub{font-size:14px;color:#c2ced8;line-height:1.45}.tiny{font-size:12px;color:#8ea7b8;margin-top:6px}.status{font-size:36px;font-weight:900;color:#ff4147}
-.columns{display:grid;grid-template-columns:1.02fr .9fr 1.2fr;gap:10px;margin:0 14px}.panel{background:linear-gradient(180deg,#092943,#061a2c);border:1px solid #315671;border-radius:8px;box-shadow:var(--shadow);overflow:hidden}.panelHead{padding:12px 14px;border-bottom:1px solid #294b64;font-size:18px;font-weight:900}.panelBody{padding:13px}.impactGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.impactItem{text-align:center;border-right:1px solid #274a62;padding:5px}.impactItem:last-child{border:0}.impactIcon{font-size:25px}.impactNum{font-size:30px;font-weight:900;margin-top:8px}.impactLabel{font-size:12px;color:#c2ced8;margin-top:4px}.impactSource{font-size:10px;color:#8fa5b5;margin-top:8px;line-height:1.35}.damage{display:grid;grid-template-columns:1fr 1fr;text-align:center;min-height:160px}.damageItem{padding:14px;border-right:1px solid #274a62}.damageItem:last-child{border:0}.damageIcon{font-size:38px}.dash{font-size:30px;font-weight:900;color:#c5d0d8;margin:12px}.note{font-size:12px;color:#91a5b4;line-height:1.4}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:10px 5px;border-bottom:1px solid #24455c;text-align:left}.table th{font-weight:700;color:#c8d4df}.table td:nth-child(n+2){text-align:right}.t-blue{color:#2bb9f7;font-weight:800}.t-yellow{color:#ffc32e;font-weight:800}.t-red{color:#ff474a;font-weight:800}.trend{color:#ff8b25;font-size:11px}
-.bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:10px;margin:10px 14px}.forecastGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.forecast{border:1px solid #315671;background:#061a2c;border-radius:5px;padding:11px 7px;text-align:center;min-height:155px}.place{font-size:15px}.weatherIcon{font-size:34px;margin:13px 0 4px}.rain{font-size:20px;color:#28b7ff;font-weight:900}.risk{font-size:11px;margin-top:8px;padding-top:7px;border-top:1px solid #274a62}.high{color:#ff4b4f}.moderate{color:#ff982c}.unknown{color:#9bb0be}.sourceLine{font-size:11px;color:#91a5b4;margin-top:10px}.rescueGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;text-align:center}.rescue{padding:10px 4px;border-right:1px solid #274a62}.rescue:last-child{border:0}.rescueIcon{font-size:28px}.rescueNum{font-size:27px;font-weight:900;margin-top:8px}.rescueLabel{font-size:11px;color:#c5d0d9;margin-top:4px}.ops{margin-top:16px;border-top:1px solid #274a62;padding-top:13px}.opsrow{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}.opsbar{height:9px;background:#1b3a50;border-radius:10px;overflow:hidden}.opsbar i{display:block;height:100%;width:0;background:#4bd277;border-radius:10px}.ticker{margin:10px 14px 14px;display:flex;align-items:center;gap:15px;background:#061a2c;border:1px solid #315671;border-radius:6px;padding:10px 12px;white-space:nowrap;overflow:hidden}.ticker strong{background:#e82f31;padding:7px 12px;border-radius:4px}.tickerText{overflow:hidden;text-overflow:ellipsis;color:#d7e0e8;font-size:13px}.footer{padding:0 20px 18px;color:#8299a9;font-size:11px;display:flex;justify-content:space-between}.source a{color:#9ec9e8}
-@media(max-width:800px){.title{font-size:22px}.legend{display:none}.affected{min-width:210px}.columns{grid-template-columns:1fr}.bottom{grid-template-columns:1fr}.forecastGrid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){
-  .header{height:108px;padding:12px 18px}
-  .title{font-size:24px;line-height:1.05;max-width:430px}
-  .flag{width:40px;height:46px}
-  .hamb{font-size:30px}
-  .meta{height:76px;padding:8px 18px;font-size:12px;display:grid;grid-template-columns:1.25fr .42fr .95fr;gap:8px;align-items:center;line-height:1.15}
-  .meta>span:first-child{min-width:0}
-  .meta .live{justify-content:center;white-space:nowrap}
-  .meta .sep{margin:0 5px}
-  .meta .live{gap:5px}
-  .meta .live .dot{width:8px;height:8px}
-  .meta .live{font-size:12px}
-  .meta .live{overflow:hidden}
-  .meta .live{flex-wrap:nowrap}
-  .hero{margin:10px 16px 0;height:390px;border-radius:14px}
-  .map{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center;display:block}
-  .affected{left:18px;right:18px;bottom:14px;min-width:0;padding:11px 14px;border-radius:10px}
-  .affected-title{font-size:18px}
-  .affected-sub{font-size:12px}
-  .grid3{grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 16px}
-  .card{padding:10px;border-radius:11px}
-  .metric{display:block;min-height:128px;padding:11px 9px}
-  .metricIcon{width:44px;height:44px;font-size:22px;margin-bottom:8px}
-  .label{font-size:10px;line-height:1.15;letter-spacing:.2px}
-  .value{font-size:25px;line-height:1.02;margin:5px 0 4px;white-space:nowrap}
-  .sub{font-size:10px;line-height:1.2}
-  .tiny{font-size:8px;line-height:1.15;margin-top:5px}
-  .status{font-size:24px;line-height:1.02;margin:5px 0 4px}
-  .columns,.bottom{margin-left:16px;margin-right:16px;gap:10px}
-  .panelHead{font-size:15px;padding:10px 11px}
-  .panelBody{padding:10px}
-  .forecastGrid{grid-template-columns:repeat(3,1fr);gap:6px}
-  .rescueGrid{grid-template-columns:repeat(3,1fr);gap:6px}
-  .footer{padding:10px 16px 14px;gap:8px;font-size:9px}
-}
-@media(max-width:390px){
-  .header{height:98px;padding:10px 12px}
-  .title{font-size:20px}
-  .meta{height:72px;padding:7px 12px;font-size:10px;grid-template-columns:1.2fr .42fr .9fr}
-  .hero{margin:9px 10px 0;height:350px}
-  .affected{left:10px;right:10px;bottom:10px}
-  .grid3{margin-left:10px;margin-right:10px;gap:5px}
-  .metric{min-height:116px;padding:8px 6px}
-  .metricIcon{width:38px;height:38px;font-size:19px}
-  .label{font-size:9px}
-  .value{font-size:21px}
-  .sub{font-size:9px}
-  .tiny{font-size:7px}
-  .status{font-size:20px}
-  .columns,.bottom{margin-left:10px;margin-right:10px}
+:root{
+  --bg:#020b14;
+  --panel:#071d31;
+  --panel2:#092842;
+  --line:#2a5575;
+  --text:#f4f7fa;
+  --muted:#b9c8d5;
+  --cyan:#23b9f2;
+  --blue:#36a7ff;
+  --yellow:#ffc32e;
+  --red:#ff3f43;
+  --green:#48cf75;
+  --orange:#ff8b25;
+  --purple:#a779ff;
+  --shadow:0 10px 28px rgba(0,0,0,.35)
 }
 
-/* ===== V4 mobile polish ===== */
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  background:#020912;
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif
+}
+
+body{min-height:100vh}
+
+.app{
+  width:min(100%,1180px);
+  margin:auto;
+  background:linear-gradient(180deg,#061a2c,#020b14);
+  min-height:100vh;
+  box-shadow:0 0 60px #000
+}
+
+.header{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  border-bottom:1px solid #27465d;
+  background:#06192a
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px
+}
+
+.flag{
+  width:36px;
+  height:42px
+}
+
+.title{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:.3px
+}
+
+.meta{
+  height:39px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  font-size:13px;
+  border-bottom:1px solid #203b50;
+  background:#051524
+}
+
+.live{
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  background:#42d36f;
+  border-radius:50%;
+  box-shadow:0 0 8px #42d36f
+}
+
+.hero{
+  margin:10px 14px 0;
+  border:1px solid #315671;
+  border-radius:9px;
+  overflow:hidden;
+  position:relative;
+  background:#071725;
+  box-shadow:var(--shadow)
+}
+
+.map{
+  width:100%;
+  aspect-ratio:2.05/1;
+  display:block;
+  object-fit:cover;
+  object-position:center
+}
+
+.mapShade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.05),
+    transparent 45%,
+    rgba(0,0,0,.22)
+  )
+}
+
+.legend{
+  position:absolute;
+  right:12px;
+  top:14px;
+  background:rgba(4,20,34,.94);
+  border:1px solid #31536a;
+  border-radius:7px;
+  padding:12px 14px;
+  font-size:13px;
+  min-width:180px
+}
+
+.legend h4{
+  margin:0 0 9px;
+  font-size:13px
+}
+
+.grad{
+  height:12px;
+  border-radius:2px;
+  background:linear-gradient(
+    90deg,
+    #236fba,
+    #3cc4cc,
+    #d2dc45,
+    #ffbe1f,
+    #ff5b23,
+    #d72b2b
+  );
+  margin:6px 0
+}
+
+.legendrow{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  margin-top:8px
+}
+
+.swatch{
+  width:16px;
+  height:10px;
+  display:inline-block
+}
+
+.flood{background:#e33a35}
+
+.river{
+  height:2px;
+  background:#27baf3
+}
+
+.station{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#24b9f2
+}
+
+.warn{
+  font-size:16px;
+  color:#ffc400
+}
+
+.affected{
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  background:rgba(4,20,34,.94);
+  border:1px solid #31536a;
+  border-radius:7px;
+  padding:10px 13px;
+  min-width:255px
+}
+
+.affected strong{
+  font-size:22px;
+  color:#ffb528
+}
+
+.affected small{
+  color:#b8c7d5
+}
+
+.bar{
+  height:8px;
+  background:#19384f;
+  border-radius:20px;
+  margin-top:8px;
+  overflow:hidden
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(
+    90deg,
+    #1e8ee5,
+    #46c2ff
+  );
+  border-radius:20px
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin:10px auto 14px;
+  width:calc(100% - 28px)
+}
+
+.card{
+  background:linear-gradient(180deg,#092943,#061a2c);
+  border:1px solid #315671;
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  padding:15px;
+  width:100%;
+  min-width:0
+}
+
+.metric{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:13px;
+  align-items:center;
+  min-height:130px
+}
+
+.metricIcon{
+  width:64px;
+  height:64px;
+  border:1px solid var(--blue);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:30px
+}
+
+.metric:nth-child(2) .metricIcon{
+  border-color:var(--yellow)
+}
+
+.metric:nth-child(3) .metricIcon{
+  border-color:var(--red)
+}
+
+.label{
+  font-size:15px;
+  color:#cbd7e1;
+  letter-spacing:.4px
+}
+
+.value{
+  font-size:39px;
+  font-weight:900;
+  line-height:1.05;
+  margin:5px 0
+}
+
+.blue{color:#28b7ff}
+.yellow{color:#ffc32e}
+.red{color:#ff4b4f}
+
+.sub{
+  font-size:14px;
+  color:#c2ced8;
+  line-height:1.45
+}
+
+.tiny{
+  font-size:12px;
+  color:#8ea7b8;
+  margin-top:6px
+}
+
+.status{
+  font-size:36px;
+  font-weight:900;
+  color:#ff4147
+}
+
+.columns{
+  display:grid;
+  grid-template-columns:1.02fr .9fr 1.2fr;
+  gap:10px;
+  margin:0 auto;
+  width:calc(100% - 28px)
+}
+
+.panel{
+  background:linear-gradient(180deg,#092943,#061a2c);
+  border:1px solid #315671;
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  overflow:hidden
+}
+
+.panelHead{
+  padding:12px 14px;
+  border-bottom:1px solid #294b64;
+  font-size:18px;
+  font-weight:900
+}
+
+.panelBody{
+  padding:13px
+}
+
+.impactGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px
+}
+
+.impactItem{
+  text-align:center;
+  border-right:1px solid #274a62;
+  padding:5px
+}
+
+.impactItem:last-child{
+  border:0
+}
+
+.impactIcon{
+  font-size:25px
+}
+
+.impactNum{
+  font-size:30px;
+  font-weight:900;
+  margin-top:8px
+}
+
+.impactLabel{
+  font-size:12px;
+  color:#c2ced8;
+  margin-top:4px
+}
+
+.impactSource{
+  font-size:10px;
+  color:#8fa5b5;
+  margin-top:8px;
+  line-height:1.35
+}
+
+.damage{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  text-align:center;
+  min-height:160px
+}
+
+.damageItem{
+  padding:14px;
+  border-right:1px solid #274a62
+}
+
+.damageItem:last-child{
+  border:0
+}
+
+.damageIcon{
+  font-size:38px
+}
+
+.dash{
+  font-size:30px;
+  font-weight:900;
+  color:#c5d0d8;
+  margin:12px
+}
+
+.note{
+  font-size:12px;
+  color:#91a5b4;
+  line-height:1.4
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px
+}
+
+.table th,
+.table td{
+  padding:10px 5px;
+  border-bottom:1px solid #24455c;
+  text-align:left
+}
+
+.table th{
+  font-weight:700;
+  color:#c8d4df
+}
+
+.table td:nth-child(n+2){
+  text-align:right
+}
+
+.t-blue{
+  color:#2bb9f7;
+  font-weight:800
+}
+
+.t-yellow{
+  color:#ffc32e;
+  font-weight:800
+}
+
+.t-red{
+  color:#ff474a;
+  font-weight:800
+}
+
+.trend{
+  color:#ff8b25;
+  font-size:11px
+}
+
+.bottom{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:10px;
+  margin:10px auto 0;
+  width:calc(100% - 28px)
+}
+
+.forecastGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px
+}
+
+.forecast{
+  border:1px solid #315671;
+  background:#061a2c;
+  border-radius:5px;
+  padding:11px 7px;
+  text-align:center;
+  min-height:155px
+}
+
+.place{
+  font-size:15px
+}
+
+.weatherIcon{
+  font-size:34px;
+  margin:13px 0 4px
+}
+
+.rain{
+  font-size:20px;
+  color:#28b7ff;
+  font-weight:900
+}
+
+.risk{
+  font-size:11px;
+  margin-top:8px;
+  padding-top:7px;
+  border-top:1px solid #274a62
+}
+
+.high{color:#ff4b4f}
+.moderate{color:#ff982c}
+.unknown{color:#9bb0be}
+
+.sourceLine{
+  font-size:11px;
+  color:#91a5b4;
+  margin-top:10px
+}
+
+.rescueGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  text-align:center
+}
+
+.rescue{
+  padding:10px 4px;
+  border-right:1px solid #274a62
+}
+
+.rescue:last-child{
+  border:0
+}
+
+.rescueIcon{
+  font-size:28px
+}
+
+.rescueNum{
+  font-size:27px;
+  font-weight:900;
+  margin-top:8px
+}
+
+.rescueLabel{
+  font-size:11px;
+  color:#c5d0d9;
+  margin-top:4px
+}
+
+.ops{
+  margin-top:16px;
+  border-top:1px solid #274a62;
+  padding-top:13px
+}
+
+.opsrow{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  margin-bottom:7px
+}
+
+.opsbar{
+  height:9px;
+  background:#1b3a50;
+  border-radius:10px;
+  overflow:hidden
+}
+
+.opsbar i{
+  display:block;
+  height:100%;
+  width:0;
+  background:#4bd277;
+  border-radius:10px
+}
+
+.ticker{
+  margin:10px auto 14px;
+  width:calc(100% - 28px);
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:#061a2c;
+  border:1px solid #315671;
+  border-radius:6px;
+  padding:10px 12px;
+  white-space:nowrap;
+  overflow:hidden
+}
+
+.ticker strong{
+  background:#e82f31;
+  padding:7px 12px;
+  border-radius:4px
+}
+
+.tickerText{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  color:#d7e0e8;
+  font-size:13px
+}
+
+.footer{
+  padding:0 20px 18px;
+  color:#8299a9;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between
+}
+
+.source a{
+  color:#9ec9e8
+}
+
+
+/* =========================================================
+   HEADER CONTROLS / THEME
+   ========================================================= */
+
+.headerControls{
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+
+.headerControls button{
+  border:1px solid #3a617c;
+  background:#09263b;
+  color:#eaf3f8;
+  border-radius:7px;
+  height:38px;
+  cursor:pointer;
+  font:700 12px Arial;
+  padding:0 11px;
+  box-shadow:0 4px 12px rgba(0,0,0,.2)
+}
+
+.headerControls button:active{
+  transform:translateY(1px)
+}
+
+.langToggle{
+  min-width:78px
+}
+
+.themeToggle{
+  width:40px;
+  padding:0!important;
+  font-size:20px!important
+}
+
+body.light{
+  --bg:#edf3f7;
+  --panel:#ffffff;
+  --panel2:#f4f8fa;
+  --line:#b8cbd7;
+  --text:#102333;
+  --muted:#506574;
+  --shadow:0 8px 22px rgba(28,57,75,.12);
+  background:#e9f0f4;
+  color:var(--text)
+}
+
+body.light .app{
+  background:linear-gradient(180deg,#f7fafc,#e9f0f4);
+  box-shadow:0 0 50px rgba(0,0,0,.08)
+}
+
+body.light .header,
+body.light .meta{
+  background:#fff;
+  border-color:#c7d5de
+}
+
+body.light .card,
+body.light .panel{
+  background:linear-gradient(180deg,#fff,#f1f6f9);
+  border-color:#b8cbd7
+}
+
+body.light .table th{
+  color:#304958
+}
+
+body.light .table td{
+  border-color:#d6e1e7
+}
+
+body.light .headerControls button{
+  background:#eef4f7;
+  color:#173043;
+  border-color:#a8bdca
+}
+
+body.light .muted,
+body.light .tiny,
+body.light .note,
+body.light .sourceLine{
+  color:#607785
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:800px){
+
+  .title{
+    font-size:22px
+  }
+
+  .columns{
+    grid-template-columns:1fr
+  }
+
+  .bottom{
+    grid-template-columns:1fr
+  }
+
+  .forecastGrid{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .legend{
+    display:none
+  }
+
+  .affected{
+    min-width:210px
+  }
+}
+
+
 @media(max-width:600px){
+
   .header{
     height:108px;
-    padding:13px 18px;
+    padding:13px 18px
   }
-  .brand-mark,.brand-mark svg{width:42px;height:42px}
+
   .title{
     font-size:24px;
     line-height:1.08;
-  }
-  .hamb{font-size:31px}
-
-  .meta{
-    height:72px;
-    padding:8px 16px;
-    display:grid;
-    grid-template-columns:minmax(0,1.35fr) auto minmax(0,1fr);
-    gap:10px;
-    align-items:center;
-    font-size:11px;
-    line-height:1.15;
-  }
-  .updatedMeta{
-    min-width:0;
-  }
-  .updatedMeta b{
-    white-space:normal;
-  }
-  .meta .live{
-    justify-content:center;
-    white-space:nowrap;
-    font-size:13px;
-    min-width:48px;
-  }
-  .meta .sourceMeta{
-    min-width:0;
-    color:#d1dbe3;
-    font-size:10px;
-    line-height:1.2;
-    text-align:left;
+    max-width:calc(100vw - 150px)
   }
 
-  .hero{
-    margin:10px 16px 0;
-    height:365px;
+  .flag{
+    width:40px;
+    height:46px
   }
-  .affected{
-    left:14px;
-    right:14px;
-    bottom:12px;
-    padding:10px 12px;
-  }
-  .affected strong{font-size:20px}
-  .affected small{font-size:11px}
 
-  .grid3{
-    margin:10px 16px 0;
-    gap:8px;
-  }
-  .grid3 .card{
-    padding:10px 9px;
-  }
-  .metric{
-    min-height:122px;
-  }
-  .metricIcon{
-    width:42px;
-    height:42px;
-    font-size:21px;
-  }
-  .label{
-    font-size:10px;
-    line-height:1.2;
-  }
-  .value{
-    font-size:25px;
-    margin:4px 0 3px;
-  }
-  .status{
-    font-size:25px;
-    line-height:1.05;
-    margin-top:5px;
-  }
-  .sub{font-size:10px;line-height:1.3}
-  .tiny{font-size:8px;line-height:1.25}
-
-  .columns,.bottom{
-    margin-left:16px;
-    margin-right:16px;
-    gap:8px;
-  }
-}
-
-@media(max-width:390px){
-  .header{height:98px;padding:11px 12px}
-  .brand-mark,.brand-mark svg{width:36px;height:36px}
-  .title{font-size:20px}
-  .hamb{font-size:28px}
-
-  .meta{
-    height:68px;
-    padding:7px 12px;
-    grid-template-columns:minmax(0,1.25fr) auto minmax(0,.9fr);
-    gap:6px;
-    font-size:9px;
-  }
-  .meta .live{font-size:11px}
-  .meta .sourceMeta{font-size:8px}
-  .hero{
-    margin:8px 10px 0;
-    height:335px;
-  }
-  .grid3{
-    margin:8px 10px 0;
-    gap:5px;
-  }
-  .grid3 .card{padding:8px 6px}
-  .metric{min-height:112px}
-  .metricIcon{width:36px;height:36px;font-size:18px}
-  .label{font-size:9px}
-  .value{font-size:21px}
-  .status{font-size:22px}
-}
-
-
-/* ===== V5: final mobile composition polish ===== */
-@media(max-width:600px){
   .meta{
     height:68px;
     padding:7px 16px;
+    display:grid;
     grid-template-columns:minmax(0,1.45fr) auto minmax(0,.95fr);
     gap:8px;
+    align-items:center;
+    font-size:11px;
+    line-height:1.15
   }
-  .meta .updatedMeta{font-size:11px}
-  .meta .live{font-size:12px}
-  .meta .sourceMeta{font-size:9px;line-height:1.15}
+
+  .updatedMeta{
+    min-width:0
+  }
+
+  .meta .live{
+    justify-content:center;
+    white-space:nowrap;
+    font-size:12px;
+    min-width:48px
+  }
+
+  .sourceMeta{
+    min-width:0;
+    color:#d1dbe3;
+    font-size:9px;
+    line-height:1.15
+  }
 
   .hero{
-    height:350px;
-    margin-top:8px;
+    margin:8px 16px 0;
+    height:350px
   }
+
   .map{
-    object-position:center center;
+    height:100%;
+    aspect-ratio:auto;
+    object-fit:cover;
+    object-position:center
   }
+
   .affected{
     left:12px;
     right:12px;
     bottom:10px;
-    padding:9px 12px;
+    padding:9px 12px
   }
-  .affected-title{font-size:18px}
-  .affected-sub{font-size:10px}
-  .progress{height:6px}
+
+  .affected strong{
+    font-size:20px
+  }
+
+  .affected small{
+    font-size:11px
+  }
 
   .grid3{
     margin-top:8px;
+    margin-left:auto;
+    margin-right:auto;
+    width:calc(100% - 32px);
+    gap:8px
   }
+
   .grid3 .card{
     min-height:116px;
-    padding:9px 8px;
+    padding:9px 8px
   }
+
+  .metric{
+    display:block;
+    min-height:122px
+  }
+
   .metricIcon{
-    width:38px;height:38px;
-    margin-bottom:5px;
+    width:38px;
+    height:38px;
+    font-size:21px;
+    margin-bottom:5px
   }
-  .label{font-size:9px}
-  .value{font-size:23px}
-  .status{font-size:23px}
-  .sub{font-size:9px}
-  .tiny{font-size:8px}
+
+  .label{
+    font-size:9px;
+    line-height:1.2
+  }
+
+  .value{
+    font-size:23px;
+    margin:4px 0 3px
+  }
+
+  .status{
+    font-size:23px;
+    line-height:1.05;
+    margin-top:5px
+  }
+
+  .sub{
+    font-size:9px;
+    line-height:1.3
+  }
+
+  .tiny{
+    font-size:8px;
+    line-height:1.25
+  }
+
+  .columns,
+  .bottom{
+    margin-left:auto;
+    margin-right:auto;
+    width:calc(100% - 32px);
+    gap:8px
+  }
+
+  .panelHead{
+    font-size:15px;
+    padding:10px 11px
+  }
+
+  .panelBody{
+    padding:10px
+  }
+
+  .forecastGrid{
+    grid-template-columns:repeat(3,1fr);
+    gap:6px
+  }
+
+  .rescueGrid{
+    grid-template-columns:repeat(3,1fr);
+    gap:6px
+  }
+
+  .footer{
+    padding:10px 16px 14px;
+    gap:8px;
+    font-size:9px
+  }
+
+  .headerControls{
+    gap:5px
+  }
+
+  .headerControls button{
+    height:34px;
+    padding:0 8px;
+    font-size:10px
+  }
+
+  .langToggle{
+    min-width:65px
+  }
+
+  .themeToggle{
+    width:34px;
+    font-size:18px!important
+  }
 }
 
+
 @media(max-width:390px){
+
+  .header{
+    height:98px;
+    padding:11px 12px
+  }
+
+  .title{
+    font-size:20px
+  }
+
+  .flag{
+    width:36px;
+    height:42px
+  }
+
   .meta{
     height:64px;
     padding:6px 11px;
     grid-template-columns:minmax(0,1.35fr) auto minmax(0,.9fr);
-  }
-  .meta .updatedMeta{font-size:8.5px}
-  .meta .live{font-size:10px}
-  .meta .sourceMeta{font-size:7.5px}
-
-  .hero{height:325px}
-  .affected{left:9px;right:9px}
-  .grid3{margin-top:7px}
-  .grid3 .card{min-height:108px;padding:7px 6px}
-  .metricIcon{width:34px;height:34px}
-  .label{font-size:8px}
-  .value{font-size:20px}
-  .status{font-size:20px}
-}
-
-
-/* ===== V6: map removed; language + theme controls ===== */
-.headerControls{display:flex;align-items:center;gap:8px}
-.headerControls button{border:1px solid #3a617c;background:#09263b;color:#eaf3f8;border-radius:7px;height:38px;cursor:pointer;font:700 12px Arial;padding:0 11px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
-.headerControls button:active{transform:translateY(1px)}
-.langToggle{min-width:78px}.themeToggle{width:40px;padding:0!important;font-size:20px!important}
-body.light{--bg:#edf3f7;--panel:#ffffff;--panel2:#f4f8fa;--line:#b8cbd7;--text:#102333;--muted:#506574;--shadow:0 8px 22px rgba(28,57,75,.12);background:#e9f0f4;color:var(--text)}
-body.light .app{background:linear-gradient(180deg,#f7fafc,#e9f0f4);box-shadow:0 0 50px rgba(0,0,0,.08)}
-body.light .header,body.light .meta{background:#ffffff;border-color:#c7d5de}
-body.light .card,body.light .panel{background:linear-gradient(180deg,#ffffff,#f1f6f9);border-color:#b8cbd7}
-body.light .table th{color:#304958}body.light .table td{border-color:#d6e1e7}
-body.light .headerControls button{background:#eef4f7;color:#173043;border-color:#a8bdca}
-body.light .muted,body.light .tiny,body.light .note,body.light .sourceLine{color:#607785}
-@media(max-width:600px){
-  .headerControls{gap:5px}
-  .headerControls button{height:34px;padding:0 8px;font-size:10px}
-  .langToggle{min-width:65px}.themeToggle{width:34px;font-size:18px!important}
-  .title{max-width:calc(100vw - 150px)}
-}
-
-
-/* ===== V7: equal metric-card widths and clean spacing ===== */
-.grid3{
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:8px;
-}
-.grid3 .card{
-  width:100%;
-  min-width:0;
-  box-sizing:border-box;
-}
-@media(max-width:600px){
-  .grid3{
-    margin-left:16px;
-    margin-right:16px;
-    gap:8px;
-  }
-  .grid3 .card{
-    width:100%;
-    min-width:0;
-    padding:9px 8px;
-  }
-}
-@media(max-width:390px){
-  .grid3{
-    margin-left:10px;
-    margin-right:10px;
     gap:6px;
+    font-size:8.5px
   }
+
+  .meta .live{
+    font-size:10px
+  }
+
+  .sourceMeta{
+    font-size:7.5px
+  }
+
+  .hero{
+    margin:8px 10px 0;
+    height:325px
+  }
+
+  .affected{
+    left:9px;
+    right:9px
+  }
+
+  .grid3{
+    width:calc(100% - 20px);
+    gap:6px
+  }
+
   .grid3 .card{
     padding:8px 6px;
+    min-height:108px
   }
-}
 
-
-/* ===== V8: align metric row with full-width panels ===== */
-.grid3,
-.columns,
-.bottom{
-  box-sizing:border-box;
-}
-.grid3{
-  margin-left:14px !important;
-  margin-right:14px !important;
-}
-.columns,
-.bottom{
-  margin-left:14px !important;
-  margin-right:14px !important;
-}
-@media(max-width:600px){
-  .grid3{
-    margin-left:16px !important;
-    margin-right:16px !important;
+  .metric{
+    min-height:112px
   }
+
+  .metricIcon{
+    width:34px;
+    height:34px;
+    font-size:18px
+  }
+
+  .label{
+    font-size:8px
+  }
+
+  .value{
+    font-size:20px
+  }
+
+  .status{
+    font-size:20px
+  }
+
   .columns,
   .bottom{
-    margin-left:16px !important;
-    margin-right:16px !important;
+    width:calc(100% - 20px)
   }
 }
-@media(max-width:390px){
-  .grid3{
-    margin-left:10px !important;
-    margin-right:10px !important;
-  }
-  .columns,
-  .bottom{
-    margin-left:10px !important;
-    margin-right:10px !important;
-  }
-}
-
-
-/* ===== V9: exact shared content width ===== */
-/* The metric row and the full-width panels use one identical content box. */
-.grid3,
-.columns,
-.bottom{
-  width:calc(100% - 28px) !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  box-sizing:border-box;
-}
-.grid3{
-  margin-top:10px !important;
-}
-.columns{
-  margin-top:0 !important;
-}
-.bottom{
-  margin-top:10px !important;
-}
-
-@media(max-width:600px){
-  .grid3,
-  .columns,
-  .bottom{
-    width:calc(100% - 32px) !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-  }
-  .grid3{
-    margin-top:8px !important;
-  }
-}
-@media(max-width:390px){
-  .grid3,
-  .columns,
-  .bottom{
-    width:calc(100% - 20px) !important;
-  }
-}
-
-
-/* ===== V10: restore clear vertical separation ===== */
-.grid3{
-  margin-bottom:14px !important;
-}
-.columns{
-  margin-top:0 !important;
-}
-
-@media(max-width:600px){
-  .grid3{
-    margin-bottom:14px !important;
-  }
-}
-
 </style>
 </head>
+
 <body>
+
 <div class="app">
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
 <header class="header">
+
   <div class="brand">
-    <svg class="flag" viewBox="0 0 40 48" aria-label="Nepal flag"><path d="M4 3h25L12 18h17L4 38z" fill="#d8202f" stroke="#fff" stroke-width="1.5"/><circle cx="11" cy="12" r="3.2" fill="#fff"/><path d="M8.5 12c1.6-2.4 4.7-2.4 6.1 0" fill="none" stroke="#d8202f" stroke-width="1"/><path d="M8 27c3.2 2.8 6.2 2.8 9.2 0" fill="none" stroke="#fff" stroke-width="1.2"/></svg>
-    <div class="title" data-i18n="title">NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD</div>
-  </div><div class="headerControls" aria-label="Display controls">
-  <button class="langToggle" id="langToggle" type="button" aria-label="Switch language">EN | ने</button>
-  <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode"><span id="themeIcon">☾</span></button>
-</div>
+
+    <svg
+      class="flag"
+      viewBox="0 0 40 48"
+      aria-label="Nepal flag"
+    >
+      <path
+        d="M4 3h25L12 18h17L4 38z"
+        fill="#d8202f"
+        stroke="#fff"
+        stroke-width="1.5"
+      />
+
+      <circle
+        cx="11"
+        cy="12"
+        r="3.2"
+        fill="#fff"
+      />
+
+      <path
+        d="M8.5 12c1.6-2.4 4.7-2.4 6.1 0"
+        fill="none"
+        stroke="#d8202f"
+        stroke-width="1"
+      />
+
+      <path
+        d="M8 27c3.2 2.8 6.2 2.8 9.2 0"
+        fill="none"
+        stroke="#fff"
+        stroke-width="1.2"
+      />
+    </svg>
+
+    <div
+      class="title"
+      data-i18n="title"
+    >
+      NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD
+    </div>
+
+  </div>
+
+
+  <div
+    class="headerControls"
+    aria-label="Display controls"
+  >
+
+    <button
+      class="langToggle"
+      id="langToggle"
+      type="button"
+      aria-label="Switch language"
+    >
+      EN | ने
+    </button>
+
+    <button
+      class="themeToggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Toggle light and dark mode"
+    >
+      <span id="themeIcon">☾</span>
+    </button>
+
+  </div>
+
 </header>
-<div class="meta"><span class="updatedMeta">LAST UPDATED: <b id="updated">—</b></span><span class="live"><i class="dot"></i><b data-i18n="live">LIVE</b></span><span class="sourceMeta" data-i18n="dataSource">DATA SOURCE: DHM • NDRRMA • Nepal Police</span></div>
 
 
+<!-- =======================================================
+     META
+     ======================================================= -->
+
+<div class="meta">
+
+  <span class="updatedMeta">
+    LAST UPDATED:
+    <b id="updated">WAITING…</b>
+  </span>
+
+  <span class="live">
+
+    <i class="dot"></i>
+
+    <b data-i18n="live">
+      LIVE
+    </b>
+
+  </span>
+
+  <span
+    class="sourceMeta"
+    data-i18n="dataSource"
+  >
+    DATA SOURCE: DHM • NDRRMA • Nepal Police
+  </span>
+
+</div>
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<section class="hero">
+
+  <img
+    class="map"
+    src="nepal-flood-map.jpg"
+    alt="Nepal flood monitoring map"
+    onerror="this.style.display='none'"
+  >
+
+  <div class="mapShade"></div>
+
+
+  <div class="legend">
+
+    <h4>
+      FLOOD RISK
+    </h4>
+
+    <div class="grad"></div>
+
+    <div class="legendrow">
+      <span class="swatch flood"></span>
+      <span>Flood affected</span>
+    </div>
+
+    <div class="legendrow">
+      <span class="swatch river"></span>
+      <span>River</span>
+    </div>
+
+    <div class="legendrow">
+      <span class="swatch station"></span>
+      <span>Monitoring station</span>
+    </div>
+
+  </div>
+
+
+  <div class="affected">
+
+    <div class="affected-title">
+      VERIFIED AFFECTED DISTRICTS
+    </div>
+
+    <strong id="affectedDistricts">
+      —
+    </strong>
+
+    <small id="affectedNote">
+      Official aggregate not verified
+    </small>
+
+    <div class="bar progress">
+      <i id="affectedBar"></i>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     MAIN METRICS
+     ======================================================= -->
 
 <section class="grid3">
-  <article class="card metric"><div class="metricIcon">🌧️</div><div><div class="label" data-i18n="maxRain">MAX 24H RAINFALL</div><div class="value blue" id="rainValue">—</div><div class="sub" id="rainStation">—</div><div class="tiny" data-i18n="dhmRain">DHM rainfall monitoring</div></div></article>
-  <article class="card metric"><div class="metricIcon">🌊</div><div><div class="label" data-i18n="maxRiver">MAX RIVER LEVEL</div><div class="value yellow" id="riverValue">—</div><div class="sub" id="riverStation">—</div><div class="tiny" id="riverThreshold">Warning — | Danger —</div></div></article>
-  <article class="card metric"><div class="metricIcon">⚠️</div><div><div class="label" data-i18n="warningStatus">WARNING STATUS</div><div class="status" id="warningStatus">—</div><div class="sub" data-i18n="dhmWarning">DHM warning system</div><div class="tiny" data-i18n="officialWarning">Official warning page</div></div></article>
+
+
+  <article class="card metric">
+
+    <div class="metricIcon">
+      🌧️
+    </div>
+
+    <div>
+
+      <div
+        class="label"
+        data-i18n="maxRain"
+      >
+        MAX 24H RAINFALL
+      </div>
+
+      <div
+        class="value blue"
+        id="rainValue"
+      >
+        —
+      </div>
+
+      <div
+        class="sub"
+        id="rainStation"
+      >
+        —
+      </div>
+
+      <div
+        class="tiny"
+        data-i18n="dhmRain"
+      >
+        DHM rainfall monitoring
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="card metric">
+
+    <div class="metricIcon">
+      🌊
+    </div>
+
+    <div>
+
+      <div
+        class="label"
+        data-i18n="maxRiver"
+      >
+        MAX RIVER LEVEL
+      </div>
+
+      <div
+        class="value yellow"
+        id="riverValue"
+      >
+        —
+      </div>
+
+      <div
+        class="sub"
+        id="riverStation"
+      >
+        —
+      </div>
+
+      <div
+        class="tiny"
+        id="riverThreshold"
+      >
+        Warning — | Danger —
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="card metric">
+
+    <div class="metricIcon">
+      ⚠️
+    </div>
+
+    <div>
+
+      <div
+        class="label"
+        data-i18n="warningStatus"
+      >
+        WARNING STATUS
+      </div>
+
+      <div
+        class="status"
+        id="warningStatus"
+      >
+        —
+      </div>
+
+      <div
+        class="sub"
+        data-i18n="dhmWarning"
+      >
+        DHM warning system
+      </div>
+
+      <div
+        class="tiny"
+        data-i18n="officialWarning"
+      >
+        Official warning page
+      </div>
+
+    </div>
+
+  </article>
+
 </section>
+
+
+<!-- =======================================================
+     CASUALTIES / DAMAGE / RIVER LEVELS
+     ======================================================= -->
 
 <section class="columns">
-  <article class="panel"><div class="panelHead" data-i18n="casualties">CASUALTIES &amp; IMPACT</div><div class="panelBody"><div class="impactGrid"><div class="impactItem"><div class="impactIcon">👥</div><div class="impactNum red" id="deaths">—</div><div class="impactLabel" data-i18n="confirmedDeaths">CONFIRMED<br>DEATHS</div><div class="impactSource">Nepal Police</div></div><div class="impactItem"><div class="impactIcon">👥</div><div class="impactNum yellow" id="missing">—</div><div class="impactLabel" data-i18n="missingPersons">MISSING<br>PERSONS</div><div class="impactSource" id="missingSource">NDRRMA/Setu</div></div><div class="impactItem"><div class="impactIcon">👥</div><div class="impactNum" id="injured">—</div><div class="impactLabel" data-i18n="injuredPersons">INJURED<br>PERSONS</div><div class="impactSource">NDRRMA/Setu</div></div></div></div></article>
-  <article class="panel"><div class="panelHead" data-i18n="damage">DAMAGE TO INFRASTRUCTURE</div><div class="panelBody"><div class="damage"><div class="damageItem"><div class="damageIcon">🏠</div><div class="dash" id="homes">—</div><div class="impactLabel" data-i18n="homesDamaged">HOMES<br>DAMAGED</div></div><div class="damageItem"><div class="damageIcon">🌉</div><div class="dash" id="bridges">—</div><div class="impactLabel" data-i18n="bridgesDamaged">BRIDGES<br>DAMAGED</div></div></div><div class="note">Only displayed when an official current aggregate is verified.</div></div></article>
-  <article class="panel"><div class="panelHead" data-i18n="riverLevels">RIVER WATER LEVELS</div><div class="panelBody"><table class="table"><thead><tr><th data-i18n="river">RIVER</th><th data-i18n="current">CURRENT</th><th data-i18n="warning">WARNING</th><th data-i18n="danger">DANGER</th></tr></thead><tbody id="riverRows"></tbody></table></div></article>
+
+
+  <article class="panel">
+
+    <div
+      class="panelHead"
+      data-i18n="casualties"
+    >
+      CASUALTIES &amp; IMPACT
+    </div>
+
+    <div class="panelBody">
+
+      <div class="impactGrid">
+
+
+        <div class="impactItem">
+
+          <div class="impactIcon">
+            👥
+          </div>
+
+          <div
+            class="impactNum red"
+            id="deaths"
+          >
+            —
+          </div>
+
+          <div
+            class="impactLabel"
+            data-i18n="confirmedDeaths"
+          >
+            CONFIRMED<br>DEATHS
+          </div>
+
+          <div class="impactSource">
+            Nepal Police
+          </div>
+
+        </div>
+
+
+        <div class="impactItem">
+
+          <div class="impactIcon">
+            👥
+          </div>
+
+          <div
+            class="impactNum yellow"
+            id="missing"
+          >
+            —
+          </div>
+
+          <div
+            class="impactLabel"
+            data-i18n="missingPersons"
+          >
+            MISSING<br>PERSONS
+          </div>
+
+          <div
+            class="impactSource"
+            id="missingSource"
+          >
+            NDRRMA/Setu
+          </div>
+
+        </div>
+
+
+        <div class="impactItem">
+
+          <div class="impactIcon">
+            👥
+          </div>
+
+          <div
+            class="impactNum"
+            id="injured"
+          >
+            —
+          </div>
+
+          <div
+            class="impactLabel"
+            data-i18n="injuredPersons"
+          >
+            INJURED<br>PERSONS
+          </div>
+
+          <div class="impactSource">
+            NDRRMA/Setu
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="panel">
+
+    <div
+      class="panelHead"
+      data-i18n="damage"
+    >
+      DAMAGE TO INFRASTRUCTURE
+    </div>
+
+    <div class="panelBody">
+
+      <div class="damage">
+
+
+        <div class="damageItem">
+
+          <div class="damageIcon">
+            🏠
+          </div>
+
+          <div
+            class="dash"
+            id="homes"
+          >
+            —
+          </div>
+
+          <div
+            class="impactLabel"
+            data-i18n="homesDamaged"
+          >
+            HOMES<br>DAMAGED
+          </div>
+
+        </div>
+
+
+        <div class="damageItem">
+
+          <div class="damageIcon">
+            🌉
+          </div>
+
+          <div
+            class="dash"
+            id="bridges"
+          >
+            —
+          </div>
+
+          <div
+            class="impactLabel"
+            data-i18n="bridgesDamaged"
+          >
+            BRIDGES<br>DAMAGED
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="note">
+        Only displayed when an official current aggregate is verified.
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="panel">
+
+    <div
+      class="panelHead"
+      data-i18n="riverLevels"
+    >
+      RIVER WATER LEVELS
+    </div>
+
+    <div class="panelBody">
+
+      <table class="table">
+
+        <thead>
+
+          <tr>
+
+            <th data-i18n="river">
+              RIVER
+            </th>
+
+            <th data-i18n="current">
+              CURRENT
+            </th>
+
+            <th data-i18n="warning">
+              WARNING
+            </th>
+
+            <th data-i18n="danger">
+              DANGER
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="riverRows">
+
+          <tr>
+
+            <td
+              colspan="4"
+              style="text-align:center;color:#91a5b4;padding:20px"
+            >
+              Waiting for DHM data…
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </article>
+
 </section>
+
+
+<!-- =======================================================
+     AFFECTED AREAS / RESCUE
+     ======================================================= -->
 
 <section class="bottom">
-  <article class="panel"><div class="panelHead" data-i18n="affectedAreas">AFFECTED AREAS — CURRENT DHM MONITORING</div><div class="panelBody"><div class="forecastGrid" id="affectedWeather"></div><div class="sourceLine">Official forecast is shown only where DHM publishes a matching location. Monitoring values are not presented as forecasts.</div></div></article>
-  <article class="panel"><div class="panelHead" data-i18n="rescueRelief">RESCUE &amp; RELIEF OPERATIONS</div><div class="panelBody"><div class="rescueGrid"><div class="rescue"><div class="rescueIcon">👷</div><div class="rescueNum" id="teams">—</div><div class="rescueLabel" data-i18n="activeTeams">ACTIVE TEAMS</div></div><div class="rescue"><div class="rescueIcon">👨‍👩‍👧</div><div class="rescueNum" id="rescued">—</div><div class="rescueLabel" data-i18n="peopleRescued">PEOPLE RESCUED</div></div><div class="rescue"><div class="rescueIcon">🚁</div><div class="rescueNum" id="vehicles">—</div><div class="rescueLabel" data-i18n="rescueVehicles">RESCUE VEHICLES</div></div><div class="rescue"><div class="rescueIcon">📦</div><div class="rescueNum" id="relief">—</div><div class="rescueLabel" data-i18n="reliefDistributed">RELIEF DISTRIBUTED</div></div></div><div class="ops"><div class="opsrow"><span data-i18n="operationsStatus">Operations status</span><b style="color:#4bd277">Official aggregate not verified</b></div><div class="opsbar"><i style="width:0"></i></div></div></div></article>
+
+
+  <article class="panel">
+
+    <div
+      class="panelHead"
+      data-i18n="affectedAreas"
+    >
+      AFFECTED AREAS — CURRENT DHM MONITORING
+    </div>
+
+    <div class="panelBody">
+
+      <div
+        class="forecastGrid"
+        id="affectedWeather"
+      >
+
+        <div
+          style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:20px;
+            color:#91a5b4;
+            font-size:12px;
+          "
+        >
+          Waiting for DHM data…
+        </div>
+
+      </div>
+
+      <div class="sourceLine">
+        Official forecast is shown only where DHM publishes a matching location.
+        Monitoring values are not presented as forecasts.
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="panel">
+
+    <div
+      class="panelHead"
+      data-i18n="rescueRelief"
+    >
+      RESCUE &amp; RELIEF OPERATIONS
+    </div>
+
+    <div class="panelBody">
+
+      <div class="rescueGrid">
+
+
+        <div class="rescue">
+
+          <div class="rescueIcon">
+            👷
+          </div>
+
+          <div
+            class="rescueNum"
+            id="teams"
+          >
+            —
+          </div>
+
+          <div
+            class="rescueLabel"
+            data-i18n="activeTeams"
+          >
+            ACTIVE TEAMS
+          </div>
+
+        </div>
+
+
+        <div class="rescue">
+
+          <div class="rescueIcon">
+            👨‍👩‍👧
+          </div>
+
+          <div
+            class="rescueNum"
+            id="rescued"
+          >
+            —
+          </div>
+
+          <div
+            class="rescueLabel"
+            data-i18n="peopleRescued"
+          >
+            PEOPLE RESCUED
+          </div>
+
+        </div>
+
+
+        <div class="rescue">
+
+          <div class="rescueIcon">
+            🚁
+          </div>
+
+          <div
+            class="rescueNum"
+            id="vehicles"
+          >
+            —
+          </div>
+
+          <div
+            class="rescueLabel"
+            data-i18n="rescueVehicles"
+          >
+            RESCUE VEHICLES
+          </div>
+
+        </div>
+
+
+        <div class="rescue">
+
+          <div class="rescueIcon">
+            📦
+          </div>
+
+          <div
+            class="rescueNum"
+            id="relief"
+          >
+            —
+          </div>
+
+          <div
+            class="rescueLabel"
+            data-i18n="reliefDistributed"
+          >
+            RELIEF DISTRIBUTED
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="ops">
+
+        <div class="opsrow">
+
+          <span data-i18n="operationsStatus">
+            Operations status
+          </span>
+
+          <b
+            id="operationsStatusText"
+            style="color:#ffc32e"
+          >
+            Official aggregate not verified
+          </b>
+
+        </div>
+
+        <div class="opsbar">
+          <i
+            id="operationsBar"
+            style="width:0"
+          ></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
 </section>
 
-<div class="ticker"><strong data-i18n="liveUpdates">LIVE UPDATES</strong><div class="tickerText" id="ticker">Loading verified government updates…</div></div>
-<footer class="footer"><span class="source"><span data-i18n="sources">Sources:</span> <a href="https://www.dhm.gov.np/" target="_blank" rel="noopener">DHM</a> • <a href="https://setu.ndrrma.gov.np/" target="_blank" rel="noopener">NDRRMA Setu</a> • <a href="https://www.nepalpolice.gov.np/" target="_blank" rel="noopener">Nepal Police</a></span><span>GitHub Pages ready • No paid server required</span></footer>
-</div>
-<script>
-const FALLBACK={updated:"28 Aug 2026 | 17:00 NPT",rain:{value:117,station:"Gobre, DHM"},rivers:[{name:"Karnali",station:"Chisapani",value:7.2,warning:10,danger:10.8,trend:"Rising"},{name:"Narayani",station:"Devghat",value:4.7,warning:7.3,danger:9,trend:"Rising"},{name:"Kankai",station:"Mainachuli",value:3.1,warning:3.8,danger:4.3,trend:"Rising"},{name:"Babai",station:"Chepang",value:2.7,warning:5.5,danger:6.8,trend:"—"},{name:"Mahakali",station:"Parigaon",value:5.1,warning:6.8,danger:8,trend:"—"}],deaths:359,missing:null,injured:null,homes:null,bridges:null,affectedDistricts:null,weather:[{place:"Rasuwa",value:null,note:"DHM forecast not published for district"},{place:"Nuwakot",value:null,note:"DHM station monitoring available"},{place:"Dhading",value:null,note:"DHM station monitoring available"},{place:"Dhunche",value:null,note:"DHM forecast not published"}]};
-function el(id){return document.getElementById(id)}
-function fmt(n,dec=0){return n==null?'—':Number(n).toLocaleString('en-US',{maximumFractionDigits:dec})}
-function render(d){window.__dashboardData=d;el('updated').textContent=d.updated||FALLBACK.updated;el('rainValue').textContent=d.rain?.value==null?'—':fmt(d.rain.value,1)+' mm';el('rainStation').textContent=d.rain?.station||'—';
-const rivers=d.rivers||[];const max=rivers.reduce((a,b)=>!a||b.value>a.value?b:a,null);el('riverValue').textContent=max?fmt(max.value,1)+' m':'—';el('riverStation').textContent=max?`${max.name} River at ${max.station}`:'—';el('riverThreshold').textContent=max?`${currentLang==='ne'?'चेतावनी':'Warning'}: ${fmt(max.warning,1)} m | ${currentLang==='ne'?'खतरा':'Danger'}: ${fmt(max.danger,1)} m`:'Warning — | Danger —';
-const active=rivers.some(r=>r.value>=r.warning);el('warningStatus').textContent=active?(currentLang==='ne'?'सक्रिय':'ACTIVE'):(currentLang==='ne'?'निगरानी':'WATCH');
-el('deaths').textContent=fmt(d.deaths);el('missing').textContent=fmt(d.missing);el('injured').textContent=fmt(d.injured);el('homes').textContent=fmt(d.homes);el('bridges').textContent=fmt(d.bridges);el('teams').textContent=fmt(d.teams);el('rescued').textContent=fmt(d.rescued);el('vehicles').textContent=fmt(d.vehicles);el('relief').textContent=fmt(d.relief);
-if(d.affectedDistricts!=null){el('affectedDistricts').textContent=fmt(d.affectedDistricts);el('affectedNote').textContent=currentLang==='ne'?'पुष्टि भएका प्रभावित जिल्ला':'verified affected districts';el('affectedBar').style.width=(d.affectedDistricts/77*100)+'%'}
-el('riverRows').innerHTML=rivers.map(r=>`<tr><td>${r.name} <small>(${r.station})</small><br><span class="trend">${r.trend||''}</span></td><td class="t-blue">${fmt(r.value,1)} m</td><td class="t-yellow">${fmt(r.warning,1)} m</td><td class="t-red">${fmt(r.danger,1)} m</td></tr>`).join('');
-el('affectedWeather').innerHTML=(d.weather||[]).map(w=>`<div class="forecast"><div class="place">${w.place}</div><div class="weatherIcon">🌧️</div><div class="rain">${w.value==null?'—':fmt(w.value,1)+' mm'}</div><div class="risk ${w.value==null?'unknown':'moderate'}">${w.note||'DHM monitoring'}</div></div>`).join('');
-el('ticker').textContent=d.ticker||currentLang==='ne'?'DHM का आधिकारिक चेतावनीहरू लागू छन्। यात्रा अघि स्थानीय अवस्था जाँच गर्नुहोस्। आपतकालीन बाढी सूचना: DHM टोल-फ्री 1155।':'Official DHM warnings are in effect. Verify local conditions before travel. Emergency flood information: DHM toll-free 1155.'}
 
-const I18N={
- en:{title:'NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD',live:'LIVE',dataSource:'DATA SOURCE: DHM • NDRRMA • Nepal Police',maxRain:'MAX 24H RAINFALL',dhmRain:'DHM rainfall monitoring',maxRiver:'MAX RIVER LEVEL',warningStatus:'WARNING STATUS',dhmWarning:'DHM warning system',officialWarning:'Official warning page',casualties:'CASUALTIES & IMPACT',confirmedDeaths:'CONFIRMED<br>DEATHS',missingPersons:'MISSING<br>PERSONS',injuredPersons:'INJURED<br>PERSONS',damage:'DAMAGE TO INFRASTRUCTURE',homesDamaged:'HOMES<br>DAMAGED',bridgesDamaged:'BRIDGES<br>DAMAGED',riverLevels:'RIVER WATER LEVELS',river:'RIVER',current:'CURRENT',warning:'WARNING',danger:'DANGER',affectedAreas:'AFFECTED AREAS — CURRENT DHM MONITORING',rescueRelief:'RESCUE & RELIEF OPERATIONS',activeTeams:'ACTIVE TEAMS',peopleRescued:'PEOPLE RESCUED',rescueVehicles:'RESCUE VEHICLES',reliefDistributed:'RELIEF DISTRIBUTED',operationsStatus:'Operations status',liveUpdates:'LIVE UPDATES',sources:'Sources:'},
- ne:{title:'नेपाल बाढी २०२६ | प्रत्यक्ष अवस्था ड्यासबोर्ड',live:'प्रत्यक्ष',dataSource:'डेटा स्रोत: DHM • NDRRMA • नेपाल प्रहरी',maxRain:'अधिकतम २४ घण्टाको वर्षा',dhmRain:'DHM वर्षा निगरानी',maxRiver:'अधिकतम नदी सतह',warningStatus:'चेतावनी अवस्था',dhmWarning:'DHM चेतावनी प्रणाली',officialWarning:'आधिकारिक चेतावनी पृष्ठ',casualties:'मानवीय क्षति तथा प्रभाव',confirmedDeaths:'पुष्टि भएका<br>मृत्यु',missingPersons:'बेपत्ता<br>व्यक्ति',injuredPersons:'घाइते<br>व्यक्ति',damage:'पूर्वाधार क्षति',homesDamaged:'क्षतिग्रस्त<br>घर',bridgesDamaged:'क्षतिग्रस्त<br>पुल',riverLevels:'नदीको पानीको सतह',river:'नदी',current:'हाल',warning:'चेतावनी',danger:'खतरा',affectedAreas:'प्रभावित क्षेत्र — हालको DHM निगरानी',rescueRelief:'उद्धार तथा राहत कार्य',activeTeams:'सक्रिय टोली',peopleRescued:'उद्धार गरिएका व्यक्ति',rescueVehicles:'उद्धार सवारी',reliefDistributed:'वितरित राहत',operationsStatus:'कार्य सञ्चालन अवस्था',liveUpdates:'प्रत्यक्ष अपडेट',sources:'स्रोत:'}
+<!-- =======================================================
+     LIVE TICKER
+     ======================================================= -->
+
+<div class="ticker">
+
+  <strong data-i18n="liveUpdates">
+    LIVE UPDATES
+  </strong>
+
+  <div
+    class="tickerText"
+    id="ticker"
+  >
+    Waiting for verified government updates…
+  </div>
+
+</div>
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer class="footer">
+
+  <span class="source">
+
+    <span data-i18n="sources">
+      Sources:
+    </span>
+
+    <a
+      href="https://www.dhm.gov.np/"
+      target="_blank"
+      rel="noopener"
+    >
+      DHM
+    </a>
+
+    •
+
+
+    <a
+      href="https://setu.ndrrma.gov.np/"
+      target="_blank"
+      rel="noopener"
+    >
+      NDRRMA Setu
+    </a>
+
+    •
+
+
+    <a
+      href="https://www.nepalpolice.gov.np/"
+      target="_blank"
+      rel="noopener"
+    >
+      Nepal Police
+    </a>
+
+  </span>
+
+
+  <span>
+    GitHub Pages ready • No paid server required
+  </span>
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   NEPAL FLOOD 2026
+   LIVE DATA ENGINE
+   ========================================================= */
+
+
+/* =========================================================
+   EMPTY DATA
+   ========================================================= */
+
+const EMPTY_DATA = {
+
+  updated:null,
+
+  rain:{
+    value:null,
+    station:null
+  },
+
+  rivers:[],
+
+  deaths:null,
+  missing:null,
+  injured:null,
+
+  homes:null,
+  bridges:null,
+
+  teams:null,
+  rescued:null,
+  vehicles:null,
+  relief:null,
+
+  affectedDistricts:null,
+
+  weather:[],
+
+  ticker:null,
+
+  sources:{
+    dhm:{
+      status:"waiting",
+      updated:null
+    }
+  }
+
 };
-let currentLang=localStorage.getItem('nepalFloodLang')||'en';
-let lightMode=localStorage.getItem('nepalFloodTheme')==='light';
-function applyLanguage(){
- document.documentElement.lang=currentLang==='ne'?'ne':'en';
- document.querySelectorAll('[data-i18n]').forEach(n=>{const k=n.dataset.i18n;if(I18N[currentLang][k])n.innerHTML=I18N[currentLang][k]});
- const b=el('langToggle'); if(b)b.textContent=currentLang==='en'?'EN | ने':'ने | EN';
- render(window.__dashboardData||FALLBACK);
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+const I18N = {
+
+  en:{
+
+    title:
+      "NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD",
+
+    live:
+      "LIVE",
+
+    dataSource:
+      "DATA SOURCE: DHM • NDRRMA • Nepal Police",
+
+    maxRain:
+      "MAX 24H RAINFALL",
+
+    dhmRain:
+      "DHM rainfall monitoring",
+
+    maxRiver:
+      "MAX RIVER LEVEL",
+
+    warningStatus:
+      "WARNING STATUS",
+
+    dhmWarning:
+      "DHM warning system",
+
+    officialWarning:
+      "Official warning page",
+
+    casualties:
+      "CASUALTIES & IMPACT",
+
+    confirmedDeaths:
+      "CONFIRMED<br>DEATHS",
+
+    missingPersons:
+      "MISSING<br>PERSONS",
+
+    injuredPersons:
+      "INJURED<br>PERSONS",
+
+    damage:
+      "DAMAGE TO INFRASTRUCTURE",
+
+    homesDamaged:
+      "HOMES<br>DAMAGED",
+
+    bridgesDamaged:
+      "BRIDGES<br>DAMAGED",
+
+    riverLevels:
+      "RIVER WATER LEVELS",
+
+    river:
+      "RIVER",
+
+    current:
+      "CURRENT",
+
+    warning:
+      "WARNING",
+
+    danger:
+      "DANGER",
+
+    affectedAreas:
+      "AFFECTED AREAS — CURRENT DHM MONITORING",
+
+    rescueRelief:
+      "RESCUE & RELIEF OPERATIONS",
+
+    activeTeams:
+      "ACTIVE TEAMS",
+
+    peopleRescued:
+      "PEOPLE RESCUED",
+
+    rescueVehicles:
+      "RESCUE VEHICLES",
+
+    reliefDistributed:
+      "RELIEF DISTRIBUTED",
+
+    operationsStatus:
+      "Operations status",
+
+    liveUpdates:
+      "LIVE UPDATES",
+
+    sources:
+      "Sources:"
+
+  },
+
+
+  ne:{
+
+    title:
+      "नेपाल बाढी २०२६ | प्रत्यक्ष अवस्था ड्यासबोर्ड",
+
+    live:
+      "प्रत्यक्ष",
+
+    dataSource:
+      "डेटा स्रोत: DHM • NDRRMA • नेपाल प्रहरी",
+
+    maxRain:
+      "अधिकतम २४ घण्टाको वर्षा",
+
+    dhmRain:
+      "DHM वर्षा निगरानी",
+
+    maxRiver:
+      "अधिकतम नदी सतह",
+
+    warningStatus:
+      "चेतावनी अवस्था",
+
+    dhmWarning:
+      "DHM चेतावनी प्रणाली",
+
+    officialWarning:
+      "आधिकारिक चेतावनी पृष्ठ",
+
+    casualties:
+      "मानवीय क्षति तथा प्रभाव",
+
+    confirmedDeaths:
+      "पुष्टि भएका<br>मृत्यु",
+
+    missingPersons:
+      "बेपत्ता<br>व्यक्ति",
+
+    injuredPersons:
+      "घाइते<br>व्यक्ति",
+
+    damage:
+      "पूर्वाधार क्षति",
+
+    homesDamaged:
+      "क्षतिग्रस्त<br>घर",
+
+    bridgesDamaged:
+      "क्षतिग्रस्त<br>पुल",
+
+    riverLevels:
+      "नदीको पानीको सतह",
+
+    river:
+      "नदी",
+
+    current:
+      "हाल",
+
+    warning:
+      "चेतावनी",
+
+    danger:
+      "खतरा",
+
+    affectedAreas:
+      "प्रभावित क्षेत्र — हालको DHM निगरानी",
+
+    rescueRelief:
+      "उद्धार तथा राहत कार्य",
+
+    activeTeams:
+      "सक्रिय टोली",
+
+    peopleRescued:
+      "उद्धार गरिएका व्यक्ति",
+
+    rescueVehicles:
+      "उद्धार सवारी",
+
+    reliefDistributed:
+      "वितरित राहत",
+
+    operationsStatus:
+      "कार्य सञ्चालन अवस्था",
+
+    liveUpdates:
+      "प्रत्यक्ष अपडेट",
+
+    sources:
+      "स्रोत:"
+
+  }
+
+};
+
+
+let currentLang =
+  localStorage.getItem(
+    "nepalFloodLang"
+  ) || "en";
+
+
+let lightMode =
+  localStorage.getItem(
+    "nepalFloodTheme"
+  ) === "light";
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function el(id){
+
+  return document.getElementById(id);
+
 }
-function applyTheme(){document.body.classList.toggle('light',lightMode);const i=el('themeIcon');if(i)i.textContent=lightMode?'☀':'☾';const b=el('themeToggle');if(b)b.setAttribute('aria-label',lightMode?'Switch to dark mode':'Switch to light mode');}
-el('langToggle')?.addEventListener('click',()=>{currentLang=currentLang==='en'?'ne':'en';localStorage.setItem('nepalFloodLang',currentLang);applyLanguage()});
-el('themeToggle')?.addEventListener('click',()=>{lightMode=!lightMode;localStorage.setItem('nepalFloodTheme',lightMode?'light':'dark');applyTheme()});
+
+
+function fmt(value,decimals=0){
+
+  if(
+    value === null ||
+    value === undefined ||
+    value === "" ||
+    Number.isNaN(Number(value))
+  ){
+
+    return "—";
+
+  }
+
+
+  return Number(value).toLocaleString(
+
+    currentLang === "ne"
+      ? "ne-NP"
+      : "en-US",
+
+    {
+      maximumFractionDigits:decimals
+    }
+
+  );
+
+}
+
+
+/* =========================================================
+   DATA TIMESTAMP
+   ========================================================= */
+
+function updateTimestamp(
+  status,
+  timestamp
+){
+
+  const output =
+    el("updated");
+
+
+  if(!output) return;
+
+
+  if(
+    status === "live" &&
+    timestamp
+  ){
+
+    const date =
+      new Date(timestamp);
+
+
+    if(
+      !Number.isNaN(
+        date.getTime()
+      )
+    ){
+
+      output.textContent =
+        date.toLocaleString(
+
+          currentLang === "ne"
+            ? "ne-NP"
+            : "en-GB",
+
+          {
+            day:"2-digit",
+            month:"short",
+            year:"numeric",
+            hour:"2-digit",
+            minute:"2-digit",
+            timeZone:"Asia/Kathmandu"
+          }
+
+        ) + " NPT";
+
+    }else{
+
+      output.textContent =
+        timestamp;
+
+    }
+
+
+  }else if(status === "error"){
+
+    output.textContent =
+      currentLang === "ne"
+        ? "डेटा उपलब्ध छैन"
+        : "DATA UNAVAILABLE";
+
+
+  }else{
+
+    output.textContent =
+      currentLang === "ne"
+        ? "पर्खिरहेको छ…"
+        : "WAITING…";
+
+  }
+
+}
+
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+
+function render(data){
+
+  data =
+    data || EMPTY_DATA;
+
+
+  window.__dashboardData =
+    data;
+
+
+  const dhm =
+    data.sources &&
+    data.sources.dhm
+      ? data.sources.dhm
+      : {};
+
+
+  updateTimestamp(
+    dhm.status || "unknown",
+    data.updated || dhm.updated
+  );
+
+
+  /* -------------------------------------------------------
+     RAINFALL
+     ------------------------------------------------------- */
+
+  if(
+    data.rain &&
+    data.rain.value !== null &&
+    data.rain.value !== undefined
+  ){
+
+    el("rainValue").textContent =
+      fmt(data.rain.value,1) + " mm";
+
+    el("rainStation").textContent =
+      data.rain.station || "—";
+
+  }else{
+
+    el("rainValue").textContent =
+      "—";
+
+    el("rainStation").textContent =
+      "—";
+
+  }
+
+
+  /* -------------------------------------------------------
+     RIVERS
+     ------------------------------------------------------- */
+
+  const rivers =
+    Array.isArray(data.rivers)
+      ? data.rivers
+      : [];
+
+
+  const validRivers =
+    rivers.filter(
+      river =>
+        river &&
+        river.value !== null &&
+        river.value !== undefined
+    );
+
+
+  const maxRiver =
+    validRivers.length
+      ? validRivers.reduce(
+          (highest,river) =>
+            !highest ||
+            Number(river.value) >
+            Number(highest.value)
+              ? river
+              : highest,
+          null
+        )
+      : null;
+
+
+  if(maxRiver){
+
+    el("riverValue").textContent =
+      fmt(maxRiver.value,1) + " m";
+
+
+    el("riverStation").textContent =
+      `${maxRiver.name || "River"} River at ${
+        maxRiver.station || "—"
+      }`;
+
+
+    el("riverThreshold").textContent =
+      currentLang === "ne"
+
+        ? `चेतावनी: ${fmt(maxRiver.warning,1)} m | खतरा: ${fmt(maxRiver.danger,1)} m`
+
+        : `Warning: ${fmt(maxRiver.warning,1)} m | Danger: ${fmt(maxRiver.danger,1)} m`;
+
+  }else{
+
+    el("riverValue").textContent =
+      "—";
+
+    el("riverStation").textContent =
+      "—";
+
+    el("riverThreshold").textContent =
+      currentLang === "ne"
+        ? "चेतावनी — | खतरा —"
+        : "Warning — | Danger —";
+
+  }
+
+
+  /* -------------------------------------------------------
+     WARNING
+     ------------------------------------------------------- */
+
+  const activeWarning =
+    validRivers.some(
+      river =>
+        river.warning !== null &&
+        river.warning !== undefined &&
+        Number(river.value) >=
+        Number(river.warning)
+    );
+
+
+  if(validRivers.length){
+
+    el("warningStatus").textContent =
+      activeWarning
+
+        ? (
+            currentLang === "ne"
+              ? "सक्रिय"
+              : "ACTIVE"
+          )
+
+        : (
+            currentLang === "ne"
+              ? "निगरानी"
+              : "WATCH"
+          );
+
+  }else{
+
+    el("warningStatus").textContent =
+      "—";
+
+  }
+
+
+  /* -------------------------------------------------------
+     CASUALTIES
+     ------------------------------------------------------- */
+
+  el("deaths").textContent =
+    fmt(data.deaths);
+
+  el("missing").textContent =
+    fmt(data.missing);
+
+  el("injured").textContent =
+    fmt(data.injured);
+
+
+  /* -------------------------------------------------------
+     DAMAGE
+     ------------------------------------------------------- */
+
+  el("homes").textContent =
+    fmt(data.homes);
+
+  el("bridges").textContent =
+    fmt(data.bridges);
+
+
+  /* -------------------------------------------------------
+     RESCUE
+     ------------------------------------------------------- */
+
+  el("teams").textContent =
+    fmt(data.teams);
+
+  el("rescued").textContent =
+    fmt(data.rescued);
+
+  el("vehicles").textContent =
+    fmt(data.vehicles);
+
+  el("relief").textContent =
+    fmt(data.relief);
+
+
+  /* -------------------------------------------------------
+     AFFECTED DISTRICTS
+     ------------------------------------------------------- */
+
+  if(
+    data.affectedDistricts !== null &&
+    data.affectedDistricts !== undefined
+  ){
+
+    el("affectedDistricts").textContent =
+      fmt(data.affectedDistricts);
+
+
+    el("affectedNote").textContent =
+      currentLang === "ne"
+        ? "पुष्टि भएका प्रभावित जिल्ला"
+        : "verified affected districts";
+
+
+    const percentage =
+      Math.min(
+        100,
+        Math.max(
+          0,
+          Number(data.affectedDistricts) /
+          77 *
+          100
+        )
+      );
+
+
+    el("affectedBar").style.width =
+      percentage + "%";
+
+  }else{
+
+    el("affectedDistricts").textContent =
+      "—";
+
+    el("affectedNote").textContent =
+      currentLang === "ne"
+        ? "आधिकारिक समग्र डेटा पुष्टि भएको छैन"
+        : "Official aggregate not verified";
+
+    el("affectedBar").style.width =
+      "0%";
+
+  }
+
+
+  /* -------------------------------------------------------
+     RIVER TABLE
+     ------------------------------------------------------- */
+
+  const riverRows =
+    el("riverRows");
+
+
+  if(!rivers.length){
+
+    riverRows.innerHTML = `
+
+      <tr>
+
+        <td
+          colspan="4"
+          style="
+            text-align:center;
+            color:#91a5b4;
+            padding:20px
+          "
+        >
+
+          ${
+            currentLang === "ne"
+              ? "नदीको डेटा उपलब्ध छैन"
+              : "River data unavailable"
+          }
+
+        </td>
+
+      </tr>
+
+    `;
+
+  }else{
+
+    riverRows.innerHTML =
+
+      rivers.map(
+        river => `
+
+          <tr>
+
+            <td>
+
+              ${river.name || "—"}
+
+              <small>
+                (${river.station || "—"})
+              </small>
+
+              <br>
+
+              <span class="trend">
+                ${river.trend || ""}
+              </span>
+
+            </td>
+
+            <td class="t-blue">
+              ${
+                river.value === null ||
+                river.value === undefined
+                  ? "—"
+                  : fmt(river.value,1) + " m"
+              }
+            </td>
+
+            <td class="t-yellow">
+              ${
+                river.warning === null ||
+                river.warning === undefined
+                  ? "—"
+                  : fmt(river.warning,1) + " m"
+              }
+            </td>
+
+            <td class="t-red">
+              ${
+                river.danger === null ||
+                river.danger === undefined
+                  ? "—"
+                  : fmt(river.danger,1) + " m"
+              }
+            </td>
+
+          </tr>
+
+        `
+      ).join("");
+
+  }
+
+
+  /* -------------------------------------------------------
+     WEATHER / AFFECTED AREAS
+     ------------------------------------------------------- */
+
+  const weather =
+    Array.isArray(data.weather)
+      ? data.weather
+      : [];
+
+
+  const weatherBox =
+    el("affectedWeather");
+
+
+  if(weatherBox){
+
+    if(!weather.length){
+
+      weatherBox.innerHTML = `
+
+        <div
+          style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:20px;
+            color:#91a5b4;
+            font-size:12px
+          "
+        >
+
+          ${
+            currentLang === "ne"
+              ? "DHM पूर्वानुमान डेटा उपलब्ध छैन"
+              : "DHM forecast data unavailable"
+          }
+
+        </div>
+
+      `;
+
+    }else{
+
+      weatherBox.innerHTML =
+
+        weather.map(
+          item => {
+
+            const hasValue =
+              item.value !== null &&
+              item.value !== undefined;
+
+
+            return `
+
+              <div class="forecast">
+
+                <div class="place">
+                  ${item.place || "—"}
+                </div>
+
+                <div class="weatherIcon">
+                  🌧️
+                </div>
+
+                <div class="rain">
+
+                  ${
+                    hasValue
+                      ? fmt(item.value,1) + " mm"
+                      : "—"
+                  }
+
+                </div>
+
+                <div
+                  class="risk ${
+                    hasValue
+                      ? "moderate"
+                      : "unknown"
+                  }"
+                >
+
+                  ${
+                    item.note ||
+                    (
+                      currentLang === "ne"
+                        ? "DHM निगरानी"
+                        : "DHM monitoring"
+                    )
+                  }
+
+                </div>
+
+              </div>
+
+            `;
+
+          }
+        ).join("");
+
+    }
+
+  }
+
+
+  /* -------------------------------------------------------
+     TICKER
+     ------------------------------------------------------- */
+
+  const ticker =
+    el("ticker");
+
+
+  if(ticker){
+
+    ticker.textContent =
+      data.ticker ||
+
+      (
+        currentLang === "ne"
+
+          ? "आधिकारिक DHM डेटा अपडेटको प्रतीक्षामा।"
+
+          : "Waiting for verified official DHM data."
+      );
+
+  }
+
+
+  /* -------------------------------------------------------
+     OPERATIONS
+     ------------------------------------------------------- */
+
+  const operationStatus =
+    el("operationsStatusText");
+
+
+  if(operationStatus){
+
+    const hasOperationsData =
+      data.teams !== null ||
+      data.rescued !== null ||
+      data.vehicles !== null ||
+      data.relief !== null;
+
+
+    if(hasOperationsData){
+
+      operationStatus.textContent =
+        currentLang === "ne"
+          ? "आधिकारिक डेटा उपलब्ध"
+          : "Official data available";
+
+      operationStatus.style.color =
+        "#4bd277";
+
+    }else{
+
+      operationStatus.textContent =
+        currentLang === "ne"
+          ? "आधिकारिक समग्र डेटा पुष्टि भएको छैन"
+          : "Official aggregate not verified";
+
+      operationStatus.style.color =
+        "#ffc32e";
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   FETCH DATA.JSON
+   ========================================================= */
+
+async function boot(){
+
+  try{
+
+    console.log(
+      "Fetching Nepal Flood data..."
+    );
+
+
+    const response =
+      await fetch(
+        "data.json?ts=" +
+        Date.now(),
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if(
+      !data ||
+      typeof data !== "object"
+    ){
+
+      throw new Error(
+        "Invalid data.json"
+      );
+
+    }
+
+
+    if(
+      !data.sources ||
+      !data.sources.dhm
+    ){
+
+      throw new Error(
+        "DHM source information missing"
+      );
+
+    }
+
+
+    render(data);
+
+
+    console.log(
+      "Nepal Flood data loaded successfully.",
+      data
+    );
+
+
+  }catch(error){
+
+    console.error(
+      "Nepal Flood data update failed:",
+      error
+    );
+
+
+    const safeData =
+      JSON.parse(
+        JSON.stringify(
+          EMPTY_DATA
+        )
+      );
+
+
+    safeData.sources.dhm.status =
+      "error";
+
+
+    safeData.ticker =
+
+      currentLang === "ne"
+
+        ? "DHM बाट हालको डेटा प्राप्त गर्न सकिएन। कृपया पछि फेरि जाँच गर्नुहोस्।"
+
+        : "Unable to fetch current DHM data. Please check again later.";
+
+
+    render(
+      safeData
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+function applyLanguage(){
+
+  document.documentElement.lang =
+    currentLang === "ne"
+      ? "ne"
+      : "en";
+
+
+  document
+    .querySelectorAll(
+      "[data-i18n]"
+    )
+    .forEach(node => {
+
+      const key =
+        node.dataset.i18n;
+
+
+      if(
+        I18N[currentLang] &&
+        I18N[currentLang][key]
+      ){
+
+        node.innerHTML =
+          I18N[currentLang][key];
+
+      }
+
+    });
+
+
+  const languageButton =
+    el("langToggle");
+
+
+  if(languageButton){
+
+    languageButton.textContent =
+      currentLang === "en"
+        ? "EN | ने"
+        : "ने | EN";
+
+  }
+
+
+  render(
+    window.__dashboardData ||
+    EMPTY_DATA
+  );
+
+}
+
+
+/* =========================================================
+   THEME
+   ========================================================= */
+
+function applyTheme(){
+
+  document.body.classList.toggle(
+    "light",
+    lightMode
+  );
+
+
+  const icon =
+    el("themeIcon");
+
+
+  if(icon){
+
+    icon.textContent =
+      lightMode
+        ? "☀"
+        : "☾";
+
+  }
+
+
+  const button =
+    el("themeToggle");
+
+
+  if(button){
+
+    button.setAttribute(
+      "aria-label",
+
+      lightMode
+        ? "Switch to dark mode"
+        : "Switch to light mode"
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   BUTTON EVENTS
+   ========================================================= */
+
+el("langToggle")?.addEventListener(
+  "click",
+  () => {
+
+    currentLang =
+      currentLang === "en"
+        ? "ne"
+        : "en";
+
+
+    localStorage.setItem(
+      "nepalFloodLang",
+      currentLang
+    );
+
+
+    applyLanguage();
+
+  }
+);
+
+
+el("themeToggle")?.addEventListener(
+  "click",
+  () => {
+
+    lightMode =
+      !lightMode;
+
+
+    localStorage.setItem(
+      "nepalFloodTheme",
+      lightMode
+        ? "light"
+        : "dark"
+    );
+
+
+    applyTheme();
+
+  }
+);
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
 applyTheme();
 
-async function boot(){let d=FALLBACK;try{const r=await fetch('data.json?ts='+Date.now(),{cache:'no-store'});if(r.ok)d=Object.assign({},FALLBACK,await r.json())}catch(e){}render(d)}boot();setInterval(boot,5*60*1000);
+applyLanguage();
+
+boot();
+
+
+/*
+  The GitHub Action updates data.json.
+
+  The dashboard checks data.json every 5 minutes.
+*/
+
+setInterval(
+  boot,
+  5 * 60 * 1000
+);
+
 </script>
-</body></html>
+
+</body>
+</html>

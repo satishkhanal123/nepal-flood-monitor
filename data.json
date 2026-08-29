@@ -1,8 +1,34 @@
-nepal-flood-2026/
-├── index.html
-├── update_data.py
-├── requirements.txt
-├── data.json          ← here
-└── .github/
-    └── workflows/
-        └── update-data.yml
+{
+  "updated": null,
+  "rain": {
+    "value": null,
+    "station": null
+  },
+  "rivers": [],
+  "deaths": null,
+  "missing": null,
+  "injured": null,
+  "homes": null,
+  "bridges": null,
+  "teams": null,
+  "rescued": null,
+  "vehicles": null,
+  "relief": null,
+  "affectedDistricts": null,
+  "weather": [],
+  "ticker": "Waiting for verified government data.",
+  "sources": {
+    "dhm": {
+      "status": "waiting",
+      "updated": null
+    },
+    "ndrrma": {
+      "status": "waiting",
+      "updated": null
+    },
+    "nepalPolice": {
+      "status": "waiting",
+      "updated": null
+    }
+  }
+}

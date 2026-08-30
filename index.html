@@ -9,19 +9,21 @@
 
 <style>
 :root{
-  --bg:#020b14;
-  --panel:#071d31;
-  --panel2:#092842;
-  --line:#2a5575;
+  --bg:#020912;
+  --app:#061a2c;
+  --panel:#092943;
+  --panel-dark:#061a2c;
+  --line:#315671;
   --text:#f4f7fa;
   --muted:#b9c8d5;
-  --cyan:#23b9f2;
-  --blue:#36a7ff;
+  --soft:#8ea7b8;
+
+  --blue:#28b7ff;
   --yellow:#ffc32e;
-  --red:#ff3f43;
+  --red:#ff474a;
   --green:#48cf75;
   --orange:#ff8b25;
-  --purple:#a779ff;
+
   --shadow:0 10px 28px rgba(0,0,0,.35);
 }
 
@@ -29,72 +31,85 @@
   box-sizing:border-box;
 }
 
-html,
+html{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+}
+
 body{
   margin:0;
-  background:#020912;
+  min-height:100vh;
+  background:var(--bg);
   color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
 }
 
-body{
-  min-height:100vh;
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
 }
 
 .app{
   width:min(100%,1180px);
+  min-height:100vh;
   margin:auto;
   background:linear-gradient(180deg,#061a2c,#020b14);
-  min-height:100vh;
   box-shadow:0 0 60px #000;
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header{
   min-height:108px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 20px;
-  border-bottom:1px solid #27465d;
+  gap:18px;
+  padding:18px 28px;
   background:#06192a;
+  border-bottom:1px solid #27465d;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:16px;
+  min-width:0;
 }
 
 .flag{
-  width:40px;
-  height:46px;
+  width:46px;
+  height:54px;
   flex:none;
 }
 
 .title{
-  font-size:27px;
+  font-size:30px;
+  line-height:1.08;
   font-weight:900;
   letter-spacing:.3px;
-  line-height:1.08;
+  max-width:700px;
 }
 
 .headerControls{
   display:flex;
   align-items:center;
   gap:8px;
+  flex:none;
 }
 
 .headerControls button{
+  height:40px;
   border:1px solid #3a617c;
+  border-radius:8px;
   background:#09263b;
   color:#eaf3f8;
-  border-radius:7px;
-  height:38px;
   cursor:pointer;
-  font:700 12px Arial;
-  padding:0 11px;
+  font:700 13px Arial,sans-serif;
+  padding:0 12px;
   box-shadow:0 4px 12px rgba(0,0,0,.2);
 }
 
@@ -103,356 +118,425 @@ body{
 }
 
 .langToggle{
-  min-width:78px;
+  min-width:82px;
 }
 
 .themeToggle{
-  width:40px;
+  width:42px;
   padding:0!important;
   font-size:20px!important;
 }
 
-/* META */
+/* =========================================================
+   META BAR
+========================================================= */
 
 .meta{
-  min-height:68px;
+  min-height:76px;
   display:grid;
-  grid-template-columns:minmax(0,1.45fr) auto minmax(0,.95fr);
-  gap:10px;
+  grid-template-columns:minmax(0,1.4fr) auto minmax(0,1fr);
+  gap:20px;
   align-items:center;
-  padding:8px 20px;
-  font-size:13px;
-  border-bottom:1px solid #203b50;
+  padding:12px 28px;
+
   background:#051524;
+  border-bottom:1px solid #203b50;
+  font-size:13px;
 }
 
 .updatedMeta{
   min-width:0;
+  color:#dce5eb;
 }
 
 .updatedMeta b{
-  color:#f4f7fa;
+  color:#fff;
 }
 
 .live{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:9px;
   white-space:nowrap;
+  font-size:15px;
 }
 
 .dot{
-  width:11px;
-  height:11px;
-  background:#42d36f;
+  width:12px;
+  height:12px;
+  flex:none;
+  background:var(--green);
   border-radius:50%;
-  box-shadow:0 0 9px #42d36f;
+  box-shadow:0 0 12px var(--green);
 }
 
 .sourceMeta{
-  min-width:0;
   color:#d1dbe3;
-  font-size:11px;
   line-height:1.25;
 }
 
-/* METRICS */
+/* =========================================================
+   METRIC CARDS
+========================================================= */
 
 .grid3{
-  width:calc(100% - 28px);
-  margin:10px auto 14px;
+  width:calc(100% - 56px);
+  margin:18px auto 16px;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:8px;
+  gap:12px;
 }
 
 .card{
-  width:100%;
   min-width:0;
   background:linear-gradient(180deg,#092943,#061a2c);
-  border:1px solid #315671;
-  border-radius:8px;
+  border:1px solid var(--line);
+  border-radius:11px;
   box-shadow:var(--shadow);
-  padding:15px;
 }
 
 .metric{
-  display:grid;
-  grid-template-columns:72px 1fr;
-  gap:13px;
+  min-height:180px;
+  padding:17px;
+  display:flex;
   align-items:center;
-  min-height:130px;
+  gap:15px;
 }
 
 .metricIcon{
   width:64px;
   height:64px;
-  border:1px solid var(--blue);
-  border-radius:50%;
+  flex:none;
   display:grid;
   place-items:center;
-  font-size:30px;
+  border:1px solid var(--blue);
+  border-radius:50%;
+  color:var(--blue);
 }
 
 .metric:nth-child(2) .metricIcon{
   border-color:var(--yellow);
+  color:var(--yellow);
 }
 
 .metric:nth-child(3) .metricIcon{
   border-color:var(--red);
+  color:var(--red);
+}
+
+.metricIcon svg{
+  width:34px;
+  height:34px;
 }
 
 .label{
-  font-size:15px;
   color:#cbd7e1;
+  font-size:14px;
   letter-spacing:.4px;
 }
 
 .value{
-  font-size:39px;
+  margin:6px 0 5px;
+  font-size:37px;
+  line-height:1;
   font-weight:900;
-  line-height:1.05;
-  margin:5px 0;
 }
 
 .blue{
-  color:#28b7ff;
+  color:var(--blue);
 }
 
 .yellow{
-  color:#ffc32e;
+  color:var(--yellow);
 }
 
 .red{
-  color:#ff4b4f;
-}
-
-.sub{
-  font-size:14px;
-  color:#c2ced8;
-  line-height:1.45;
-}
-
-.tiny{
-  font-size:12px;
-  color:#8ea7b8;
-  margin-top:6px;
+  color:var(--red);
 }
 
 .status{
-  font-size:36px;
+  margin:6px 0 5px;
+  color:var(--green);
+  font-size:34px;
+  line-height:1;
   font-weight:900;
-  color:#ff4147;
 }
 
-/* PANELS */
+.status.watch{
+  color:var(--yellow);
+}
+
+.status.active{
+  color:var(--red);
+}
+
+.sub{
+  color:#c2ced8;
+  font-size:13px;
+  line-height:1.35;
+}
+
+.tiny{
+  margin-top:6px;
+  color:#8ea7b8;
+  font-size:11px;
+  line-height:1.3;
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
 
 .columns{
-  width:calc(100% - 28px);
+  width:calc(100% - 56px);
   margin:0 auto;
   display:grid;
   grid-template-columns:1.02fr .9fr 1.2fr;
-  gap:10px;
+  gap:12px;
 }
 
 .panel{
-  background:linear-gradient(180deg,#092943,#061a2c);
-  border:1px solid #315671;
-  border-radius:8px;
-  box-shadow:var(--shadow);
+  min-width:0;
   overflow:hidden;
+  background:linear-gradient(180deg,#092943,#061a2c);
+  border:1px solid var(--line);
+  border-radius:11px;
+  box-shadow:var(--shadow);
 }
 
 .panelHead{
-  padding:12px 14px;
+  padding:14px 16px;
   border-bottom:1px solid #294b64;
   font-size:18px;
   font-weight:900;
 }
 
 .panelBody{
-  padding:13px;
+  padding:14px;
 }
 
-/* CASUALTIES */
+/* =========================================================
+   CASUALTIES
+========================================================= */
 
 .impactGrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  gap:0;
+  min-height:190px;
 }
 
 .impactItem{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   text-align:center;
+  padding:12px 8px;
   border-right:1px solid #274a62;
-  padding:5px;
 }
 
 .impactItem:last-child{
-  border:0;
+  border-right:0;
 }
 
 .impactIcon{
-  font-size:25px;
+  width:42px;
+  height:42px;
+  color:#b8c7d5;
+  margin-bottom:8px;
+}
+
+.impactIcon svg{
+  width:100%;
+  height:100%;
 }
 
 .impactNum{
-  font-size:30px;
+  font-size:31px;
+  line-height:1;
   font-weight:900;
-  margin-top:8px;
+  margin:4px 0 10px;
 }
 
 .impactLabel{
-  font-size:12px;
   color:#c2ced8;
-  margin-top:4px;
-}
-
-.impactSource{
-  font-size:10px;
-  color:#8fa5b5;
-  margin-top:8px;
+  font-size:12px;
   line-height:1.35;
 }
 
-/* DAMAGE */
+.impactSource{
+  color:#8fa5b5;
+  font-size:10px;
+  margin-top:10px;
+  line-height:1.3;
+}
+
+/* =========================================================
+   DAMAGE
+========================================================= */
 
 .damage{
   display:grid;
   grid-template-columns:1fr 1fr;
+  min-height:190px;
   text-align:center;
-  min-height:160px;
 }
 
 .damageItem{
-  padding:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
   border-right:1px solid #274a62;
 }
 
 .damageItem:last-child{
-  border:0;
+  border-right:0;
 }
 
 .damageIcon{
-  font-size:38px;
+  width:58px;
+  height:58px;
+  margin-bottom:14px;
+  color:#c9d8e2;
+}
+
+.damageIcon svg{
+  width:100%;
+  height:100%;
 }
 
 .dash{
-  font-size:30px;
+  color:#d7e0e8;
+  font-size:31px;
+  line-height:1;
   font-weight:900;
-  color:#c5d0d8;
-  margin:12px;
+  margin-bottom:10px;
 }
 
 .note{
-  font-size:12px;
   color:#91a5b4;
+  font-size:11px;
   line-height:1.4;
 }
 
-/* RIVER TABLE */
+/* =========================================================
+   RIVER TABLE
+========================================================= */
 
 .table{
   width:100%;
   border-collapse:collapse;
-  font-size:13px;
+  font-size:12px;
 }
 
 .table th,
 .table td{
-  padding:10px 5px;
+  padding:9px 5px;
   border-bottom:1px solid #24455c;
   text-align:left;
 }
 
 .table th{
-  font-weight:700;
   color:#c8d4df;
+  font-weight:700;
 }
 
 .table td:nth-child(n+2){
   text-align:right;
+  white-space:nowrap;
 }
 
 .table small{
-  color:#91a5b4;
-  font-size:10px;
+  color:#8fa5b5;
+  font-size:9px;
 }
 
 .t-blue{
-  color:#2bb9f7;
+  color:var(--blue);
   font-weight:800;
 }
 
 .t-yellow{
-  color:#ffc32e;
+  color:var(--yellow);
   font-weight:800;
 }
 
 .t-red{
-  color:#ff474a;
+  color:var(--red);
   font-weight:800;
 }
 
 .trend{
-  color:#ff8b25;
-  font-size:11px;
+  color:var(--orange);
+  font-size:9px;
 }
 
-/* BOTTOM */
+/* =========================================================
+   BOTTOM PANELS
+========================================================= */
 
 .bottom{
-  width:calc(100% - 28px);
-  margin:10px auto;
+  width:calc(100% - 56px);
+  margin:12px auto 0;
   display:grid;
   grid-template-columns:1.1fr 1fr;
-  gap:10px;
+  gap:12px;
 }
 
 .forecastGrid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:7px;
+  gap:8px;
 }
 
 .forecast{
+  min-height:145px;
+  padding:12px 8px;
   border:1px solid #315671;
+  border-radius:7px;
   background:#061a2c;
-  border-radius:5px;
-  padding:11px 7px;
   text-align:center;
-  min-height:155px;
 }
 
 .place{
-  font-size:15px;
+  font-size:14px;
 }
 
 .weatherIcon{
-  font-size:34px;
-  margin:13px 0 4px;
+  width:38px;
+  height:38px;
+  margin:13px auto 7px;
+}
+
+.weatherIcon svg{
+  width:100%;
+  height:100%;
 }
 
 .rain{
-  font-size:20px;
-  color:#28b7ff;
+  color:var(--blue);
+  font-size:19px;
   font-weight:900;
 }
 
 .risk{
-  font-size:11px;
   margin-top:8px;
   padding-top:7px;
   border-top:1px solid #274a62;
+  font-size:10px;
+  line-height:1.35;
 }
 
 .high{
-  color:#ff4b4f;
+  color:var(--red);
 }
 
 .moderate{
-  color:#ff982c;
+  color:var(--orange);
 }
 
 .unknown{
@@ -460,134 +544,155 @@ body{
 }
 
 .sourceLine{
-  font-size:11px;
-  color:#91a5b4;
   margin-top:10px;
+  color:#91a5b4;
+  font-size:10px;
+  line-height:1.4;
 }
 
-/* RESCUE */
+/* =========================================================
+   RESCUE
+========================================================= */
 
 .rescueGrid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:7px;
+  gap:0;
   text-align:center;
 }
 
 .rescue{
-  padding:10px 4px;
+  padding:10px 5px;
   border-right:1px solid #274a62;
 }
 
 .rescue:last-child{
-  border:0;
+  border-right:0;
 }
 
 .rescueIcon{
-  font-size:28px;
+  width:34px;
+  height:34px;
+  margin:auto;
+}
+
+.rescueIcon svg{
+  width:100%;
+  height:100%;
 }
 
 .rescueNum{
+  margin-top:9px;
   font-size:27px;
   font-weight:900;
-  margin-top:8px;
 }
 
 .rescueLabel{
-  font-size:11px;
-  color:#c5d0d9;
   margin-top:4px;
+  color:#c5d0d9;
+  font-size:10px;
+  line-height:1.3;
 }
 
 .ops{
   margin-top:16px;
-  border-top:1px solid #274a62;
   padding-top:13px;
+  border-top:1px solid #274a62;
 }
 
 .opsrow{
   display:flex;
   justify-content:space-between;
-  font-size:12px;
+  gap:10px;
   margin-bottom:7px;
+  color:#c7d3dc;
+  font-size:11px;
 }
 
-.opsStatus{
-  color:#4bd277;
+.opsrow b{
+  color:var(--green);
+  text-align:right;
 }
 
 .opsbar{
-  height:9px;
-  background:#1b3a50;
-  border-radius:10px;
+  height:8px;
   overflow:hidden;
+  border-radius:10px;
+  background:#1b3a50;
 }
 
 .opsbar i{
   display:block;
-  height:100%;
   width:0;
-  background:#4bd277;
+  height:100%;
   border-radius:10px;
+  background:var(--green);
 }
 
-/* TICKER */
+/* =========================================================
+   TICKER
+========================================================= */
 
 .ticker{
-  width:calc(100% - 28px);
-  margin:10px auto 14px;
+  width:calc(100% - 56px);
+  margin:12px auto 16px;
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:13px;
+  padding:10px 12px;
+  overflow:hidden;
   background:#061a2c;
   border:1px solid #315671;
-  border-radius:6px;
-  padding:10px 12px;
-  white-space:nowrap;
-  overflow:hidden;
+  border-radius:7px;
 }
 
 .ticker strong{
-  background:#e82f31;
-  padding:7px 12px;
-  border-radius:4px;
   flex:none;
+  padding:7px 11px;
+  border-radius:4px;
+  background:#e82f31;
+  color:#fff;
+  font-size:11px;
 }
 
 .tickerText{
   overflow:hidden;
-  text-overflow:ellipsis;
   color:#d7e0e8;
-  font-size:13px;
+  font-size:12px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer{
-  padding:0 20px 18px;
-  color:#8299a9;
-  font-size:11px;
+  width:calc(100% - 56px);
+  margin:auto;
+  padding:0 0 20px;
   display:flex;
   justify-content:space-between;
   gap:15px;
+  color:#8299a9;
+  font-size:10px;
 }
 
 .source a{
   color:#9ec9e8;
 }
 
-/* LIGHT MODE */
+/* =========================================================
+   LIGHT MODE
+========================================================= */
 
 body.light{
-  --bg:#edf3f7;
-  --panel:#ffffff;
-  --panel2:#f4f8fa;
-  --line:#b8cbd7;
+  --bg:#e9f0f4;
   --text:#102333;
   --muted:#506574;
-  --shadow:0 8px 22px rgba(28,57,75,.12);
+  --soft:#607785;
+
   background:#e9f0f4;
-  color:var(--text);
 }
 
 body.light .app{
@@ -607,10 +712,6 @@ body.light .panel{
   border-color:#b8cbd7;
 }
 
-body.light .forecast{
-  background:#f4f8fa;
-}
-
 body.light .table th{
   color:#304958;
 }
@@ -625,18 +726,22 @@ body.light .headerControls button{
   border-color:#a8bdca;
 }
 
-body.light .tiny,
-body.light .note,
-body.light .sourceLine{
-  color:#607785;
+body.light .forecast{
+  background:#f4f8fa;
 }
 
-/* MOBILE */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media(max-width:800px){
+@media(max-width:900px){
+
+  .header{
+    padding:17px 20px;
+  }
 
   .title{
-    font-size:22px;
+    font-size:25px;
   }
 
   .columns{
@@ -648,26 +753,35 @@ body.light .sourceLine{
   }
 
   .forecastGrid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
   .header{
-    height:108px;
+    min-height:108px;
     padding:13px 18px;
+    gap:10px;
   }
 
-  .title{
-    font-size:24px;
-    line-height:1.08;
-    max-width:calc(100vw - 150px);
+  .brand{
+    gap:11px;
   }
 
   .flag{
     width:40px;
-    height:46px;
+    height:47px;
+  }
+
+  .title{
+    max-width:calc(100vw - 150px);
+    font-size:23px;
+    line-height:1.08;
   }
 
   .headerControls{
@@ -675,58 +789,63 @@ body.light .sourceLine{
   }
 
   .headerControls button{
-    height:34px;
+    height:35px;
     padding:0 8px;
     font-size:10px;
   }
 
   .langToggle{
-    min-width:65px;
+    min-width:67px;
   }
 
   .themeToggle{
-    width:34px;
+    width:35px;
     font-size:18px!important;
   }
 
   .meta{
-    height:68px;
+    min-height:68px;
     padding:7px 16px;
     grid-template-columns:minmax(0,1.45fr) auto minmax(0,.95fr);
     gap:8px;
-    font-size:11px;
+    font-size:10px;
   }
 
-  .meta .live{
+  .live{
     font-size:12px;
   }
 
-  .meta .sourceMeta{
+  .dot{
+    width:10px;
+    height:10px;
+  }
+
+  .sourceMeta{
     font-size:9px;
     line-height:1.15;
   }
 
   .grid3{
     width:calc(100% - 32px);
-    margin:8px auto 14px;
+    margin:10px auto 14px;
     gap:8px;
   }
 
-  .grid3 .card{
-    min-height:116px;
-    padding:9px 8px;
-  }
-
   .metric{
+    min-height:124px;
     display:block;
-    min-height:122px;
+    padding:10px 9px;
   }
 
   .metricIcon{
-    width:38px;
-    height:38px;
-    font-size:21px;
-    margin-bottom:5px;
+    width:42px;
+    height:42px;
+    margin-bottom:7px;
+  }
+
+  .metricIcon svg{
+    width:23px;
+    height:23px;
   }
 
   .label{
@@ -735,67 +854,142 @@ body.light .sourceLine{
   }
 
   .value{
-    font-size:23px;
-    margin:4px 0 3px;
+    margin:5px 0 4px;
+    font-size:24px;
   }
 
   .status{
+    margin:5px 0 4px;
     font-size:23px;
-    margin-top:5px;
   }
 
   .sub{
     font-size:9px;
-    line-height:1.3;
-  }
-
-  .tiny{
-    font-size:8px;
     line-height:1.25;
   }
 
+  .tiny{
+    margin-top:5px;
+    font-size:8px;
+    line-height:1.2;
+  }
+
   .columns,
-  .bottom,
-  .ticker{
+  .bottom{
     width:calc(100% - 32px);
+    margin-left:auto;
+    margin-right:auto;
+    gap:10px;
   }
 
   .panelHead{
-    font-size:15px;
-    padding:10px 11px;
+    padding:12px;
+    font-size:16px;
   }
 
   .panelBody{
     padding:10px;
   }
 
+  .impactGrid{
+    min-height:235px;
+  }
+
+  .impactItem{
+    padding:12px 5px;
+  }
+
+  .impactIcon{
+    width:40px;
+    height:40px;
+  }
+
+  .impactNum{
+    font-size:28px;
+    margin:5px 0 10px;
+  }
+
+  .impactLabel{
+    font-size:11px;
+  }
+
+  .impactSource{
+    font-size:9px;
+  }
+
+  .damage{
+    min-height:230px;
+  }
+
+  .damageIcon{
+    width:52px;
+    height:52px;
+  }
+
+  .dash{
+    font-size:28px;
+  }
+
+  .table{
+    font-size:11px;
+  }
+
+  .table th,
+  .table td{
+    padding:9px 4px;
+  }
+
   .forecastGrid{
-    grid-template-columns:repeat(3,1fr);
-    gap:6px;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .rescueGrid{
-    grid-template-columns:repeat(3,1fr);
-    gap:6px;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .rescue{
+    padding:13px 5px;
+    border-bottom:1px solid #274a62;
+  }
+
+  .rescue:nth-child(2){
+    border-right:0;
+  }
+
+  .rescue:nth-child(3),
+  .rescue:nth-child(4){
+    border-bottom:0;
+  }
+
+  .opsrow{
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .opsrow b{
+    text-align:left;
+  }
+
+  .ticker{
+    width:calc(100% - 32px);
   }
 
   .footer{
-    padding:10px 16px 14px;
-    gap:8px;
+    width:calc(100% - 32px);
+    flex-direction:column;
     font-size:9px;
-    flex-wrap:wrap;
   }
 }
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
 @media(max-width:390px){
 
   .header{
-    height:98px;
+    min-height:98px;
     padding:11px 12px;
-  }
-
-  .title{
-    font-size:20px;
   }
 
   .flag{
@@ -803,39 +997,44 @@ body.light .sourceLine{
     height:42px;
   }
 
+  .title{
+    max-width:calc(100vw - 135px);
+    font-size:20px;
+  }
+
   .meta{
-    height:64px;
+    min-height:64px;
     padding:6px 11px;
     grid-template-columns:minmax(0,1.35fr) auto minmax(0,.9fr);
+    gap:6px;
+  }
+
+  .updatedMeta{
     font-size:8.5px;
   }
 
-  .meta .live{
+  .live{
     font-size:10px;
   }
 
-  .meta .sourceMeta{
+  .sourceMeta{
     font-size:7.5px;
   }
 
   .grid3{
     width:calc(100% - 20px);
     gap:6px;
-  }
-
-  .grid3 .card{
-    min-height:108px;
-    padding:8px 6px;
+    margin-top:8px;
   }
 
   .metric{
-    min-height:108px;
+    min-height:112px;
+    padding:8px 6px;
   }
 
   .metricIcon{
-    width:34px;
-    height:34px;
-    font-size:18px;
+    width:36px;
+    height:36px;
   }
 
   .label{
@@ -860,16 +1059,29 @@ body.light .sourceLine{
 
   .columns,
   .bottom,
-  .ticker{
+  .ticker,
+  .footer{
     width:calc(100% - 20px);
   }
 
-  .forecastGrid{
-    grid-template-columns:repeat(2,1fr);
+  .panelHead{
+    font-size:14px;
   }
 
-  .rescueGrid{
-    grid-template-columns:repeat(2,1fr);
+  .impactGrid{
+    min-height:215px;
+  }
+
+  .impactNum{
+    font-size:25px;
+  }
+
+  .impactLabel{
+    font-size:10px;
+  }
+
+  .table{
+    font-size:10px;
   }
 }
 </style>
@@ -879,7 +1091,9 @@ body.light .sourceLine{
 
 <div class="app">
 
-<!-- HEADER -->
+<!-- =======================================================
+     HEADER
+======================================================== -->
 
 <header class="header">
 
@@ -887,38 +1101,41 @@ body.light .sourceLine{
 
     <svg class="flag"
          viewBox="0 0 40 48"
-         aria-label="Nepal flag">
-
-      <path d="M4 3h25L12 18h17L4 38z"
-            fill="#d8202f"
-            stroke="#fff"
-            stroke-width="1.5"/>
-
-      <circle cx="11"
-              cy="12"
-              r="3.2"
-              fill="#fff"/>
-
-      <path d="M8.5 12c1.6-2.4 4.7-2.4 6.1 0"
-            fill="none"
-            stroke="#d8202f"
-            stroke-width="1"/>
-
-      <path d="M8 27c3.2 2.8 6.2 2.8 9.2 0"
-            fill="none"
-            stroke="#fff"
-            stroke-width="1.2"/>
-
+         aria-label="Nepal flag"
+         role="img">
+      <path
+        d="M4 3h25L12 18h17L4 38z"
+        fill="#d8202f"
+        stroke="#fff"
+        stroke-width="1.5"/>
+      <circle
+        cx="11"
+        cy="12"
+        r="3.2"
+        fill="#fff"/>
+      <path
+        d="M8.5 12c1.6-2.4 4.7-2.4 6.1 0"
+        fill="none"
+        stroke="#d8202f"
+        stroke-width="1"/>
+      <path
+        d="M8 27c3.2 2.8 6.2 2.8 9.2 0"
+        fill="none"
+        stroke="#fff"
+        stroke-width="1.2"/>
     </svg>
 
-    <div class="title"
-         data-i18n="title">
+    <div
+      class="title"
+      data-i18n="title">
       NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD
     </div>
 
   </div>
 
-  <div class="headerControls">
+  <div
+    class="headerControls"
+    aria-label="Display controls">
 
     <button
       class="langToggle"
@@ -932,9 +1149,7 @@ body.light .sourceLine{
       id="themeToggle"
       type="button"
       aria-label="Toggle light and dark mode">
-
       <span id="themeIcon">☾</span>
-
     </button>
 
   </div>
@@ -942,46 +1157,62 @@ body.light .sourceLine{
 </header>
 
 
-<!-- META -->
+<!-- =======================================================
+     META
+======================================================== -->
 
 <div class="meta">
 
   <span class="updatedMeta">
     LAST UPDATED:
-    <b id="updated">—</b>
+    <b id="updated">DATA UNAVAILABLE</b>
   </span>
 
   <span class="live">
-
     <i class="dot"></i>
-
-    <b data-i18n="live">
-      LIVE
-    </b>
-
+    <b data-i18n="live">LIVE</b>
   </span>
 
   <span
     class="sourceMeta"
     data-i18n="dataSource">
-
     DATA SOURCE: DHM • NDRRMA • Nepal Police
-
   </span>
 
 </div>
 
 
-<!-- MAIN METRICS -->
+<!-- =======================================================
+     METRICS
+======================================================== -->
 
 <section class="grid3">
 
-  <!-- RAINFALL -->
+  <!-- Rain -->
 
   <article class="card metric">
 
-    <div class="metricIcon">
-      🌧️
+    <div class="metricIcon" aria-hidden="true">
+
+      <svg viewBox="0 0 64 64" fill="none">
+        <path
+          d="M19 43h28c7 0 11-4 11-10s-4-10-10-10c-1-8-7-13-15-13-8 0-14 5-16 12-6 1-10 5-10 11 0 6 5 10 12 10Z"
+          fill="currentColor"
+          opacity=".22"/>
+
+        <path
+          d="M19 43h28c7 0 11-4 11-10s-4-10-10-10c-1-8-7-13-15-13-8 0-14 5-16 12-6 1-10 5-10 11 0 6 5 10 12 10Z"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linejoin="round"/>
+
+        <path
+          d="M23 49l-3 6M33 49l-3 6M43 49l-3 6"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"/>
+      </svg>
+
     </div>
 
     <div>
@@ -989,33 +1220,25 @@ body.light .sourceLine{
       <div
         class="label"
         data-i18n="maxRain">
-
         MAX 24H RAINFALL
-
       </div>
 
       <div
         class="value blue"
         id="rainValue">
-
         —
-
       </div>
 
       <div
         class="sub"
         id="rainStation">
-
         —
-
       </div>
 
       <div
         class="tiny"
         data-i18n="dhmRain">
-
         DHM rainfall monitoring
-
       </div>
 
     </div>
@@ -1023,12 +1246,39 @@ body.light .sourceLine{
   </article>
 
 
-  <!-- RIVER -->
+  <!-- River -->
 
   <article class="card metric">
 
-    <div class="metricIcon">
-      🌊
+    <div class="metricIcon" aria-hidden="true">
+
+      <svg viewBox="0 0 64 64" fill="none">
+
+        <path
+          d="M8 43c9-9 17-9 24 0s15 9 24 0"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"/>
+
+        <path
+          d="M8 51c9-9 17-9 24 0s15 9 24 0"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity=".65"/>
+
+        <path
+          d="M32 10c0 8-9 11-9 19 0 6 4 10 9 10s9-4 9-10c0-8-9-11-9-19Z"
+          fill="currentColor"
+          opacity=".22"/>
+
+        <path
+          d="M32 10c0 8-9 11-9 19 0 6 4 10 9 10s9-4 9-10c0-8-9-11-9-19Z"
+          stroke="currentColor"
+          stroke-width="3"/>
+
+      </svg>
+
     </div>
 
     <div>
@@ -1036,33 +1286,25 @@ body.light .sourceLine{
       <div
         class="label"
         data-i18n="maxRiver">
-
         MAX RIVER LEVEL
-
       </div>
 
       <div
         class="value yellow"
         id="riverValue">
-
         —
-
       </div>
 
       <div
         class="sub"
         id="riverStation">
-
         —
-
       </div>
 
       <div
         class="tiny"
         id="riverThreshold">
-
         Warning — | Danger —
-
       </div>
 
     </div>
@@ -1070,12 +1312,39 @@ body.light .sourceLine{
   </article>
 
 
-  <!-- WARNING -->
+  <!-- Warning -->
 
   <article class="card metric">
 
-    <div class="metricIcon">
-      ⚠️
+    <div class="metricIcon" aria-hidden="true">
+
+      <svg viewBox="0 0 64 64" fill="none">
+
+        <path
+          d="M32 8 58 54H6L32 8Z"
+          fill="currentColor"
+          opacity=".18"/>
+
+        <path
+          d="M32 8 58 54H6L32 8Z"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linejoin="round"/>
+
+        <path
+          d="M32 23v15"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"/>
+
+        <circle
+          cx="32"
+          cy="44"
+          r="2.5"
+          fill="currentColor"/>
+
+      </svg>
+
     </div>
 
     <div>
@@ -1083,33 +1352,25 @@ body.light .sourceLine{
       <div
         class="label"
         data-i18n="warningStatus">
-
         WARNING STATUS
-
       </div>
 
       <div
         class="status"
         id="warningStatus">
-
         —
-
       </div>
 
       <div
         class="sub"
         data-i18n="dhmWarning">
-
         DHM warning system
-
       </div>
 
       <div
         class="tiny"
         data-i18n="officialWarning">
-
         Official warning page
-
       </div>
 
     </div>
@@ -1119,21 +1380,20 @@ body.light .sourceLine{
 </section>
 
 
-<!-- THREE PANELS -->
+<!-- =======================================================
+     MAIN PANELS
+======================================================== -->
 
 <section class="columns">
 
-
-  <!-- CASUALTIES -->
+  <!-- Casualties -->
 
   <article class="panel">
 
     <div
       class="panelHead"
       data-i18n="casualties">
-
       CASUALTIES &amp; IMPACT
-
     </div>
 
     <div class="panelBody">
@@ -1142,25 +1402,50 @@ body.light .sourceLine{
 
         <div class="impactItem">
 
-          <div class="impactIcon">
-            👥
+          <div class="impactIcon" aria-hidden="true">
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <circle
+                cx="24"
+                cy="20"
+                r="9"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="44"
+                cy="23"
+                r="7"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M8 51c1-11 8-17 16-17s15 6 16 17"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M38 36c8 0 14 5 16 15"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="impactNum red"
             id="deaths">
-
             —
-
           </div>
 
           <div
             class="impactLabel"
             data-i18n="confirmedDeaths">
-
-            CONFIRMED<br>
-            DEATHS
-
+            CONFIRMED<br>DEATHS
           </div>
 
           <div class="impactSource">
@@ -1172,33 +1457,56 @@ body.light .sourceLine{
 
         <div class="impactItem">
 
-          <div class="impactIcon">
-            👥
+          <div class="impactIcon" aria-hidden="true">
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <circle
+                cx="24"
+                cy="20"
+                r="9"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="44"
+                cy="23"
+                r="7"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M8 51c1-11 8-17 16-17s15 6 16 17"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M38 36c8 0 14 5 16 15"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="impactNum yellow"
             id="missing">
-
             —
-
           </div>
 
           <div
             class="impactLabel"
             data-i18n="missingPersons">
-
-            MISSING<br>
-            PERSONS
-
+            MISSING<br>PERSONS
           </div>
 
           <div
             class="impactSource"
             id="missingSource">
-
             NDRRMA / Setu
-
           </div>
 
         </div>
@@ -1206,25 +1514,50 @@ body.light .sourceLine{
 
         <div class="impactItem">
 
-          <div class="impactIcon">
-            👥
+          <div class="impactIcon" aria-hidden="true">
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <circle
+                cx="24"
+                cy="20"
+                r="9"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="44"
+                cy="23"
+                r="7"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M8 51c1-11 8-17 16-17s15 6 16 17"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M38 36c8 0 14 5 16 15"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="impactNum"
             id="injured">
-
             —
-
           </div>
 
           <div
             class="impactLabel"
             data-i18n="injuredPersons">
-
-            INJURED<br>
-            PERSONS
-
+            INJURED<br>PERSONS
           </div>
 
           <div class="impactSource">
@@ -1240,16 +1573,14 @@ body.light .sourceLine{
   </article>
 
 
-  <!-- DAMAGE -->
+  <!-- Damage -->
 
   <article class="panel">
 
     <div
       class="panelHead"
       data-i18n="damage">
-
       DAMAGE TO INFRASTRUCTURE
-
     </div>
 
     <div class="panelBody">
@@ -1258,25 +1589,53 @@ body.light .sourceLine{
 
         <div class="damageItem">
 
-          <div class="damageIcon">
-            🏠
+          <div class="damageIcon" aria-hidden="true">
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <path
+                d="M10 30 32 11l22 19v23H10V30Z"
+                fill="currentColor"
+                opacity=".16"/>
+
+              <path
+                d="M10 30 32 11l22 19"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+              <path
+                d="M14 28v25h36V28"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linejoin="round"/>
+
+              <path
+                d="M26 53V39h12v14"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M43 24h7"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="dash"
             id="homes">
-
             —
-
           </div>
 
           <div
             class="impactLabel"
             data-i18n="homesDamaged">
-
-            HOMES<br>
-            DAMAGED
-
+            HOMES<br>DAMAGED
           </div>
 
         </div>
@@ -1284,37 +1643,60 @@ body.light .sourceLine{
 
         <div class="damageItem">
 
-          <div class="damageIcon">
-            🌉
+          <div class="damageIcon" aria-hidden="true">
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <path
+                d="M7 49h50"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M12 49V27M52 49V27"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M12 27h40"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M18 27 32 10l14 17"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linejoin="round"/>
+
+              <path
+                d="M18 27v22M25 27v22M32 27v22M39 27v22M46 27v22"
+                stroke="currentColor"
+                stroke-width="2"
+                opacity=".65"/>
+
+            </svg>
+
           </div>
 
           <div
             class="dash"
             id="bridges">
-
             —
-
           </div>
 
           <div
             class="impactLabel"
             data-i18n="bridgesDamaged">
-
-            BRIDGES<br>
-            DAMAGED
-
+            BRIDGES<br>DAMAGED
           </div>
 
         </div>
 
       </div>
 
-      <div
-        class="note"
-        id="damageNote">
-
+      <div class="note">
         Only displayed when an official current aggregate is verified.
-
       </div>
 
     </div>
@@ -1322,16 +1704,14 @@ body.light .sourceLine{
   </article>
 
 
-  <!-- RIVER LEVELS -->
+  <!-- Rivers -->
 
   <article class="panel">
 
     <div
       class="panelHead"
       data-i18n="riverLevels">
-
       RIVER WATER LEVELS
-
     </div>
 
     <div class="panelBody">
@@ -1373,21 +1753,20 @@ body.light .sourceLine{
 </section>
 
 
-<!-- BOTTOM -->
+<!-- =======================================================
+     BOTTOM
+======================================================== -->
 
 <section class="bottom">
 
-
-  <!-- AFFECTED AREAS -->
+  <!-- Affected areas -->
 
   <article class="panel">
 
     <div
       class="panelHead"
       data-i18n="affectedAreas">
-
       AFFECTED AREAS — CURRENT DHM MONITORING
-
     </div>
 
     <div class="panelBody">
@@ -1395,15 +1774,10 @@ body.light .sourceLine{
       <div
         class="forecastGrid"
         id="affectedWeather">
-
       </div>
 
-      <div
-        class="sourceLine">
-
-        Official forecast is shown only where DHM publishes a matching location.
-        Monitoring values are not presented as forecasts.
-
+      <div class="sourceLine">
+        Official forecast is shown only where DHM publishes a matching location. Monitoring values are not presented as forecasts.
       </div>
 
     </div>
@@ -1411,43 +1785,58 @@ body.light .sourceLine{
   </article>
 
 
-  <!-- RESCUE -->
+  <!-- Rescue -->
 
   <article class="panel">
 
     <div
       class="panelHead"
       data-i18n="rescueRelief">
-
       RESCUE &amp; RELIEF OPERATIONS
-
     </div>
 
     <div class="panelBody">
 
       <div class="rescueGrid">
 
-
         <div class="rescue">
 
           <div class="rescueIcon">
-            👷
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <circle
+                cx="32"
+                cy="18"
+                r="8"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M16 54c1-13 7-21 16-21s15 8 16 21"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M22 38h20"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+            </svg>
+
           </div>
 
           <div
             class="rescueNum"
             id="teams">
-
             —
-
           </div>
 
           <div
             class="rescueLabel"
             data-i18n="activeTeams">
-
             ACTIVE TEAMS
-
           </div>
 
         </div>
@@ -1456,23 +1845,49 @@ body.light .sourceLine{
         <div class="rescue">
 
           <div class="rescueIcon">
-            👨‍👩‍👧
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <circle
+                cx="24"
+                cy="19"
+                r="8"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="44"
+                cy="22"
+                r="7"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M9 53c1-12 7-19 15-19s14 7 15 19"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M39 38c8 0 14 6 16 15"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="rescueNum"
             id="rescued">
-
             —
-
           </div>
 
           <div
             class="rescueLabel"
             data-i18n="peopleRescued">
-
             PEOPLE RESCUED
-
           </div>
 
         </div>
@@ -1481,23 +1896,53 @@ body.light .sourceLine{
         <div class="rescue">
 
           <div class="rescueIcon">
-            🚁
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <path
+                d="M10 34h44"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"/>
+
+              <path
+                d="M19 34V25h26v9"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M27 25v-7h10v7"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="20"
+                cy="44"
+                r="5"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <circle
+                cx="44"
+                cy="44"
+                r="5"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+            </svg>
+
           </div>
 
           <div
             class="rescueNum"
             id="vehicles">
-
             —
-
           </div>
 
           <div
             class="rescueLabel"
             data-i18n="rescueVehicles">
-
             RESCUE VEHICLES
-
           </div>
 
         </div>
@@ -1506,23 +1951,40 @@ body.light .sourceLine{
         <div class="rescue">
 
           <div class="rescueIcon">
-            📦
+
+            <svg viewBox="0 0 64 64" fill="none">
+
+              <path
+                d="M13 22h38v30H13z"
+                stroke="currentColor"
+                stroke-width="4"/>
+
+              <path
+                d="M13 22 32 10l19 12"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linejoin="round"/>
+
+              <path
+                d="M25 32h14M25 40h14"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"/>
+
+            </svg>
+
           </div>
 
           <div
             class="rescueNum"
             id="relief">
-
             —
-
           </div>
 
           <div
             class="rescueLabel"
             data-i18n="reliefDistributed">
-
             RELIEF DISTRIBUTED
-
           </div>
 
         </div>
@@ -1538,18 +2000,14 @@ body.light .sourceLine{
             Operations status
           </span>
 
-          <b
-            class="opsStatus"
-            id="operationsStatus">
-
+          <b id="operationsStatus">
             Official aggregate not verified
-
           </b>
 
         </div>
 
         <div class="opsbar">
-          <i id="opsBar"></i>
+          <i id="operationsBar"></i>
         </div>
 
       </div>
@@ -1561,7 +2019,9 @@ body.light .sourceLine{
 </section>
 
 
-<!-- LIVE TICKER -->
+<!-- =======================================================
+     TICKER
+======================================================== -->
 
 <div class="ticker">
 
@@ -1572,15 +2032,15 @@ body.light .sourceLine{
   <div
     class="tickerText"
     id="ticker">
-
     Loading verified government updates…
-
   </div>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =======================================================
+     FOOTER
+======================================================== -->
 
 <footer class="footer">
 
@@ -1594,20 +2054,16 @@ body.light .sourceLine{
       href="https://www.dhm.gov.np/"
       target="_blank"
       rel="noopener">
-
       DHM
-
     </a>
 
-    • 
+    •
 
     <a
       href="https://setu.ndrrma.gov.np/"
       target="_blank"
       rel="noopener">
-
       NDRRMA Setu
-
     </a>
 
     •
@@ -1616,9 +2072,7 @@ body.light .sourceLine{
       href="https://www.nepalpolice.gov.np/"
       target="_blank"
       rel="noopener">
-
       Nepal Police
-
     </a>
 
   </span>
@@ -1635,58 +2089,159 @@ body.light .sourceLine{
 <script>
 
 /* =========================================================
-   FALLBACK DATA
-   Used only if data.json cannot be loaded.
+   TRANSLATIONS
 ========================================================= */
 
-const FALLBACK = {
+const I18N = {
 
-  updated_at_npt:"—",
+  en: {
+    title:'NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD',
+    live:'LIVE',
+    dataSource:'DATA SOURCE: DHM • NDRRMA • Nepal Police',
 
-  updated:"—",
+    maxRain:'MAX 24H RAINFALL',
+    dhmRain:'DHM rainfall monitoring',
 
-  status:"LIVE",
+    maxRiver:'MAX RIVER LEVEL',
 
-  sources:{
-    rainfall:"DHM",
-    river:"DHM",
-    casualties:"NDRRMA / Nepal Police",
-    damage:"NDRRMA / Nepal Police"
+    warningStatus:'WARNING STATUS',
+    dhmWarning:'DHM warning system',
+    officialWarning:'Official warning page',
+
+    casualties:'CASUALTIES & IMPACT',
+
+    confirmedDeaths:'CONFIRMED<br>DEATHS',
+    missingPersons:'MISSING<br>PERSONS',
+    injuredPersons:'INJURED<br>PERSONS',
+
+    damage:'DAMAGE TO INFRASTRUCTURE',
+    homesDamaged:'HOMES<br>DAMAGED',
+    bridgesDamaged:'BRIDGES<br>DAMAGED',
+
+    riverLevels:'RIVER WATER LEVELS',
+    river:'RIVER',
+    current:'CURRENT',
+    warning:'WARNING',
+    danger:'DANGER',
+
+    affectedAreas:'AFFECTED AREAS — CURRENT DHM MONITORING',
+
+    rescueRelief:'RESCUE & RELIEF OPERATIONS',
+
+    activeTeams:'ACTIVE TEAMS',
+    peopleRescued:'PEOPLE RESCUED',
+    rescueVehicles:'RESCUE VEHICLES',
+    reliefDistributed:'RELIEF DISTRIBUTED',
+
+    operationsStatus:'Operations status',
+
+    liveUpdates:'LIVE UPDATES',
+    sources:'Sources:',
+
+    normal:'NORMAL',
+    watch:'WATCH',
+    active:'ACTIVE',
+
+    warningText:'Warning',
+    dangerText:'Danger',
+
+    dataUnavailable:'DATA UNAVAILABLE',
+
+    officialNotVerified:'Official aggregate not verified',
+
+    dhmUnavailable:'DHM data unavailable',
+    loading:'Loading verified government updates…',
+
+    noForecast:'DHM forecast not published',
+    monitoring:'DHM station monitoring available',
+
+    rising:'Rising',
+    falling:'Falling',
+    steady:'Steady'
   },
 
-  rainfall:{
-    max_24h_mm:null,
-    station:null,
-    source:"DHM rainfall monitoring"
-  },
 
-  river:{
-    max_level_m:null,
-    basin:null,
-    station:null,
-    overall_warning:null
-  },
+  ne: {
 
-  rivers:{},
+    title:'नेपाल बाढी २०२६ | प्रत्यक्ष अवस्था ड्यासबोर्ड',
+    live:'प्रत्यक्ष',
+    dataSource:'डेटा स्रोत: DHM • NDRRMA • नेपाल प्रहरी',
 
-  deaths:null,
-  missing:null,
-  injured:null,
+    maxRain:'अधिकतम २४ घण्टाको वर्षा',
+    dhmRain:'DHM वर्षा निगरानी',
 
-  homes:null,
-  bridges:null,
+    maxRiver:'अधिकतम नदी सतह',
 
-  teams:null,
-  rescued:null,
-  vehicles:null,
-  relief:null,
+    warningStatus:'चेतावनी अवस्था',
+    dhmWarning:'DHM चेतावनी प्रणाली',
+    officialWarning:'आधिकारिक चेतावनी पृष्ठ',
 
-  affectedDistricts:null,
+    casualties:'मानवीय क्षति तथा प्रभाव',
 
-  weather:[],
+    confirmedDeaths:'पुष्टि भएका<br>मृत्यु',
+    missingPersons:'बेपत्ता<br>व्यक्ति',
+    injuredPersons:'घाइते<br>व्यक्ति',
 
-  ticker:null
+    damage:'पूर्वाधार क्षति',
+    homesDamaged:'क्षतिग्रस्त<br>घर',
+    bridgesDamaged:'क्षतिग्रस्त<br>पुल',
+
+    riverLevels:'नदीको पानीको सतह',
+    river:'नदी',
+    current:'हाल',
+    warning:'चेतावनी',
+    danger:'खतरा',
+
+    affectedAreas:'प्रभावित क्षेत्र — हालको DHM निगरानी',
+
+    rescueRelief:'उद्धार तथा राहत कार्य',
+
+    activeTeams:'सक्रिय टोली',
+    peopleRescued:'उद्धार गरिएका व्यक्ति',
+    rescueVehicles:'उद्धार सवारी',
+    reliefDistributed:'वितरित राहत',
+
+    operationsStatus:'कार्य सञ्चालन अवस्था',
+
+    liveUpdates:'प्रत्यक्ष अपडेट',
+    sources:'स्रोत:',
+
+    normal:'सामान्य',
+    watch:'निगरानी',
+    active:'सक्रिय',
+
+    warningText:'चेतावनी',
+    dangerText:'खतरा',
+
+    dataUnavailable:'डेटा उपलब्ध छैन',
+
+    officialNotVerified:'आधिकारिक समग्र तथ्यांक पुष्टि भएको छैन',
+
+    dhmUnavailable:'DHM डेटा उपलब्ध छैन',
+    loading:'पुष्टि भएका सरकारी अपडेटहरू लोड हुँदैछन्…',
+
+    noForecast:'DHM पूर्वानुमान प्रकाशित छैन',
+    monitoring:'DHM स्टेशन निगरानी उपलब्ध छ',
+
+    rising:'बढ्दो',
+    falling:'घट्दो',
+    steady:'स्थिर'
+  }
+
 };
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentLang =
+  localStorage.getItem('nepalFloodLang') || 'en';
+
+let lightMode =
+  localStorage.getItem('nepalFloodTheme') === 'light';
+
+let dashboardData = null;
 
 
 /* =========================================================
@@ -1698,19 +2253,19 @@ function el(id){
 }
 
 
-function fmt(value, decimals=0){
+function fmt(value, decimals = 0){
 
   if(
     value === null ||
     value === undefined ||
-    value === "" ||
+    value === '' ||
     Number.isNaN(Number(value))
   ){
-    return "—";
+    return '—';
   }
 
   return Number(value).toLocaleString(
-    "en-US",
+    'en-US',
     {
       maximumFractionDigits:decimals
     }
@@ -1718,1013 +2273,539 @@ function fmt(value, decimals=0){
 }
 
 
-function firstValue(...values){
+/* =========================================================
+   NEPAL TIME
+========================================================= */
 
-  for(const value of values){
+function formatNepalTime(value){
 
-    if(
-      value !== undefined &&
-      value !== null &&
-      value !== ""
-    ){
-      return value;
-    }
-
+  if(!value){
+    return I18N[currentLang].dataUnavailable;
   }
 
-  return null;
-}
+  const date = new Date(value);
 
-
-function safeNumber(value){
-
-  if(
-    value === null ||
-    value === undefined ||
-    value === ""
-  ){
-    return null;
+  if(Number.isNaN(date.getTime())){
+    return value;
   }
 
-  const number = Number(value);
+  const parts =
+    new Intl.DateTimeFormat(
+      'en-GB',
+      {
+        timeZone:'Asia/Kathmandu',
+        day:'2-digit',
+        month:'short',
+        year:'numeric',
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit',
+        hour12:false
+      }
+    ).formatToParts(date);
 
-  return Number.isFinite(number)
-    ? number
-    : null;
+  const p = {};
+
+  parts.forEach(part=>{
+    p[part.type] = part.value;
+  });
+
+  return `${p.day} ${p.month} ${p.year} | ${p.hour}:${p.minute}:${p.second} NPT`;
 }
 
 
 /* =========================================================
-   NORMALIZE NEW DATA.JSON
+   STATUS
 ========================================================= */
 
-function normalizeData(raw){
+function getWarningState(rivers){
 
-  const d = raw || {};
+  if(!Array.isArray(rivers) || rivers.length === 0){
+    return 'unknown';
+  }
 
-  const rainfallSource =
-    d.rainfall || {};
+  const valid = rivers.filter(r =>
+    r &&
+    r.value != null &&
+    r.warning != null
+  );
 
-  const riverSource =
-    d.river || {};
+  if(valid.length === 0){
+    return 'unknown';
+  }
 
-  let riverCollection = d.rivers || {};
+  if(valid.some(r => Number(r.value) >= Number(r.warning))){
+    return 'active';
+  }
 
-
-  /*
-    New Python format:
-
-    rivers: {
-      Karnali: {
-        basin,
-        station,
-        water_level_m,
-        warning_level_m,
-        danger_level_m,
-        status,
-        source
-      }
-    }
-  */
+  return 'normal';
+}
 
 
-  const rivers = [];
+function renderWarningStatus(rivers){
+
+  const node = el('warningStatus');
+
+  node.classList.remove('watch','active');
+
+  const state = getWarningState(rivers);
+
+  if(state === 'active'){
+
+    node.textContent =
+      I18N[currentLang].active;
+
+    node.classList.add('active');
+
+    return;
+  }
+
+  if(state === 'normal'){
+
+    node.textContent =
+      I18N[currentLang].normal;
+
+    return;
+  }
+
+  node.textContent = '—';
+}
 
 
-  if(Array.isArray(riverCollection)){
+/* =========================================================
+   WEATHER ICON
+========================================================= */
 
-    riverCollection.forEach((r,index)=>{
+function weatherSvg(){
 
-      if(!r) return;
+  return `
+    <svg viewBox="0 0 64 64" fill="none">
 
-      rivers.push({
+      <path
+        d="M19 43h28c7 0 11-4 11-10s-4-10-10-10c-1-8-7-13-15-13-8 0-14 5-16 12-6 1-10 5-10 11 0 6 5 10 12 10Z"
+        fill="currentColor"
+        opacity=".18"/>
 
-        name:firstValue(
-          r.name,
-          r.river,
-          `River ${index+1}`
-        ),
+      <path
+        d="M19 43h28c7 0 11-4 11-10s-4-10-10-10c-1-8-7-13-15-13-8 0-14 5-16 12-6 1-10 5-10 11 0 6 5 10 12 10Z"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linejoin="round"/>
 
-        basin:firstValue(
-          r.basin,
-          ""
-        ),
+      <path
+        d="M23 49l-3 6M33 49l-3 6M43 49l-3 6"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"/>
 
-        station:firstValue(
-          r.station,
-          ""
-        ),
+    </svg>
+  `;
+}
 
-        value:safeNumber(
-          firstValue(
-            r.value,
-            r.water_level_m,
-            r.level_m
-          )
-        ),
 
-        warning:safeNumber(
-          firstValue(
-            r.warning,
-            r.warning_level_m
-          )
-        ),
+/* =========================================================
+   RENDER
+========================================================= */
 
-        danger:safeNumber(
-          firstValue(
-            r.danger,
-            r.danger_level_m
-          )
-        ),
+function render(data){
 
-        status:firstValue(
-          r.status,
-          ""
-        ),
+  dashboardData = data;
 
-        trend:firstValue(
-          r.trend,
-          ""
-        ),
+  if(!data){
 
-        source:firstValue(
-          r.source,
-          "DHM"
-        )
+    renderUnavailable();
 
-      });
-
-    });
-
-  }else{
-
-    Object.entries(riverCollection).forEach(
-      ([name,r])=>{
-
-        if(!r || typeof r !== "object"){
-          return;
-        }
-
-        rivers.push({
-
-          name:name,
-
-          basin:firstValue(
-            r.basin,
-            ""
-          ),
-
-          station:firstValue(
-            r.station,
-            ""
-          ),
-
-          value:safeNumber(
-            firstValue(
-              r.value,
-              r.water_level_m,
-              r.level_m
-            )
-          ),
-
-          warning:safeNumber(
-            firstValue(
-              r.warning,
-              r.warning_level_m
-            )
-          ),
-
-          danger:safeNumber(
-            firstValue(
-              r.danger,
-              r.danger_level_m
-            )
-          ),
-
-          status:firstValue(
-            r.status,
-            ""
-          ),
-
-          trend:firstValue(
-            r.trend,
-            ""
-          ),
-
-          source:firstValue(
-            r.source,
-            "DHM"
-          )
-
-        });
-
-      }
-    );
-
+    return;
   }
 
 
-  /*
-    Find maximum river.
-    If Python already provides river.max_level_m,
-    use that value as the headline.
-  */
+  /* Timestamp */
+
+  el('updated').textContent =
+    formatNepalTime(data.updated_at || data.updated_at_npt || data.updated);
+
+
+  /* Rainfall */
+
+  const rain = data.rainfall || data.rain || {};
+
+  el('rainValue').textContent =
+    rain.max_24h_mm != null
+      ? `${fmt(rain.max_24h_mm,1)} mm`
+      : rain.value != null
+        ? `${fmt(rain.value,1)} mm`
+        : '—';
+
+  el('rainStation').textContent =
+    rain.station || '—';
+
+
+  /* Rivers */
+
+  const riversObject =
+    data.rivers || {};
+
+  let rivers = [];
+
+  if(Array.isArray(data.rivers)){
+    rivers = data.rivers;
+  }
+  else if(
+    riversObject &&
+    typeof riversObject === 'object'
+  ){
+    rivers = Object.entries(riversObject)
+      .map(([name,r])=>({
+        name,
+        ...(r || {})
+      }));
+  }
+
+
+  /* Max river */
+
+  const validRivers =
+    rivers.filter(r =>
+      r &&
+      r.value != null
+    );
 
   let maxRiver = null;
 
+  if(validRivers.length){
 
-  if(
-    riverSource.max_level_m !== null &&
-    riverSource.max_level_m !== undefined
-  ){
-
-    maxRiver = {
-
-      name:firstValue(
-        riverSource.basin,
-        "River"
-      ),
-
-      basin:firstValue(
-        riverSource.basin,
-        ""
-      ),
-
-      station:firstValue(
-        riverSource.station,
-        ""
-      ),
-
-      value:safeNumber(
-        riverSource.max_level_m
-      ),
-
-      warning:null,
-
-      danger:null,
-
-      status:firstValue(
-        riverSource.overall_warning,
-        ""
-      )
-
-    };
-
-
-    /*
-      Match the headline station to the
-      detailed river record so warning/danger
-      levels are shown correctly.
-    */
-
-    const matching = rivers.find(
-      r =>
-        r.station &&
-        riverSource.station &&
-        r.station.toLowerCase() ===
-        riverSource.station.toLowerCase()
-    );
-
-
-    if(matching){
-
-      maxRiver = {
-        ...maxRiver,
-        name:matching.name,
-        basin:firstValue(
-          matching.basin,
-          riverSource.basin
-        ),
-        warning:matching.warning,
-        danger:matching.danger,
-        status:firstValue(
-          matching.status,
-          riverSource.overall_warning
-        )
-      };
-
-    }
-
-  }
-
-
-  /*
-    If no headline river exists,
-    calculate it from detailed records.
-  */
-
-  if(!maxRiver){
-
-    const valid = rivers.filter(
-      r => safeNumber(r.value) !== null
-    );
-
-    if(valid.length){
-
-      maxRiver = valid.reduce(
-        (a,b)=>
-          b.value > a.value
-            ? b
-            : a
+    maxRiver =
+      validRivers.reduce(
+        (highest,current)=>
+          Number(current.value) >
+          Number(highest.value)
+            ? current
+            : highest
       );
+  }
 
-    }
+
+  if(maxRiver){
+
+    el('riverValue').textContent =
+      `${fmt(maxRiver.value,1)} m`;
+
+    el('riverStation').textContent =
+      `${maxRiver.name || 'River'} River at ${maxRiver.station || '—'}`;
+
+    el('riverThreshold').textContent =
+      `${I18N[currentLang].warningText}: ${
+        fmt(maxRiver.warning,1)
+      } m | ${I18N[currentLang].dangerText}: ${
+        fmt(maxRiver.danger,1)
+      } m`;
+
+  }
+  else{
+
+    el('riverValue').textContent = '—';
+    el('riverStation').textContent = '—';
+    el('riverThreshold').textContent =
+      `${I18N[currentLang].warningText}: — | ${I18N[currentLang].dangerText}: —`;
 
   }
 
 
-  /*
-    Rainfall.
-  */
-
-  const rainfallValue =
-    safeNumber(
-      firstValue(
-        rainfallSource.max_24h_mm,
-        rainfallSource.value,
-        d.rain?.value
-      )
-    );
-
-
-  /*
-    Updated time.
-  */
-
-  const updated =
-    firstValue(
-      d.updated_at_npt,
-      d.updated_npt,
-      d.updated_at,
-      d.updated
-    );
-
-
-  /*
-    Warning.
-  */
-
-  let warningStatus =
-    firstValue(
-      riverSource.overall_warning,
-      d.warning_status,
-      d.warningStatus
-    );
-
-
-  if(!warningStatus && rivers.length){
-
-    const danger =
-      rivers.some(
-        r =>
-          r.value !== null &&
-          r.danger !== null &&
-          r.value >= r.danger
-      );
-
-    const warning =
-      rivers.some(
-        r =>
-          r.value !== null &&
-          r.warning !== null &&
-          r.value >= r.warning
-      );
-
-    if(danger){
-      warningStatus = "DANGER";
-    }else if(warning){
-      warningStatus = "WARNING";
-    }else{
-      warningStatus = "NORMAL";
-    }
-
-  }
-
-
-  /*
-    Casualty fields can exist either directly
-    or inside nested objects.
-  */
-
-  const deaths =
-    firstValue(
-      d.deaths,
-      d.casualties?.deaths,
-      d.casualties?.confirmed_deaths,
-      d.impact?.deaths
-    );
-
-  const missing =
-    firstValue(
-      d.missing,
-      d.casualties?.missing,
-      d.casualties?.missing_persons,
-      d.impact?.missing
-    );
-
-  const injured =
-    firstValue(
-      d.injured,
-      d.casualties?.injured,
-      d.casualties?.injured_persons,
-      d.impact?.injured
-    );
+  /* Warning */
 
+  renderWarningStatus(rivers);
 
-  const homes =
-    firstValue(
-      d.homes,
-      d.damage?.homes,
-      d.damage?.homes_damaged,
-      d.infrastructure?.homes_damaged
-    );
 
+  /* Casualties */
 
-  const bridges =
-    firstValue(
-      d.bridges,
-      d.damage?.bridges,
-      d.damage?.bridges_damaged,
-      d.infrastructure?.bridges_damaged
-    );
+  el('deaths').textContent =
+    fmt(data.deaths);
 
+  el('missing').textContent =
+    fmt(data.missing);
 
-  return {
+  el('injured').textContent =
+    fmt(data.injured);
 
-    ...d,
 
-    updated:updated,
+  /* Damage */
 
-    updated_at_npt:
-      firstValue(
-        d.updated_at_npt,
-        d.updated_at,
-        d.updated
-      ),
+  el('homes').textContent =
+    fmt(data.homes);
 
-    rainfall:{
-      ...rainfallSource,
+  el('bridges').textContent =
+    fmt(data.bridges);
 
-      max_24h_mm:
-        rainfallValue,
 
-      station:
-        firstValue(
-          rainfallSource.station,
-          rainfallSource.location,
-          d.rain?.station
-        )
-    },
+  /* Rescue */
 
-    river:{
-      ...riverSource,
+  el('teams').textContent =
+    fmt(data.teams);
 
-      max_level_m:
-        maxRiver?.value ??
-        safeNumber(riverSource.max_level_m),
+  el('rescued').textContent =
+    fmt(data.rescued);
 
-      basin:
-        firstValue(
-          maxRiver?.basin,
-          riverSource.basin
-        ),
+  el('vehicles').textContent =
+    fmt(data.vehicles);
 
-      station:
-        firstValue(
-          maxRiver?.station,
-          riverSource.station
-        ),
+  el('relief').textContent =
+    fmt(data.relief);
 
-      warning:
-        maxRiver?.warning,
 
-      danger:
-        maxRiver?.danger,
+  /* River table */
 
-      overall_warning:
-        warningStatus
-    },
-
-    rivers:rivers,
-
-    warningStatus:warningStatus,
-
-    deaths:deaths,
-
-    missing:missing,
-
-    injured:injured,
-
-    homes:homes,
-
-    bridges:bridges
-
-  };
-
-}
-
-
-/* =========================================================
-   RENDER DASHBOARD
-========================================================= */
-
-function render(raw){
-
-  const d =
-    normalizeData(raw);
-
-  window.__dashboardData =
-    d;
-
-
-  /*
-    LAST UPDATED
-  */
-
-  el("updated").textContent =
-    d.updated ||
-    "—";
-
-
-  /*
-    RAINFALL
-  */
-
-  const rain =
-    d.rainfall?.max_24h_mm;
-
-  el("rainValue").textContent =
-    rain === null ||
-    rain === undefined
-      ? "—"
-      : fmt(rain,1) + " mm";
-
-
-  el("rainStation").textContent =
-    d.rainfall?.station ||
-    "—";
-
-
-  /*
-    RIVER HEADLINE
-  */
-
-  const maxRiver =
-    d.river;
-
-
-  if(
-    maxRiver &&
-    maxRiver.max_level_m !== null &&
-    maxRiver.max_level_m !== undefined
-  ){
-
-    el("riverValue").textContent =
-      fmt(
-        maxRiver.max_level_m,
-        1
-      ) + " m";
-
-
-    const riverName =
-      maxRiver.basin ||
-      "River";
-
-
-    el("riverStation").textContent =
-      `${riverName} River at ${maxRiver.station || "—"}`;
-
-
-    const warning =
-      maxRiver.warning;
-
-
-    const danger =
-      maxRiver.danger;
-
-
-    if(
-      warning !== null &&
-      warning !== undefined &&
-      danger !== null &&
-      danger !== undefined
-    ){
-
-      el("riverThreshold").textContent =
-        `${currentLang === "ne" ? "चेतावनी" : "Warning"}: ${fmt(warning,1)} m | ` +
-        `${currentLang === "ne" ? "खतरा" : "Danger"}: ${fmt(danger,1)} m`;
-
-    }else{
-
-      el("riverThreshold").textContent =
-        maxRiver.overall_warning ||
-        "DHM river monitoring";
-
-    }
-
-  }else{
-
-    el("riverValue").textContent =
-      "—";
-
-    el("riverStation").textContent =
-      "—";
-
-    el("riverThreshold").textContent =
-      "Warning — | Danger —";
-
-  }
-
-
-  /*
-    WARNING STATUS
-  */
-
-  const warning =
-    String(
-      d.warningStatus ||
-      d.river?.overall_warning ||
-      ""
-    ).toUpperCase();
-
-
-  let displayWarning;
-
-
-  if(
-    warning.includes("DANGER")
-  ){
-
-    displayWarning =
-      currentLang === "ne"
-        ? "खतरा"
-        : "DANGER";
-
-  }else if(
-    warning.includes("WARNING") ||
-    warning.includes("WATCH")
-  ){
-
-    displayWarning =
-      currentLang === "ne"
-        ? "चेतावनी"
-        : "WATCH";
-
-  }else if(
-    warning.includes("NORMAL")
-  ){
-
-    displayWarning =
-      currentLang === "ne"
-        ? "सामान्य"
-        : "NORMAL";
-
-  }else{
-
-    displayWarning =
-      currentLang === "ne"
-        ? "निगरानी"
-        : "WATCH";
-
-  }
-
-
-  el("warningStatus").textContent =
-    displayWarning;
-
-
-  /*
-    CASUALTIES
-  */
-
-  el("deaths").textContent =
-    fmt(d.deaths);
-
-
-  el("missing").textContent =
-    fmt(d.missing);
-
-
-  el("injured").textContent =
-    fmt(d.injured);
-
-
-  /*
-    DAMAGE
-  */
-
-  el("homes").textContent =
-    fmt(d.homes);
-
-
-  el("bridges").textContent =
-    fmt(d.bridges);
-
-
-  /*
-    RESCUE
-  */
-
-  el("teams").textContent =
-    fmt(
-      firstValue(
-        d.teams,
-        d.rescue?.teams
-      )
-    );
-
-
-  el("rescued").textContent =
-    fmt(
-      firstValue(
-        d.rescued,
-        d.rescue?.rescued
-      )
-    );
-
-
-  el("vehicles").textContent =
-    fmt(
-      firstValue(
-        d.vehicles,
-        d.rescue?.vehicles
-      )
-    );
-
-
-  el("relief").textContent =
-    fmt(
-      firstValue(
-        d.relief,
-        d.rescue?.relief
-      )
-    );
-
-
-  /*
-    RIVER TABLE
-  */
-
-  const rivers =
-    d.rivers || [];
-
-
-  el("riverRows").innerHTML =
+  el('riverRows').innerHTML =
     rivers.length
-      ? rivers.map(r=>{
+      ? rivers.map(r => {
 
-          const status =
-            String(
-              r.status || ""
-            ).toUpperCase();
-
-
-          let trend =
-            r.trend || "";
-
-
-          if(!trend && status){
-            trend = status;
-          }
-
+          const trend =
+            r.trend || '';
 
           return `
-
             <tr>
 
               <td>
+                ${escapeHtml(r.name || '—')}
 
-                ${escapeHtml(r.name)}
+                <small>
+                  (${escapeHtml(r.station || '—')})
+                </small>
 
-                ${
-                  r.station
-                    ? `<small>(${escapeHtml(r.station)})</small>`
-                    : ""
-                }
+                <br>
 
-                ${
-                  trend
-                    ? `<br><span class="trend">${escapeHtml(trend)}</span>`
-                    : ""
-                }
+                <span class="trend">
+                  ${escapeHtml(trend)}
+                </span>
 
               </td>
 
               <td class="t-blue">
-                ${
-                  r.value === null
-                    ? "—"
-                    : fmt(r.value,1) + " m"
-                }
+                ${fmt(r.value,1)} m
               </td>
 
               <td class="t-yellow">
-                ${
-                  r.warning === null
-                    ? "—"
-                    : fmt(r.warning,1) + " m"
-                }
+                ${fmt(r.warning,1)} m
               </td>
 
               <td class="t-red">
-                ${
-                  r.danger === null
-                    ? "—"
-                    : fmt(r.danger,1) + " m"
-                }
+                ${fmt(r.danger,1)} m
               </td>
 
             </tr>
-
           `;
 
-        }).join("")
+        }).join('')
 
       : `
-
         <tr>
-
-          <td colspan="4"
-              style="text-align:center;color:#91a5b4">
-
-            No verified river station data
-
+          <td colspan="4">
+            —
           </td>
-
         </tr>
-
       `;
 
 
-  /*
-    AFFECTED AREAS / WEATHER
-  */
+  /* Weather */
 
   const weather =
-    d.weather || [];
+    Array.isArray(data.weather)
+      ? data.weather
+      : [];
 
+  el('affectedWeather').innerHTML =
+    weather.length
+      ? weather.map(w => {
 
-  if(weather.length){
+          const value =
+            w.value != null
+              ? `${fmt(w.value,1)} mm`
+              : '—';
 
-    el("affectedWeather").innerHTML =
-      weather.map(w=>`
+          const note =
+            w.note ||
+            (
+              w.value == null
+                ? I18N[currentLang].noForecast
+                : I18N[currentLang].monitoring
+            );
 
+          return `
+            <div class="forecast">
+
+              <div class="place">
+                ${escapeHtml(w.place || '—')}
+              </div>
+
+              <div
+                class="weatherIcon"
+                aria-hidden="true">
+
+                ${weatherSvg()}
+
+              </div>
+
+              <div class="rain">
+                ${value}
+              </div>
+
+              <div class="risk ${
+                w.value == null
+                  ? 'unknown'
+                  : 'moderate'
+              }">
+
+                ${escapeHtml(note)}
+
+              </div>
+
+            </div>
+          `;
+
+        }).join('')
+
+      : `
         <div class="forecast">
 
           <div class="place">
-            ${escapeHtml(
-              w.place ||
-              w.district ||
-              "Location"
-            )}
+            —
           </div>
 
           <div class="weatherIcon">
-            🌧️
+            ${weatherSvg()}
           </div>
 
           <div class="rain">
-
-            ${
-              w.value === null ||
-              w.value === undefined
-                ? "—"
-                : fmt(w.value,1) + " mm"
-            }
-
+            —
           </div>
 
-          <div class="risk ${
-            w.value == null
-              ? "unknown"
-              : "moderate"
-          }">
-
-            ${escapeHtml(
-              w.note ||
-              "DHM monitoring"
-            )}
-
+          <div class="risk unknown">
+            ${I18N[currentLang].dhmUnavailable}
           </div>
 
         </div>
-
-      `).join("");
-
-  }else{
-
-    el("affectedWeather").innerHTML = `
-
-      <div class="forecast">
-
-        <div class="place">
-          DHM
-        </div>
-
-        <div class="weatherIcon">
-          🌧️
-        </div>
-
-        <div class="rain">
-          —
-        </div>
-
-        <div class="risk unknown">
-          Current station monitoring
-        </div>
-
-      </div>
-
-      <div class="forecast">
-
-        <div class="place">
-          Nepal
-        </div>
-
-        <div class="weatherIcon">
-          🌧️
-        </div>
-
-        <div class="rain">
-          —
-        </div>
-
-        <div class="risk unknown">
-          District aggregate not verified
-        </div>
-
-      </div>
-
-    `;
-
-  }
+      `;
 
 
-  /*
-    OPERATIONS
-  */
+  /* Operations */
 
-  const operationsVerified =
-    d.teams !== null ||
-    d.rescued !== null ||
-    d.vehicles !== null ||
-    d.relief !== null;
+  const officialAggregate =
+    data.operations_status ||
+    data.operationsStatus ||
+    null;
 
+  el('operationsStatus').textContent =
+    officialAggregate ||
+    I18N[currentLang].officialNotVerified;
 
-  el("operationsStatus").textContent =
-    operationsVerified
-      ? (
-          currentLang === "ne"
-            ? "आधिकारिक डेटा"
-            : "Official data available"
-        )
-      : (
-          currentLang === "ne"
-            ? "आधिकारिक कुल पुष्टि भएको छैन"
-            : "Official aggregate not verified"
-        );
+  el('operationsBar').style.width =
+    officialAggregate ? '100%' : '0%';
 
 
-  el("opsBar").style.width =
-    operationsVerified
-      ? "100%"
-      : "0%";
+  /* Ticker */
 
+  const ticker =
+    data.ticker ||
+    data.live_update ||
+    data.liveUpdate ||
+    '';
 
-  /*
-    TICKER
-  */
-
-  const defaultTicker =
-    currentLang === "ne"
-
-      ? "DHM का आधिकारिक नदी तथा वर्षा निगरानी डेटा प्रयोग गरिएको छ। यात्रा अघि स्थानीय अवस्था जाँच गर्नुहोस्।"
-
-      : "Official DHM river and rainfall monitoring data is displayed. Check local conditions before travel.";
-
-
-  el("ticker").textContent =
-    d.ticker ||
-    defaultTicker;
-
+  el('ticker').textContent =
+    ticker ||
+    (
+      currentLang === 'ne'
+        ? 'DHM का आधिकारिक चेतावनीहरू लागू छन्। यात्रा अघि स्थानीय अवस्था जाँच गर्नुहोस्।'
+        : 'Official DHM warnings are in effect. Verify local conditions before travel.'
+    );
 }
 
 
 /* =========================================================
-   HTML ESCAPE
+   UNAVAILABLE STATE
+========================================================= */
+
+function renderUnavailable(){
+
+  el('updated').textContent =
+    I18N[currentLang].dataUnavailable;
+
+  el('rainValue').textContent = '—';
+  el('rainStation').textContent = '—';
+
+  el('riverValue').textContent = '—';
+  el('riverStation').textContent = '—';
+
+  el('riverThreshold').textContent =
+    `${I18N[currentLang].warningText}: — | ${I18N[currentLang].dangerText}: —`;
+
+  el('warningStatus').textContent = '—';
+
+  el('warningStatus')
+    .classList.remove('watch','active');
+
+  [
+    'deaths',
+    'missing',
+    'injured',
+    'homes',
+    'bridges',
+    'teams',
+    'rescued',
+    'vehicles',
+    'relief'
+  ].forEach(id=>{
+    el(id).textContent = '—';
+  });
+
+  el('riverRows').innerHTML = `
+    <tr>
+      <td colspan="4">—</td>
+    </tr>
+  `;
+
+  el('affectedWeather').innerHTML = `
+    <div class="forecast">
+
+      <div class="place">
+        —
+      </div>
+
+      <div class="weatherIcon">
+        ${weatherSvg()}
+      </div>
+
+      <div class="rain">
+        —
+      </div>
+
+      <div class="risk unknown">
+        ${I18N[currentLang].dhmUnavailable}
+      </div>
+
+    </div>
+  `;
+
+  el('operationsStatus').textContent =
+    I18N[currentLang].officialNotVerified;
+
+  el('operationsBar').style.width = '0%';
+
+  el('ticker').textContent =
+    I18N[currentLang].dhmUnavailable;
+}
+
+
+/* =========================================================
+   SAFE HTML
 ========================================================= */
 
 function escapeHtml(value){
 
-  return String(
-    value ?? ""
-  )
-  .replaceAll("&","&amp;")
-  .replaceAll("<","&lt;")
-  .replaceAll(">","&gt;")
-  .replaceAll('"',"&quot;")
-  .replaceAll("'","&#039;");
-
+  return String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
 }
 
 
@@ -2732,258 +2813,48 @@ function escapeHtml(value){
    LANGUAGE
 ========================================================= */
 
-const I18N = {
-
-  en:{
-
-    title:
-      "NEPAL FLOOD 2026 | LIVE SITUATION DASHBOARD",
-
-    live:
-      "LIVE",
-
-    dataSource:
-      "DATA SOURCE: DHM • NDRRMA • Nepal Police",
-
-    maxRain:
-      "MAX 24H RAINFALL",
-
-    dhmRain:
-      "DHM rainfall monitoring",
-
-    maxRiver:
-      "MAX RIVER LEVEL",
-
-    warningStatus:
-      "WARNING STATUS",
-
-    dhmWarning:
-      "DHM warning system",
-
-    officialWarning:
-      "Official warning page",
-
-    casualties:
-      "CASUALTIES & IMPACT",
-
-    confirmedDeaths:
-      "CONFIRMED<br>DEATHS",
-
-    missingPersons:
-      "MISSING<br>PERSONS",
-
-    injuredPersons:
-      "INJURED<br>PERSONS",
-
-    damage:
-      "DAMAGE TO INFRASTRUCTURE",
-
-    homesDamaged:
-      "HOMES<br>DAMAGED",
-
-    bridgesDamaged:
-      "BRIDGES<br>DAMAGED",
-
-    riverLevels:
-      "RIVER WATER LEVELS",
-
-    river:
-      "RIVER",
-
-    current:
-      "CURRENT",
-
-    warning:
-      "WARNING",
-
-    danger:
-      "DANGER",
-
-    affectedAreas:
-      "AFFECTED AREAS — CURRENT DHM MONITORING",
-
-    rescueRelief:
-      "RESCUE & RELIEF OPERATIONS",
-
-    activeTeams:
-      "ACTIVE TEAMS",
-
-    peopleRescued:
-      "PEOPLE RESCUED",
-
-    rescueVehicles:
-      "RESCUE VEHICLES",
-
-    reliefDistributed:
-      "RELIEF DISTRIBUTED",
-
-    operationsStatus:
-      "Operations status",
-
-    liveUpdates:
-      "LIVE UPDATES",
-
-    sources:
-      "Sources:"
-
-  },
-
-
-  ne:{
-
-    title:
-      "नेपाल बाढी २०२६ | प्रत्यक्ष अवस्था ड्यासबोर्ड",
-
-    live:
-      "प्रत्यक्ष",
-
-    dataSource:
-      "डेटा स्रोत: DHM • NDRRMA • नेपाल प्रहरी",
-
-    maxRain:
-      "अधिकतम २४ घण्टाको वर्षा",
-
-    dhmRain:
-      "DHM वर्षा निगरानी",
-
-    maxRiver:
-      "अधिकतम नदी सतह",
-
-    warningStatus:
-      "चेतावनी अवस्था",
-
-    dhmWarning:
-      "DHM चेतावनी प्रणाली",
-
-    officialWarning:
-      "आधिकारिक चेतावनी पृष्ठ",
-
-    casualties:
-      "मानवीय क्षति तथा प्रभाव",
-
-    confirmedDeaths:
-      "पुष्टि भएका<br>मृत्यु",
-
-    missingPersons:
-      "बेपत्ता<br>व्यक्ति",
-
-    injuredPersons:
-      "घाइते<br>व्यक्ति",
-
-    damage:
-      "पूर्वाधार क्षति",
-
-    homesDamaged:
-      "क्षतिग्रस्त<br>घर",
-
-    bridgesDamaged:
-      "क्षतिग्रस्त<br>पुल",
-
-    riverLevels:
-      "नदीको पानीको सतह",
-
-    river:
-      "नदी",
-
-    current:
-      "हाल",
-
-    warning:
-      "चेतावनी",
-
-    danger:
-      "खतरा",
-
-    affectedAreas:
-      "प्रभावित क्षेत्र — हालको DHM निगरानी",
-
-    rescueRelief:
-      "उद्धार तथा राहत कार्य",
-
-    activeTeams:
-      "सक्रिय टोली",
-
-    peopleRescued:
-      "उद्धार गरिएका व्यक्ति",
-
-    rescueVehicles:
-      "उद्धार सवारी",
-
-    reliefDistributed:
-      "वितरित राहत",
-
-    operationsStatus:
-      "कार्य सञ्चालन अवस्था",
-
-    liveUpdates:
-      "प्रत्यक्ष अपडेट",
-
-    sources:
-      "स्रोत:"
-
-  }
-
-};
-
-
-/* =========================================================
-   LANGUAGE STATE
-========================================================= */
-
-let currentLang =
-  localStorage.getItem(
-    "nepalFloodLang"
-  ) || "en";
-
-
 function applyLanguage(){
 
   document.documentElement.lang =
-    currentLang === "ne"
-      ? "ne"
-      : "en";
+    currentLang === 'ne'
+      ? 'ne'
+      : 'en';
 
 
   document
-    .querySelectorAll("[data-i18n]")
+    .querySelectorAll('[data-i18n]')
     .forEach(node=>{
 
       const key =
         node.dataset.i18n;
 
-
-      if(
-        I18N[currentLang] &&
-        I18N[currentLang][key]
-      ){
-
+      if(I18N[currentLang][key]){
         node.innerHTML =
           I18N[currentLang][key];
-
       }
 
     });
 
 
-  const button =
-    el("langToggle");
+  const langButton =
+    el('langToggle');
 
+  if(langButton){
 
-  if(button){
-
-    button.textContent =
-      currentLang === "en"
-        ? "EN | ने"
-        : "ने | EN";
+    langButton.textContent =
+      currentLang === 'en'
+        ? 'EN | ने'
+        : 'ने | EN';
 
   }
 
 
-  render(
-    window.__dashboardData ||
-    FALLBACK
-  );
-
+  if(dashboardData){
+    render(dashboardData);
+  }
+  else{
+    renderUnavailable();
+  }
 }
 
 
@@ -2991,72 +2862,54 @@ function applyLanguage(){
    THEME
 ========================================================= */
 
-let lightMode =
-  localStorage.getItem(
-    "nepalFloodTheme"
-  ) === "light";
-
-
 function applyTheme(){
 
   document.body.classList.toggle(
-    "light",
+    'light',
     lightMode
   );
 
-
   const icon =
-    el("themeIcon");
-
+    el('themeIcon');
 
   if(icon){
-
     icon.textContent =
-      lightMode
-        ? "☀"
-        : "☾";
-
+      lightMode ? '☀' : '☾';
   }
 
-
   const button =
-    el("themeToggle");
-
+    el('themeToggle');
 
   if(button){
 
     button.setAttribute(
-      "aria-label",
+      'aria-label',
       lightMode
-        ? "Switch to dark mode"
-        : "Switch to light mode"
+        ? 'Switch to dark mode'
+        : 'Switch to light mode'
     );
-
   }
-
 }
 
 
 /* =========================================================
-   BUTTON EVENTS
+   CONTROLS
 ========================================================= */
 
-el("langToggle")
+el('langToggle')
   ?.addEventListener(
-    "click",
+    'click',
     ()=>{
 
       currentLang =
-        currentLang === "en"
-          ? "ne"
-          : "en";
-
+        currentLang === 'en'
+          ? 'ne'
+          : 'en';
 
       localStorage.setItem(
-        "nepalFloodLang",
+        'nepalFloodLang',
         currentLang
       );
-
 
       applyLanguage();
 
@@ -3064,22 +2917,20 @@ el("langToggle")
   );
 
 
-el("themeToggle")
+el('themeToggle')
   ?.addEventListener(
-    "click",
+    'click',
     ()=>{
 
       lightMode =
         !lightMode;
 
-
       localStorage.setItem(
-        "nepalFloodTheme",
+        'nepalFloodTheme',
         lightMode
-          ? "light"
-          : "dark"
+          ? 'light'
+          : 'dark'
       );
-
 
       applyTheme();
 
@@ -3088,63 +2939,46 @@ el("themeToggle")
 
 
 /* =========================================================
-   LOAD DATA.JSON
+   DATA LOADING
 ========================================================= */
 
-async function boot(){
+async function loadData(){
 
   try{
 
     const response =
       await fetch(
-        "data.json?ts=" +
-        Date.now(),
+        'data.json?ts=' + Date.now(),
         {
-          cache:"no-store"
+          cache:'no-store'
         }
       );
 
 
     if(!response.ok){
-
       throw new Error(
-        "HTTP " +
-        response.status
+        `HTTP ${response.status}`
       );
-
     }
 
 
-    const raw =
+    const data =
       await response.json();
 
 
-    /*
-      Important:
-      We now render the new Python
-      data.json format directly.
-    */
+    render(data);
 
-    render(raw);
-
-
-  }catch(error){
+  }
+  catch(error){
 
     console.error(
-      "Unable to load data.json:",
+      'Nepal Flood data loading failed:',
       error
     );
 
-
-    /*
-      Only use fallback if the live
-      JSON cannot be loaded.
-    */
-
-    render(FALLBACK);
+    renderUnavailable();
 
   }
-
 }
 
 
@@ -3156,15 +2990,16 @@ applyTheme();
 
 applyLanguage();
 
-boot();
+loadData();
 
 
 /*
-  Refresh live data every 5 minutes.
+  Refresh every 5 minutes.
+  The page always reads the latest data.json.
 */
 
 setInterval(
-  boot,
+  loadData,
   5 * 60 * 1000
 );
 

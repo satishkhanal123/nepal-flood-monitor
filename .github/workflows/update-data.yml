@@ -21,11 +21,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests playwright
+
+      - name: Install Chromium
+        run: |
+          python -m playwright install --with-deps chromium
+
       - name: Fetch official DHM data
-        run: python update_data.py
+        run: |
+          python update_data.py
 
       - name: Run Milestone 1.5 QA
-        run: python qa_dashboard.py
+        run: |
+          python qa_dashboard.py
 
       - name: Commit updated data
         run: |

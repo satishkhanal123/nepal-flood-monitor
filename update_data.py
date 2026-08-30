@@ -1,525 +1,527 @@
+#!/usr/bin/env python3
+"""
+Nepal Flood 2026 — verified data updater
+
+Milestone 1.5 — Data Correctness
+
+Rules:
+- Read rainfall and river observations from official DHM pages.
+- Never invent casualty, infrastructure, rescue, or relief numbers.
+- Preserve previously verified non-null impact values when no new verified value is available.
+- Fail the run if required DHM observations cannot be verified.
+- Write the exact JSON shape expected by the locked index.html.
+- Use only Python standard-library modules.
+"""
+
+from __future__ import annotations
+
 import json
 import re
-from datetime import datetime, timezone
+import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.request import Request, urlopen
 
-import requests
-from bs4 import BeautifulSoup
+ROOT = Path(__file__).resolve().parent
+DATA_FILE = ROOT / "data.json"
 
-
-# ============================================================
-# CONFIGURATION
-# ============================================================
-
-DHM_HOME_URL = "https://www.dhm.gov.np/"
-
-OUTPUT_FILE = Path(__file__).with_name("data.json")
-
+DHM_HOME = "https://www.dhm.gov.np/?locale=en"
+DHM_RIVER_WATCH = "https://dhm.gov.np/hydrology/river-watch"
 TIMEOUT = 30
+NPT = timezone(timedelta(hours=5, minutes=45))
+
+# These are the five stations used by the locked dashboard.
+RIVER_PATTERNS = [
+    (
+        "Karnali",
+        "Chisapani",
+        r"Karnali\s+at\s+Chisapani\s+WL:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+    ),
+    (
+        "Narayani",
+        "Devghat",
+        r"Narayani\s+at\s+Devghat\s+WL:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+    ),
+    (
+        "Kankai",
+        "Mainachuli",
+        r"Kankai\s+River\s+at\s+Mainachuli\s+WL:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+    ),
+    (
+        "Babai",
+        "Chepang",
+        r"Babai\s+at\s+Chepang\s+WL:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+    ),
+    (
+        "Mahakali",
+        "Parigaon",
+        r"Mahakali\s+at\s+Parigaon\s+WL:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m"
+        r"\s*DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+    ),
+]
 
 
-# Stations used by our dashboard
-TARGET_RIVERS = {
-    "Karnali": {
-        "station": "Chisapani",
-        "warning": 10.0,
-        "danger": 10.8,
-    },
-    "Narayani": {
-        "station": "Devghat",
-        "warning": 7.3,
-        "danger": 9.0,
-    },
-    "Kankai": {
-        "station": "Mainachuli",
-        "warning": 3.8,
-        "danger": 4.3,
-    },
-    "Babai": {
-        "station": "Chepang",
-        "warning": 5.5,
-        "danger": 6.8,
-    },
-    "Mahakali": {
-        "station": "Parigaon",
-        "warning": 6.8,
-        "danger": 8.0,
-    },
-}
+def now_npt() -> datetime:
+    return datetime.now(NPT)
 
 
-# ============================================================
-# HELPERS
-# ============================================================
-
-def clean_text(text):
-    """Remove extra spaces and line breaks."""
-    return re.sub(r"\s+", " ", text or "").strip()
+def iso_now() -> str:
+    return now_npt().isoformat(timespec="seconds")
 
 
-def to_number(value):
-    """Convert text to float when possible."""
+def display_time() -> str:
+    return now_npt().strftime("%d %b %Y | %H:%M:%S NPT")
+
+
+def fetch_text(url: str) -> str:
+    request = Request(
+        url,
+        headers={
+            "User-Agent": "Nepal-Flood-Monitor/1.5",
+            "Accept": "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.8",
+        },
+    )
+    with urlopen(request, timeout=TIMEOUT) as response:
+        raw = response.read()
+        charset = response.headers.get_content_charset() or "utf-8"
+        return raw.decode(charset, errors="replace")
+
+
+def clean_text(text: str) -> str:
+    # HTML often contains tags/whitespace between the visible values.
+    text = re.sub(r"<script\b[^>]*>.*?</script>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = text.replace("&nbsp;", " ")
+    text = re.sub(r"\s+", " ", text)
+    return text
+
+
+def read_existing() -> dict:
+    if not DATA_FILE.exists():
+        return {}
+
+    try:
+        with DATA_FILE.open("r", encoding="utf-8") as f:
+            value = json.load(f)
+    except Exception as exc:
+        raise RuntimeError(f"data.json is invalid JSON: {exc}") from exc
+
+    if not isinstance(value, dict):
+        raise RuntimeError("data.json must contain a JSON object")
+
+    return value
+
+
+def number(value):
     if value is None:
-        return None
-
-    value = str(value).strip()
-
-    match = re.search(r"-?\d+(?:\.\d+)?", value)
-
-    if not match:
         return None
 
     try:
-        return float(match.group())
-    except ValueError:
+        n = float(value)
+    except (TypeError, ValueError):
         return None
 
-
-def format_number(value):
-    """Return an integer when possible, otherwise one decimal."""
-    if value is None:
+    if n < 0:
         return None
 
-    if float(value).is_integer():
-        return int(value)
-
-    return round(float(value), 1)
+    return int(n) if n.is_integer() else n
 
 
-def get_status(level, warning, danger):
-    """Calculate river warning status."""
-    if level is None:
-        return "UNKNOWN"
-
-    if level >= danger:
-        return "DANGER"
-
-    if level >= warning:
-        return "WATCH"
-
-    return "NORMAL"
+def first_number(*values):
+    for value in values:
+        n = number(value)
+        if n is not None:
+            return n
+    return None
 
 
-# ============================================================
-# FETCH DHM
-# ============================================================
-
-def fetch_dhm_homepage():
-    print("Opening DHM homepage...")
-
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 "
-            "(Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 "
-            "(KHTML, like Gecko) "
-            "Chrome/131.0 Safari/537.36"
-        ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Cache-Control": "no-cache",
-    }
-
-    response = requests.get(
-        DHM_HOME_URL,
-        headers=headers,
-        timeout=TIMEOUT,
-    )
-
-    response.raise_for_status()
-
-    print(f"DHM response: HTTP {response.status_code}")
-
-    return response.text
-
-
-# ============================================================
-# PARSE RAINFALL
-# ============================================================
-
-def extract_max_rainfall(text):
-    """
-    Extract the maximum 24-hour rainfall shown by DHM.
-
-    Example:
-        Max 24hr: 117 mm Gobre
-    """
-
+def extract_rainfall(text: str) -> dict:
     patterns = [
-        r"Max\s*24\s*hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
-        r"Max\s*24hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
-        r"Max\s*24\s*hour\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z .'-]+)",
+        r"Max\s*24hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z][A-Za-z0-9 ()_-]*)",
+        r"Max\s*24\s*hr\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z][A-Za-z0-9 ()_-]*)",
+        r"Maximum\s*24\s*Hour(?:\s*Rainfall)?\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*mm\s*([A-Za-z][A-Za-z0-9 ()_-]*)",
     ]
 
     for pattern in patterns:
-        match = re.search(pattern, text, re.IGNORECASE)
-
+        match = re.search(pattern, text, flags=re.I)
         if match:
-            amount = to_number(match.group(1))
-            station = clean_text(match.group(2))
-
+            station = match.group(2).strip(" -:;,")
             return {
-                "value_mm": format_number(amount),
-                "station": station,
-                "source": "DHM rainfall monitoring",
+                "value": number(match.group(1)),
+                "station": station or None,
+                "source": "DHM",
+                "source_url": DHM_HOME,
+                "as_of": iso_now(),
             }
 
-    print("WARNING: Could not find Max 24hr rainfall.")
-
-    return {
-        "value_mm": None,
-        "station": None,
-        "source": "DHM rainfall monitoring",
-    }
+    raise RuntimeError("DHM maximum 24-hour rainfall value was not found")
 
 
-# ============================================================
-# PARSE RIVER LEVELS
-# ============================================================
+def extract_rivers(text: str) -> list[dict]:
+    rivers = []
 
-def extract_river_levels(text):
-    """
-    Extract the target river readings from the DHM homepage.
-
-    DHM currently exposes lines similar to:
-
-    Karnali at Chisapani WL: 7.2 m WR: 10.0 m DL: 10.8 m
-    """
-
-    results = {}
-
-    for basin, config in TARGET_RIVERS.items():
-
-        station = config["station"]
-
-        # Try the most common DHM format.
-        pattern = (
-            rf"{re.escape(basin)}"
-            rf"(?:\s+River)?"
-            rf"\s+at\s+"
-            rf"{re.escape(station)}"
-            rf"\s+WL\s*:\s*"
-            rf"([0-9]+(?:\.[0-9]+)?)"
-            rf"\s*m"
-            rf"\s*WR\s*:\s*"
-            rf"([0-9]+(?:\.[0-9]+)?)"
-            rf"\s*m"
-            rf"\s*DL\s*:\s*"
-            rf"([0-9]+(?:\.[0-9]+)?)"
-            rf"\s*m"
-        )
-
-        match = re.search(pattern, text, re.IGNORECASE)
-
+    for name, station, pattern in RIVER_PATTERNS:
+        match = re.search(pattern, text, flags=re.I)
         if not match:
-            print(
-                f"WARNING: Could not find "
-                f"{basin} at {station}."
-            )
-
-            results[basin] = {
-                "basin": basin,
-                "station": station,
-                "water_level_m": None,
-                "warning_level_m": config["warning"],
-                "danger_level_m": config["danger"],
-                "status": "UNKNOWN",
-                "source": "DHM River Watch",
-            }
-
             continue
 
-        water_level = to_number(match.group(1))
-        warning_level = to_number(match.group(2))
-        danger_level = to_number(match.group(3))
+        value = number(match.group(1))
+        warning = number(match.group(2))
+        danger = number(match.group(3))
 
-        status = get_status(
-            water_level,
-            warning_level,
-            danger_level,
+        if value is None or warning is None or danger is None:
+            continue
+
+        if warning <= 0 or danger <= warning:
+            raise RuntimeError(
+                f"Invalid DHM threshold order for {name}: "
+                f"value={value}, warning={warning}, danger={danger}"
+            )
+
+        if value >= danger:
+            status = "Above Danger Level"
+        elif value >= warning:
+            status = "Above Warning Level"
+        else:
+            status = "Below Warning Level"
+
+        rivers.append(
+            {
+                "name": name,
+                "station": station,
+                "value": value,
+                "warning": warning,
+                "danger": danger,
+                "status": status,
+                "source": "DHM",
+                "source_url": DHM_RIVER_WATCH,
+                "as_of": iso_now(),
+            }
         )
 
-        results[basin] = {
-            "basin": basin,
-            "station": station,
-            "water_level_m": format_number(water_level),
-            "warning_level_m": format_number(warning_level),
-            "danger_level_m": format_number(danger_level),
-            "status": status,
-            "source": "DHM River Watch",
-        }
-
-        print(
-            f"{basin} at {station}: "
-            f"{water_level} m "
-            f"(Warning {warning_level} m / "
-            f"Danger {danger_level} m)"
+    if len(rivers) < 3:
+        found = ", ".join(r["name"] for r in rivers) or "none"
+        raise RuntimeError(
+            f"DHM returned too few verified river observations: "
+            f"{len(rivers)} ({found})"
         )
 
-    return results
+    return rivers
 
 
-# ============================================================
-# DETERMINE DASHBOARD WARNING
-# ============================================================
-
-def calculate_overall_warning(rivers):
+def preserve_impact(existing: dict) -> dict:
     """
-    Overall dashboard warning:
+    Preserve existing verified impact values.
 
-    DANGER -> if any river is above danger
-    WATCH  -> if any river is above warning
-    NORMAL -> if all known readings are below warning
-    UNKNOWN -> if no readings are available
+    This updater does not guess casualty or damage figures.
+    A null value remains null until a trusted source supplies a value.
     """
 
-    statuses = [
-        item["status"]
-        for item in rivers.values()
-        if item.get("status")
-    ]
+    old_casualties = existing.get("casualties")
+    if not isinstance(old_casualties, dict):
+        old_casualties = {}
 
-    if "DANGER" in statuses:
-        return "DANGER"
+    old_infrastructure = existing.get("infrastructure")
+    if not isinstance(old_infrastructure, dict):
+        old_infrastructure = {}
 
-    if "WATCH" in statuses:
-        return "WATCH"
+    old_operations = existing.get("operations")
+    if not isinstance(old_operations, dict):
+        old_operations = {}
 
-    if "NORMAL" in statuses:
-        return "NORMAL"
+    def keep(*values):
+        for value in values:
+            n = number(value)
+            if n is not None:
+                return n
+        return None
 
-    return "UNKNOWN"
-
-
-# ============================================================
-# FIND HIGHEST RIVER LEVEL
-# ============================================================
-
-def find_max_river(rivers):
-    valid = [
-        item
-        for item in rivers.values()
-        if item.get("water_level_m") is not None
-    ]
-
-    if not valid:
-        return {
-            "value_m": None,
-            "basin": None,
-            "station": None,
-        }
-
-    highest = max(
-        valid,
-        key=lambda item: item["water_level_m"],
+    deaths = keep(
+        old_casualties.get("deaths"),
+        existing.get("deaths"),
+    )
+    missing = keep(
+        old_casualties.get("missing"),
+        existing.get("missing"),
+    )
+    injured = keep(
+        old_casualties.get("injured"),
+        existing.get("injured"),
+    )
+    rescued = keep(
+        old_casualties.get("rescued"),
+        old_operations.get("rescued"),
+        existing.get("rescued"),
     )
 
     return {
-        "value_m": highest["water_level_m"],
-        "basin": highest["basin"],
-        "station": highest["station"],
+        "deaths": deaths,
+        "missing": missing,
+        "injured": injured,
+        "rescued": rescued,
+        "source": (
+            old_casualties.get("source")
+            or existing.get("impact_source")
+            or "Not verified"
+        ),
+        "as_of": old_casualties.get("as_of") or existing.get("impact_as_of"),
+        "infrastructure": {
+            "homes": keep(
+                old_infrastructure.get("homes"),
+                existing.get("homes"),
+            ),
+            "bridges": keep(
+                old_infrastructure.get("bridges"),
+                existing.get("bridges"),
+            ),
+        },
+        "operations": {
+            "teams": keep(
+                old_operations.get("teams"),
+                existing.get("teams"),
+            ),
+            "vehicles": keep(
+                old_operations.get("vehicles"),
+                existing.get("vehicles"),
+            ),
+            "relief": keep(
+                old_operations.get("relief"),
+                existing.get("relief"),
+            ),
+        },
     }
 
 
-# ============================================================
-# BUILD DATA.JSON
-# ============================================================
+def validate_output(data: dict):
+    required_top = {
+        "schema_version",
+        "status",
+        "updated_at",
+        "updated_at_npt",
+        "rainfall",
+        "rivers",
+        "casualties",
+        "infrastructure",
+        "operations",
+    }
 
-def build_data(rainfall, rivers):
-    now = datetime.now(timezone.utc)
+    missing_top = required_top - set(data)
+    if missing_top:
+        raise RuntimeError(
+            f"Missing required output fields: {', '.join(sorted(missing_top))}"
+        )
 
-    overall_warning = calculate_overall_warning(rivers)
+    rainfall = data["rainfall"]
+    if not isinstance(rainfall, dict):
+        raise RuntimeError("rainfall must be an object")
 
-    max_river = find_max_river(rivers)
+    if number(rainfall.get("value")) is None:
+        raise RuntimeError("rainfall.value is missing")
 
-    data = {
-        "updated_at": now.isoformat(),
-        "updated_at_npt": now.astimezone().isoformat(),
+    if not rainfall.get("station"):
+        raise RuntimeError("rainfall.station is missing")
 
+    rivers = data["rivers"]
+    if not isinstance(rivers, list) or len(rivers) < 3:
+        raise RuntimeError("At least three river observations are required")
+
+    seen = set()
+
+    for river in rivers:
+        for field in ("name", "station", "value", "warning", "danger"):
+            if field not in river:
+                raise RuntimeError(f"River field missing: {field}")
+
+        key = (river["name"], river["station"])
+        if key in seen:
+            raise RuntimeError(f"Duplicate river station: {key}")
+        seen.add(key)
+
+        value = number(river["value"])
+        warning = number(river["warning"])
+        danger = number(river["danger"])
+
+        if value is None or warning is None or danger is None:
+            raise RuntimeError(f"Incomplete river record: {river}")
+
+        if warning <= 0 or danger <= warning:
+            raise RuntimeError(f"Bad river thresholds: {river}")
+
+    casualties = data["casualties"]
+    if not isinstance(casualties, dict):
+        raise RuntimeError("casualties must be an object")
+
+    for key in ("deaths", "missing", "injured", "rescued"):
+        value = casualties.get(key)
+        if value is not None and number(value) is None:
+            raise RuntimeError(f"Invalid casualty value: {key}={value}")
+
+    infrastructure = data["infrastructure"]
+    if not isinstance(infrastructure, dict):
+        raise RuntimeError("infrastructure must be an object")
+
+    for key in ("homes", "bridges"):
+        value = infrastructure.get(key)
+        if value is not None and number(value) is None:
+            raise RuntimeError(f"Invalid infrastructure value: {key}={value}")
+
+    operations = data["operations"]
+    if not isinstance(operations, dict):
+        raise RuntimeError("operations must be an object")
+
+    for key in ("teams", "rescued", "vehicles", "relief"):
+        value = operations.get(key)
+        if value is not None and number(value) is None:
+            raise RuntimeError(f"Invalid operations value: {key}={value}")
+
+
+def build_output(existing: dict, rainfall: dict, rivers: list[dict]) -> dict:
+    impact = preserve_impact(existing)
+    timestamp = iso_now()
+
+    return {
+        "schema_version": "1.5",
         "status": "LIVE",
+        "updated_at": timestamp,
+        "updated_at_npt": display_time(),
 
-        "sources": {
-            "rainfall": "DHM",
-            "river": "DHM",
-            "casualties": "NDRRMA / Nepal Police",
-            "damage": "NDRRMA / Nepal Police",
-        },
-
-        "rainfall": {
-            "max_24h_mm": rainfall["value_mm"],
+        "rain": {
+            "value": rainfall["value"],
             "station": rainfall["station"],
-            "source": rainfall["source"],
-        },
-
-        "river": {
-            "max_level_m": max_river["value_m"],
-            "basin": max_river["basin"],
-            "station": max_river["station"],
-            "overall_warning": overall_warning,
+            "source": "DHM",
+            "source_url": rainfall["source_url"],
+            "as_of": rainfall["as_of"],
         },
 
         "rivers": rivers,
 
-        # ----------------------------------------------------
-        # These are intentionally NOT invented.
-        # They remain null until we have a trusted live source.
-        # ----------------------------------------------------
+        "deaths": impact["deaths"],
+        "missing": impact["missing"],
+        "injured": impact["injured"],
 
-        "impact": {
-            "confirmed_deaths": None,
-            "missing_persons": None,
-            "injured_persons": None,
-            "source": "NDRRMA / Nepal Police",
+        "homes": impact["infrastructure"]["homes"],
+        "bridges": impact["infrastructure"]["bridges"],
+
+        "teams": impact["operations"]["teams"],
+        "rescued": impact["rescued"],
+        "vehicles": impact["operations"]["vehicles"],
+        "relief": impact["operations"]["relief"],
+
+        "casualties": {
+            "deaths": impact["deaths"],
+            "missing": impact["missing"],
+            "injured": impact["injured"],
+            "rescued": impact["rescued"],
+            "source": impact["source"],
+            "as_of": impact["as_of"],
         },
 
-        "damage": {
-            "homes_damaged": None,
-            "bridges_damaged": None,
-            "source": "NDRRMA / Nepal Police",
+        "infrastructure": {
+            "homes": impact["infrastructure"]["homes"],
+            "bridges": impact["infrastructure"]["bridges"],
         },
+
+        "operations": {
+            "teams": impact["operations"]["teams"],
+            "rescued": impact["rescued"],
+            "vehicles": impact["operations"]["vehicles"],
+            "relief": impact["operations"]["relief"],
+        },
+
+        "sources": {
+            "rainfall": {
+                "name": "DHM",
+                "url": DHM_HOME,
+                "as_of": rainfall["as_of"],
+            },
+            "river": {
+                "name": "DHM River Watch",
+                "url": DHM_RIVER_WATCH,
+                "as_of": timestamp,
+            },
+            "casualties": {
+                "name": impact["source"],
+                "as_of": impact["as_of"],
+            },
+        },
+
+        # Keep existing forecast/ticker content. Do not turn monitoring
+        # observations into forecasts.
+        "weather": (
+            existing.get("weather")
+            if isinstance(existing.get("weather"), list)
+            else []
+        ),
+        "ticker": existing.get("ticker"),
     }
 
-    return data
+
+def write_json_atomic(data: dict):
+    tmp = DATA_FILE.with_suffix(".json.tmp")
+
+    with tmp.open("w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    tmp.replace(DATA_FILE)
 
 
-# ============================================================
-# VALIDATE DATA
-# ============================================================
+def main() -> int:
+    print("Starting Nepal Flood 2026 verified data update...")
 
-def validate_data(data):
-    if not isinstance(data, dict):
-        raise RuntimeError("Generated data is not an object.")
+    existing = read_existing()
 
-    if "updated_at" not in data:
-        raise RuntimeError("Missing updated_at.")
+    try:
+        raw = fetch_text(DHM_HOME)
+        text = clean_text(raw)
 
-    if "rainfall" not in data:
-        raise RuntimeError("Missing rainfall section.")
+        rainfall = extract_rainfall(text)
+        rivers = extract_rivers(text)
 
-    if "river" not in data:
-        raise RuntimeError("Missing river section.")
+    except Exception as exc:
+        print(f"DHM verification failed: {exc}", file=sys.stderr)
+        return 1
 
-    if "rivers" not in data:
-        raise RuntimeError("Missing rivers section.")
+    output = build_output(existing, rainfall, rivers)
 
-    if not data["rivers"]:
-        raise RuntimeError("No river data was collected.")
+    try:
+        validate_output(output)
+        write_json_atomic(output)
+    except Exception as exc:
+        print(f"Output validation failed: {exc}", file=sys.stderr)
+        return 1
 
-    valid_rivers = [
-        river
-        for river in data["rivers"].values()
-        if river.get("water_level_m") is not None
-    ]
+    print(f"Updated data.json: {output['updated_at_npt']}")
+    print(
+        f"Rainfall: {output['rain']['value']} mm "
+        f"at {output['rain']['station']}"
+    )
 
-    if not valid_rivers:
-        raise RuntimeError(
-            "DHM returned no valid target river readings."
+    for river in output["rivers"]:
+        print(
+            f"{river['name']} ({river['station']}): "
+            f"{river['value']} m | "
+            f"warning {river['warning']} | "
+            f"danger {river['danger']} | "
+            f"{river['status']}"
         )
 
-    return True
+    print(f"Deaths preserved: {output['deaths']}")
+    print(f"Missing preserved: {output['missing']}")
+    print(f"Injured preserved: {output['injured']}")
 
-
-# ============================================================
-# SAFE WRITE
-# ============================================================
-
-def write_data(data):
-    """
-    Write data.json only after validation succeeds.
-    """
-
-    validate_data(data)
-
-    temporary_file = OUTPUT_FILE.with_suffix(".tmp")
-
-    with open(
-        temporary_file,
-        "w",
-        encoding="utf-8",
-    ) as file:
-        json.dump(
-            data,
-            file,
-            indent=2,
-            ensure_ascii=False,
-        )
-
-    temporary_file.replace(OUTPUT_FILE)
-
-    print()
-    print(f"Successfully wrote: {OUTPUT_FILE}")
-    print()
-
-
-# ============================================================
-# MAIN
-# ============================================================
-
-def main():
-
-    print("========================================")
-    print("NEPAL FLOOD 2026 DATA COLLECTION")
-    print("========================================")
-    print()
-
-    print("Starting DHM data collection...")
-    print()
-
-    html = fetch_dhm_homepage()
-
-    soup = BeautifulSoup(html, "html.parser")
-
-    # Convert the page into clean text.
-    text = clean_text(soup.get_text(" ", strip=True))
-
-    print()
-    print("Parsing rainfall...")
-    rainfall = extract_max_rainfall(text)
-
-    print()
-    print("Parsing river levels...")
-    rivers = extract_river_levels(text)
-
-    print()
-    print("Building dashboard data...")
-
-    data = build_data(
-        rainfall,
-        rivers,
-    )
-
-    print()
-    print("Validating data...")
-
-    validate_data(data)
-
-    print()
-    print("Writing data.json...")
-
-    write_data(data)
-
-    print("========================================")
-    print("UPDATE SUCCESSFUL")
-    print("========================================")
-    print()
-
-    print(
-        f"Max 24h rainfall: "
-        f"{data['rainfall']['max_24h_mm']} mm "
-        f"{data['rainfall']['station'] or ''}"
-    )
-
-    print(
-        f"Highest river: "
-        f"{data['river']['max_level_m']} m "
-        f"{data['river']['station'] or ''}"
-    )
-
-    print(
-        f"Overall warning: "
-        f"{data['river']['overall_warning']}"
-    )
+    return 0
 
 
 if __name__ == "__main__":
-    main() 
+    raise SystemExit(main())

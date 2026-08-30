@@ -2,154 +2,124 @@
 """
 Nepal Flood 2026 — verified data updater
 
+Milestone 1.5
+
 Purpose:
-- Pull current rainfall and river observations from the official DHM site.
-- Keep casualty/impact figures only when they already exist as verified data.
-- Never replace a good value with null, zero, or an unverified guess.
-- Write one stable JSON shape that the locked dashboard can read.
-- Use only Python standard-library modules.
+- Fetch current rainfall and river observations from official DHM.
+- Retry temporary DHM/network failures.
+- Never overwrite good data with incomplete data.
+- Preserve verified casualty/impact figures.
+- Keep the existing data.json if DHM is temporarily unavailable.
+- Validate the complete output before replacing data.json.
+- Use Python standard-library modules only.
 """
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import sys
+import time
 from datetime import datetime, timezone, timedelta
-from html import unescape
-from html.parser import HTMLParser
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 
-# ============================================================
-# CONFIGURATION
-# ============================================================
+# =========================================================
+# PATHS
+# =========================================================
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data.json"
 
-DHM_URL = "https://www.dhm.gov.np/?locale=en"
+
+# =========================================================
+# OFFICIAL DHM SOURCES
+# =========================================================
+
+DHM_URLS = [
+    "https://www.dhm.gov.np/?locale=en",
+    "https://www.dhm.gov.np/",
+]
+
 DHM_RIVER_URL = "https://dhm.gov.np/hydrology/river-watch"
 
-TIMEOUT = 30
+
+# =========================================================
+# NETWORK SETTINGS
+# =========================================================
+
+# A GitHub Actions runner may occasionally get a slow response
+# from the DHM website. 25 seconds was too aggressive.
+TIMEOUT = 60
+
+# Number of attempts for each DHM URL.
+MAX_ATTEMPTS = 3
+
+# Seconds between retry attempts.
+RETRY_DELAY = 5
+
+
+# =========================================================
+# TIMEZONE
+# =========================================================
 
 NPT = timezone(timedelta(hours=5, minutes=45))
 
 
-# ============================================================
-# KNOWN DHM RIVER OBSERVATIONS
-# ============================================================
+# =========================================================
+# EXPECTED RIVER OBSERVATIONS
+# =========================================================
 
 RIVER_PATTERNS = [
     (
         "Narayani",
         "Devghat",
-        r"Narayani\s+at\s+Devghat\s+WL:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+        r"Narayani\s+at\s+Devghat\s+WL\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"WR\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"DL\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
     ),
     (
         "Karnali",
         "Chisapani",
-        r"Karnali\s+at\s+Chisapani\s+WL:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+        r"Karnali\s+at\s+Chisapani\s+WL\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"WR\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"DL\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
     ),
     (
         "Kankai",
         "Mainachuli",
-        r"Kankai\s+River\s+at\s+Mainachuli\s+WL:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+        r"Kankai\s+River\s+at\s+Mainachuli\s+WL\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"WR\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"DL\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
     ),
     (
         "Babai",
         "Chepang",
-        r"Babai\s+at\s+Chepang\s+WL:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+        r"Babai\s+at\s+Chepang\s+WL\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"WR\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"DL\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
     ),
     (
         "Mahakali",
         "Parigaon",
-        r"Mahakali\s+at\s+Parigaon\s+WL:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"WR:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s+"
-        r"DL:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
+        r"Mahakali\s+at\s+Parigaon\s+WL\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"WR\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m\s*"
+        r"DL\s*:\s*([0-9]+(?:\.[0-9]+)?)\s*m",
     ),
 ]
 
 
-# ============================================================
-# HTML TEXT EXTRACTION
-# ============================================================
-
-class DHMTextParser(HTMLParser):
-    """
-    Extract visible text from DHM HTML.
-
-    Script/style/noscript content is ignored so JavaScript or CSS
-    cannot interfere with the data parser.
-    """
-
-    def __init__(self):
-        super().__init__()
-        self.parts = []
-        self._ignored_depth = 0
-
-    def handle_starttag(self, tag, attrs):
-        if tag.lower() in {"script", "style", "noscript", "template"}:
-            self._ignored_depth += 1
-
-    def handle_endtag(self, tag):
-        if tag.lower() in {"script", "style", "noscript", "template"}:
-            if self._ignored_depth > 0:
-                self._ignored_depth -= 1
-
-    def handle_data(self, data):
-        if self._ignored_depth == 0:
-            self.parts.append(data)
-
-    def get_text(self) -> str:
-        return " ".join(self.parts)
-
-
-def html_to_text(html: str) -> str:
-    """
-    Convert DHM HTML into normalized readable text.
-    """
-
-    parser = DHMTextParser()
-
-    try:
-        parser.feed(html)
-        parser.close()
-        text = parser.get_text()
-    except Exception as exc:
-        raise RuntimeError(
-            f"Unable to parse DHM HTML: {exc}"
-        ) from exc
-
-    # Decode HTML entities such as &nbsp;
-    text = unescape(text)
-
-    # Normalize non-breaking spaces.
-    text = text.replace("\xa0", " ")
-
-    # Collapse all whitespace into single spaces.
-    text = re.sub(r"\s+", " ", text)
-
-    return text.strip()
-
-
-# ============================================================
+# =========================================================
 # TIME HELPERS
-# ============================================================
+# =========================================================
 
 def now_npt() -> datetime:
     return datetime.now(NPT)
@@ -159,99 +129,19 @@ def iso_now() -> str:
     return now_npt().isoformat(timespec="seconds")
 
 
-# ============================================================
-# NETWORK
-# ============================================================
-
-def fetch_text(url: str) -> str:
-    """
-    Download the official DHM page.
-    """
-
-    request = Request(
-        url,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 "
-                "(compatible; Nepal-Flood-Monitor/1.5; +https://github.com/)"
-            ),
-            "Accept": (
-                "text/html,application/xhtml+xml,"
-                "application/xml;q=0.9,*/*;q=0.8"
-            ),
-            "Accept-Language": "en-US,en;q=0.9",
-            "Cache-Control": "no-cache",
-        },
-    )
-
-    try:
-        with urlopen(request, timeout=TIMEOUT) as response:
-            raw = response.read()
-
-            charset = (
-                response.headers.get_content_charset()
-                or "utf-8"
-            )
-
-            return raw.decode(
-                charset,
-                errors="replace",
-            )
-
-    except Exception as exc:
-        raise RuntimeError(
-            f"Unable to fetch DHM page: {exc}"
-        ) from exc
+def formatted_npt() -> str:
+    return now_npt().strftime("%d %b %Y | %H:%M:%S NPT")
 
 
-# ============================================================
-# EXISTING DATA
-# ============================================================
-
-def read_existing() -> dict:
-    """
-    Read the existing data.json.
-
-    Existing verified impact data is intentionally preserved.
-    """
-
-    if not DATA_FILE.exists():
-        return {}
-
-    try:
-        with DATA_FILE.open(
-            "r",
-            encoding="utf-8",
-        ) as f:
-            value = json.load(f)
-
-        if not isinstance(value, dict):
-            raise RuntimeError(
-                "data.json must contain a JSON object"
-            )
-
-        return value
-
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(
-            f"data.json is invalid JSON: {exc}"
-        ) from exc
-
-    except OSError as exc:
-        raise RuntimeError(
-            f"Unable to read data.json: {exc}"
-        ) from exc
-
-
-# ============================================================
-# NUMBER HELPERS
-# ============================================================
+# =========================================================
+# GENERAL HELPERS
+# =========================================================
 
 def number(value):
     """
-    Convert a value into a non-negative int/float.
+    Convert a value to a non-negative int/float.
 
-    Invalid or negative values become None.
+    Returns None for invalid values.
     """
 
     if value is None:
@@ -272,92 +162,294 @@ def number(value):
         return None
 
 
-# ============================================================
-# DHM RAINFALL PARSER
-# ============================================================
-
-def extract_rainfall(text: str) -> dict:
+def clean_text(text: str) -> str:
     """
-    Extract the current DHM maximum 24-hour rainfall.
-
-    Current DHM format is similar to:
-
-        Max 24hr: 120.4 mm Arughat (rainfall)
-
-    The parser deliberately stops at '(rainfall)' so the station
-    name does not accidentally include the following river data.
+    Convert DHM HTML into a reasonably clean searchable text string.
     """
 
-    pattern = re.compile(
-        r"Max\s+24\s*hr\s*:\s*"
-        r"([0-9]+(?:\.[0-9]+)?)"
-        r"\s*mm\s*"
-        r"(.+?)"
-        r"\s*\(\s*rainfall\s*\)",
+    # Decode HTML entities.
+    text = html.unescape(text)
+
+    # Remove scripts and styles.
+    text = re.sub(
+        r"<script\b[^>]*>.*?</script>",
+        " ",
+        text,
+        flags=re.I | re.S,
+    )
+
+    text = re.sub(
+        r"<style\b[^>]*>.*?</style>",
+        " ",
+        text,
+        flags=re.I | re.S,
+    )
+
+    # Remove remaining HTML tags.
+    text = re.sub(r"<[^>]+>", " ", text)
+
+    # Normalize whitespace.
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
+# =========================================================
+# FILE HANDLING
+# =========================================================
+
+def read_existing() -> dict:
+    """
+    Read the existing data.json.
+
+    An invalid existing file is a hard error because silently
+    replacing or ignoring corrupted data would be unsafe.
+    """
+
+    if not DATA_FILE.exists():
+        return {}
+
+    try:
+        with DATA_FILE.open("r", encoding="utf-8") as file:
+            value = json.load(file)
+
+        if not isinstance(value, dict):
+            raise RuntimeError("data.json root must be an object")
+
+        return value
+
+    except Exception as exc:
+        raise RuntimeError(
+            f"data.json is invalid: {exc}"
+        ) from exc
+
+
+# =========================================================
+# DHM NETWORK FETCH
+# =========================================================
+
+def fetch_text_once(url: str) -> str:
+    """
+    Fetch one DHM page.
+
+    Raises an exception if the request fails.
+    """
+
+    request = Request(
+        url,
+        headers={
+            "User-Agent": (
+                "Mozilla/5.0 "
+                "(compatible; Nepal-Flood-Monitor/1.5; "
+                "+https://github.com/)"
+            ),
+            "Accept": (
+                "text/html,application/xhtml+xml,"
+                "application/xml;q=0.9,*/*;q=0.8"
+            ),
+            "Accept-Language": "en-US,en;q=0.9",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+        },
+    )
+
+    with urlopen(request, timeout=TIMEOUT) as response:
+        raw = response.read()
+
+        charset = (
+            response.headers.get_content_charset()
+            or "utf-8"
+        )
+
+        return raw.decode(charset, errors="replace")
+
+
+def fetch_dhm_page() -> tuple[str, str]:
+    """
+    Try the official DHM URLs several times.
+
+    Returns:
+        (clean_text, successful_url)
+
+    Raises RuntimeError only after every attempt fails.
+    """
+
+    errors = []
+
+    for url in DHM_URLS:
+
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+
+            print(
+                f"Fetching official DHM data "
+                f"(attempt {attempt}/{MAX_ATTEMPTS}): {url}"
+            )
+
+            try:
+                raw = fetch_text_once(url)
+
+                if not raw.strip():
+                    raise RuntimeError(
+                        "DHM returned an empty response"
+                    )
+
+                text = clean_text(raw)
+
+                # Basic sanity check before accepting the page.
+                if "Max 24hr" not in text:
+                    raise RuntimeError(
+                        "DHM page did not contain the expected "
+                        "rainfall section"
+                    )
+
+                if "Karnali at Chisapani" not in text:
+                    raise RuntimeError(
+                        "DHM page did not contain the expected "
+                        "river section"
+                    )
+
+                print(
+                    f"Successfully fetched DHM data from {url}"
+                )
+
+                return text, url
+
+            except HTTPError as exc:
+                message = (
+                    f"HTTP {exc.code} {exc.reason}"
+                )
+
+                errors.append(
+                    f"{url} attempt {attempt}: {message}"
+                )
+
+                print(
+                    f"DHM request failed: {message}",
+                    file=sys.stderr,
+                )
+
+            except URLError as exc:
+                message = str(exc.reason)
+
+                errors.append(
+                    f"{url} attempt {attempt}: {message}"
+                )
+
+                print(
+                    f"DHM network error: {message}",
+                    file=sys.stderr,
+                )
+
+            except TimeoutError as exc:
+                message = str(exc) or "timeout"
+
+                errors.append(
+                    f"{url} attempt {attempt}: {message}"
+                )
+
+                print(
+                    f"DHM timeout: {message}",
+                    file=sys.stderr,
+                )
+
+            except Exception as exc:
+                message = str(exc)
+
+                errors.append(
+                    f"{url} attempt {attempt}: {message}"
+                )
+
+                print(
+                    f"DHM request failed: {message}",
+                    file=sys.stderr,
+                )
+
+            if attempt < MAX_ATTEMPTS:
+                print(
+                    f"Waiting {RETRY_DELAY}s before retry..."
+                )
+                time.sleep(RETRY_DELAY)
+
+    error_text = "\n".join(errors)
+
+    raise RuntimeError(
+        "Unable to fetch official DHM data after all retries.\n"
+        + error_text
+    )
+
+
+# =========================================================
+# DHM DATA EXTRACTION
+# =========================================================
+
+def extract_dhm(text: str, source_url: str) -> dict:
+    """
+    Extract rainfall and river data from the official DHM page.
+    """
+
+    # -----------------------------------------------------
+    # RAINFALL
+    # -----------------------------------------------------
+
+    rainfall_match = re.search(
+        r"Max\s*24hr\s*:\s*"
+        r"([0-9]+(?:\.[0-9]+)?)\s*mm\s+"
+        r"([A-Za-z][A-Za-z0-9 ()_./-]*?)"
+        r"(?=\s+Narayani\s+at|\s+Karnali\s+at|\s*$)",
+        text,
         flags=re.I,
     )
 
-    match = pattern.search(text)
+    if not rainfall_match:
 
-    if not match:
-        raise RuntimeError(
-            "DHM rainfall value was not found. "
-            "Expected a line similar to "
-            "'Max 24hr: 120.4 mm Station (rainfall)'."
+        # Slightly looser fallback for DHM formatting changes.
+        rainfall_match = re.search(
+            r"Max\s*24hr\s*:\s*"
+            r"([0-9]+(?:\.[0-9]+)?)\s*mm\s+"
+            r"([A-Za-z][A-Za-z0-9 ()_./-]*)",
+            text,
+            flags=re.I,
         )
 
-    rainfall_value = number(match.group(1))
-    station = match.group(2).strip()
+    rainfall_value = (
+        number(rainfall_match.group(1))
+        if rainfall_match
+        else None
+    )
+
+    rainfall_station = (
+        rainfall_match.group(2).strip()
+        if rainfall_match
+        else None
+    )
 
     if rainfall_value is None:
         raise RuntimeError(
-            f"Invalid DHM rainfall value: {match.group(1)}"
+            "DHM rainfall value was not found"
         )
 
-    if not station:
+    if not rainfall_station:
         raise RuntimeError(
-            "DHM rainfall station name was empty"
+            "DHM rainfall station was not found"
         )
 
-    return {
+    rainfall = {
         "max_24h_mm": rainfall_value,
-        "station": station,
+        "station": rainfall_station,
         "source": "DHM",
-        "source_url": DHM_URL,
+        "source_url": source_url,
         "as_of": iso_now(),
     }
 
 
-# ============================================================
-# RIVER PARSER
-# ============================================================
-
-def river_status(
-    value: float,
-    warning: float,
-    danger: float,
-) -> str:
-    """
-    Determine river status from DHM thresholds.
-    """
-
-    if value >= danger:
-        return "Above Danger Level"
-
-    if value >= warning:
-        return "Above Warning Level"
-
-    return "Below Warning Level"
-
-
-def extract_rivers(text: str) -> list:
-    """
-    Extract known DHM river observations.
-    """
+    # -----------------------------------------------------
+    # RIVERS
+    # -----------------------------------------------------
 
     rivers = []
 
     for name, station, pattern in RIVER_PATTERNS:
+
         match = re.search(
             pattern,
             text,
@@ -376,26 +468,28 @@ def extract_rivers(text: str) -> list:
             or warning is None
             or danger is None
         ):
-            raise RuntimeError(
-                f"Incomplete DHM river record for {name}"
-            )
+            continue
 
         if warning <= 0:
             raise RuntimeError(
-                f"Invalid warning level for {name}: "
+                f"Invalid warning threshold for {name}: "
                 f"{warning}"
             )
 
         if danger <= warning:
             raise RuntimeError(
-                f"Invalid threshold order for {name}: "
+                f"Invalid danger threshold for {name}: "
                 f"warning={warning}, danger={danger}"
             )
 
-        if value < 0:
-            raise RuntimeError(
-                f"Invalid river value for {name}: {value}"
-            )
+        if value >= danger:
+            status = "Above Danger Level"
+
+        elif value >= warning:
+            status = "Above Warning Level"
+
+        else:
+            status = "Below Warning Level"
 
         rivers.append(
             {
@@ -404,48 +498,17 @@ def extract_rivers(text: str) -> list:
                 "value": value,
                 "warning": warning,
                 "danger": danger,
-                "status": river_status(
-                    value,
-                    warning,
-                    danger,
-                ),
+                "status": status,
                 "source": "DHM",
                 "source_url": DHM_RIVER_URL,
                 "as_of": iso_now(),
             }
         )
 
-    return rivers
-
-
-# ============================================================
-# COMPLETE DHM EXTRACTION
-# ============================================================
-
-def extract_dhm(html: str) -> dict:
-    """
-    Extract rainfall and river data from the official DHM page.
-    """
-
-    if not html or not html.strip():
-        raise RuntimeError(
-            "DHM returned an empty response"
-        )
-
-    text = html_to_text(html)
-
-    if len(text) < 100:
-        raise RuntimeError(
-            "DHM response contained too little readable text"
-        )
-
-    rainfall = extract_rainfall(text)
-    rivers = extract_rivers(text)
-
     if len(rivers) < 3:
         raise RuntimeError(
-            "DHM returned too few river observations: "
-            f"{len(rivers)}. Expected at least 3."
+            "DHM returned too few valid river observations: "
+            f"{len(rivers)}"
         )
 
     return {
@@ -454,16 +517,16 @@ def extract_dhm(html: str) -> dict:
     }
 
 
-# ============================================================
-# VERIFIED IMPACT DATA
-# ============================================================
+# =========================================================
+# PRESERVE VERIFIED IMPACT DATA
+# =========================================================
 
 def preserve_impact(existing: dict) -> dict:
     """
-    Preserve already verified impact figures.
+    Preserve already verified casualty/impact figures.
 
-    This updater does NOT scrape casualties from news sites,
-    social media, Wikipedia, or unofficial sources.
+    This updater does NOT scrape news sites, social media,
+    Wikipedia, or other unofficial sources.
     """
 
     old = existing.get("casualties")
@@ -471,11 +534,11 @@ def preserve_impact(existing: dict) -> dict:
     if not isinstance(old, dict):
         old = {}
 
-    # Support older nested stats format.
-    stats = existing.get("stats")
-
-    if not isinstance(stats, dict):
-        stats = {}
+    stats = (
+        existing.get("stats")
+        if isinstance(existing.get("stats"), dict)
+        else {}
+    )
 
     def keep(key):
         # Preferred current structure.
@@ -484,13 +547,13 @@ def preserve_impact(existing: dict) -> dict:
         if direct is not None:
             return number(direct)
 
-        # Older stats structure.
+        # Older nested structure.
         stat = stats.get(key)
 
         if isinstance(stat, dict):
             return number(stat.get("value"))
 
-        # Older top-level structure.
+        # Older flat structure.
         direct_old = existing.get(key)
 
         return number(direct_old)
@@ -511,23 +574,85 @@ def preserve_impact(existing: dict) -> dict:
     }
 
 
-# ============================================================
+# =========================================================
+# PRESERVE OTHER VERIFIED DATA
+# =========================================================
+
+def preserve_infrastructure(existing: dict) -> dict:
+    infrastructure = existing.get("infrastructure")
+
+    if isinstance(infrastructure, dict):
+        return {
+            "homes": number(infrastructure.get("homes")),
+            "bridges": number(infrastructure.get("bridges")),
+        }
+
+    return {
+        "homes": number(existing.get("homes")),
+        "bridges": number(existing.get("bridges")),
+    }
+
+
+def preserve_operations(
+    existing: dict,
+    casualties: dict,
+) -> dict:
+
+    operations = existing.get("operations")
+
+    if not isinstance(operations, dict):
+        operations = {}
+
+    return {
+        "teams": number(
+            operations.get("teams")
+            if operations.get("teams") is not None
+            else existing.get("teams")
+        ),
+
+        "rescued": casualties.get("rescued"),
+
+        "vehicles": number(
+            operations.get("vehicles")
+            if operations.get("vehicles") is not None
+            else existing.get("vehicles")
+        ),
+
+        "relief": operations.get(
+            "relief",
+            existing.get("relief")
+        ),
+    }
+
+
+# =========================================================
 # OUTPUT VALIDATION
-# ============================================================
+# =========================================================
 
 def validate_output(data: dict):
     """
-    Final safety checks before data.json is replaced.
+    Validate the complete data structure before writing it.
     """
 
     if not isinstance(data, dict):
         raise RuntimeError(
-            "Output must be a JSON object"
+            "Output root must be an object"
         )
 
-    # --------------------------------------------------------
-    # Rainfall
-    # --------------------------------------------------------
+    if data.get("schema_version") != "1.5":
+        raise RuntimeError(
+            "Unexpected schema_version"
+        )
+
+    if data.get("status") != "LIVE":
+        raise RuntimeError(
+            "Output status must be LIVE"
+        )
+
+
+    # -----------------------------------------------------
+    # RAINFALL
+    # -----------------------------------------------------
 
     rainfall = data.get("rainfall")
 
@@ -542,7 +667,7 @@ def validate_output(data: dict):
 
     if rainfall_value is None:
         raise RuntimeError(
-            "rainfall.max_24h_mm is missing or invalid"
+            "rainfall.max_24h_mm is missing"
         )
 
     if not rainfall.get("station"):
@@ -550,15 +675,16 @@ def validate_output(data: dict):
             "rainfall.station is missing"
         )
 
-    # --------------------------------------------------------
-    # Rivers
-    # --------------------------------------------------------
+
+    # -----------------------------------------------------
+    # RIVERS
+    # -----------------------------------------------------
 
     rivers = data.get("rivers")
 
     if not isinstance(rivers, list):
         raise RuntimeError(
-            "rivers must be an array"
+            "rivers must be a list"
         )
 
     if len(rivers) < 3:
@@ -566,11 +692,29 @@ def validate_output(data: dict):
             "At least three river observations are required"
         )
 
+    seen = set()
+
     for river in rivers:
+
         if not isinstance(river, dict):
             raise RuntimeError(
                 f"Invalid river record: {river}"
             )
+
+        name = river.get("name")
+        station = river.get("station")
+
+        if not name or not station:
+            raise RuntimeError(
+                f"River name/station missing: {river}"
+            )
+
+        if name in seen:
+            raise RuntimeError(
+                f"Duplicate river record: {name}"
+            )
+
+        seen.add(name)
 
         value = number(river.get("value"))
         warning = number(river.get("warning"))
@@ -595,9 +739,10 @@ def validate_output(data: dict):
                 f"Invalid danger threshold: {river}"
             )
 
-    # --------------------------------------------------------
-    # Casualties
-    # --------------------------------------------------------
+
+    # -----------------------------------------------------
+    # CASUALTIES
+    # -----------------------------------------------------
 
     casualties = data.get("casualties")
 
@@ -612,83 +757,194 @@ def validate_output(data: dict):
         "injured",
         "rescued",
     ):
+
         value = casualties.get(key)
 
-        if (
-            value is not None
-            and number(value) is None
-        ):
+        if value is not None and number(value) is None:
             raise RuntimeError(
                 f"Invalid casualty value: "
                 f"{key}={value}"
             )
 
-    # --------------------------------------------------------
-    # Required metadata
-    # --------------------------------------------------------
 
-    if data.get("schema_version") != "1.5":
+    # -----------------------------------------------------
+    # SOURCES
+    # -----------------------------------------------------
+
+    sources = data.get("sources")
+
+    if not isinstance(sources, dict):
         raise RuntimeError(
-            "Unexpected schema_version"
+            "sources must be an object"
         )
 
-    if data.get("status") != "LIVE":
+    if not sources.get("rainfall"):
         raise RuntimeError(
-            "Output status must be LIVE"
+            "rainfall source metadata missing"
+        )
+
+    if not sources.get("river"):
+        raise RuntimeError(
+            "river source metadata missing"
         )
 
 
-# ============================================================
-# DATA BUILDING
-# ============================================================
+# =========================================================
+# ATOMIC JSON WRITE
+# =========================================================
 
-def build_output(
-    existing: dict,
-    dhm: dict,
-) -> dict:
+def write_json_atomic(data: dict):
     """
-    Build the stable data.json structure used by the dashboard.
+    Write data.json safely.
+
+    The old data.json remains untouched if writing fails.
     """
+
+    tmp = DATA_FILE.with_suffix(
+        ".json.tmp"
+    )
+
+    try:
+
+        with tmp.open(
+            "w",
+            encoding="utf-8",
+        ) as file:
+
+            json.dump(
+                data,
+                file,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+            file.write("\n")
+
+        tmp.replace(DATA_FILE)
+
+    except Exception:
+
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
+
+        raise
+
+
+# =========================================================
+# MAIN UPDATE
+# =========================================================
+
+def main():
+
+    print(
+        "Starting verified Nepal Flood data update..."
+    )
+
+    existing = read_existing()
+
+
+    # -----------------------------------------------------
+    # FETCH DHM
+    # -----------------------------------------------------
+
+    try:
+
+        dhm_text, dhm_source_url = fetch_dhm_page()
+
+        dhm = extract_dhm(
+            dhm_text,
+            dhm_source_url,
+        )
+
+    except Exception as exc:
+
+        # -------------------------------------------------
+        # IMPORTANT:
+        #
+        # A temporary DHM outage must NOT destroy the last
+        # valid data.json.
+        #
+        # We deliberately leave data.json untouched.
+        # QA will check the existing file.
+        # -------------------------------------------------
+
+        print(
+            "",
+            file=sys.stderr,
+        )
+
+        print(
+            "WARNING: Official DHM data could not be "
+            "refreshed during this run.",
+            file=sys.stderr,
+        )
+
+        print(
+            f"Reason: {exc}",
+            file=sys.stderr,
+        )
+
+        print(
+            "Keeping the existing verified data.json "
+            "unchanged.",
+            file=sys.stderr,
+        )
+
+        print(
+            "The next scheduled run will try again.",
+            file=sys.stderr,
+        )
+
+        # Exit successfully so the QA step can inspect
+        # the last known-good data.json.
+        return 0
+
+
+    # -----------------------------------------------------
+    # PRESERVE VERIFIED DATA
+    # -----------------------------------------------------
 
     casualties = preserve_impact(existing)
 
-    old_infrastructure = existing.get(
-        "infrastructure"
+    infrastructure = preserve_infrastructure(
+        existing
     )
 
-    if not isinstance(old_infrastructure, dict):
-        old_infrastructure = {}
-
-    old_operations = existing.get(
-        "operations"
+    operations = preserve_operations(
+        existing,
+        casualties,
     )
 
-    if not isinstance(old_operations, dict):
-        old_operations = {}
+
+    # -----------------------------------------------------
+    # BUILD OUTPUT
+    # -----------------------------------------------------
+
+    timestamp = iso_now()
 
     output = {
         "schema_version": "1.5",
+
         "status": "LIVE",
 
-        "updated_at": iso_now(),
+        "updated_at": timestamp,
 
-        "updated_at_npt": (
-            now_npt().strftime(
-                "%d %b %Y | %H:%M:%S NPT"
-            )
-        ),
+        "updated_at_npt": formatted_npt(),
 
         "sources": {
             "rainfall": {
                 "name": "DHM",
-                "url": DHM_URL,
+                "url": dhm_source_url,
                 "as_of": dhm["rainfall"]["as_of"],
             },
 
             "river": {
                 "name": "DHM River Watch",
                 "url": DHM_RIVER_URL,
-                "as_of": iso_now(),
+                "as_of": timestamp,
             },
 
             "casualties": {
@@ -706,29 +962,9 @@ def build_output(
 
         "casualties": casualties,
 
-        "infrastructure": {
-            "homes": old_infrastructure.get(
-                "homes"
-            ),
-            "bridges": old_infrastructure.get(
-                "bridges"
-            ),
-        },
+        "infrastructure": infrastructure,
 
-        "operations": {
-            "teams": old_operations.get(
-                "teams"
-            ),
-            "rescued": casualties.get(
-                "rescued"
-            ),
-            "vehicles": old_operations.get(
-                "vehicles"
-            ),
-            "relief": old_operations.get(
-                "relief"
-            ),
-        },
+        "operations": operations,
 
         "weather": (
             existing.get("weather")
@@ -739,167 +975,48 @@ def build_output(
             else []
         ),
 
-        "ticker": existing.get(
-            "ticker"
-        ),
+        "ticker": existing.get("ticker"),
     }
 
-    return output
+
+    # -----------------------------------------------------
+    # FINAL VALIDATION
+    # -----------------------------------------------------
+
+    validate_output(output)
 
 
-# ============================================================
-# SAFE JSON WRITE
-# ============================================================
+    # -----------------------------------------------------
+    # WRITE
+    # -----------------------------------------------------
 
-def write_data(data: dict):
-    """
-    Validate and atomically replace data.json.
-    """
-
-    validate_output(data)
-
-    tmp = DATA_FILE.with_suffix(
-        ".json.tmp"
-    )
-
-    try:
-        with tmp.open(
-            "w",
-            encoding="utf-8",
-        ) as f:
-            json.dump(
-                data,
-                f,
-                ensure_ascii=False,
-                indent=2,
-            )
-            f.write("\n")
-
-        tmp.replace(DATA_FILE)
-
-    except OSError as exc:
-        if tmp.exists():
-            try:
-                tmp.unlink()
-            except OSError:
-                pass
-
-        raise RuntimeError(
-            f"Unable to write data.json: {exc}"
-        ) from exc
+    write_json_atomic(output)
 
 
-# ============================================================
-# MAIN
-# ============================================================
+    # -----------------------------------------------------
+    # LOG RESULTS
+    # -----------------------------------------------------
 
-def main():
+    print("")
     print(
-        "Starting verified Nepal Flood data update..."
+        "SUCCESS: data.json updated successfully."
     )
 
     print(
-        f"DHM source: {DHM_URL}"
-    )
-
-    # --------------------------------------------------------
-    # Read existing data first.
-    # --------------------------------------------------------
-
-    existing = read_existing()
-
-    # --------------------------------------------------------
-    # Fetch official DHM data.
-    # --------------------------------------------------------
-
-    print(
-        "Fetching official DHM data..."
-    )
-
-    try:
-        dhm_html = fetch_text(
-            DHM_URL
-        )
-
-        print(
-            f"Received DHM response: "
-            f"{len(dhm_html):,} bytes"
-        )
-
-        dhm = extract_dhm(
-            dhm_html
-        )
-
-    except Exception as exc:
-        print(
-            f"DHM update failed: {exc}",
-            file=sys.stderr,
-        )
-
-        raise SystemExit(1)
-
-    # --------------------------------------------------------
-    # Build output.
-    # --------------------------------------------------------
-
-    output = build_output(
-        existing,
-        dhm,
-    )
-
-    # --------------------------------------------------------
-    # Validate and write.
-    # --------------------------------------------------------
-
-    try:
-        write_data(output)
-
-    except Exception as exc:
-        print(
-            f"Data validation/write failed: {exc}",
-            file=sys.stderr,
-        )
-
-        raise SystemExit(1)
-
-    # --------------------------------------------------------
-    # Print useful QA information.
-    # --------------------------------------------------------
-
-    print()
-    print(
-        "========================================"
-    )
-    print(
-        " Nepal Flood data update successful"
-    )
-    print(
-        "========================================"
+        f"Updated at: {output['updated_at_npt']}"
     )
 
     print(
-        f"Updated: "
-        f"{output['updated_at_npt']}"
+        "DHM rainfall: "
+        f"{output['rainfall']['max_24h_mm']} mm "
+        f"at {output['rainfall']['station']}"
     )
 
-    print(
-        f"Rainfall: "
-        f"{output['rainfall']['max_24h_mm']} mm"
-    )
-
-    print(
-        f"Station: "
-        f"{output['rainfall']['station']}"
-    )
-
-    print()
-
-    print(
-        f"River observations: "
-        f"{len(output['rivers'])}"
-    )
+    print("")
+    print("River observations:")
 
     for river in output["rivers"]:
+
         print(
             f"- {river['name']} "
             f"({river['station']}): "
@@ -909,44 +1026,52 @@ def main():
             f"{river['status']}"
         )
 
-    print()
 
-    casualties = output["casualties"]
+    # -----------------------------------------------------
+    # IMPACT DATA
+    # -----------------------------------------------------
 
-    print(
-        "Preserved verified impact data:"
-    )
+    print("")
+    print("Preserved verified impact data:")
 
-    print(
-        f"- Deaths: "
-        f"{casualties['deaths']}"
-    )
+    if casualties["deaths"] is not None:
+        print(
+            f"- Deaths: {casualties['deaths']}"
+        )
+    else:
+        print("- Deaths: not available")
 
-    print(
-        f"- Missing: "
-        f"{casualties['missing']}"
-    )
+    if casualties["missing"] is not None:
+        print(
+            f"- Missing: {casualties['missing']}"
+        )
+    else:
+        print("- Missing: not available")
 
-    print(
-        f"- Injured: "
-        f"{casualties['injured']}"
-    )
+    if casualties["injured"] is not None:
+        print(
+            f"- Injured: {casualties['injured']}"
+        )
+    else:
+        print("- Injured: not available")
 
-    print(
-        f"- Rescued: "
-        f"{casualties['rescued']}"
-    )
+    if casualties["rescued"] is not None:
+        print(
+            f"- Rescued: {casualties['rescued']}"
+        )
+    else:
+        print("- Rescued: not available")
 
-    print()
 
-    print(
-        "data.json validation: PASSED"
-    )
+    print("")
+    print("Milestone 1.5 data update completed.")
 
-    print(
-        "Update complete."
-    )
+    return 0
 
+
+# =========================================================
+# ENTRY POINT
+# =========================================================
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

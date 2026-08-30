@@ -1,80 +1,101 @@
 {
-  "updated_at": "2026-08-30T05:34:19.402612+00:00",
-  "updated_at_npt": "2026-08-30T05:34:19.402612+00:00",
+  "schema_version": "1.5",
   "status": "LIVE",
+  "updated_at": "2026-08-30T00:00:00+05:45",
+  "updated_at_npt": "30 Aug 2026 | 00:00:00 NPT",
   "sources": {
-    "rainfall": "DHM",
-    "river": "DHM",
-    "casualties": "NDRRMA / Nepal Police",
-    "damage": "NDRRMA / Nepal Police"
-  },
-  "rainfall": {
-    "max_24h_mm": 151,
-    "station": "Hanman Nagar",
-    "source": "DHM rainfall monitoring"
-  },
-  "river": {
-    "max_level_m": 7.2,
-    "basin": "Karnali",
-    "station": "Chisapani",
-    "overall_warning": "NORMAL"
-  },
-  "rivers": {
-    "Karnali": {
-      "basin": "Karnali",
-      "station": "Chisapani",
-      "water_level_m": 7.2,
-      "warning_level_m": 10,
-      "danger_level_m": 10.8,
-      "status": "NORMAL",
-      "source": "DHM River Watch"
+    "rainfall": {
+      "name": "DHM",
+      "url": "https://www.dhm.gov.np/?locale=en",
+      "as_of": "2026-08-30"
     },
-    "Narayani": {
-      "basin": "Narayani",
-      "station": "Devghat",
-      "water_level_m": 6,
-      "warning_level_m": 7.3,
-      "danger_level_m": 9,
-      "status": "NORMAL",
-      "source": "DHM River Watch"
+    "river": {
+      "name": "DHM River Watch",
+      "url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30"
     },
-    "Kankai": {
-      "basin": "Kankai",
-      "station": "Mainachuli",
-      "water_level_m": 2.7,
-      "warning_level_m": 3.8,
-      "danger_level_m": 4.3,
-      "status": "NORMAL",
-      "source": "DHM River Watch"
-    },
-    "Babai": {
-      "basin": "Babai",
-      "station": "Chepang",
-      "water_level_m": 3,
-      "warning_level_m": 5.5,
-      "danger_level_m": 6.8,
-      "status": "NORMAL",
-      "source": "DHM River Watch"
-    },
-    "Mahakali": {
-      "basin": "Mahakali",
-      "station": "Parigaon",
-      "water_level_m": 5.4,
-      "warning_level_m": 6.8,
-      "danger_level_m": 8,
-      "status": "NORMAL",
-      "source": "DHM River Watch"
+    "casualties": {
+      "name": "NDRRMA",
+      "as_of": "2026-08-28 15:00 NPT"
     }
   },
-  "impact": {
-    "confirmed_deaths": null,
-    "missing_persons": null,
-    "injured_persons": null,
-    "source": "NDRRMA / Nepal Police"
+  "rainfall": {
+    "max_24h_mm": 121,
+    "station": "Gobre",
+    "source": "DHM",
+    "source_url": "https://www.dhm.gov.np/?locale=en",
+    "as_of": "2026-08-30"
   },
-  "damage": {
-    "homes_damaged": null,
-    "bridges_damaged": null,
-    "source": "NDRRMA / Nepal Police"
-  }
+  "rivers": [
+    {
+      "name": "Karnali",
+      "station": "Chisapani",
+      "value": 7.2,
+      "warning": 10.0,
+      "danger": 10.8,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "as_of": "2026-08-30"
+    },
+    {
+      "name": "Narayani",
+      "station": "Devghat",
+      "value": 5.3,
+      "warning": 7.3,
+      "danger": 9.0,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "as_of": "2026-08-30"
+    },
+    {
+      "name": "Kankai",
+      "station": "Mainachuli",
+      "value": 2.7,
+      "warning": 3.8,
+      "danger": 4.3,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "as_of": "2026-08-30"
+    },
+    {
+      "name": "Babai",
+      "station": "Chepang",
+      "value": 2.9,
+      "warning": 5.5,
+      "danger": 6.8,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "as_of": "2026-08-30"
+    },
+    {
+      "name": "Mahakali",
+      "station": "Parigaon",
+      "value": 5.4,
+      "warning": 6.8,
+      "danger": 8.0,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "as_of": "2026-08-30"
+    }
+  ],
+  "casualties": {
+    "deaths": 538,
+    "missing": 977,
+    "injured": 73,
+    "rescued": 3742,
+    "source": "NDRRMA",
+    "as_of": "2026-08-28 15:00 NPT"
+  },
+  "infrastructure": {
+    "homes": null,
+    "bridges": null
+  },
+  "operations": {
+    "teams": null,
+    "rescued": 3742,
+    "vehicles": null,
+    "relief": null
+  },
+  "weather": [],
+  "ticker": null
 }

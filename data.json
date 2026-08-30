@@ -1,34 +1,80 @@
 {
-  "updated": null,
-  "rain": {
-    "value": null,
-    "station": null
-  },
-  "rivers": [],
-  "deaths": null,
-  "missing": null,
-  "injured": null,
-  "homes": null,
-  "bridges": null,
-  "teams": null,
-  "rescued": null,
-  "vehicles": null,
-  "relief": null,
-  "affectedDistricts": null,
-  "weather": [],
-  "ticker": "Waiting for verified government data.",
+  "updated_at": "2026-08-30T05:34:19.402612+00:00",
+  "updated_at_npt": "2026-08-30T05:34:19.402612+00:00",
+  "status": "LIVE",
   "sources": {
-    "dhm": {
-      "status": "waiting",
-      "updated": null
+    "rainfall": "DHM",
+    "river": "DHM",
+    "casualties": "NDRRMA / Nepal Police",
+    "damage": "NDRRMA / Nepal Police"
+  },
+  "rainfall": {
+    "max_24h_mm": 151,
+    "station": "Hanman Nagar",
+    "source": "DHM rainfall monitoring"
+  },
+  "river": {
+    "max_level_m": 7.2,
+    "basin": "Karnali",
+    "station": "Chisapani",
+    "overall_warning": "NORMAL"
+  },
+  "rivers": {
+    "Karnali": {
+      "basin": "Karnali",
+      "station": "Chisapani",
+      "water_level_m": 7.2,
+      "warning_level_m": 10,
+      "danger_level_m": 10.8,
+      "status": "NORMAL",
+      "source": "DHM River Watch"
     },
-    "ndrrma": {
-      "status": "waiting",
-      "updated": null
+    "Narayani": {
+      "basin": "Narayani",
+      "station": "Devghat",
+      "water_level_m": 6,
+      "warning_level_m": 7.3,
+      "danger_level_m": 9,
+      "status": "NORMAL",
+      "source": "DHM River Watch"
     },
-    "nepalPolice": {
-      "status": "waiting",
-      "updated": null
+    "Kankai": {
+      "basin": "Kankai",
+      "station": "Mainachuli",
+      "water_level_m": 2.7,
+      "warning_level_m": 3.8,
+      "danger_level_m": 4.3,
+      "status": "NORMAL",
+      "source": "DHM River Watch"
+    },
+    "Babai": {
+      "basin": "Babai",
+      "station": "Chepang",
+      "water_level_m": 3,
+      "warning_level_m": 5.5,
+      "danger_level_m": 6.8,
+      "status": "NORMAL",
+      "source": "DHM River Watch"
+    },
+    "Mahakali": {
+      "basin": "Mahakali",
+      "station": "Parigaon",
+      "water_level_m": 5.4,
+      "warning_level_m": 6.8,
+      "danger_level_m": 8,
+      "status": "NORMAL",
+      "source": "DHM River Watch"
     }
+  },
+  "impact": {
+    "confirmed_deaths": null,
+    "missing_persons": null,
+    "injured_persons": null,
+    "source": "NDRRMA / Nepal Police"
+  },
+  "damage": {
+    "homes_damaged": null,
+    "bridges_damaged": null,
+    "source": "NDRRMA / Nepal Police"
   }
 }

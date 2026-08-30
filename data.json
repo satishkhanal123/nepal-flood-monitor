@@ -1,18 +1,18 @@
 {
   "schema_version": "1.5",
   "status": "LIVE",
-  "updated_at": "2026-08-30T00:00:00+05:45",
-  "updated_at_npt": "30 Aug 2026 | 00:00:00 NPT",
+  "updated_at": "2026-08-30T17:28:36+05:45",
+  "updated_at_npt": "30 Aug 2026 | 17:28:36 NPT",
   "sources": {
     "rainfall": {
       "name": "DHM",
       "url": "https://www.dhm.gov.np/?locale=en",
-      "as_of": "2026-08-30"
+      "as_of": "2026-08-30T17:28:36+05:45"
     },
     "river": {
       "name": "DHM River Watch",
       "url": "https://dhm.gov.np/hydrology/river-watch",
-      "as_of": "2026-08-30"
+      "as_of": "2026-08-30T17:28:36+05:45"
     },
     "casualties": {
       "name": "NDRRMA",
@@ -20,32 +20,34 @@
     }
   },
   "rainfall": {
-    "max_24h_mm": 121,
-    "station": "Gobre",
+    "max_24h_mm": 120.4,
+    "station": "Arughat (rainfall)",
     "source": "DHM",
     "source_url": "https://www.dhm.gov.np/?locale=en",
-    "as_of": "2026-08-30"
+    "as_of": "2026-08-30T17:28:36+05:45"
   },
   "rivers": [
+    {
+      "name": "Narayani",
+      "station": "Devghat",
+      "value": 5.1,
+      "warning": 7.3,
+      "danger": 9,
+      "status": "Below Warning Level",
+      "source": "DHM",
+      "source_url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30T17:28:36+05:45"
+    },
     {
       "name": "Karnali",
       "station": "Chisapani",
       "value": 7.2,
-      "warning": 10.0,
+      "warning": 10,
       "danger": 10.8,
       "status": "Below Warning Level",
       "source": "DHM",
-      "as_of": "2026-08-30"
-    },
-    {
-      "name": "Narayani",
-      "station": "Devghat",
-      "value": 5.3,
-      "warning": 7.3,
-      "danger": 9.0,
-      "status": "Below Warning Level",
-      "source": "DHM",
-      "as_of": "2026-08-30"
+      "source_url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30T17:28:36+05:45"
     },
     {
       "name": "Kankai",
@@ -55,7 +57,8 @@
       "danger": 4.3,
       "status": "Below Warning Level",
       "source": "DHM",
-      "as_of": "2026-08-30"
+      "source_url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30T17:28:36+05:45"
     },
     {
       "name": "Babai",
@@ -65,17 +68,19 @@
       "danger": 6.8,
       "status": "Below Warning Level",
       "source": "DHM",
-      "as_of": "2026-08-30"
+      "source_url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30T17:28:36+05:45"
     },
     {
       "name": "Mahakali",
       "station": "Parigaon",
-      "value": 5.4,
+      "value": 5.3,
       "warning": 6.8,
-      "danger": 8.0,
+      "danger": 8,
       "status": "Below Warning Level",
       "source": "DHM",
-      "as_of": "2026-08-30"
+      "source_url": "https://dhm.gov.np/hydrology/river-watch",
+      "as_of": "2026-08-30T17:28:36+05:45"
     }
   ],
   "casualties": {

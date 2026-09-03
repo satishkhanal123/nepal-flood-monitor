@@ -1,0 +1,104 @@
+name: Update and Deploy Trishuli Pulse
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "trishuli-pulse-pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------
+      # 1. Get the repository
+      # ------------------------------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------
+      # 2. Install Python
+      # ------------------------------------------------------------
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # ------------------------------------------------------------
+      # 3. Update Kathmandu Post news
+      # ------------------------------------------------------------
+
+      - name: Update Kathmandu Post news
+        run: |
+          python scripts/update_news.py
+
+      # ------------------------------------------------------------
+      # 4. Save updated news.json to the repository
+      # ------------------------------------------------------------
+
+      - name: Commit updated news data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/news.json
+
+          if git diff --cached --quiet; then
+            echo "No news data changes to commit."
+          else
+            git commit -m "Update Kathmandu Post news"
+            git push
+          fi
+
+      # ------------------------------------------------------------
+      # 5. Configure GitHub Pages
+      # ------------------------------------------------------------
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # ------------------------------------------------------------
+      # 6. Prepare the static website
+      # ------------------------------------------------------------
+
+      - name: Prepare Pages site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          cp index.html _site/
+          cp -r data _site/
+
+          touch _site/.nojekyll
+
+      # ------------------------------------------------------------
+      # 7. Create GitHub Pages artifact
+      # ------------------------------------------------------------
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+      # ------------------------------------------------------------
+      # 8. Deploy to GitHub Pages
+      # ------------------------------------------------------------
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

@@ -1,1 +1,84 @@
-
+{
+  "source": "The Kathmandu Post",
+  "source_url": "https://kathmandupost.com/rss",
+  "updated_at": "2026-09-03T13:03:00+05:45",
+  "items": [
+    {
+      "tag": "sitrep",
+      "date": "3 Sep 2026",
+      "title": "Nepal flood toll rises to 1,252 as at least 4,216 remain unaccounted for",
+      "blurb": "NDRRMA noon figures. Nearly 900 hydropower workers still missing. 11,913 rescued.",
+      "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
+    },
+    {
+      "tag": "access",
+      "date": "3 Sep 2026",
+      "title": "Bhotekoshi floods expose gaps in Nepal’s emergency communications",
+      "blurb": "Most towers are back, but fibre is gone in places and calls still drop. The post-2015 disaster communications plan was never fully enacted.",
+      "url": "https://kathmandupost.com/national/2026/09/03/bhotekoshi-floods-expose-gaps-in-nepal-s-emergency-communications"
+    },
+    {
+      "tag": "access",
+      "date": "2 Sep 2026",
+      "title": "Oft-battered Langtang Valley cut off after Rasuwa floods",
+      "blurb": "No road from Syabrubesi to Dhunche. Tourists and supplies depend on helicopters.",
+      "url": "https://kathmandupost.com/national/2026/09/02/oft-battered-langtang-valley-cut-off-after-rasuwa-floods"
+    },
+    {
+      "tag": "warning",
+      "date": "2 Sep 2026",
+      "title": "Nepal sent its disaster alert 38 minutes after the glacier collapse",
+      "blurb": "The warning came after the collapse, raising questions about high-mountain monitoring and early warning.",
+      "url": "https://kathmandupost.com/national/2026/09/02/nepal-sent-its-disaster-alert-38-minutes-after-the-glacier-collapse-it-wasn-t-enough"
+    },
+    {
+      "tag": "people",
+      "date": "1 Sep 2026",
+      "title": "Fourteen minutes before the flood hit, a warning sent 900 students running",
+      "blurb": "A warning helped clear Tribhuvan Trishuli Secondary School in Bidur before the flood reached the area.",
+      "url": "https://kathmandupost.com/national/2026/09/01/fourteen-minutes-before-the-flood-hit-a-warning-sent-900-students-running-for-safety"
+    },
+    {
+      "tag": "people",
+      "date": "1 Sep 2026",
+      "title": "UN Women estimates 43,000 women and girls need urgent assistance",
+      "blurb": "Women and girls in Rasuwa and Nuwakot face urgent needs including food, water and protection.",
+      "url": "https://kathmandupost.com/national/2026/09/01/un-women-estimates-43-000-women-and-girls-in-nepal-need-urgent-flood-assistance"
+    },
+    {
+      "tag": "ops",
+      "date": "1 Sep 2026",
+      "title": "Local governments take charge of flood relief",
+      "blurb": "Local committees in Rasuwa and Nuwakot are taking a larger role in relief operations.",
+      "url": "https://kathmandupost.com/national/2026/09/01/local-governments-take-charge-of-flood-relief-after-criticism-of-centralised-response"
+    },
+    {
+      "tag": "ops",
+      "date": "1 Sep 2026",
+      "title": "Nepal seeks urgent climate finance after Bhotekoshi flood",
+      "blurb": "The government is seeking immediate support through international loss-and-damage financing.",
+      "url": "https://kathmandupost.com/national/2026/09/01/nepal-seeks-urgent-climate-finance-after-bhotekoshi-flood"
+    },
+    {
+      "tag": "people",
+      "date": "1 Sep 2026",
+      "title": "In Nepal’s flood zone, the second disaster is psychological",
+      "blurb": "Mental-health teams are beginning to reach survivors as recovery continues.",
+      "url": "https://kathmandupost.com/national/2026/09/01/in-nepal-s-flood-zone-the-second-disaster-is-psychological"
+    },
+    {
+      "tag": "ops",
+      "date": "31 Aug 2026",
+      "title": "The floods keep coming. Nepal keeps starting over",
+      "blurb": "The latest disaster has renewed questions about preparedness, response and long-term resilience.",
+      "url": "https://kathmandupost.com/national/2026/08/31/the-floods-keep-coming-nepal-keeps-starting-over"
+    },
+    {
+      "tag": "sitrep",
+      "date": "30 Aug 2026",
+      "title": "Reconstruction could cost up to $5 billion",
+      "blurb": "The government is assessing the damage while relief remains the immediate priority.",
+      "url": "https://kathmandupost.com/national/2026/08/30/relief-priority-but-government-assessing-damage-inflicted-by-bhotekoshi-floods"
+    }
+  ]
+}

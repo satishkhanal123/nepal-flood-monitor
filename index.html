@@ -1,2110 +1,2315 @@
-```react
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import {
-  Bell,
-  Menu,
-  Calendar,
-  BarChart2,
-  AlertTriangle,
-  Users,
-  UserPlus,
-  HelpCircle,
-  CheckCircle2,
-  MapPin,
-  ChevronRight,
-  Plane,
-  Shield,
-  Globe,
-  Home,
-  LifeBuoy,
-  Map as MapIcon,
-  Clock,
-  FileText,
-  MoreHorizontal,
-  X,
-  Search,
-  Download,
-  PhoneCall,
-  RefreshCw,
-  Info,
-  Check,
-  Radio
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B1220" />
+  <meta
+    name="description"
+    content="Mobile-first situation dashboard for the August 2026 floods. Figures compiled from The Kathmandu Post."
+  />
+  <title>Trishuli Pulse · Nepal Floods 2026</title>
 
-// ============================================================================
-// PART 14 & 26: NORMALIZED DATA ARCHITECTURE & SERVICE ABSTRACTION LAYER
-// ============================================================================
-// Clean data source registry ready for live ingestion (e.g., The Kathmandu Post & NDRRMA)
-export const DATA_SOURCES = {
-  kathmanduPost: {
-    id: "kathmandu-post",
-    name: "The Kathmandu Post",
-    type: "news_feed",
-    status: "connected",
-    reliability: "Reported Media"
-  },
-  ndrrma: {
-    id: "ndrrma",
-    name: "National Disaster Risk Reduction & Management Authority (NDRRMA)",
-    type: "official_agency",
-    status: "connected",
-    reliability: "Official Government"
-  },
-  dhm: {
-    id: "dhm",
-    name: "Department of Hydrology and Meteorology (DHM)",
-    type: "sensor_telemetry",
-    status: "connected",
-    reliability: "Telemetry Data"
-  }
-};
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-// Fallback initial dataset with strict data verification status
-const INITIAL_DASHBOARD_DATA = {
-  lastUpdated: "Sept 1, 2026 • 3:30 PM NPT",
-  headline: "Bhote Koshi – Trishuli Flood Disaster",
-  dataStatus: "CONNECTED",
-  keyMetrics: {
-    deaths: {
-      value: "987",
-      unit: "people",
-      note: "Latest available figure",
-      source: "The Kathmandu Post / Ministry of Home Affairs",
-      status: "REPORTED",
-      verified: true
-    },
-    missing: {
-      value: "3,916",
-      unit: "people",
-      note: "Latest available figure",
-      source: "Rasuwa District Police / Local Administration",
-      status: "REPORTED",
-      verified: false
-    },
-    rescued: {
-      value: "11,884",
-      unit: "people",
-      note: "Latest available figure",
-      source: "Nepal Army Disaster Response Joint Command",
-      status: "OFFICIAL",
-      verified: true
-    },
-    peopleAffected: {
-      value: "130,000+",
-      unit: "people",
-      note: "Latest available figure",
-      source: "Nepal Red Cross Society Initial Assessment",
-      status: "ESTIMATED",
-      verified: false
-    },
-    districtsAffected: {
-      value: "17",
-      unit: "districts",
-      note: "Latest available figure",
-      source: "NDRRMA Crisis Situation Bulletin",
-      status: "OFFICIAL",
-      verified: true
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-2: #0d1524;
+      --card: rgba(16, 26, 44, 0.86);
+      --card-solid: #101a2c;
+      --line: rgba(232, 224, 205, 0.1);
+      --text: #f4f1ea;
+      --muted: #9aa6b8;
+      --teal: #2ec4b6;
+      --teal-dim: rgba(46, 196, 182, 0.16);
+      --amber: #e8a838;
+      --crimson: #e05a4f;
+      --blue: #6ea8fe;
+      --ok: #7dce82;
+      --radius: 18px;
+      --safe-b: env(safe-area-inset-bottom, 0px);
+      --header-h: 58px;
+      --dock-h: calc(68px + var(--safe-b));
     }
-  },
-  quickOverview: [
-    {
-      id: "flood-damage",
-      title: "Flood Damage",
-      highlight: "Hundreds",
-      desc: "of houses destroyed",
-      type: "flood",
-      status: "REPORTED",
-      source: "The Kathmandu Post field reporting & local municipality",
-      details: {
-        "Damage Summary": "Widespread flash flooding triggered by upstream catchment breaches along Bhote Koshi.",
-        "Housing Impact": "Hundreds of residential structures swept away or structurally damaged across river terraces.",
-        "Primary Settlements": "Syabrubesi, Timure, Betrawati lowlands, and downstream riverbanks.",
-        "Evacuation Centers": "Emergency temporary shelters established at elevated school grounds."
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+      line-height: 1.45;
+      min-height: 100dvh;
+      padding-bottom: calc(var(--dock-h) + 16px);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.ne {
+      font-family: "Noto Sans Devanagari", "IBM Plex Sans", system-ui, sans-serif;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .sky {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(
+          1200px 500px at 80% -10%,
+          rgba(46, 196, 182, 0.12),
+          transparent 55%
+        ),
+        radial-gradient(
+          800px 400px at -10% 20%,
+          rgba(224, 90, 79, 0.08),
+          transparent 50%
+        ),
+        linear-gradient(
+          180deg,
+          #0a1220 0%,
+          #070b14 40%,
+          #070b14 100%
+        );
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: var(--header-h);
+      padding: 0 14px;
+      background: rgba(7, 11, 20, 0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .brand b {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #ffd0cc;
+      background: rgba(224, 90, 79, 0.18);
+      border: 1px solid rgba(224, 90, 79, 0.35);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .live i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--crimson);
+      box-shadow: 0 0 0 0 rgba(224, 90, 79, 0.7);
+      animation: pulse 1.6s infinite;
+    }
+
+    .live.snapshot {
+      color: #ffe0a5;
+      background: rgba(232, 168, 56, 0.14);
+      border-color: rgba(232, 168, 56, 0.35);
+    }
+
+    .live.snapshot i {
+      background: var(--amber);
+      animation: none;
+      box-shadow: none;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(224, 90, 79, 0.55);
       }
-    },
-    {
-      id: "hydro-damage",
-      title: "Hydropower Damage",
-      highlight: "11+",
-      desc: "projects affected",
-      type: "hydro",
-      status: "REPORTED",
-      source: "Nepal Electricity Authority (NEA) & Project Developers",
-      details: {
-        "Projects Affected": "11+ cascade and run-of-river plants damaged along Trishuli and Bhote Koshi basin.",
-        "Grid Impact": "Major generation capacity temporarily severed; transmission lines tripped by falling debris.",
-        "Tunnel Status": "Severe siltation and floodwater ingress in headworks and surge shafts.",
-        "Emergency Action": "Technical teams deployed with high-capacity dewatering pumps where accessible."
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(224, 90, 79, 0);
       }
-    },
-    {
-      id: "roads-damage",
-      title: "Roads Damage",
-      highlight: "40+ km",
-      desc: "roads destroyed or blocked",
-      type: "road",
-      status: "REPORTED",
-      source: "Department of Roads & Nepal Army Engineering Division",
-      details: {
-        "Highway Section": "Pasang Lhamu Highway severed by over a dozen massive landslides and river erosion.",
-        "Access Status": "Alternative single-lane emergency track opened for 4WD rescue convoys near Betrawati.",
-        "Clearance Ops": "Heavy excavators clearing mud and boulders under active rockfall risk.",
-        "Travel Advisory": "General civilian movement strictly prohibited along Trishuli corridor."
-      }
-    },
-    {
-      id: "bridges-damage",
-      title: "Bridges Damage",
-      highlight: "35",
-      desc: "bridges damaged across the region",
-      type: "bridge",
-      status: "REPORTED",
-      source: "District Emergency Operations Center (DEOC)",
-      details: {
-        "Infrastructure Loss": "35 suspension footbridges and vehicular crossings damaged or swept away.",
-        "Border Connection": "Miteri Bridge at Rasuwagadhi border point collapsed into surge waters.",
-        "Temporary Relief": "Nepal Army engineering units staging Bailey bridge components at staging grounds.",
-        "River Crossings": "Temporary aerial ropeways (tuin/zip lines) rigged for emergency medical cargo."
-      }
-    },
-    {
-      id: "border-damage",
-      title: "Rasuwagadhi Border",
-      highlight: "Border Point",
-      desc: "Rasuwagadhi point and Miteri Bridge destroyed",
-      type: "border",
-      status: "REPORTED",
-      source: "The Kathmandu Post / Customs Department",
-      details: {
-        "Customs Yard": "Dry port customs yard and inspection sheds inundated with heavy debris.",
-        "Trade Corridor": "Key overland northern transit route with China fully halted.",
-        "Border Coordination": "Liaison officers in active coordination with neighboring trans-Himalayan authorities."
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(224, 90, 79, 0);
       }
     }
-  ],
-  rescueOperations: {
-    helicopterFlights: "592",
-    nepalisRescuedByAir: "359",
-    foreignNationalsRescuedByAir: "273",
-    securityPersonnel: "21,000+",
-    totalRescued: "11,884",
-    statusNote: "Rescue operations are ongoing in affected areas. Numbers will change as updates arrive.",
-    source: "Nepal Army & APF Joint Rescue Center"
-  },
-  districtDeaths: [
-    { district: "Rasuwa", count: 819, max: 819, status: "Critical Impact" },
-    { district: "Nuwakot", count: 67, max: 819, status: "High Impact" },
-    { district: "Dhading", count: 39, max: 819, status: "Moderate Impact" },
-    { district: "Sindhupalchok", count: 32, max: 819, status: "Moderate Impact" },
-    { district: "Kathmandu", count: 15, max: 819, status: "Lowland Inundation" },
-    { district: "Others", count: 15, max: 819, status: "Scattered Flooding" }
-  ],
-  rasuwaHotspots: [
-    { location: "Syabrubesi", status: "Severe damage", severity: "high" },
-    { location: "Timure", status: "Severe damage", severity: "high" },
-    { location: "Betrawati", status: "Severe damage", severity: "high" },
-    { location: "Rasuwagadhi", status: "Infrastructure destroyed", severity: "critical" },
-    { location: "Gatlang", status: "Many houses swept away", severity: "critical" }
-  ],
-  latestUpdates: [
-    {
-      id: 1,
-      title: "Alternative road to Rasuwa has been reconnected for small vehicles.",
-      time: "1h ago",
-      timestamp: "Sept 1, 2:30 PM",
-      category: "ROAD ACCESS",
-      source: "The Kathmandu Post",
-      status: "REPORTED",
-      content: "Nepal Army engineers and the Department of Roads have managed to cut through debris near Betrawati, establishing a single-lane bypass suitable only for light emergency vehicles and ambulances. Heavy freight movement remains restricted."
-    },
-    {
-      id: 2,
-      title: "Search teams continue operation in hydropower tunnels.",
-      time: "2h ago",
-      timestamp: "Sept 1, 1:30 PM",
-      category: "RESCUE",
-      source: "Armed Police Force (APF) Media Wing",
-      status: "OFFICIAL",
-      content: "Specialized swift-water divers and tunnel rescue teams are operating pumps to clear flood silt from headrace tunnels along affected hydropower stations. Search operations continue around the clock."
-    },
-    {
-      id: 3,
-      title: "Government preparing for national mourning for flood victims.",
-      time: "3h ago",
-      timestamp: "Sept 1, 12:30 PM",
-      category: "GOVERNMENT",
-      source: "The Kathmandu Post / Cabinet Secretariat",
-      status: "REPORTED",
-      content: "The Ministry of Home Affairs indicated that an official resolution regarding state assistance packages and a day of national mourning will be presented following the emergency disaster council briefing."
-    },
-    {
-      id: 4,
-      title: "Foreign teams and equipment arriving to support rescue operations.",
-      time: "4h ago",
-      timestamp: "Sept 1, 11:30 AM",
-      category: "INTERNATIONAL AID",
-      source: "Ministry of Foreign Affairs",
-      status: "OFFICIAL",
-      content: "Specialized search-and-rescue units equipped with acoustic listening devices, satellite communication packages, and water filtration units have arrived to assist local emergency forces."
-    },
-    {
-      id: 5,
-      title: "DHM reports river water levels beginning slow stabilization.",
-      time: "6h ago",
-      timestamp: "Sept 1, 9:30 AM",
-      category: "HYDROLOGY",
-      source: "Department of Hydrology and Meteorology",
-      status: "OFFICIAL",
-      content: "Hydro-telemetry stations along Trishuli River report flow levels have dipped slightly below highest flood peak thresholds, though saturated catchment slopes retain heightened landslide probability."
+
+    .lang {
+      display: flex;
+      background: #121c2e;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px;
     }
-  ],
-  notifications: [
-    {
-      id: "notif-1",
-      severity: "CRITICAL",
-      title: "FLASH FLOOD EVACUATION ALERT",
-      body: "High sediment surge detected 8km upstream of Timure. Evacuate riverbank lowlands immediately.",
-      time: "15m ago"
-    },
-    {
-      id: "notif-2",
-      severity: "WARNING",
-      title: "Landslide Risk on Betrawati Bypass",
-      body: "Secondary rockfall reported at Km 42. Only emergency convoys with spotters permitted.",
-      time: "1h ago"
-    },
-    {
-      id: "notif-3",
-      severity: "INFO",
-      title: "Relief Food Airdrop Complete",
-      body: "Nepal Army helicopters dropped dry rations and water purification tablets at Gatlang camp.",
-      time: "2h ago"
+
+    .lang button {
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
     }
-  ],
-  mapData: {
-    districts: [
-      { id: "nuwakot", name: "Nuwakot", path: "M 35 180 L 115 170 L 155 140 L 135 100 L 65 120 Z", color: "#713f12", stroke: "#a16207", labelX: 90, labelY: 140, casualties: 67, status: "Moderate Flood Inundation" },
-      { id: "dhading", name: "Dhading", path: "M 115 170 L 205 190 L 225 160 L 155 140 Z", color: "#854d0e", stroke: "#ca8a04", labelX: 145, labelY: 175, casualties: 39, status: "Landslide & River Encroachment" },
-      { id: "muwakot", name: "Muwakot", path: "M 205 190 L 285 195 L 295 160 L 225 160 Z", color: "#b45309", stroke: "#f59e0b", labelX: 235, labelY: 185, casualties: 18, status: "Moderate River Surge" },
-      { id: "rasuwa", name: "Rasuwa", path: "M 135 100 L 225 70 L 265 95 L 285 140 L 225 160 L 155 140 Z", color: "#dc2626", stroke: "#ef4444", labelX: 200, labelY: 115, casualties: 819, status: "Severely Affected Epicenter" },
-      { id: "rasuwagadhi-zone", name: "Rasuwagadhi Upper", path: "M 225 70 L 275 60 L 315 85 L 265 95 Z", color: "#991b1b", stroke: "#f87171", labelX: 270, labelY: 75, casualties: 140, status: "Border Bridge & Dam Destroyed" }
-    ],
-    hotspots: [
-      { id: "h1", name: "Rasuwagadhi", cx: 280, cy: 70, labelX: 290, labelY: 73, type: "border", status: "Infrastructure destroyed" },
-      { id: "h2", name: "Syabrubesi", cx: 210, cy: 98, labelX: 218, labelY: 101, type: "settlement", status: "Severe damage" },
-      { id: "h3", name: "Syabruwati", cx: 240, cy: 130, labelX: 248, labelY: 133, type: "junction", status: "Severe damage" }
-    ]
-  }
-};
 
-// Simulated data fetching service ready to hook into real backend/The Kathmandu Post endpoints
-export async function getDashboardData() {
-  // Simulating network response latency with fallback payload
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(INITIAL_DASHBOARD_DATA);
-    }, 400);
-  });
-}
-
-// ============================================================================
-// BESPOKE SVG ICONS (EXACT PIXEL & PROPORTION MATCH TO LOCKED UI)
-// ============================================================================
-const FloodLogo = () => (
-  <div className="w-10 h-10 rounded-xl bg-[#0d1b36] border border-[#1d3563] flex items-center justify-center p-1.5 shadow-md shrink-0">
-    <svg viewBox="0 0 24 24" className="w-full h-full text-sky-400" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M4 13L12 4L20 13" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M2 16.5C5 15 8 18 12 16.5C16 15 19 18 22 16.5" strokeLinecap="round" />
-      <path d="M2 20C5 18.5 8 21.5 12 20C16 18.5 19 21.5 22 20" strokeLinecap="round" />
-    </svg>
-  </div>
-);
-
-const NepalFlagIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-4 h-4 text-red-500 fill-red-600 inline-block shrink-0">
-    <path d="M4 2v20h2V14l8-3-6-3 6-4-10-2z" stroke="#fff" strokeWidth="0.8" />
-  </svg>
-);
-
-const DamagedHouseIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 10L12 3L21 10V20H3V10Z" />
-    <path d="M9 20V12H15V20" />
-    <path d="M2 20C5 18.5 8 21.5 12 20C16 18.5 19 21.5 22 20" strokeLinecap="round" />
-  </svg>
-);
-
-const HydropowerIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" fillOpacity="0.2" />
-    <path d="M4 18C7 16.5 10 19.5 14 18C17 16.5 19 19.5 22 18" strokeLinecap="round" />
-  </svg>
-);
-
-const RoadDamageIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M4 21L8 3M20 21L16 3" strokeLinecap="round" />
-    <path d="M12 4V8M12 11L10 14L13 16L12 20" strokeLinecap="round" />
-  </svg>
-);
-
-const BridgeIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 17C6 14 9 14 12 17C15 14 18 14 21 17" strokeLinecap="round" />
-    <path d="M2 17H22M4 17V8M20 17V8M4 8H20" strokeLinecap="round" />
-    <path d="M4 8L12 17L20 8" strokeLinecap="round" strokeDasharray="1 2" />
-  </svg>
-);
-
-const BorderGateIcon = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-300" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M3 21H21M5 21V9M19 21V9M3 9L12 4L21 9M8 9V6M16 9V6" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 21V15H15V21" />
-  </svg>
-);
-
-// ============================================================================
-// MAIN APPLICATION COMPONENT
-// ============================================================================
-export default function App() {
-  // Navigation and Modal States
-  const [activeTab, setActiveTab] = useState('overview');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
-  const [selectedDetail, setSelectedDetail] = useState(null);
-  const [selectedUpdate, setSelectedUpdate] = useState(null);
-  const [selectedDistrict, setSelectedDistrict] = useState(null);
-  const [selectedIntelligenceTopic, setSelectedIntelligenceTopic] = useState(null);
-
-  // Data & Refresh States
-  const [data, setData] = useState(INITIAL_DASHBOARD_DATA);
-  const [isLoading, setIsLoading] = useState(false);
-  const [refreshMessage, setRefreshMessage] = useState('');
-
-  // Updates Filter States
-  const [searchQuery, setSearchQuery] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('ALL');
-
-  // Reports PDF Preview State
-  const [reportDownloadNotice, setReportDownloadNotice] = useState(false);
-
-  // Map Pan & Zoom States
-  const [mapZoom, setMapZoom] = useState(1);
-  const [mapPan, setMapPan] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-
-  // Map Container Ref
-  const mapSvgRef = useRef(null);
-
-  // Handle data refresh safely without fake artificial data creation
-  const handleRefreshData = async () => {
-    setIsLoading(true);
-    setRefreshMessage('Fetching latest reporting from The Kathmandu Post & NDRRMA...');
-    try {
-      const freshData = await getDashboardData();
-      setData({
-        ...freshData,
-        lastUpdated: `Just now • ${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} NPT`
-      });
-      setRefreshMessage('Dashboard data synchronized.');
-      setTimeout(() => setRefreshMessage(''), 2500);
-    } catch {
-      setRefreshMessage('Data source temporarily unavailable. Displaying last cached data.');
-      setTimeout(() => setRefreshMessage(''), 3000);
-    } finally {
-      setIsLoading(false);
+    .lang button.on {
+      background: var(--teal);
+      color: #06221f;
     }
-  };
 
-  // Map Interaction Handlers (Mouse + Touch Drag/Pan Support)
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setDragStart({ x: e.clientX - mapPan.x, y: e.clientY - mapPan.y });
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    setMapPan({
-      x: e.clientX - dragStart.x,
-      y: e.clientY - dragStart.y
-    });
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleTouchStart = (e) => {
-    if (e.touches.length === 1) {
-      setIsDragging(true);
-      setDragStart({
-        x: e.touches[0].clientX - mapPan.x,
-        y: e.touches[0].clientY - mapPan.y
-      });
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: 16px 14px 8px;
     }
-  };
 
-  const handleTouchMove = (e) => {
-    if (!isDragging || e.touches.length !== 1) return;
-    setMapPan({
-      x: e.touches[0].clientX - dragStart.x,
-      y: e.touches[0].clientY - dragStart.y
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  const handleResetMap = () => {
-    setMapZoom(1);
-    setMapPan({ x: 0, y: 0 });
-  };
-
-  // Filtered Updates
-  const filteredUpdates = useMemo(() => {
-    return data.latestUpdates.filter((item) => {
-      const matchesSearch =
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.content.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory =
-        categoryFilter === 'ALL' || item.category === categoryFilter;
-      return matchesSearch && matchesCategory;
-    });
-  }, [data.latestUpdates, searchQuery, categoryFilter]);
-
-  // Drawer link action helper
-  const handleMenuNavigation = (targetTab, intelligenceTopic = null) => {
-    setActiveTab(targetTab);
-    setIsMenuOpen(false);
-    if (intelligenceTopic) {
-      setSelectedIntelligenceTopic(intelligenceTopic);
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+      color: var(--muted);
+      font-size: 12px;
     }
-  };
-
-  return (
-    <div className="min-h-screen bg-[#060c18] text-slate-100 flex justify-center font-sans antialiased selection:bg-blue-600 selection:text-white">
-      {/* PRIMARY TARGET CONTAINER:
-        Strictly max-w-[412px] as specified for mobile viewports (360px - 412px)
-        pb-[112px] ensures complete scrollability with ZERO bottom navigation overlap
-      */}
-      <div className="w-full max-w-[412px] min-h-screen bg-[#081020] border-x border-[#132240] flex flex-col relative pb-[112px] shadow-2xl overflow-x-hidden">
-        
-        {/* ====================================================================
-            PART 3 & 9: PROPORTIONAL DARK NAVY HEADER
-           ==================================================================== */}
-        <header className="sticky top-0 z-40 bg-[#081122]/98 backdrop-blur-md px-4 pt-3.5 pb-3 border-b border-[#142342] flex items-center justify-between shadow-sm">
-          <div className="flex items-center gap-3">
-            {/* Hamburger Button (22-24px icon with 44px touch container) */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="w-10 h-10 -ml-1 rounded-xl text-slate-300 hover:text-white hover:bg-[#132344] active:scale-95 flex items-center justify-center transition-all"
-              aria-label="Open navigation menu"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-
-            {/* Disaster Logo (40-44px box) */}
-            <FloodLogo />
-
-            {/* Title & Subtitle */}
-            <div className="flex flex-col">
-              <div className="flex items-baseline">
-                <span className="font-black tracking-wider text-white text-[17px] sm:text-[18px] leading-none">
-                  RASUWA FLOOD
-                </span>
-                <span className="font-semibold text-slate-400 text-[11px] sm:text-[12px] tracking-wider uppercase ml-1.5">
-                  DASHBOARD
-                </span>
-              </div>
-              <span className="text-[12px] text-slate-400 font-medium leading-tight mt-0.5">
-                Bhote Koshi – Trishuli Flood Disaster
-              </span>
-            </div>
-          </div>
-
-          {/* Notification Button (22-24px with 44px touch area) */}
-          <button
-            onClick={() => setIsNotificationsOpen(true)}
-            className="w-10 h-10 rounded-xl text-slate-300 hover:text-white hover:bg-[#132344] relative flex items-center justify-center active:scale-95 transition-all"
-            aria-label="Open emergency alerts"
-          >
-            <Bell className="w-6 h-6 text-slate-300" />
-            <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-[#081122] animate-pulse" />
-          </button>
-        </header>
-
-        {/* ====================================================================
-            STATUS / UPDATE / REFRESH BAR
-           ==================================================================== */}
-        <section className="px-3.5 pt-2.5 pb-1">
-          <div className="bg-[#0b172e] border border-[#162c54] rounded-xl px-3 py-2 flex items-center justify-between shadow-inner">
-            <div className="flex items-center gap-1.5 text-[11.5px] text-slate-300 font-medium truncate pr-2">
-              <Calendar className="w-4 h-4 text-slate-400 shrink-0" />
-              <span className="truncate">Last Updated: {data.lastUpdated}</span>
-            </div>
-
-            <div className="flex items-center gap-1.5 shrink-0">
-              <button
-                onClick={handleRefreshData}
-                disabled={isLoading}
-                className="w-7 h-7 rounded-lg bg-[#0f2142] hover:bg-[#162f5e] border border-[#1c3970] text-slate-300 hover:text-white flex items-center justify-center active:scale-95 transition-all"
-                aria-label="Refresh dashboard data"
-                title="Refresh from data sources"
-              >
-                <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-sky-400' : ''}`} />
-              </button>
-
-              <button
-                onClick={() => setActiveTab('overview')}
-                className="bg-[#1976d2] hover:bg-[#1565c0] text-white px-2.5 py-1 rounded-lg text-[11.5px] font-semibold flex items-center gap-1 shadow-md shadow-blue-900/40 active:scale-95 transition-all"
-              >
-                <BarChart2 className="w-3.5 h-3.5" />
-                <span>Overview</span>
-              </button>
-            </div>
-          </div>
-
-          {refreshMessage && (
-            <div className="mt-1.5 px-3 py-1 bg-sky-950/80 border border-sky-600/40 rounded-lg text-[11px] text-sky-200 flex items-center gap-1.5 animate-in fade-in">
-              <Info className="w-3.5 h-3.5 shrink-0 text-sky-400" />
-              <span>{refreshMessage}</span>
-            </div>
-          )}
-        </section>
-
-        {/* ====================================================================
-            MAIN VIEW ROUTER
-           ==================================================================== */}
-        <main className="flex-1 px-3.5 py-2.5 space-y-4">
-          
-          {/* ==================================================================
-              VIEW: OVERVIEW (LOCKED DESIGN SOURCE OF TRUTH)
-             ================================================================== */}
-          {activeTab === 'overview' && (
-            <>
-              {/* --------------------------------------------------------------
-                  PART 4: MAIN STATISTIC CARDS (LOCKED 5-CARD HIERARCHY)
-                 -------------------------------------------------------------- */}
-              <section className="space-y-2">
-                {/* Top Row: 3 Cards (Deaths, Missing, Rescued) -> min-h: 116px */}
-                <div className="grid grid-cols-3 gap-2">
-                  {/* Card 1: DEATHS (Red) */}
-                  <div
-                    onClick={() => setActiveTab('reports')}
-                    className="min-h-[116px] bg-gradient-to-br from-[#c82333] via-[#b71c1c] to-[#991b1b] rounded-2xl p-2.5 sm:p-3 flex flex-col justify-between shadow-lg cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-red-100">
-                        DEATHS
-                      </span>
-                      <div className="w-5 h-5 rounded-full bg-red-900/40 flex items-center justify-center">
-                        <UserPlus className="w-3 h-3 text-red-100" />
-                      </div>
-                    </div>
-                    <div className="my-0.5">
-                      <div className="text-xl sm:text-2xl font-black text-white leading-tight">
-                        {data.keyMetrics.deaths.value}
-                      </div>
-                      <div className="text-[10px] text-red-100/90 font-medium -mt-0.5">
-                        {data.keyMetrics.deaths.unit}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[8.5px] sm:text-[9.5px] text-red-200/90 leading-tight">
-                      <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
-                      <span className="truncate">Latest available figure</span>
-                    </div>
-                  </div>
-
-                  {/* Card 2: MISSING (Orange) */}
-                  <div
-                    onClick={() => setActiveTab('reports')}
-                    className="min-h-[116px] bg-gradient-to-br from-[#e65100] via-[#d97706] to-[#b45309] rounded-2xl p-2.5 sm:p-3 flex flex-col justify-between shadow-lg cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-100">
-                        MISSING
-                      </span>
-                      <div className="w-5 h-5 rounded-full bg-amber-900/40 flex items-center justify-center">
-                        <HelpCircle className="w-3 h-3 text-amber-100" />
-                      </div>
-                    </div>
-                    <div className="my-0.5">
-                      <div className="text-xl sm:text-2xl font-black text-white leading-tight">
-                        {data.keyMetrics.missing.value}
-                      </div>
-                      <div className="text-[10px] text-amber-100/90 font-medium -mt-0.5">
-                        {data.keyMetrics.missing.unit}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[8.5px] sm:text-[9.5px] text-amber-200/90 leading-tight">
-                      <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
-                      <span className="truncate">Latest available figure</span>
-                    </div>
-                  </div>
-
-                  {/* Card 3: RESCUED (Green) */}
-                  <div
-                    onClick={() => setActiveTab('rescue')}
-                    className="min-h-[116px] bg-gradient-to-br from-[#1b5e20] via-[#16a34a] to-[#15803d] rounded-2xl p-2.5 sm:p-3 flex flex-col justify-between shadow-lg cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-green-100">
-                        RESCUED
-                      </span>
-                      <div className="w-5 h-5 rounded-full bg-green-900/40 flex items-center justify-center">
-                        <CheckCircle2 className="w-3 h-3 text-green-100" />
-                      </div>
-                    </div>
-                    <div className="my-0.5">
-                      <div className="text-xl sm:text-2xl font-black text-white leading-tight">
-                        {data.keyMetrics.rescued.value}
-                      </div>
-                      <div className="text-[10px] text-green-100/90 font-medium -mt-0.5">
-                        {data.keyMetrics.rescued.unit}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[8.5px] sm:text-[9.5px] text-green-200/90 leading-tight">
-                      <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
-                      <span className="truncate">Latest available figure</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Second Row: 2 Cards -> min-h: 140-150px */}
-                <div className="grid grid-cols-2 gap-2">
-                  {/* Card 4: PEOPLE AFFECTED (Blue) */}
-                  <div
-                    onClick={() => setActiveTab('reports')}
-                    className="min-h-[142px] bg-gradient-to-br from-[#1565c0] via-[#1e40af] to-[#1e3a8a] rounded-2xl p-3 flex flex-col justify-between shadow-lg cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-xl bg-blue-900/40 flex items-center justify-center">
-                        <Users className="w-4 h-4 text-blue-200" />
-                      </div>
-                      <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-blue-100 leading-tight">
-                        PEOPLE AFFECTED
-                      </span>
-                    </div>
-                    <div className="my-1">
-                      <div className="text-[26px] font-black text-white leading-tight whitespace-nowrap">
-                        {data.keyMetrics.peopleAffected.value}
-                      </div>
-                      <div className="text-xs text-blue-200 font-medium">
-                        {data.keyMetrics.peopleAffected.unit}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[9px] text-blue-200/90">
-                      <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
-                      <span>Latest available figure</span>
-                    </div>
-                  </div>
-
-                  {/* Card 5: DISTRICTS AFFECTED (Purple) */}
-                  <div
-                    onClick={() => setActiveTab('map')}
-                    className="min-h-[142px] bg-gradient-to-br from-[#6b21a8] via-[#7e22ce] to-[#581c87] rounded-2xl p-3 flex flex-col justify-between shadow-lg cursor-pointer hover:brightness-110 active:scale-[0.98] transition-all"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-xl bg-purple-900/40 flex items-center justify-center">
-                        <MapPin className="w-4 h-4 text-purple-200" />
-                      </div>
-                      <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wider text-purple-100 leading-tight">
-                        DISTRICTS AFFECTED
-                      </span>
-                    </div>
-                    <div className="my-1">
-                      <div className="text-[26px] font-black text-white leading-tight">
-                        {data.keyMetrics.districtsAffected.value}
-                      </div>
-                      <div className="text-xs text-purple-200 font-medium">
-                        {data.keyMetrics.districtsAffected.unit}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[9px] text-purple-200/90">
-                      <AlertTriangle className="w-2.5 h-2.5 shrink-0" />
-                      <span>Latest available figure</span>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* --------------------------------------------------------------
-                  PART 6: QUICK OVERVIEW (CAROUSEL WITH CONSISTENT CARD SIZES)
-                 -------------------------------------------------------------- */}
-              <section className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-[15px] font-bold text-white tracking-wide">
-                    Quick Overview
-                  </h2>
-                  <button
-                    onClick={() => setActiveTab('reports')}
-                    className="text-xs text-sky-400 hover:text-sky-300 font-medium"
-                  >
-                    View all
-                  </button>
-                </div>
-
-                {/* Horizontal scroll strictly isolated within carousel */}
-                <div className="flex gap-2.5 overflow-x-auto pb-1.5 no-scrollbar -mx-1 px-1 snap-x">
-                  {data.quickOverview.map((item) => (
-                    <div
-                      key={item.id}
-                      onClick={() => setSelectedDetail(item)}
-                      className="bg-[#0b162c] border border-[#162a50] rounded-2xl p-3 w-[140px] shrink-0 flex flex-col justify-between snap-start shadow-md hover:border-sky-500/50 cursor-pointer transition-all active:scale-95"
-                    >
-                      <div>
-                        {/* Icon Box */}
-                        <div className="w-9 h-9 rounded-xl bg-[#112344] border border-[#1d386c] flex items-center justify-center mb-2">
-                          {item.type === 'flood' && <DamagedHouseIcon />}
-                          {item.type === 'hydro' && <HydropowerIcon />}
-                          {item.type === 'road' && <RoadDamageIcon />}
-                          {item.type === 'bridge' && <BridgeIcon />}
-                          {item.type === 'border' && <BorderGateIcon />}
-                        </div>
-
-                        <div className="text-xs font-semibold text-slate-200 leading-snug">
-                          {item.title}
-                        </div>
-
-                        {item.type === 'border' ? (
-                          <div className="text-[11px] text-slate-300 leading-snug mt-1 line-clamp-3">
-                            {item.desc}
-                          </div>
-                        ) : (
-                          <div className="mt-1">
-                            <div className="text-base font-extrabold text-amber-400 leading-tight">
-                              {item.highlight}
-                            </div>
-                            <div className="text-[10px] text-slate-400 leading-tight">
-                              {item.desc}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="mt-3 pt-2 border-t border-[#132547] flex items-center justify-between text-[11px] text-slate-300 hover:text-sky-300 font-medium">
-                        <span>Details</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* --------------------------------------------------------------
-                  RESCUE OPERATIONS (COUNTRYWIDE)
-                 -------------------------------------------------------------- */}
-              <section className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 shadow-md">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-baseline gap-1.5">
-                    <h2 className="text-[14px] font-bold text-white">Rescue Operations</h2>
-                    <span className="text-xs text-slate-400 font-normal">(Countrywide)</span>
-                  </div>
-                  <button
-                    onClick={() => setActiveTab('rescue')}
-                    className="text-xs text-sky-400 hover:text-sky-300 font-medium"
-                  >
-                    View all
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-12 gap-3 items-center">
-                  {/* Left Column: 4 Metrics */}
-                  <div className="col-span-7 space-y-2.5">
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
-                        <Plane className="w-4 h-4 text-slate-400 shrink-0" />
-                        <span className="truncate">Helicopter Flights</span>
-                      </div>
-                      <span className="font-bold text-white text-sm">
-                        {data.rescueOperations.helicopterFlights}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
-                        <NepalFlagIcon />
-                        <span className="truncate">Nepalis Rescued by Air</span>
-                      </div>
-                      <span className="font-bold text-white text-sm">
-                        {data.rescueOperations.nepalisRescuedByAir}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
-                        <Globe className="w-4 h-4 text-slate-400 shrink-0" />
-                        <span className="truncate">Foreign Nationals Rescued by Air</span>
-                      </div>
-                      <span className="font-bold text-white text-sm">
-                        {data.rescueOperations.foreignNationalsRescuedByAir}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
-                        <Shield className="w-4 h-4 text-slate-400 shrink-0" />
-                        <span className="truncate">Security Personnel Deployed</span>
-                      </div>
-                      <span className="font-bold text-white text-sm">
-                        {data.rescueOperations.securityPersonnel}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Circular Rescue Gauge */}
-                  <div className="col-span-5 flex flex-col items-center justify-center relative">
-                    <div className="relative w-28 h-28 flex items-center justify-center">
-                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="38"
-                          stroke="#13274c"
-                          strokeWidth="8"
-                          fill="transparent"
-                        />
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="38"
-                          stroke="#22c55e"
-                          strokeWidth="8"
-                          strokeDasharray="238.7"
-                          strokeDashoffset="35"
-                          strokeLinecap="round"
-                          fill="transparent"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                        <span className="text-[17px] font-black text-white leading-tight">
-                          {data.rescueOperations.totalRescued}
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-medium leading-none mt-0.5">
-                          Total Rescued
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Status Alert Box */}
-                <div className="mt-3 bg-[#081224] border border-[#142647] rounded-xl px-3 py-2 flex items-center gap-2 text-[11px] text-slate-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 shadow-[0_0_8px_#34d399] animate-pulse" />
-                  <p className="leading-snug">
-                    {data.rescueOperations.statusNote}
-                  </p>
-                </div>
-              </section>
-
-              {/* --------------------------------------------------------------
-                  DEATHS BY DISTRICT & RASUWA SITUATION
-                 -------------------------------------------------------------- */}
-              <div className="space-y-3">
-                {/* Card A: Deaths by District */}
-                <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 shadow-md">
-                  <h3 className="text-[14px] font-bold text-white mb-2.5">
-                    Deaths by District
-                  </h3>
-                  <div className="space-y-2">
-                    {data.districtDeaths.map((item) => {
-                      const widthPercentage = Math.max((item.count / 819) * 100, 3);
-                      return (
-                        <div
-                          key={item.district}
-                          onClick={() => setSelectedDistrict(item.district)}
-                          className="flex items-center text-xs group cursor-pointer hover:bg-slate-800/40 p-1 rounded-lg transition-colors"
-                        >
-                          <span className="w-24 text-slate-300 truncate font-medium text-[11px]">
-                            {item.district}
-                          </span>
-                          <div className="flex-1 bg-[#122344] h-4 rounded-sm overflow-hidden mx-2 relative flex items-center">
-                            <div
-                              style={{ width: `${widthPercentage}%` }}
-                              className="bg-[#dc2626] h-full rounded-sm transition-all duration-500 group-hover:brightness-125"
-                            />
-                          </div>
-                          <span className="w-8 text-right font-bold text-white text-[11px]">
-                            {item.count}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Card B: Rasuwa Situation */}
-                <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 shadow-md flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-[14px] font-bold text-white">Rasuwa Situation</h3>
-                      <button
-                        onClick={() => setActiveTab('map')}
-                        className="text-xs text-sky-400 hover:text-sky-300 font-medium"
-                      >
-                        View all
-                      </button>
-                    </div>
-
-                    <div className="space-y-1.5 mb-3">
-                      {data.rasuwaHotspots.map((spot) => (
-                        <div
-                          key={spot.location}
-                          onClick={() => setSelectedDistrict(spot.location)}
-                          className="flex items-center justify-between text-xs py-1 border-b border-[#132342] last:border-none cursor-pointer hover:bg-slate-800/30 px-1 rounded transition-colors"
-                        >
-                          <div className="flex items-center gap-1.5 text-slate-200">
-                            <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                            <span className="font-medium text-[11.5px]">{spot.location}</span>
-                          </div>
-                          <span
-                            className={`text-[11px] ${
-                              spot.severity === 'critical' ? 'text-red-400 font-semibold' : 'text-slate-300'
-                            }`}
-                          >
-                            {spot.status}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Warning Callout Box */}
-                  <div className="bg-[#240e13] border border-[#5e1822] rounded-xl p-2.5 flex items-start gap-2 text-[11px] text-red-200">
-                    <div className="w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                      !
-                    </div>
-                    <p className="leading-snug">
-                      Many people are still missing. Search and rescue operations are ongoing.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* --------------------------------------------------------------
-                  LATEST UPDATES SECTION
-                 -------------------------------------------------------------- */}
-              <section className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 shadow-md">
-                <div className="flex items-center justify-between mb-2.5">
-                  <h3 className="text-[14px] font-bold text-white">Latest Updates</h3>
-                  <button
-                    onClick={() => setActiveTab('updates')}
-                    className="text-xs text-sky-400 hover:text-sky-300 font-medium"
-                  >
-                    View all
-                  </button>
-                </div>
-
-                <div className="space-y-2.5">
-                  {data.latestUpdates.slice(0, 4).map((update) => (
-                    <div
-                      key={update.id}
-                      onClick={() => setSelectedUpdate(update)}
-                      className="flex items-start justify-between gap-3 text-xs border-b border-[#122240] pb-2.5 last:border-none last:pb-0 cursor-pointer hover:bg-[#101e38] p-1.5 rounded-lg transition-colors group"
-                    >
-                      <div className="flex items-start gap-2">
-                        <span className="w-2 h-2 rounded-full bg-red-500 shrink-0 mt-1 shadow-[0_0_6px_#ef4444] group-hover:scale-125 transition-transform" />
-                        <p className="text-slate-200 font-normal leading-snug group-hover:text-white transition-colors">
-                          {update.title}
-                        </p>
-                      </div>
-                      <span className="text-[10.5px] text-slate-400 shrink-0 whitespace-nowrap pt-0.5">
-                        {update.time}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* --------------------------------------------------------------
-                  PART 10: INTERACTIVE SITUATION MAP (TOUCH & MOUSE DRAG/PAN)
-                 -------------------------------------------------------------- */}
-              <section className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 shadow-md">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-[14px] font-bold text-white">Situation Map</h3>
-                  <button
-                    onClick={() => setActiveTab('map')}
-                    className="text-xs text-sky-400 hover:text-sky-300 font-medium"
-                  >
-                    View full map
-                  </button>
-                </div>
-
-                {/* Map Graphic Viewport */}
-                <div
-                  className="relative bg-[#07101f] border border-[#16294a] rounded-xl overflow-hidden p-1.5 cursor-grab active:cursor-grabbing select-none"
-                  onMouseDown={handleMouseDown}
-                  onMouseMove={handleMouseMove}
-                  onMouseUp={handleMouseUp}
-                  onMouseLeave={handleMouseUp}
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  <div className="relative w-full h-56 bg-gradient-to-br from-[#0c1830] via-[#091428] to-[#060e1c] rounded-lg overflow-hidden flex items-center justify-center">
-                    
-                    <svg
-                      ref={mapSvgRef}
-                      viewBox="0 0 400 240"
-                      className="w-full h-full object-cover transition-transform duration-75"
-                      style={{
-                        transform: `scale(${mapZoom}) translate(${mapPan.x}px, ${mapPan.y}px)`
-                      }}
-                    >
-                      {/* Topographic Elevation Contours */}
-                      <path d="M 10 180 Q 80 120 160 160 T 320 140 T 400 170" fill="none" stroke="#13274c" strokeWidth="1" />
-                      <path d="M 0 140 Q 90 90 200 130 T 360 100 T 400 120" fill="none" stroke="#13274c" strokeWidth="1" />
-                      <path d="M 30 90 Q 120 40 240 80 T 380 60" fill="none" stroke="#152c56" strokeWidth="1" />
-
-                      {/* District Polygons from Architecture Model */}
-                      {data.mapData.districts.map((dist) => (
-                        <path
-                          key={dist.id}
-                          d={dist.path}
-                          fill={dist.color}
-                          fillOpacity="0.82"
-                          stroke={dist.stroke}
-                          strokeWidth="1.5"
-                          className="hover:brightness-125 cursor-pointer transition-all"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedDistrict(dist.name);
-                          }}
-                        />
-                      ))}
-
-                      {/* River Surge Flow Line (Bhote Koshi / Trishuli) */}
-                      <path
-                        d="M 300 60 Q 250 80 220 120 T 170 170 T 90 200"
-                        fill="none"
-                        stroke="#38bdf8"
-                        strokeWidth="2.5"
-                        strokeDasharray="4 2"
-                      />
-
-                      {/* District Text Labels */}
-                      {data.mapData.districts.map((dist) => (
-                        <text
-                          key={`label-${dist.id}`}
-                          x={dist.labelX}
-                          y={dist.labelY}
-                          fill="#f8fafc"
-                          fontSize="10"
-                          fontWeight="bold"
-                          className="select-none pointer-events-none drop-shadow"
-                        >
-                          {dist.name}
-                        </text>
-                      ))}
-
-                      {/* Hotspot Markers */}
-                      {data.mapData.hotspots.map((h) => (
-                        <g
-                          key={h.id}
-                          className="cursor-pointer"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedDistrict(h.name);
-                          }}
-                        >
-                          <circle cx={h.cx} cy={h.cy} r="4" fill="#fff" stroke="#dc2626" strokeWidth="2" />
-                          <text x={h.labelX} y={h.labelY} fill="#fff" fontSize="9.5" fontWeight="bold" className="select-none">
-                            {h.name}
-                          </text>
-                        </g>
-                      ))}
-                    </svg>
-
-                    {/* Interactive Zoom Controls */}
-                    <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setMapZoom((z) => Math.min(z + 0.3, 2.5));
-                        }}
-                        className="w-7 h-7 rounded-lg bg-[#09152b]/95 border border-[#1b345e] flex items-center justify-center text-slate-200 hover:text-white text-sm font-bold shadow"
-                        aria-label="Zoom in map"
-                      >
-                        +
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setMapZoom((z) => Math.max(z - 0.3, 0.8));
-                        }}
-                        className="w-7 h-7 rounded-lg bg-[#09152b]/95 border border-[#1b345e] flex items-center justify-center text-slate-200 hover:text-white text-sm font-bold shadow"
-                        aria-label="Zoom out map"
-                      >
-                        -
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleResetMap();
-                        }}
-                        className="w-7 h-7 rounded-lg bg-[#09152b]/95 border border-[#1b345e] flex items-center justify-center text-slate-200 hover:text-white text-xs shadow"
-                        aria-label="Reset map position"
-                        title="Recenter Map"
-                      >
-                        ↺
-                      </button>
-                    </div>
-
-                    {/* Locked UI Legend Overlay */}
-                    <div className="absolute top-2 right-2 bg-[#091326]/95 backdrop-blur-sm border border-[#172d54] rounded-lg p-2 text-[9.5px] space-y-1 shadow-lg max-w-[130px] pointer-events-none">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 bg-[#dc2626] rounded-sm shrink-0" />
-                        <span className="text-slate-200 truncate">Severely Affected</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 bg-[#ea580c] rounded-sm shrink-0" />
-                        <span className="text-slate-200 truncate">Highly Affected</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 bg-[#f59e0b] rounded-sm shrink-0" />
-                        <span className="text-slate-200 truncate">Moderately Affected</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 bg-[#ca8a04] rounded-sm shrink-0" />
-                        <span className="text-slate-200 truncate">Affected</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 pt-0.5 border-t border-[#162744]">
-                        <span className="w-3 border-b border-dashed border-slate-400 shrink-0" />
-                        <span className="text-slate-300 text-[8.5px]">District Boundary</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </>
-          )}
-
-          {/* ==================================================================
-              VIEW: RESCUE OPERATIONS
-             ================================================================== */}
-          {activeTab === 'rescue' && (
-            <div className="space-y-4 animate-in fade-in">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-lg font-bold text-white">Rescue Operations</h2>
-                  <p className="text-xs text-slate-400">Air, ground, and riverine operations log</p>
-                </div>
-                <button
-                  onClick={handleRefreshData}
-                  className="text-xs px-2.5 py-1.5 bg-[#112347] border border-[#1f3d75] rounded-lg text-sky-300 flex items-center gap-1 font-medium"
-                >
-                  <RefreshCw className={`w-3 h-3 ${isLoading ? 'animate-spin' : ''}`} />
-                  <span>Sync Rescues</span>
-                </button>
-              </div>
-
-              {/* Total Rescued Card */}
-              <div className="bg-gradient-to-r from-emerald-950/80 via-[#0d2238] to-[#0b162c] border border-emerald-500/40 rounded-2xl p-4 shadow-lg">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Total Evacuated & Rescued</span>
-                  <span className="text-[10px] bg-emerald-900/60 text-emerald-200 px-2 py-0.5 rounded-full border border-emerald-700/50">
-                    STATUS: ACTIVE
-                  </span>
-                </div>
-                <div className="text-3xl font-black text-white mt-1 mb-2">{data.rescueOperations.totalRescued}</div>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div className="bg-[#09152b] p-2.5 rounded-xl border border-[#14284d]">
-                    <span className="text-slate-400 text-[10px]">Helicopter Sorties</span>
-                    <div className="text-base font-bold text-sky-400">{data.rescueOperations.helicopterFlights}</div>
-                  </div>
-                  <div className="bg-[#09152b] p-2.5 rounded-xl border border-[#14284d]">
-                    <span className="text-slate-400 text-[10px]">Active Rescuers</span>
-                    <div className="text-base font-bold text-emerald-400">{data.rescueOperations.securityPersonnel}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Breakdown by Force */}
-              <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 space-y-3">
-                <h3 className="text-sm font-bold text-white">Deployed Task Forces</h3>
-                <div className="space-y-2 text-xs">
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0e1c38] border border-[#1b3464]">
-                    <div>
-                      <div className="font-semibold text-slate-200">Nepal Army Disaster Response Wing</div>
-                      <div className="text-[10px] text-slate-400">MI-17 & ALH helicopters, combat engineering battalion</div>
-                    </div>
-                    <span className="font-bold text-white text-sm">9,400+</span>
-                  </div>
-
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0e1c38] border border-[#1b3464]">
-                    <div>
-                      <div className="font-semibold text-slate-200">Armed Police Force (APF) Disaster Unit</div>
-                      <div className="text-[10px] text-slate-400">Swift-water divers, acoustic tunnel search apparatus</div>
-                    </div>
-                    <span className="font-bold text-white text-sm">6,800+</span>
-                  </div>
-
-                  <div className="flex items-center justify-between p-2.5 rounded-xl bg-[#0e1c38] border border-[#1b3464]">
-                    <div>
-                      <div className="font-semibold text-slate-200">Nepal Police & Emergency Volunteers</div>
-                      <div className="text-[10px] text-slate-400">Camp security, missing-persons database verification</div>
-                    </div>
-                    <span className="font-bold text-white text-sm">4,800+</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* ==================================================================
-              VIEW: FULL GEOSPATIAL MAP
-             ================================================================== */}
-          {activeTab === 'map' && (
-            <div className="space-y-3 animate-in fade-in">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-lg font-bold text-white">Disaster Situation Map</h2>
-                  <p className="text-xs text-slate-400">Interactive impact zones & relief corridors</p>
-                </div>
-                <button
-                  onClick={handleResetMap}
-                  className="text-xs bg-[#112347] border border-[#1f3d75] text-sky-300 px-2.5 py-1 rounded-lg"
-                >
-                  Recenter Map
-                </button>
-              </div>
-
-              {/* Extended Map Canvas */}
-              <div
-                className="relative bg-[#07101f] border border-[#16294a] rounded-2xl overflow-hidden p-2 min-h-[360px] flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-              >
-                <svg
-                  viewBox="0 0 400 300"
-                  className="w-full h-full object-cover transition-transform duration-75"
-                  style={{
-                    transform: `scale(${mapZoom}) translate(${mapPan.x}px, ${mapPan.y}px)`
-                  }}
-                >
-                  <rect width="400" height="300" fill="#07101f" />
-                  
-                  {data.mapData.districts.map((dist) => (
-                    <path
-                      key={`full-${dist.id}`}
-                      d={dist.path}
-                      fill={dist.color}
-                      fillOpacity="0.85"
-                      stroke={dist.stroke}
-                      strokeWidth="2"
-                      className="hover:brightness-125 cursor-pointer transition-all"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedDistrict(dist.name);
-                      }}
-                    />
-                  ))}
-
-                  <path
-                    d="M 360 70 Q 290 100 250 140 T 190 200 T 80 260"
-                    fill="none"
-                    stroke="#38bdf8"
-                    strokeWidth="3"
-                    strokeDasharray="5 3"
-                  />
-
-                  {data.mapData.districts.map((dist) => (
-                    <text
-                      key={`full-txt-${dist.id}`}
-                      x={dist.labelX}
-                      y={dist.labelY}
-                      fill="#fff"
-                      fontSize="11"
-                      fontWeight="bold"
-                      className="select-none pointer-events-none drop-shadow"
-                    >
-                      {dist.name}
-                    </text>
-                  ))}
-
-                  {data.mapData.hotspots.map((h) => (
-                    <g
-                      key={`full-hotspot-${h.id}`}
-                      className="cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedDistrict(h.name);
-                      }}
-                    >
-                      <circle cx={h.cx} cy={h.cy} r="5" fill="#dc2626" stroke="#fff" strokeWidth="2" />
-                      <text x={h.labelX} y={h.labelY} fill="#fff" fontSize="10.5" fontWeight="bold" className="select-none">
-                        {h.name}
-                      </text>
-                    </g>
-                  ))}
-                </svg>
-
-                {/* Floating Map Zoom Controls */}
-                <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-                  <button
-                    onClick={() => setMapZoom((z) => Math.min(z + 0.3, 2.5))}
-                    className="w-8 h-8 rounded-xl bg-[#09152b]/95 border border-[#1b345e] flex items-center justify-center text-slate-200 hover:text-white font-bold"
-                    aria-label="Zoom in"
-                  >
-                    +
-                  </button>
-                  <button
-                    onClick={() => setMapZoom((z) => Math.max(z - 0.3, 0.8))}
-                    className="w-8 h-8 rounded-xl bg-[#09152b]/95 border border-[#1b345e] flex items-center justify-center text-slate-200 hover:text-white font-bold"
-                    aria-label="Zoom out"
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-
-              {/* District Quick Select Grid */}
-              <div className="grid grid-cols-2 gap-2">
-                {data.districtDeaths.map((d) => (
-                  <button
-                    key={d.district}
-                    onClick={() => setSelectedDistrict(d.district)}
-                    className="p-2.5 bg-[#0b162c] border border-[#162b52] rounded-xl text-left hover:border-sky-500 text-xs transition-colors"
-                  >
-                    <div className="font-bold text-white">{d.district}</div>
-                    <div className="text-slate-400 text-[10px] mt-0.5">{d.count} casualties • {d.status}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* ==================================================================
-              PART 18: LATEST UPDATES & CATEGORY FILTERING
-             ================================================================== */}
-          {activeTab === 'updates' && (
-            <div className="space-y-3 animate-in fade-in">
-              <div>
-                <h2 className="text-lg font-bold text-white">Live Updates</h2>
-                <p className="text-xs text-slate-400">Categorized disaster reporting & verified media bulletins</p>
-              </div>
-
-              {/* Search Bar */}
-              <div className="relative">
-                <Search className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
-                <input
-                  type="text"
-                  placeholder="Search updates by keyword..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#0b162c] border border-[#162b52] rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500"
-                />
-              </div>
-
-              {/* Category Filter Pills */}
-              <div className="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar text-[10.5px]">
-                {["ALL", "RESCUE", "ROAD ACCESS", "GOVERNMENT", "INTERNATIONAL AID", "HYDROLOGY"].map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setCategoryFilter(cat)}
-                    className={`px-2.5 py-1 rounded-lg shrink-0 font-semibold transition-all ${
-                      categoryFilter === cat
-                        ? "bg-sky-600 text-white shadow"
-                        : "bg-[#0c1932] border border-[#162b52] text-slate-300 hover:text-white"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-
-              {/* Filtered Feed */}
-              <div className="space-y-2.5">
-                {filteredUpdates.length === 0 ? (
-                  <div className="p-6 text-center bg-[#0b162c] border border-[#162b52] rounded-2xl text-xs text-slate-400">
-                    No updates found matching your filter or query.
-                  </div>
-                ) : (
-                  filteredUpdates.map((update) => (
-                    <div
-                      key={update.id}
-                      onClick={() => setSelectedUpdate(update)}
-                      className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 hover:border-sky-500/60 cursor-pointer transition-all active:scale-[0.99] shadow-md"
-                    >
-                      <div className="flex items-center justify-between text-[11px] mb-1.5">
-                        <span className="bg-red-950/80 text-red-300 border border-red-800/60 px-2 py-0.5 rounded-full font-semibold">
-                          {update.category}
-                        </span>
-                        <span className="text-slate-400 flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {update.time}
-                        </span>
-                      </div>
-                      <h4 className="text-xs sm:text-sm font-semibold text-white leading-snug">
-                        {update.title}
-                      </h4>
-                      <p className="text-[11px] text-slate-300 line-clamp-2 mt-1 leading-relaxed">
-                        {update.content}
-                      </p>
-                      <div className="mt-2 pt-2 border-t border-[#132547] flex items-center justify-between text-[10px] text-slate-400">
-                        <span>Source: {update.source}</span>
-                        <span className="text-sky-400 font-medium">Read bulletin ›</span>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* ==================================================================
-              PART 17: REPORTS VIEW & SITREP PREVIEW
-             ================================================================== */}
-          {activeTab === 'reports' && (
-            <div className="space-y-4 animate-in fade-in">
-              <div>
-                <h2 className="text-lg font-bold text-white">Disaster Situation Reports</h2>
-                <p className="text-xs text-slate-400">NDRRMA Joint Situation Report Archive</p>
-              </div>
-
-              {/* PDF Document Notice Component */}
-              <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 space-y-2.5">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 rounded-xl bg-red-900/30 border border-red-700/50 flex items-center justify-center">
-                      <FileText className="w-5 h-5 text-red-400" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-white">NDRRMA_SitRep_Final_Sept1.pdf</div>
-                      <div className="text-[10px] text-slate-400">Official SitRep • Sept 1, 2026</div>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setReportDownloadNotice(true)}
-                    className="bg-[#1976d2] hover:bg-blue-600 text-white p-2 rounded-xl text-xs flex items-center gap-1 transition-colors"
-                    aria-label="Download or view SitRep report"
-                  >
-                    <Download className="w-4 h-4" />
-                  </button>
-                </div>
-
-                {reportDownloadNotice && (
-                  <div className="p-2.5 bg-[#071329] border border-[#1b3b75] rounded-xl text-[11px] text-sky-200 space-y-1">
-                    <div className="font-semibold flex items-center gap-1 text-sky-300">
-                      <Info className="w-3.5 h-3.5" /> SitRep PDF Status
-                    </div>
-                    <p>
-                      Official PDF SitRep is currently pending final inter-ministerial signature. The metrics shown below represent the current live normalized figures.
-                    </p>
-                    <button
-                      onClick={() => setReportDownloadNotice(false)}
-                      className="text-[10px] text-sky-400 font-bold underline mt-1"
-                    >
-                      Dismiss notice
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Casualty & Damage Matrix Table */}
-              <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 space-y-2">
-                <h3 className="text-sm font-bold text-white">Casualty Breakdown by District</h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs">
-                    <thead>
-                      <tr className="text-slate-400 border-b border-[#142647] text-[10px] uppercase">
-                        <th className="py-1.5">District</th>
-                        <th className="py-1.5 text-red-400">Deaths</th>
-                        <th className="py-1.5 text-amber-400">Missing</th>
-                        <th className="py-1.5 text-emerald-400">Rescued</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-[#122240] text-slate-200">
-                      <tr>
-                        <td className="py-2 font-medium">Rasuwa</td>
-                        <td className="py-2 font-bold text-red-400">819</td>
-                        <td className="py-2 text-amber-400">2,840</td>
-                        <td className="py-2 text-emerald-400">6,420</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2 font-medium">Nuwakot</td>
-                        <td className="py-2 font-bold text-red-400">67</td>
-                        <td className="py-2 text-amber-400">410</td>
-                        <td className="py-2 text-emerald-400">2,180</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2 font-medium">Dhading</td>
-                        <td className="py-2 font-bold text-red-400">39</td>
-                        <td className="py-2 text-amber-400">280</td>
-                        <td className="py-2 text-emerald-400">1,410</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2 font-medium">Sindhupalchok</td>
-                        <td className="py-2 font-bold text-red-400">32</td>
-                        <td className="py-2 text-amber-400">220</td>
-                        <td className="py-2 text-emerald-400">980</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2 font-medium">Kathmandu</td>
-                        <td className="py-2 font-bold text-red-400">15</td>
-                        <td className="py-2 text-amber-400">86</td>
-                        <td className="py-2 text-emerald-400">540</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* ==================================================================
-              VIEW: MORE & CONTACTS
-             ================================================================== */}
-          {activeTab === 'more' && (
-            <div className="space-y-4 animate-in fade-in">
-              <div>
-                <h2 className="text-lg font-bold text-white">Emergency Resources</h2>
-                <p className="text-xs text-slate-400">Official hotlines & disaster coordination contacts</p>
-              </div>
-
-              {/* Emergency Dial Box */}
-              <div className="bg-red-950/40 border border-red-700/50 rounded-2xl p-3.5 space-y-3">
-                <span className="text-xs font-bold text-red-400 uppercase tracking-wide">
-                  24/7 Flood Disaster Helplines
-                </span>
-                
-                <div className="space-y-2 text-xs">
-                  <a
-                    href="tel:1149"
-                    className="flex items-center justify-between p-2.5 bg-[#09152b] rounded-xl border border-red-900/60 text-white font-medium hover:bg-slate-800 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <PhoneCall className="w-4 h-4 text-red-400" />
-                      <span>National Emergency Ops Center (NEOC)</span>
-                    </div>
-                    <span className="font-bold text-red-400">1149</span>
-                  </a>
-
-                  <a
-                    href="tel:1114"
-                    className="flex items-center justify-between p-2.5 bg-[#09152b] rounded-xl border border-red-900/60 text-white font-medium hover:bg-slate-800 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <PhoneCall className="w-4 h-4 text-emerald-400" />
-                      <span>Nepal Army Rescue Air Wing</span>
-                    </div>
-                    <span className="font-bold text-emerald-400">1114</span>
-                  </a>
-
-                  <a
-                    href="tel:100"
-                    className="flex items-center justify-between p-2.5 bg-[#09152b] rounded-xl border border-red-900/60 text-white font-medium hover:bg-slate-800 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <PhoneCall className="w-4 h-4 text-sky-400" />
-                      <span>Nepal Police Emergency Dispatch</span>
-                    </div>
-                    <span className="font-bold text-sky-400">100</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Attribution */}
-              <div className="bg-[#0b162c] border border-[#162b52] rounded-2xl p-3.5 space-y-2 text-xs text-slate-300">
-                <h4 className="font-bold text-white">About this Emergency Dashboard</h4>
-                <p className="leading-relaxed text-[11px] text-slate-400">
-                  Developed in coordination with the Ministry of Home Affairs, Department of Hydrology & Meteorology (DHM), and The Kathmandu Post disaster reporting desk.
-                </p>
-                <div className="pt-2 text-[10px] text-slate-500 border-t border-[#132547]">
-                  Data Normalized via Public Disaster Ingestion Pipeline • Build 2.5
-                </div>
-              </div>
-            </div>
-          )}
-        </main>
-
-        {/* ====================================================================
-            PART 8: FIXED BOTTOM NAVIGATION (LOCKED SPEC WITH SAFE-AREA PADDING)
-           ==================================================================== */}
-        <nav
-          style={{ paddingBottom: "max(6px, env(safe-area-inset-bottom))" }}
-          className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[412px] bg-[#07101f]/98 backdrop-blur-lg border-t border-[#142546] pt-1.5 px-2 z-40 flex items-center justify-around shadow-2xl"
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .dot-ok {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 14px 12px;
+      min-height: 108px;
+    }
+
+    .kpi .lbl {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .kpi .num {
+      font-size: clamp(26px, 8vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 6px 0 2px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .kpi .sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .kpi.dead .num {
+      color: #ff8b82;
+    }
+
+    .kpi.miss .num {
+      color: var(--amber);
+    }
+
+    .kpi.resc .num {
+      color: var(--teal);
+    }
+
+    .kpi.hurt .num {
+      color: var(--blue);
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section h2 {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .dist {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .drow {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 6px 10px;
+      align-items: center;
+    }
+
+    .drow b {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .drow span {
+      font-size: 12px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar {
+      grid-column: 1 / -1;
+      height: 7px;
+      background: #1a2538;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #c23b3b, #e8a838);
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .mapbox {
+      position: relative;
+      overflow: hidden;
+    }
+
+    svg.corridor {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .legend b {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      margin-right: 5px;
+    }
+
+    .facts {
+      display: grid;
+      gap: 10px;
+    }
+
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .fact p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .tabs button {
+      white-space: nowrap;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #121c2e;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tabs button.on {
+      background: var(--teal-dim);
+      color: var(--teal);
+      border-color: rgba(46, 196, 182, 0.35);
+    }
+
+    .search {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0c1422;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .feed {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .story {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .story .when {
+      font-size: 11px;
+      color: var(--amber);
+      letter-spacing: 0.04em;
+    }
+
+    .story h3 {
+      font-size: 15px;
+      margin: 4px 0 6px;
+      line-height: 1.3;
+    }
+
+    .story p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .story .src {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--teal);
+    }
+
+    .phones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .phone {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: #121c2e;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      color: var(--text);
+    }
+
+    .phone b {
+      font-size: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .phone span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .phone.primary {
+      background: linear-gradient(
+        180deg,
+        rgba(46, 196, 182, 0.18),
+        rgba(16, 26, 44, 0.6)
+      );
+      border-color: rgba(46, 196, 182, 0.35);
+    }
+
+    .help {
+      display: grid;
+      gap: 8px;
+    }
+
+    .help a,
+    .help button.cardish {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--text);
+    }
+
+    .help small {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .disclaimer strong {
+      color: var(--text);
+    }
+
+    .dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(8, 12, 22, 0.92);
+      backdrop-filter: blur(18px);
+      border-top: 1px solid var(--line);
+      padding: 8px 6px calc(8px + var(--safe-b));
+    }
+
+    .dock a,
+    .dock button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 10px;
+      color: var(--muted);
+      padding: 4px;
+    }
+
+    .dock .sos {
+      color: #ffd0cc;
+    }
+
+    .dock svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .sheet {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .sheet.open {
+      display: block;
+    }
+
+    .sheet .tray {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #101826;
+      border-top: 1px solid var(--line);
+      border-radius: 20px 20px 0 0;
+      padding: 16px 16px calc(20px + var(--safe-b));
+      max-height: 78dvh;
+      overflow: auto;
+    }
+
+    .handle {
+      width: 42px;
+      height: 4px;
+      background: #2a364c;
+      border-radius: 99px;
+      margin: 0 auto 12px;
+    }
+
+    .sheet h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .sheet p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 720px) {
+      .kpis {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .phones {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sky" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <b>Trishuli Pulse</b>
+      <small data-i18n="tagline">Nepal Floods 2026 · TKP sitrep</small>
+    </div>
+
+    <span class="live snapshot" id="liveBadge">
+      <i></i>
+      <span id="liveLabel">SNAPSHOT</span>
+    </span>
+
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btnEn" class="on">EN</button>
+      <button type="button" id="btnNe">नेपाली</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="meta">
+        <span class="chip">
+          <span class="dot-ok"></span>
+          <span id="updated">
+            Source snapshot · 3 Sep 2026, 13:03 NPT
+          </span>
+        </span>
+
+        <span class="chip" data-i18n="sourcechip">
+          Source: The Kathmandu Post
+        </span>
+
+        <span class="chip" data-i18n="daychip">
+          Day 9 of operations
+        </span>
+      </div>
+    </section>
+
+    <!-- KEY FIGURES -->
+    <section class="kpis" id="situation" aria-label="Key figures">
+
+      <article class="kpi dead">
+        <div class="lbl" data-i18n="k_dead">
+          Confirmed dead
+        </div>
+
+        <div class="num" data-count="1252">
+          1,252
+        </div>
+
+        <div class="sub" data-i18n="k_dead_sub">
+          95 identified &amp; handed over
+        </div>
+      </article>
+
+      <article class="kpi miss">
+        <div class="lbl" data-i18n="k_miss">
+          Unaccounted for
+        </div>
+
+        <div class="num" data-count="4216">
+          4,216
+        </div>
+
+        <div class="sub" data-i18n="k_miss_sub">
+          Includes ~900 hydropower workers
+        </div>
+      </article>
+
+      <article class="kpi resc">
+        <div class="lbl" data-i18n="k_resc">
+          Rescued
+        </div>
+
+        <div class="num" data-count="11913">
+          11,913
+        </div>
+
+        <div class="sub" data-i18n="k_resc_sub">
+          Army airlifted 4,364 in 715 flights
+        </div>
+      </article>
+
+      <article class="kpi hurt">
+        <div class="lbl" data-i18n="k_hurt">
+          Treated injured
+        </div>
+
+        <div class="num">&gt;5,000</div>
+
+        <div class="sub" data-i18n="k_hurt_sub">
+          Army &amp; APF medical teams
+        </div>
+      </article>
+
+    </section>
+
+    <!-- DISTRICTS -->
+    <section class="section" id="districts">
+      <h2 data-i18n="h_districts">
+        Deaths recovered by district
+      </h2>
+
+      <div class="panel dist" id="distList"></div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section" id="map">
+      <h2 data-i18n="h_map">
+        Corridor snapshot
+      </h2>
+
+      <div class="panel mapbox">
+
+        <svg
+          class="corridor"
+          viewBox="0 0 360 220"
+          role="img"
+          aria-label="Schematic of the Bhotekoshi Trishuli corridor"
         >
-          {/* 1. Overview */}
-          <button
-            onClick={() => setActiveTab('overview')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'overview' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to Overview"
-          >
-            <Home className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">Overview</span>
-          </button>
+          <defs>
+            <linearGradient id="river" x1="0" x2="1">
+              <stop offset="0" stop-color="#3a6d7a" />
+              <stop offset="1" stop-color="#1c3d4a" />
+            </linearGradient>
+          </defs>
 
-          {/* 2. Rescue */}
-          <button
-            onClick={() => setActiveTab('rescue')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'rescue' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to Rescue Operations"
-          >
-            <LifeBuoy className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">Rescue</span>
-          </button>
+          <rect width="360" height="220" fill="#0b1524" />
 
-          {/* 3. Map */}
-          <button
-            onClick={() => setActiveTab('map')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'map' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to Situation Map"
-          >
-            <MapIcon className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">Map</span>
-          </button>
+          <path
+            d="M40 30 C80 50, 90 70, 110 95 S160 140, 190 155 S260 175, 330 190"
+            fill="none"
+            stroke="url(#river)"
+            stroke-width="14"
+            stroke-linecap="round"
+          />
 
-          {/* 4. Updates */}
-          <button
-            onClick={() => setActiveTab('updates')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'updates' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to Latest Updates"
-          >
-            <Clock className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">Updates</span>
-          </button>
+          <path
+            d="M40 30 C80 50, 90 70, 110 95 S160 140, 190 155 S260 175, 330 190"
+            fill="none"
+            stroke="#7ec8c0"
+            stroke-width="2"
+            opacity=".5"
+          />
 
-          {/* 5. Reports */}
-          <button
-            onClick={() => setActiveTab('reports')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'reports' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to Situation Reports"
-          >
-            <FileText className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">Reports</span>
-          </button>
+          <circle cx="58" cy="38" r="6" fill="#e05a4f" />
 
-          {/* 6. More */}
-          <button
-            onClick={() => setActiveTab('more')}
-            className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-lg transition-colors min-h-[44px] ${
-              activeTab === 'more' ? 'text-[#1976d2] font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-            aria-label="Navigate to More resources"
-          >
-            <MoreHorizontal className="w-5 h-5 mb-0.5" />
-            <span className="text-[10px] leading-tight">More</span>
-          </button>
-        </nav>
+          <text x="70" y="32" fill="#f4f1ea" font-size="10">
+            Rasuwa / Timure
+          </text>
 
-        {/* ====================================================================
-            PART 7: COMPLETE HAMBURGER SIDE DRAWER (FUNCTIONAL & LINKED)
-           ==================================================================== */}
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex justify-start animate-in fade-in">
-            <div className="bg-[#081224] border-r border-[#162a50] w-full max-w-[320px] h-full p-4 flex flex-col justify-between shadow-2xl overflow-y-auto">
-              <div className="space-y-4">
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between border-b border-[#142647] pb-3">
-                  <div className="flex items-center gap-2.5">
-                    <FloodLogo />
-                    <div>
-                      <div className="font-bold text-xs text-white">RASUWA DISASTER HQ</div>
-                      <div className="text-[10px] text-slate-400">Emergency Operations Dashboard</div>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white"
-                    aria-label="Close navigation menu"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
+          <text x="70" y="44" fill="#9aa6b8" font-size="8">
+            origin · 26 Aug
+          </text>
 
-                {/* Section 1: DASHBOARD */}
-                <div className="space-y-1">
-                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase px-2">
-                    DASHBOARD
-                  </span>
-                  <button
-                    onClick={() => handleMenuNavigation('overview')}
-                    className="w-full text-left px-2.5 py-2 rounded-xl hover:bg-[#112347] flex items-center gap-2.5 text-xs text-slate-200"
-                  >
-                    <Home className="w-4 h-4 text-sky-400" />
-                    <span>Overview</span>
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('rescue')}
-                    className="w-full text-left px-2.5 py-2 rounded-xl hover:bg-[#112347] flex items-center gap-2.5 text-xs text-slate-200"
-                  >
-                    <LifeBuoy className="w-4 h-4 text-emerald-400" />
-                    <span>Rescue Operations</span>
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('map')}
-                    className="w-full text-left px-2.5 py-2 rounded-xl hover:bg-[#112347] flex items-center gap-2.5 text-xs text-slate-200"
-                  >
-                    <MapIcon className="w-4 h-4 text-amber-400" />
-                    <span>Situation Map</span>
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('updates')}
-                    className="w-full text-left px-2.5 py-2 rounded-xl hover:bg-[#112347] flex items-center gap-2.5 text-xs text-slate-200"
-                  >
-                    <Clock className="w-4 h-4 text-blue-400" />
-                    <span>Latest Updates</span>
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('reports')}
-                    className="w-full text-left px-2.5 py-2 rounded-xl hover:bg-[#112347] flex items-center gap-2.5 text-xs text-slate-200"
-                  >
-                    <FileText className="w-4 h-4 text-purple-400" />
-                    <span>Reports</span>
-                  </button>
-                </div>
+          <circle cx="128" cy="108" r="6" fill="#e8a838" />
 
-                {/* Section 2: DISASTER INTELLIGENCE */}
-                <div className="space-y-1 pt-1 border-t border-[#122240]">
-                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase px-2">
-                    DISASTER INTELLIGENCE
-                  </span>
-                  {[
-                    { label: "Casualties", tab: "reports" },
-                    { label: "Missing Persons", tab: "reports" },
-                    { label: "Infrastructure Damage", tab: "overview" },
-                    { label: "Hydropower Damage", tab: "overview" },
-                    { label: "Roads & Bridges", tab: "overview" },
-                    { label: "Rasuwagadhi Border", tab: "overview" }
-                  ].map((item) => (
-                    <button
-                      key={item.label}
-                      onClick={() => handleMenuNavigation(item.tab, item.label)}
-                      className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[#112347] flex items-center justify-between text-xs text-slate-300"
-                    >
-                      <span>{item.label}</span>
-                      <ChevronRight className="w-3 h-3 text-slate-500" />
-                    </button>
-                  ))}
-                </div>
+          <text x="140" y="104" fill="#f4f1ea" font-size="10">
+            Nuwakot / Betrawati
+          </text>
 
-                {/* Section 3: INFORMATION */}
-                <div className="space-y-1 pt-1 border-t border-[#122240]">
-                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase px-2">
-                    INFORMATION
-                  </span>
-                  <button
-                    onClick={() => handleMenuNavigation('updates')}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[#112347] text-xs text-slate-300 block"
-                  >
-                    News & Sources (The Kathmandu Post)
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('more')}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[#112347] text-xs text-slate-300 block"
-                  >
-                    Emergency Contacts
-                  </button>
-                  <button
-                    onClick={() => handleMenuNavigation('more')}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-[#112347] text-xs text-slate-300 block"
-                  >
-                    About Dashboard
-                  </button>
-                </div>
-              </div>
+          <circle cx="198" cy="158" r="5" fill="#e8a838" />
 
-              {/* Data Connection Info Bar */}
-              <div className="mt-4 bg-[#050c18] p-3 rounded-xl border border-[#112242] text-[11px] space-y-1">
-                <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>DATA CONNECTION: Connected</span>
-                </div>
-                <div className="text-slate-400 text-[10px]">
-                  Source: The Kathmandu Post & NDRRMA
-                </div>
-                <div className="text-slate-500 text-[9.5px]">
-                  Last data sync: {data.lastUpdated}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+          <text x="210" y="154" fill="#f4f1ea" font-size="10">
+            Dhading
+          </text>
 
-        {/* ====================================================================
-            PART 21: NOTIFICATION DRAWER
-           ==================================================================== */}
-        {isNotificationsOpen && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex justify-end animate-in fade-in">
-            <div className="bg-[#081224] border-l border-[#162a50] w-full max-w-[320px] h-full p-4 flex flex-col justify-between shadow-2xl">
-              <div>
-                <div className="flex items-center justify-between border-b border-[#142647] pb-3 mb-3">
-                  <div className="flex items-center gap-2">
-                    <Bell className="w-4 h-4 text-sky-400" />
-                    <h3 className="font-bold text-sm text-white">Emergency Alerts</h3>
-                  </div>
-                  <button
-                    onClick={() => setIsNotificationsOpen(false)}
-                    className="p-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white"
-                    aria-label="Close notifications"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
+          <circle cx="268" cy="178" r="5" fill="#c23b3b" />
 
-                <div className="space-y-2.5 overflow-y-auto max-h-[75vh] pr-1">
-                  {data.notifications.map((n) => (
-                    <div
-                      key={n.id}
-                      className={`border p-3 rounded-xl text-xs space-y-1 ${
-                        n.severity === 'CRITICAL'
-                          ? 'bg-red-950/40 border-red-700/60'
-                          : n.severity === 'WARNING'
-                          ? 'bg-amber-950/40 border-amber-700/60'
-                          : 'bg-[#0c1830] border-[#18315c]'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between text-[10px]">
-                        <span
-                          className={`font-bold px-1.5 py-0.5 rounded ${
-                            n.severity === 'CRITICAL'
-                              ? 'bg-red-700 text-white'
-                              : n.severity === 'WARNING'
-                              ? 'bg-amber-600 text-white'
-                              : 'bg-blue-800 text-white'
-                          }`}
-                        >
-                          {n.severity}
-                        </span>
-                        <span className="text-slate-400">{n.time}</span>
-                      </div>
-                      <h4 className="font-bold text-white text-[12px]">{n.title}</h4>
-                      <p className="text-slate-300 leading-snug">{n.body}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <text x="230" y="200" fill="#f4f1ea" font-size="10">
+            Chitwan / Narayani
+          </text>
 
-              <button
-                onClick={() => setIsNotificationsOpen(false)}
-                className="w-full bg-slate-800 text-slate-300 py-2.5 rounded-xl text-xs font-semibold hover:bg-slate-700 transition-colors"
-              >
-                Close Alerts
-              </button>
-            </div>
-          </div>
-        )}
+          <text x="16" y="210" fill="#9aa6b8" font-size="8">
+            Schematic only · not a survey map
+          </text>
+        </svg>
 
-        {/* ====================================================================
-            PART 20: QUICK OVERVIEW DETAIL MODAL
-           ==================================================================== */}
-        {selectedDetail && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in">
-            <div className="bg-[#0b162c] border border-[#1b3464] w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
-              <div className="flex items-center justify-between border-b border-[#14274d] pb-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-sky-950 border border-sky-800/60 flex items-center justify-center">
-                    {selectedDetail.type === 'flood' && <DamagedHouseIcon />}
-                    {selectedDetail.type === 'hydro' && <HydropowerIcon />}
-                    {selectedDetail.type === 'road' && <RoadDamageIcon />}
-                    {selectedDetail.type === 'bridge' && <BridgeIcon />}
-                    {selectedDetail.type === 'border' && <BorderGateIcon />}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-white">{selectedDetail.title}</h3>
-                    <span className="text-xs text-amber-400 font-bold">{selectedDetail.highlight}</span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setSelectedDetail(null)}
-                  className="p-1.5 rounded-full bg-slate-800 text-slate-300 hover:text-white"
-                  aria-label="Close detail modal"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
+        <div class="legend">
+          <span>
+            <b style="background:#e05a4f"></b>
+            <span data-i18n="leg_origin">
+              Origin / cut-off
+            </span>
+          </span>
 
-              {/* Status and source badges */}
-              <div className="flex items-center justify-between text-[11px] bg-[#071122] p-2.5 rounded-xl border border-[#142647]">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-slate-400 font-medium">Status:</span>
-                  <span className="font-bold text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/60">
-                    {selectedDetail.status}
-                  </span>
-                </div>
-                <div className="text-slate-400 text-[10.5px]">
-                  Source: {selectedDetail.source}
-                </div>
-              </div>
+          <span>
+            <b style="background:#e8a838"></b>
+            <span data-i18n="leg_hit">
+              Heavily hit
+            </span>
+          </span>
 
-              {/* Detail Items */}
-              <div className="space-y-2.5 text-xs">
-                {Object.entries(selectedDetail.details).map(([key, val]) => (
-                  <div key={key} className="bg-[#081224] p-3 rounded-xl border border-[#142647]">
-                    <span className="text-slate-400 uppercase text-[10px] font-bold tracking-wider">
-                      {key}
-                    </span>
-                    <p className="text-slate-200 mt-0.5 font-medium leading-relaxed">{val}</p>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => setSelectedDetail(null)}
-                className="w-full bg-[#1976d2] hover:bg-blue-600 text-white py-2.5 rounded-xl text-xs font-bold transition-all"
-              >
-                Close Report
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ====================================================================
-            BULLETIN DETAIL MODAL
-           ==================================================================== */}
-        {selectedUpdate && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in">
-            <div className="bg-[#0b162c] border border-[#1b3464] w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
-              <div className="flex items-center justify-between border-b border-[#14274d] pb-3">
-                <span className="bg-red-950 text-red-300 border border-red-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                  {selectedUpdate.category}
-                </span>
-                <button
-                  onClick={() => setSelectedUpdate(null)}
-                  className="p-1 rounded-full bg-slate-800 text-slate-300 hover:text-white"
-                  aria-label="Close update modal"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div>
-                <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
-                  {selectedUpdate.title}
-                </h3>
-                <span className="text-[11px] text-slate-400 mt-1 block">
-                  Reported: {selectedUpdate.timestamp} ({selectedUpdate.time})
-                </span>
-              </div>
-
-              <div className="bg-[#081224] p-3.5 rounded-xl border border-[#142647] text-xs text-slate-200 leading-relaxed space-y-2">
-                <p>{selectedUpdate.content}</p>
-                <div className="pt-2 border-t border-[#132547] text-[10.5px] text-slate-400 flex items-center justify-between">
-                  <span>Source: {selectedUpdate.source}</span>
-                  <span className="font-semibold text-amber-400">[{selectedUpdate.status}]</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => setSelectedUpdate(null)}
-                className="w-full bg-[#1976d2] hover:bg-blue-600 text-white py-2.5 rounded-xl text-xs font-bold transition-all"
-              >
-                Done Reading
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ====================================================================
-            DISTRICT INSPECTOR MODAL
-           ==================================================================== */}
-        {selectedDistrict && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in">
-            <div className="bg-[#0b162c] border border-[#1b3464] w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 space-y-3">
-              <div className="flex items-center justify-between border-b border-[#14274d] pb-2.5">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-red-500" />
-                  <h3 className="text-base font-bold text-white">{selectedDistrict} District Profile</h3>
-                </div>
-                <button
-                  onClick={() => setSelectedDistrict(null)}
-                  className="p-1 rounded-full bg-slate-800 text-slate-300 hover:text-white"
-                  aria-label="Close district profile"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="text-xs space-y-2">
-                <div className="bg-[#081224] p-3 rounded-xl border border-[#142647] flex justify-between items-center">
-                  <span className="text-slate-400">Casualties Confirmed:</span>
-                  <span className="font-bold text-red-400 text-sm">
-                    {data.districtDeaths.find((d) => d.district === selectedDistrict)?.count || 'Severe'}
-                  </span>
-                </div>
-                <div className="bg-[#081224] p-3 rounded-xl border border-[#142647]">
-                  <span className="text-slate-400 font-bold text-[10px] uppercase">Active Status</span>
-                  <p className="text-slate-200 mt-0.5 leading-relaxed">
-                    Heavy earthmovers clearing debris along Trishuli corridor. Search & rescue teams prioritizing riverbank evacuation camps.
-                  </p>
-                </div>
-              </div>
-
-              <button
-                onClick={() => setSelectedDistrict(null)}
-                className="w-full bg-[#1976d2] text-white py-2.5 rounded-xl text-xs font-bold"
-              >
-                Close Profile
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ====================================================================
-            DISASTER INTELLIGENCE DRAWER MODAL
-           ==================================================================== */}
-        {selectedIntelligenceTopic && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in">
-            <div className="bg-[#0b162c] border border-[#1b3464] w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 space-y-3">
-              <div className="flex items-center justify-between border-b border-[#14274d] pb-2.5">
-                <div className="flex items-center gap-2">
-                  <Radio className="w-5 h-5 text-sky-400" />
-                  <h3 className="text-base font-bold text-white">{selectedIntelligenceTopic} Intelligence</h3>
-                </div>
-                <button
-                  onClick={() => setSelectedIntelligenceTopic(null)}
-                  className="p-1 rounded-full bg-slate-800 text-slate-300 hover:text-white"
-                  aria-label="Close intelligence topic"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="text-xs space-y-2">
-                <div className="bg-[#081224] p-3 rounded-xl border border-[#142647]">
-                  <span className="text-slate-400 font-bold text-[10px] uppercase">Telemetry & Press Source</span>
-                  <p className="text-slate-200 mt-1">
-                    Ingested from {DATA_SOURCES.kathmanduPost.name} and {DATA_SOURCES.ndrrma.name}.
-                  </p>
-                </div>
-                <div className="bg-[#081224] p-3 rounded-xl border border-[#142647]">
-                  <span className="text-slate-400 font-bold text-[10px] uppercase">Data Verification</span>
-                  <p className="text-slate-200 mt-1">
-                    All casualty and infrastructure numbers are cataloged under standard crisis reporting protocols.
-                  </p>
-                </div>
-              </div>
-
-              <button
-                onClick={() => setSelectedIntelligenceTopic(null)}
-                className="w-full bg-[#1976d2] text-white py-2.5 rounded-xl text-xs font-bold"
-              >
-                Close Topic
-              </button>
-            </div>
-          </div>
-        )}
+          <span>
+            <b style="background:#c23b3b"></b>
+            <span data-i18n="leg_down">
+              Downstream recoveries
+            </span>
+          </span>
+        </div>
 
       </div>
+    </section>
+
+    <!-- OPERATIONS -->
+    <section class="section" id="ops">
+      <h2 data-i18n="h_ops">
+        Operations &amp; access
+      </h2>
+
+      <div class="facts">
+
+        <article class="fact">
+          <strong data-i18n="f1t">
+            21,000+ security personnel deployed
+          </strong>
+
+          <p data-i18n="f1p">
+            Search, rescue and relief continue on day 9. Private operators added 129 emergency helicopter flights.
+          </p>
+        </article>
+
+        <article class="fact">
+          <strong data-i18n="f2t">
+            3,950 people in temporary centres
+          </strong>
+
+          <p data-i18n="f2p">
+            Shelters reported in Nuwakot, Dhading, Rasuwa and Kathmandu. Relief still moves by road and helicopter where bridges are gone.
+          </p>
+        </article>
+
+        <article class="fact">
+          <strong data-i18n="f3t">
+            Langtang Valley remains cut off
+          </strong>
+
+          <p data-i18n="f3p">
+            Roads and the Syabrubesi bridge to Dhunche were swept away. Locals have food for roughly 4–6 weeks; later resupply depends on helicopters.
+          </p>
+        </article>
+
+        <article class="fact">
+          <strong data-i18n="f4t">
+            Mobile service ~95% restored, quality uneven
+          </strong>
+
+          <p data-i18n="f4p">
+            Nepal Telecom reports flood-hit towers back; Ncell still rebuilding three destroyed sites. Microwave and 30 satellite phones fill the gaps.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="briefing">
+      <h2 data-i18n="h_news">
+        Kathmandu Post briefing
+      </h2>
+
+      <div class="tabs" id="newsTabs"></div>
+
+      <input
+        class="search"
+        id="newsSearch"
+        type="search"
+        placeholder="Search headlines…"
+        autocomplete="off"
+      />
+
+      <div class="feed" id="newsFeed"></div>
+    </section>
+
+    <!-- HELP -->
+    <section class="section" id="help">
+      <h2 data-i18n="h_help">
+        Call for help
+      </h2>
+
+      <div class="phones">
+
+        <a class="phone primary" href="tel:1234">
+          <b>1234</b>
+          <span data-i18n="p1234">
+            Disaster hotline / DEOC
+          </span>
+        </a>
+
+        <a class="phone" href="tel:1155">
+          <b>1155</b>
+          <span data-i18n="p1155">
+            DHM weather &amp; flood
+          </span>
+        </a>
+
+        <a class="phone" href="tel:100">
+          <b>100</b>
+          <span data-i18n="p100">
+            Police
+          </span>
+        </a>
+
+        <a class="phone" href="tel:102">
+          <b>102</b>
+          <span data-i18n="p102">
+            Ambulance
+          </span>
+        </a>
+
+        <a class="phone" href="tel:1144">
+          <b>1144</b>
+          <span data-i18n="p1144">
+            Tourist Police
+          </span>
+        </a>
+
+        <a class="phone" href="tel:1114">
+          <b>1114</b>
+          <span data-i18n="p1114">
+            Armed Police Force
+          </span>
+        </a>
+
+      </div>
+
+      <p class="note" data-i18n="helpnote">
+        Identification: families are being asked to give DNA samples at Nepal Police Hospital, Maharajgunj, or the nearest District Police Office. Only 95 of 1,252 recovered bodies had been identified in the 3 September sitrep.
+      </p>
+    </section>
+
+    <!-- VERIFIED NEXT STEPS -->
+    <section class="section" id="donate">
+      <h2 data-i18n="h_give">
+        Verified next steps
+      </h2>
+
+      <div class="help">
+
+        <a
+          href="https://kathmandupost.com/national/2026/08/27/how-people-can-help-nepal-s-flood-affected-communities"
+          target="_blank"
+          rel="noopener"
+        >
+          How people can help — The Kathmandu Post
+
+          <small data-i18n="g1">
+            Guidance published 27 Aug 2026. Prefer official funds and listed agencies.
+          </small>
+        </a>
+
+        <a
+          href="https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
+          target="_blank"
+          rel="noopener"
+        >
+          Latest sitrep used on this page
+
+          <small>
+            kathmandupost.com · 3 Sep 2026, 13:03
+          </small>
+        </a>
+
+        <button type="button" class="cardish" id="shareBtn">
+          Share this brief
+
+          <small data-i18n="g3">
+            Sends the current headline figures, not photos of victims.
+          </small>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>
+        <strong data-i18n="disc_t">
+          Data rule.
+        </strong>
+
+        <span data-i18n="disc_p">
+          Every figure on this dashboard is taken from The Kathmandu Post reporting, principally the 3 September 2026 NDRRMA sitrep filed by Post Report. District totals for Gorkha, Dhading and Tanahun were described as recoveries without a published count in that article, so they are listed as recovered, count not specified. This is an independent briefing page, not an official government product. Numbers move as bodies are identified and missing-person lists are verified.
+        </span>
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- BOTTOM DOCK -->
+  <nav class="dock" aria-label="Quick actions">
+
+    <a class="sos" href="tel:1234">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+        <path d="M7 3h4l1 5-3 2a12 12 0 0 0 6 6l2-3 5 1v4a2 2 0 0 1-2 2A16 16 0 0 1 3 7a2 2 0 0 1 2-2z" />
+      </svg>
+
+      SOS 1234
+    </a>
+
+    <a href="#map">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+        <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z" />
+        <path d="M9 3v15M15 6v15" />
+      </svg>
+
+      <span data-i18n="nav_map">
+        Map
+      </span>
+    </a>
+
+    <a href="#briefing">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+        <path d="M5 4h14v16H5z" />
+        <path d="M8 8h8M8 12h8M8 16h5" />
+      </svg>
+
+      <span data-i18n="nav_news">
+        Briefing
+      </span>
+    </a>
+
+    <button type="button" id="alertBtn">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+        <path d="M12 3a6 6 0 0 1 6 6c0 7 2 8 2 8H4s2-1 2-8a6 6 0 0 1 6-6z" />
+        <path d="M10 19a2 2 0 0 0 4 0" />
+      </svg>
+
+      <span data-i18n="nav_alert">
+        Status
+      </span>
+    </button>
+
+  </nav>
+
+  <!-- STATUS SHEET -->
+  <div class="sheet" id="sheet" hidden>
+    <div class="tray">
+      <div class="handle"></div>
+      <h3 id="sheetTitle"></h3>
+      <p id="sheetBody"></p>
     </div>
-  );
-}
-```
+  </div>
+
+  <script>
+    /*
+      ============================================================
+      TRISHULI PULSE — FRONTEND DATA CONFIGURATION
+      ============================================================
+
+      PIECE 1
+      ------------------------------------------------------------
+      The UI remains unchanged.
+
+      Because this website is being published on GitHub Pages,
+      the browser does NOT call a server-side /api/news endpoint.
+
+      Instead, Piece 2 will create and regularly update:
+
+          ./data/news.json
+
+      GitHub Actions will fetch The Kathmandu Post RSS feed,
+      validate the articles and write the latest known-good
+      data into data/news.json.
+
+      GitHub Pages then serves that JSON as a normal static file.
+
+      Expected response:
+
+      {
+        "source": "The Kathmandu Post",
+        "source_url": "https://kathmandupost.com/rss",
+        "updated_at": "2026-09-03T13:03:00+05:45",
+        "items": [
+          {
+            "tag": "sitrep",
+            "date": "3 Sep 2026",
+            "title": "Article title",
+            "blurb": "Short summary",
+            "url": "https://kathmandupost.com/..."
+          }
+        ]
+      }
+
+      Until Piece 2 is installed, the page safely uses the
+      verified FALLBACK_NEWS snapshot below.
+    */
+
+
+    const CONFIG = {
+      NEWS_DATA_URL: "./data/news.json",
+      NEWS_REFRESH_MS: 5 * 60 * 1000
+    };
+
+
+    const I18N = {
+      en: {
+        tagline:
+          "Nepal Floods 2026 · TKP sitrep",
+
+        sourcechip:
+          "Source: The Kathmandu Post",
+
+        daychip:
+          "Day 9 of operations",
+
+        k_dead:
+          "Confirmed dead",
+
+        k_dead_sub:
+          "95 identified & handed over",
+
+        k_miss:
+          "Unaccounted for",
+
+        k_miss_sub:
+          "Includes ~900 hydropower workers",
+
+        k_resc:
+          "Rescued",
+
+        k_resc_sub:
+          "Army airlifted 4,364 in 715 flights",
+
+        k_hurt:
+          "Treated injured",
+
+        k_hurt_sub:
+          "Army & APF medical teams",
+
+        h_districts:
+          "Deaths recovered by district",
+
+        dist_note:
+          "Highest recoveries are downstream of the origin. Rasuwa is where the surge began; Chitwan holds the largest recovered-body count because the flood carried people far south.",
+
+        h_map:
+          "Corridor snapshot",
+
+        leg_origin:
+          "Origin / cut-off",
+
+        leg_hit:
+          "Heavily hit",
+
+        leg_down:
+          "Downstream recoveries",
+
+        h_ops:
+          "Operations & access",
+
+        f1t:
+          "21,000+ security personnel deployed",
+
+        f1p:
+          "Search, rescue and relief continue on day 9. Private operators added 129 emergency helicopter flights.",
+
+        f2t:
+          "3,950 people in temporary centres",
+
+        f2p:
+          "Shelters reported in Nuwakot, Dhading, Rasuwa and Kathmandu. Relief still moves by road and helicopter where bridges are gone.",
+
+        f3t:
+          "Langtang Valley remains cut off",
+
+        f3p:
+          "Roads and the Syabrubesi bridge to Dhunche were swept away. Locals have food for roughly 4–6 weeks; later resupply depends on helicopters.",
+
+        f4t:
+          "Mobile service ~95% restored, quality uneven",
+
+        f4p:
+          "Nepal Telecom reports flood-hit towers back; Ncell still rebuilding three destroyed sites. Microwave and 30 satellite phones fill the gaps.",
+
+        h_news:
+          "Kathmandu Post briefing",
+
+        h_help:
+          "Call for help",
+
+        p1234:
+          "Disaster hotline / DEOC",
+
+        p1155:
+          "DHM weather & flood",
+
+        p100:
+          "Police",
+
+        p102:
+          "Ambulance",
+
+        p1144:
+          "Tourist Police",
+
+        p1114:
+          "Armed Police Force",
+
+        helpnote:
+          "Identification: families are being asked to give DNA samples at Nepal Police Hospital, Maharajgunj, or the nearest District Police Office. Only 95 of 1,252 recovered bodies had been identified in the 3 September sitrep.",
+
+        h_give:
+          "Verified next steps",
+
+        g1:
+          "Guidance published 27 Aug 2026. Prefer official funds and listed agencies.",
+
+        g3:
+          "Sends the current headline figures, not photos of victims.",
+
+        disc_t:
+          "Data rule.",
+
+        disc_p:
+          "Every figure on this dashboard is taken from The Kathmandu Post reporting, principally the 3 September 2026 NDRRMA sitrep filed by Post Report. District totals for Gorkha, Dhading and Tanahun were described as recoveries without a published count in that article, so they are listed as recovered, count not specified. This is an independent briefing page, not an official government product. Numbers move as bodies are identified and missing-person lists are verified.",
+
+        nav_map:
+          "Map",
+
+        nav_news:
+          "Briefing",
+
+        nav_alert:
+          "Status",
+
+        searchph:
+          "Search headlines…"
+      },
+
+
+      ne: {
+        tagline:
+          "नेपाल बाढी २०२६ · कान्तिपुर सिट्रेप",
+
+        sourcechip:
+          "स्रोत: द काठमाडौं पोस्ट",
+
+        daychip:
+          "सञ्चालनको ९ औँ दिन",
+
+        k_dead:
+          "पुष्टि मृत्यु",
+
+        k_dead_sub:
+          "९५ जनाको पहिचान र बुझाइ",
+
+        k_miss:
+          "बेपत्ता",
+
+        k_miss_sub:
+          "करिब ९०० जलविद्युत् कामदार सहित",
+
+        k_resc:
+          "उद्धार",
+
+        k_resc_sub:
+          "सेनाले ७१५ उडानमा ४,३६४ जना",
+
+        k_hurt:
+          "उपचार गरिएका घाइते",
+
+        k_hurt_sub:
+          "सेना र सशस्त्र प्रहरीका टोली",
+
+        h_districts:
+          "जिल्लाअनुसार भेटिएका शव",
+
+        dist_note:
+          "सबैभन्दा धेरै शव उद्गमभन्दा तल्लो तटीय जिल्लामा भेटिएका छन्। रसुवाबाट सुरु भएको छालले मानिसलाई टाढासम्म बगाएकाले चितवनमा सबैभन्दा धेरै शव भेटिएका छन्।",
+
+        h_map:
+          "करिडोर झलक",
+
+        leg_origin:
+          "उद्गम / सम्पर्क विच्छेद",
+
+        leg_hit:
+          "अत्यधिक प्रभावित",
+
+        leg_down:
+          "तल्लो तटीय खोज",
+
+        h_ops:
+          "सञ्चालन र पहुँच",
+
+        f1t:
+          "२१,००० भन्दा बढी सुरक्षाकर्मी परिचालन",
+
+        f1p:
+          "९ औँ दिनमा पनि खोज, उद्धार र राहत जारी। निजी हेलिकप्टरले थप १२९ आपतकालीन उडान गरे।",
+
+        f2t:
+          "अस्थायी केन्द्रमा ३,९५० जना",
+
+        f2p:
+          "नुवाकोट, धादिङ, रसुवा र काठमाडौंका आश्रयस्थल। पुल भत्किएकाले राहत सडक र हेलिकप्टरबाट गइरहेको छ।",
+
+        f3t:
+          "लाङटाङ उपत्यका अझै विच्छेद",
+
+        f3p:
+          "स्याफ्रुबेसी पुलसहित धुञ्चे जोड्ने सडक बगे। स्थानीयसँग ४–६ हप्ताको खाद्यान्न छ; त्यसपछि हेलिकप्टरमा भर पर्नुपर्नेछ।",
+
+        f4t:
+          "मोबाइल सेवा करिब ९५% फर्कियो, गुणस्तर असमान",
+
+        f4p:
+          "नेपाल टेलिकमका प्रभावित टावर सञ्चालनमा। एनसेलका तीन पूर्ण क्षतिग्रस्त साइट पुनर्निर्माण हुँदै। ३० वटा स्याटेलाइट फोन प्रयोगमा।",
+
+        h_news:
+          "काठमाडौं पोस्ट ब्रिफिङ",
+
+        h_help:
+          "सहयोगका लागि फोन",
+
+        p1234:
+          "विपद् हटलाइन / जिल्ला ईओसी",
+
+        p1155:
+          "जल तथा मौसम विज्ञान विभाग",
+
+        p100:
+          "प्रहरी",
+
+        p102:
+          "एम्बुलेन्स",
+
+        p1144:
+          "पर्यटक प्रहरी",
+
+        p1114:
+          "सशस्त्र प्रहरी बल",
+
+        helpnote:
+          "पहिचान: परिवारलाई नेपाल प्रहरी अस्पताल, महाराजगञ्ज वा नजिकको जिल्ला प्रहरी कार्यालयमा डीएनए नमूना दिन भनिएको छ। ३ सेप्टेम्बरको विवरणअनुसार १,२५२ मध्ये ९५ शव मात्र पहिचान भएका छन्।",
+
+        h_give:
+          "प्रमाणित अर्को कदम",
+
+        g1:
+          "२०२६ अगस्ट २७ को मार्गदर्शन। सरकारी कोष र सूचीकृत संस्था रोज्नुहोस्।",
+
+        g3:
+          "पीडितका तस्बिर होइन, अहिलेका मुख्य अंक पठाउँछ।",
+
+        disc_t:
+          "तथ्यांक नियम।",
+
+        disc_p:
+          "यस ड्यासबोर्डका सबै अंक द काठमाडौं पोस्टका रिपोर्टबाट लिइएका हुन्, मुख्यतः ३ सेप्टेम्बर २०२६ को एनडीआरआरएमए विवरण। गोरखा, धादिङ र तनहुँमा शव भेटिएको उल्लेख छ तर सो लेखमा संख्या दिइएको छैन। यो स्वतन्त्र ब्रिफिङ हो, सरकारी उत्पादन होइन।",
+
+        nav_map:
+          "नक्सा",
+
+        nav_news:
+          "ब्रिफिङ",
+
+        nav_alert:
+          "स्थिति",
+
+        searchph:
+          "शीर्षक खोज्नुहोस्…"
+      }
+    };
+
+
+    /*
+      ============================================================
+      VERIFIED FALLBACK NEWS
+      ============================================================
+    */
+
+    const FALLBACK_NEWS = [
+      {
+        tag: "sitrep",
+        date: "3 Sep 2026",
+        title:
+          "Nepal flood toll rises to 1,252 as at least 4,216 remain unaccounted for",
+        blurb:
+          "NDRRMA noon figures. Nearly 900 hydropower workers still missing. 11,913 rescued.",
+        url:
+          "https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
+      },
+
+      {
+        tag: "access",
+        date: "3 Sep 2026",
+        title:
+          "Bhotekoshi floods expose gaps in Nepal’s emergency communications",
+        blurb:
+          "Most towers are back, but fibre is gone in places and calls still drop. The post-2015 disaster comms plan was never fully enacted.",
+        url:
+          "https://kathmandupost.com/national/2026/09/03/bhotekoshi-floods-expose-gaps-in-nepal-s-emergency-communications"
+      },
+
+      {
+        tag: "access",
+        date: "2 Sep 2026",
+        title:
+          "Oft-battered Langtang Valley cut off after Rasuwa floods",
+        blurb:
+          "No road from Syabrubesi to Dhunche. Tourists and supplies depend on helicopters.",
+        url:
+          "https://kathmandupost.com/national/2026/09/02/oft-battered-langtang-valley-cut-off-after-rasuwa-floods"
+      },
+
+      {
+        tag: "warning",
+        date: "2 Sep 2026",
+        title:
+          "Nepal sent its disaster alert 38 minutes after the glacier collapse",
+        blurb:
+          "Some people survived by luck, not by the official warning. A knowable high-mountain risk went under-monitored for years.",
+        url:
+          "https://kathmandupost.com/national/2026/09/02/nepal-sent-its-disaster-alert-38-minutes-after-the-glacier-collapse-it-wasn-t-enough"
+      },
+
+      {
+        tag: "people",
+        date: "1 Sep 2026",
+        title:
+          "Fourteen minutes before the flood hit, a warning sent 900 students running",
+        blurb:
+          "A school accountant’s frantic call emptied Tribhuvan Trishuli Secondary School in Bidur before the mud wall arrived.",
+        url:
+          "https://kathmandupost.com/national/2026/09/01/fourteen-minutes-before-the-flood-hit-a-warning-sent-900-students-running-for-safety"
+      },
+
+      {
+        tag: "people",
+        date: "1 Sep 2026",
+        title:
+          "UN Women estimates 43,000 women and girls need urgent assistance",
+        blurb:
+          "157,050 women and girls in Rasuwa and Nuwakot affected directly or indirectly. Food, water and protection are the urgent gaps.",
+        url:
+          "https://kathmandupost.com/national/2026/09/01/un-women-estimates-43-000-women-and-girls-in-nepal-need-urgent-flood-assistance"
+      },
+
+      {
+        tag: "ops",
+        date: "1 Sep 2026",
+        title:
+          "Local governments take charge of flood relief",
+        blurb:
+          "Six-party committees in Rasuwa and Nuwakot after criticism that the first response was too centralised.",
+        url:
+          "https://kathmandupost.com/national/2026/09/01/local-governments-take-charge-of-flood-relief-after-criticism-of-centralised-response"
+      },
+
+      {
+        tag: "ops",
+        date: "1 Sep 2026",
+        title:
+          "Nepal seeks urgent climate finance after Bhotekoshi flood",
+        blurb:
+          "Government asks the loss-and-damage fund for immediate support, saying the destruction exceeds national capacity.",
+        url:
+          "https://kathmandupost.com/national/2026/09/01/nepal-seeks-urgent-climate-finance-after-bhotekoshi-flood"
+      },
+
+      {
+        tag: "people",
+        date: "1 Sep 2026",
+        title:
+          "In Nepal’s flood zone, the second disaster is psychological",
+        blurb:
+          "Mental-health teams are only beginning to reach survivors a week into the country’s deadliest disaster in a decade.",
+        url:
+          "https://kathmandupost.com/national/2026/09/01/in-nepal-s-flood-zone-the-second-disaster-is-psychological"
+      },
+
+      {
+        tag: "ops",
+        date: "31 Aug 2026",
+        title:
+          "The floods keep coming. Nepal keeps starting over",
+        blurb:
+          "Three catastrophic floods in three years, three administrations — and the same question about whether anything actually changed.",
+        url:
+          "https://kathmandupost.com/national/2026/08/31/the-floods-keep-coming-nepal-keeps-starting-over"
+      },
+
+      {
+        tag: "sitrep",
+        date: "30 Aug 2026",
+        title:
+          "Reconstruction could cost up to $5 billion",
+        blurb:
+          "Government working on a detailed damage assessment while relief remains the immediate priority.",
+        url:
+          "https://kathmandupost.com/national/2026/08/30/relief-priority-but-government-assessing-damage-inflicted-by-bhotekoshi-floods"
+      }
+    ];
+
+
+    const DISTRICTS = [
+      {
+        name: "Chitwan",
+        nameNe: "चितवन",
+        dead: 355,
+        max: 355,
+        note:
+          "Largest recovered-body count; flood carried people down the Narayani."
+      },
+
+      {
+        name: "Nawalparasi East",
+        nameNe: "नवलपरासी पूर्व",
+        dead: 218,
+        max: 355,
+        note:
+          "Downstream recovery district."
+      },
+
+      {
+        name: "Nawalparasi West",
+        nameNe: "नवलपरासी पश्चिम",
+        dead: 208,
+        max: 355,
+        note:
+          "Includes bodies later handed over from India, as reported in parallel coverage."
+      },
+
+      {
+        name: "Nuwakot",
+        nameNe: "नुवाकोट",
+        dead: 177,
+        max: 355,
+        note:
+          "Betrawati and Trishuli settlements heavily buried."
+      },
+
+      {
+        name: "Rasuwa",
+        nameNe: "रसुवा",
+        dead: 127,
+        max: 355,
+        note:
+          "Origin district. Roads to Langtang and the border destroyed."
+      },
+
+      {
+        name: "Gorkha",
+        nameNe: "गोरखा",
+        dead: null,
+        max: 355,
+        note:
+          "Bodies recovered; The Kathmandu Post 3 Sep sitrep did not publish a count."
+      },
+
+      {
+        name: "Dhading",
+        nameNe: "धादिङ",
+        dead: null,
+        max: 355,
+        note:
+          "Bodies recovered; count not specified in the 3 Sep TKP sitrep."
+      },
+
+      {
+        name: "Tanahun",
+        nameNe: "तनहुँ",
+        dead: null,
+        max: 355,
+        note:
+          "Bodies recovered; count not specified in the 3 Sep TKP sitrep."
+      }
+    ];
+
+
+    const TABS = [
+      {
+        id: "all",
+        en: "All",
+        ne: "सबै"
+      },
+
+      {
+        id: "sitrep",
+        en: "Sitrep",
+        ne: "स्थिति"
+      },
+
+      {
+        id: "access",
+        en: "Access",
+        ne: "पहुँच"
+      },
+
+      {
+        id: "warning",
+        en: "Warning",
+        ne: "पूर्वसूचना"
+      },
+
+      {
+        id: "people",
+        en: "People",
+        ne: "मानिस"
+      },
+
+      {
+        id: "ops",
+        en: "Response",
+        ne: "प्रतिकार्य"
+      }
+    ];
+
+
+    let lang = "en";
+    let newsFilter = "all";
+
+    let NEWS = [...FALLBACK_NEWS];
+
+    let dataMode = "snapshot";
+    let lastNewsRefresh = null;
+
+
+    /*
+      ============================================================
+      DATA HELPERS
+      ============================================================
+    */
+
+    function escapeHTML(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+
+    function normalizeNewsItem(item) {
+      if (!item || typeof item !== "object") {
+        return null;
+      }
+
+      const title = String(item.title || "").trim();
+      const url = String(item.url || "").trim();
+
+      if (!title || !url) {
+        return null;
+      }
+
+      return {
+        tag: String(item.tag || "all").toLowerCase(),
+        date: String(item.date || item.published_at || "").trim(),
+        title,
+        blurb: String(item.blurb || item.summary || "").trim(),
+        url
+      };
+    }
+
+
+    function normalizeNewsPayload(payload) {
+      const rawItems = Array.isArray(payload)
+        ? payload
+        : Array.isArray(payload?.items)
+          ? payload.items
+          : [];
+
+      return rawItems
+        .map(normalizeNewsItem)
+        .filter(Boolean);
+    }
+
+
+    function parseSourceUpdatedAt(payload) {
+      const value = payload?.updated_at;
+
+      if (!value) {
+        return new Date();
+      }
+
+      const date = new Date(value);
+
+      return Number.isNaN(date.getTime())
+        ? new Date()
+        : date;
+    }
+
+
+    function formatRefreshTime(date) {
+      if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
+        return "";
+      }
+
+      return (
+        new Intl.DateTimeFormat(
+          lang === "ne" ? "ne-NP" : "en-NP",
+          {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+            timeZone: "Asia/Kathmandu"
+          }
+        ).format(date) + " NPT"
+      );
+    }
+
+
+    function setDataMode(mode, refreshDate = null) {
+      dataMode = mode;
+      lastNewsRefresh = refreshDate;
+
+      const badge = document.getElementById("liveBadge");
+      const label = document.getElementById("liveLabel");
+      const updated = document.getElementById("updated");
+
+      if (mode === "live") {
+        badge.classList.remove("snapshot");
+        label.textContent = "LIVE";
+
+        if (refreshDate) {
+          updated.textContent =
+            lang === "ne"
+              ? `फिड अपडेट · ${formatRefreshTime(refreshDate)}`
+              : `Feed updated · ${formatRefreshTime(refreshDate)}`;
+        }
+      } else {
+        badge.classList.add("snapshot");
+        label.textContent = "SNAPSHOT";
+
+        updated.textContent =
+          lang === "ne"
+            ? "स्रोत स्न्यापसट · ३ सेप्टेम्बर २०२६, १३:०३ NPT"
+            : "Source snapshot · 3 Sep 2026, 13:03 NPT";
+      }
+    }
+
+
+    /*
+      ============================================================
+      STATIC NEWS LOADER
+      ============================================================
+    */
+
+    async function loadLiveNews() {
+      let controller = null;
+      let timeout = null;
+
+      try {
+        controller = new AbortController();
+
+        timeout = setTimeout(() => {
+          controller.abort();
+        }, 10000);
+
+        const response = await fetch(
+          `${CONFIG.NEWS_DATA_URL}?t=${Date.now()}`,
+          {
+            method: "GET",
+
+            headers: {
+              "Accept": "application/json"
+            },
+
+            cache: "no-store",
+
+            signal: controller.signal
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `News data returned ${response.status}`
+          );
+        }
+
+        const payload =
+          await response.json();
+
+        const freshNews =
+          normalizeNewsPayload(payload);
+
+        if (!freshNews.length) {
+          throw new Error(
+            "News data contained no usable articles"
+          );
+        }
+
+        NEWS = freshNews;
+
+        const sourceUpdatedAt =
+          parseSourceUpdatedAt(payload);
+
+        setDataMode(
+          "live",
+          sourceUpdatedAt
+        );
+
+        renderTabs();
+        renderNews();
+
+        console.log(
+          `[Trishuli Pulse] Static news data loaded: ${freshNews.length} articles`
+        );
+
+        return true;
+
+      } catch (error) {
+
+        NEWS = [...FALLBACK_NEWS];
+
+        setDataMode("snapshot");
+
+        renderTabs();
+        renderNews();
+
+        console.warn(
+          "[Trishuli Pulse] News data unavailable. Using verified snapshot.",
+          error
+        );
+
+        return false;
+
+      } finally {
+
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+
+      }
+    }
+
+
+    /*
+      ============================================================
+      LANGUAGE
+      ============================================================
+    */
+
+    function applyLang() {
+      document.body.classList.toggle(
+        "ne",
+        lang === "ne"
+      );
+
+      document.documentElement.lang =
+        lang === "ne"
+          ? "ne"
+          : "en";
+
+      document
+        .getElementById("btnEn")
+        .classList.toggle(
+          "on",
+          lang === "en"
+        );
+
+      document
+        .getElementById("btnNe")
+        .classList.toggle(
+          "on",
+          lang === "ne"
+        );
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((el) => {
+
+          const key =
+            el.getAttribute("data-i18n");
+
+          if (I18N[lang][key]) {
+            el.textContent =
+              I18N[lang][key];
+          }
+        });
+
+      document.getElementById("newsSearch").placeholder =
+        I18N[lang].searchph;
+
+      renderDistricts();
+      renderTabs();
+      renderNews();
+
+      if (dataMode === "live") {
+        setDataMode(
+          "live",
+          lastNewsRefresh
+        );
+      } else {
+        setDataMode("snapshot");
+      }
+    }
+
+
+    /*
+      ============================================================
+      DISTRICTS
+      ============================================================
+    */
+
+    function renderDistricts() {
+      const root =
+        document.getElementById("distList");
+
+      root.innerHTML =
+        DISTRICTS
+          .map((d) => {
+
+            const label =
+              lang === "ne"
+                ? d.nameNe
+                : d.name;
+
+            const value =
+              d.dead == null
+                ? (
+                    lang === "ne"
+                      ? "संख्या उल्लेख छैन"
+                      : "Count not in sitrep"
+                  )
+                : d.dead.toLocaleString("en-NP");
+
+            const width =
+              d.dead == null
+                ? 8
+                : Math.max(
+                    8,
+                    (d.dead / d.max) * 100
+                  );
+
+            return `
+              <div class="drow">
+                <b>${escapeHTML(label)}</b>
+                <span>${escapeHTML(value)}</span>
+
+                <div class="bar" aria-hidden="true">
+                  <i style="width:${width}%"></i>
+                </div>
+              </div>
+            `;
+          })
+          .join("") +
+
+        `
+          <p class="note">
+            ${escapeHTML(I18N[lang].dist_note)}
+          </p>
+        `;
+    }
+
+
+    /*
+      ============================================================
+      NEWS TABS
+      ============================================================
+    */
+
+    function renderTabs() {
+      const root =
+        document.getElementById("newsTabs");
+
+      root.innerHTML =
+        TABS
+          .map((t) => `
+            <button
+              type="button"
+              data-tab="${escapeHTML(t.id)}"
+              class="${newsFilter === t.id ? "on" : ""}"
+            >
+              ${escapeHTML(
+                lang === "ne"
+                  ? t.ne
+                  : t.en
+              )}
+            </button>
+          `)
+          .join("");
+
+      root
+        .querySelectorAll("button")
+        .forEach((btn) => {
+
+          btn.onclick = () => {
+
+            newsFilter =
+              btn.dataset.tab;
+
+            renderTabs();
+            renderNews();
+
+          };
+
+        });
+    }
+
+
+    /*
+      ============================================================
+      NEWS SEARCH + RENDER
+      ============================================================
+    */
+
+    function renderNews() {
+      const q =
+        (
+          document.getElementById("newsSearch").value ||
+          ""
+        )
+          .trim()
+          .toLowerCase();
+
+      const items =
+        NEWS.filter((n) => {
+
+          const okTab =
+            newsFilter === "all" ||
+            n.tag === newsFilter;
+
+          const searchable =
+            [
+              n.title,
+              n.blurb,
+              n.tag,
+              n.date
+            ]
+              .filter(Boolean)
+              .join(" ")
+              .toLowerCase();
+
+          const okQ =
+            !q ||
+            searchable.includes(q);
+
+          return okTab && okQ;
+
+        });
+
+      document.getElementById("newsFeed").innerHTML =
+
+        items
+          .map((n) => `
+
+            <a
+              class="story"
+              href="${escapeHTML(n.url)}"
+              target="_blank"
+              rel="noopener"
+            >
+
+              <div class="when">
+                ${escapeHTML(n.date)} · The Kathmandu Post
+              </div>
+
+              <h3>
+                ${escapeHTML(n.title)}
+              </h3>
+
+              <p>
+                ${escapeHTML(n.blurb)}
+              </p>
+
+              <div class="src">
+                Open article →
+              </div>
+
+            </a>
+
+          `)
+          .join("") ||
+
+        `
+          <p class="note">
+            ${
+              lang === "ne"
+                ? "मिल्दो ब्रिफिङ भेटिएन।"
+                : "No matching briefing items."
+            }
+          </p>
+        `;
+    }
+
+
+    /*
+      ============================================================
+      STATUS SHEET
+      ============================================================
+    */
+
+    function openSheet(title, body) {
+      const sheet =
+        document.getElementById("sheet");
+
+      document.getElementById("sheetTitle")
+        .textContent = title;
+
+      document.getElementById("sheetBody")
+        .textContent = body;
+
+      sheet.hidden = false;
+      sheet.classList.add("open");
+    }
+
+
+    function closeSheet() {
+      const sheet =
+        document.getElementById("sheet");
+
+      sheet.classList.remove("open");
+      sheet.hidden = true;
+    }
+
+
+    /*
+      ============================================================
+      EVENTS
+      ============================================================
+    */
+
+    document.getElementById("btnEn").onclick = () => {
+      lang = "en";
+      applyLang();
+    };
+
+
+    document.getElementById("btnNe").onclick = () => {
+      lang = "ne";
+      applyLang();
+    };
+
+
+    document
+      .getElementById("newsSearch")
+      .addEventListener(
+        "input",
+        renderNews
+      );
+
+
+    document
+      .getElementById("sheet")
+      .addEventListener(
+        "click",
+        (e) => {
+
+          if (e.target.id === "sheet") {
+            closeSheet();
+          }
+
+        }
+      );
+
+
+    document.getElementById("alertBtn").onclick = () => {
+
+      openSheet(
+
+        lang === "ne"
+          ? "अहिलेको स्थिति"
+          : "Current status",
+
+        lang === "ne"
+
+          ? "३ सेप्टेम्बर २०२६, दिउँसो १:०३ — मृत्यु १,२५२, बेपत्ता कम्तीमा ४,२१६, उद्धार ११,९१३। लाङटाङ अझै विच्छेद। मोबाइल करिब ९५% फर्कियो। स्रोत: द काठमाडौं पोस्ट।"
+
+          : "3 September 2026, 13:03 NPT — 1,252 dead, at least 4,216 unaccounted for, 11,913 rescued. Langtang still cut off. Mobile service about 95% restored. Source: The Kathmandu Post citing NDRRMA."
+      );
+    };
+
+
+    /*
+      ============================================================
+      SHARE
+      ============================================================
+    */
+
+    document.getElementById("shareBtn").onclick =
+      async () => {
+
+        const text =
+          "Nepal Floods 2026 (TKP 3 Sep 13:03 NPT): " +
+          "1,252 dead · 4,216 missing · 11,913 rescued. " +
+          "Helpline 1234. Brief: open the Trishuli Pulse page.";
+
+        if (navigator.share) {
+
+          try {
+
+            await navigator.share({
+              title: "Trishuli Pulse",
+              text
+            });
+
+          } catch (_) {}
+
+          return;
+        }
+
+        try {
+
+          await navigator.clipboard.writeText(text);
+
+          openSheet(
+            "Copied",
+            "Headline figures copied. Paste into a message — do not forward unverified victim photos."
+          );
+
+        } catch (_) {
+
+          openSheet(
+            "Share unavailable",
+            "Your browser did not allow automatic copying. Please copy the headline figures manually."
+          );
+
+        }
+      };
+
+
+    /*
+      ============================================================
+      INITIAL STARTUP
+      ============================================================
+    */
+
+    applyLang();
+
+
+    /*
+      First attempt to load the generated static news file.
+
+      If Piece 2 has not been installed yet, or if the file is
+      unavailable, the dashboard automatically falls back to
+      the verified Kathmandu Post snapshot.
+    */
+
+    loadLiveNews();
+
+
+    /*
+      Once Piece 2 is installed, the browser checks the static
+      JSON file every five minutes for newly generated data.
+    */
+
+    setInterval(
+      loadLiveNews,
+      CONFIG.NEWS_REFRESH_MS
+    );
+
+  </script>
+</body>
+</html>

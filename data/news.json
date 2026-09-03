@@ -1,84 +1,147 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-03T13:03:00+05:45",
+  "updated_at": "2026-09-03T18:33:40.398397+00:00",
   "items": [
     {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal weighing options to relocate Bhotekoshi flood survivors",
+      "blurb": "Authorities are mapping unsafe settlements and considering safer locations, but past disasters show that moving communities away from their land and livelihoods can be unsuitable.",
+      "url": "https://kathmandupost.com/national/2026/09/03/nepal-weighing-options-to-relocate-bhotekoshi-flood-survivors"
+    },
+    {
       "tag": "sitrep",
-      "date": "3 Sep 2026",
+      "date": "",
+      "title": "Prime Minister Balendra Shah to lead Nepali delegation to UN General Assembly",
+      "blurb": "Shah will take a small delegation to New York and make Nepal’s case on the Bhotekoshi disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/03/prime-minister-balendra-shah-to-lead-nepali-delegation-to-un-general-assembly"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "New bypass track to be built above collapsed Krishnabhir stretch",
+      "blurb": "Authorities race to restore Kathmandu’s main supply route as a 70-metre stretch plunged into the Trishuli river on Sunday. Engineers are also exploring long-term alternatives.",
+      "url": "https://kathmandupost.com/national/2026/09/03/new-bypass-track-to-be-built-above-collapsed-stretch-of-prithvi-highway"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Bhotekoshi flood leaves Syafrubesi in ruins, cuts off road access",
+      "blurb": "Much of the settlement was swept away by the flood, while damaged roads have hampered relief, rescue and the search for people still missing.",
+      "url": "https://kathmandupost.com/visual-stories/2026/09/03/bhotekoshi-flood-leaves-syafrubesi-in-ruins-cuts-off-road-access"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "EU provides additional Rs89 million in aid for Nepal flood victims",
+      "blurb": "The new funding will support up to 20,000 people in Bagmati Province with shelter, cash assistance, healthcare, water and sanitation services, and other emergency aid.",
+      "url": "https://kathmandupost.com/national/2026/09/03/eu-provides-additional-rs89-million-in-aid-for-nepal-flood-victims"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal launches #NepalCalling campaign to counter flood-driven tourism cancellations",
+      "blurb": "The peak September-November season accounts for nearly 40 percent of Nepal’s annual tourist arrivals. That makes the coming months crucial for an industry still recovering from successive shocks.",
+      "url": "https://kathmandupost.com/national/2026/09/03/nepal-launches-nepalcalling-campaign-to-counter-flood-driven-tourism-cancellations"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "114 Nepalis stranded in China return through Tatopani border",
+      "blurb": "The returnees were among 147 Nepali citizens stranded in China after devastating flood in the Bhotekoshi river on August 26, with more expected to cross the border in the coming days.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/03/114-nepalis-stranded-in-china-return-through-tatopani-border"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Q&A: How Nepal can still identify those who died in the flood",
+      "blurb": "Forensic scientist Lata Gautam on documenting the dead, the limits of DNA, the choices Nepal is making over the hundreds of unidentified flood victims — and the forensic capacity the country still lacks.",
+      "url": "https://kathmandupost.com/interviews/2026/09/03/q-a-how-nepal-can-still-identify-those-who-died-in-the-flood"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Silence underground does not mean death, says tunnel expert Dix",
+      "blurb": "The renowned tunnel expert says underground environments can remain survivable for a long time after devastation above ground, citing past rescues in Chile, Thailand and India.",
+      "url": "https://kathmandupost.com/national/2026/09/03/silence-underground-does-not-mean-death-says-tunnel-expert-dix"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "China sends third batch of emergency relief supplies to Nepal",
+      "blurb": "A Chinese Y-20A transport aircraft delivered mortuary freezers, epidemic prevention materials and daily necessities while 10 forensic experts arrived to assist with victim identification.",
+      "url": "https://kathmandupost.com/national/2026/09/03/china-sends-third-batch-of-emergency-relief-supplies-to-nepal"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal briefs diplomats on Bhotekoshi flood devastation",
+      "blurb": "Foreign Minister Shisir Khanal updated diplomats on the devastation across five districts, describing the disaster as a “Himalayan tsunami” and highlighting international support for the response.",
+      "url": "https://kathmandupost.com/national/2026/09/03/nepal-briefs-diplomats-on-bhotekoshi-flood-devastation"
+    },
+    {
+      "tag": "ops",
+      "date": "",
       "title": "Nepal flood toll rises to 1,252 as at least 4,216 remain unaccounted for",
-      "blurb": "NDRRMA noon figures. Nearly 900 hydropower workers still missing. 11,913 rescued.",
+      "blurb": "The death toll continues to rise as thousands remain unaccounted for, including nearly 900 hydropower workers still missing.",
       "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
     },
     {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Flash-flood risk remains high in Nepal’s Bhotekoshi, Trishuli rivers",
+      "blurb": "More rain is expected in the upper reaches of the rivers, with water levels likely to rise significantly in Rasuwa and Nuwakot and surrounding areas.",
+      "url": "https://kathmandupost.com/national/2026/09/03/flash-flood-risk-remains-high-in-nepal-s-bhotekoshi-trishuli-rivers"
+    },
+    {
       "tag": "access",
-      "date": "3 Sep 2026",
+      "date": "",
+      "title": "In Nepal’s flood zone, pilots are flying by their “own discipline”",
+      "blurb": "Washed-out roads, altered river courses and unreliable radio links have left helicopter crews navigating narrow valleys with little help from ground-based air traffic control.",
+      "url": "https://kathmandupost.com/national/2026/09/03/in-nepal-s-flood-zone-pilots-are-flying-by-their-own-discipline"
+    },
+    {
+      "tag": "access",
+      "date": "",
       "title": "Bhotekoshi floods expose gaps in Nepal’s emergency communications",
-      "blurb": "Most towers are back, but fibre is gone in places and calls still drop. The post-2015 disaster communications plan was never fully enacted.",
+      "blurb": "Most mobile services have been restored, but damaged towers and fibre have forced operators onto slower backup systems as experts call for the implementation of a disaster communications plan drafted after the 2015…",
       "url": "https://kathmandupost.com/national/2026/09/03/bhotekoshi-floods-expose-gaps-in-nepal-s-emergency-communications"
     },
     {
-      "tag": "access",
-      "date": "2 Sep 2026",
-      "title": "Oft-battered Langtang Valley cut off after Rasuwa floods",
-      "blurb": "No road from Syabrubesi to Dhunche. Tourists and supplies depend on helicopters.",
-      "url": "https://kathmandupost.com/national/2026/09/02/oft-battered-langtang-valley-cut-off-after-rasuwa-floods"
-    },
-    {
-      "tag": "warning",
-      "date": "2 Sep 2026",
-      "title": "Nepal sent its disaster alert 38 minutes after the glacier collapse",
-      "blurb": "The warning came after the collapse, raising questions about high-mountain monitoring and early warning.",
-      "url": "https://kathmandupost.com/national/2026/09/02/nepal-sent-its-disaster-alert-38-minutes-after-the-glacier-collapse-it-wasn-t-enough"
+      "tag": "people",
+      "date": "",
+      "title": "School students cut snack money to help Bhotekoshi flood victims",
+      "blurb": "The contributions, meant for flood-affected children, demonstrate that even small gestures can provide meaningful relief in times of disaster, teachers say.",
+      "url": "https://kathmandupost.com/national/2026/09/03/school-students-cut-snack-money-to-help-bhotekoshi-flood-victims"
     },
     {
       "tag": "people",
-      "date": "1 Sep 2026",
-      "title": "Fourteen minutes before the flood hit, a warning sent 900 students running",
-      "blurb": "A warning helped clear Tribhuvan Trishuli Secondary School in Bidur before the flood reached the area.",
-      "url": "https://kathmandupost.com/national/2026/09/01/fourteen-minutes-before-the-flood-hit-a-warning-sent-900-students-running-for-safety"
+      "date": "",
+      "title": "Nepal flood survivors lack space even to mourn their dead",
+      "blurb": "Families perform funeral rites using effigies, mourners struggle to find cooking gas.",
+      "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-survivors-lack-space-even-to-mourn-their-dead"
     },
     {
       "tag": "people",
-      "date": "1 Sep 2026",
-      "title": "UN Women estimates 43,000 women and girls need urgent assistance",
-      "blurb": "Women and girls in Rasuwa and Nuwakot face urgent needs including food, water and protection.",
-      "url": "https://kathmandupost.com/national/2026/09/01/un-women-estimates-43-000-women-and-girls-in-nepal-need-urgent-flood-assistance"
-    },
-    {
-      "tag": "ops",
-      "date": "1 Sep 2026",
-      "title": "Local governments take charge of flood relief",
-      "blurb": "Local committees in Rasuwa and Nuwakot are taking a larger role in relief operations.",
-      "url": "https://kathmandupost.com/national/2026/09/01/local-governments-take-charge-of-flood-relief-after-criticism-of-centralised-response"
-    },
-    {
-      "tag": "ops",
-      "date": "1 Sep 2026",
-      "title": "Nepal seeks urgent climate finance after Bhotekoshi flood",
-      "blurb": "The government is seeking immediate support through international loss-and-damage financing.",
-      "url": "https://kathmandupost.com/national/2026/09/01/nepal-seeks-urgent-climate-finance-after-bhotekoshi-flood"
+      "date": "",
+      "title": "They escaped the 2015 earthquake. They couldn’t escape the Bhotekoshi flood",
+      "blurb": "After years of unfulfilled government promises to move them to safe ground, dozens of quake-affected families in Rasuwa and Nuwakot have now been swept away by the catastrophic Bhotekoshi flood.",
+      "url": "https://kathmandupost.com/national/2026/09/03/they-escaped-the-2015-earthquake-they-couldn-t-escape-the-bhotekoshi-flood"
     },
     {
       "tag": "people",
-      "date": "1 Sep 2026",
-      "title": "In Nepal’s flood zone, the second disaster is psychological",
-      "blurb": "Mental-health teams are beginning to reach survivors as recovery continues.",
-      "url": "https://kathmandupost.com/national/2026/09/01/in-nepal-s-flood-zone-the-second-disaster-is-psychological"
+      "date": "",
+      "title": "Four hours under the rubble, 97 years above it",
+      "blurb": "Guna Maya Bohara was rescued from an elderly care home where she had lived for more than a decade. But her survival was only the latest chapter in a life marked by loss, resilience and a family she built around herself.",
+      "url": "https://kathmandupost.com/national/2026/09/02/at-97-she-survived-the-flood-that-swept-through-her-care-home"
     },
     {
-      "tag": "ops",
-      "date": "31 Aug 2026",
-      "title": "The floods keep coming. Nepal keeps starting over",
-      "blurb": "The latest disaster has renewed questions about preparedness, response and long-term resilience.",
-      "url": "https://kathmandupost.com/national/2026/08/31/the-floods-keep-coming-nepal-keeps-starting-over"
-    },
-    {
-      "tag": "sitrep",
-      "date": "30 Aug 2026",
-      "title": "Reconstruction could cost up to $5 billion",
-      "blurb": "The government is assessing the damage while relief remains the immediate priority.",
-      "url": "https://kathmandupost.com/national/2026/08/30/relief-priority-but-government-assessing-damage-inflicted-by-bhotekoshi-floods"
+      "tag": "people",
+      "date": "",
+      "title": "Nepal’s floods left thousands unidentified. DNA can help",
+      "blurb": "DNA testing can’t undo the flood. But it can help the affected families bid farewell to those they lost.",
+      "url": "https://kathmandupost.com/columns/2026/09/02/nepal-s-floods-left-thousands-unidentified-dna-can-help"
     }
   ]
 }

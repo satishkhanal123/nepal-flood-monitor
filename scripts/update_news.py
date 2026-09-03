@@ -6,9 +6,14 @@ Trishuli Pulse · Kathmandu Post RSS updater
 Fetches flood/disaster-related stories from The Kathmandu Post RSS feed
 and safely updates data/news.json.
 
-Important:
-    If fetching, parsing, filtering, or validation fails, the existing
-    data/news.json is left untouched.
+Safety rules:
+    - Only Kathmandu Post HTTPS URLs are accepted.
+    - Unrelated RSS stories are filtered out.
+    - Duplicate stories are removed.
+    - Malformed XML characters/entities are repaired before parsing.
+    - The existing news.json is never replaced if the update fails.
+    - The generated JSON is validated before being written.
+    - Standard Python library only.
 """
 
 from __future__ import annotations
@@ -43,6 +48,7 @@ USER_AGENT = (
 )
 
 FETCH_TIMEOUT = 30
+
 MAX_ITEMS = 20
 
 
@@ -168,7 +174,9 @@ OPS_TERMS = [
 # ============================================================
 
 def local_name(tag: str) -> str:
-    """Return XML tag name without namespace."""
+    """
+    Return an XML tag name without namespace information.
+    """
 
     if "}" in tag:
         tag = tag.rsplit("}", 1)[-1]
@@ -183,16 +191,27 @@ def child_text(
     element: ET.Element,
     names: list[str],
 ) -> str:
-    """Return text from the first matching child element."""
+    """
+    Return text from the first matching child element.
+    """
 
-    wanted = {name.lower() for name in names}
+    wanted = {
+        name.lower()
+        for name in names
+    }
 
     for child in element.iter():
+
         if child is element:
             continue
 
-        if local_name(child.tag).lower() in wanted:
-            text = "".join(child.itertext()).strip()
+        if (
+            local_name(child.tag).lower()
+            in wanted
+        ):
+            text = "".join(
+                child.itertext()
+            ).strip()
 
             if text:
                 return text
@@ -200,7 +219,9 @@ def child_text(
     return ""
 
 
-def child_link(element: ET.Element) -> str:
+def child_link(
+    element: ET.Element,
+) -> str:
     """
     Extract a URL from RSS or Atom.
 
@@ -214,43 +235,72 @@ def child_link(element: ET.Element) -> str:
     """
 
     for child in element.iter():
+
         if child is element:
             continue
 
-        if local_name(child.tag).lower() != "link":
+        if (
+            local_name(child.tag).lower()
+            != "link"
+        ):
             continue
 
-        href = child.attrib.get("href", "").strip()
+        href = child.attrib.get(
+            "href",
+            "",
+        ).strip()
 
         if href:
-            return html.unescape(href)
+            return html.unescape(
+                href
+            )
 
-        text = "".join(child.itertext()).strip()
+        text = "".join(
+            child.itertext()
+        ).strip()
 
         if text:
-            return html.unescape(text)
+            return html.unescape(
+                text
+            )
 
     return ""
 
 
 # ============================================================
-# XML cleaning
+# XML repair
 # ============================================================
 
-def remove_invalid_xml_characters(data: bytes) -> bytes:
+def repair_xml_entities(
+    data: bytes,
+) -> bytes:
     """
-    Remove characters that XML 1.0 does not allow.
+    Repair common malformed XML problems before parsing.
 
-    Kathmandu Post's RSS response can contain a character that causes
-    Python's strict XML parser to fail.
+    Kathmandu Post's RSS response can contain malformed XML content,
+    including bare ampersands. XML parsers reject these characters.
 
-    This function keeps valid UTF-8 text and removes only characters
-    forbidden by XML 1.0.
+    This function:
+
+        1. Decodes the feed safely.
+        2. Removes XML 1.0-invalid control characters.
+        3. Converts bare '&' characters to '&amp;'.
+        4. Preserves valid XML entities.
     """
 
-    text = data.decode("utf-8", errors="replace")
+    text = data.decode(
+        "utf-8",
+        errors="replace",
+    )
 
-    def valid_xml_character(char: str) -> bool:
+    # --------------------------------------------------------
+    # Remove characters forbidden by XML 1.0.
+    # --------------------------------------------------------
+
+    def valid_xml_character(
+        char: str,
+    ) -> bool:
+
         code = ord(char)
 
         return (
@@ -262,39 +312,74 @@ def remove_invalid_xml_characters(data: bytes) -> bytes:
             or 0x10000 <= code <= 0x10FFFF
         )
 
-    cleaned = "".join(
+    text = "".join(
         char
         for char in text
         if valid_xml_character(char)
     )
 
-    return cleaned.encode("utf-8")
+    # --------------------------------------------------------
+    # Repair bare ampersands.
+    #
+    # Keep valid XML entities such as:
+    #
+    #   &amp;
+    #   &lt;
+    #   &gt;
+    #   &quot;
+    #   &apos;
+    #   &#123;
+    #   &#x1F600;
+    #
+    # --------------------------------------------------------
+
+    text = re.sub(
+        r"&(?!(?:amp|lt|gt|quot|apos);|#\d+;|#x[0-9A-Fa-f]+;)",
+        "&amp;",
+        text,
+    )
+
+    return text.encode(
+        "utf-8"
+    )
 
 
 # ============================================================
 # Text helpers
 # ============================================================
 
-def strip_html(value: str) -> str:
-    """Remove HTML markup and decode entities."""
+def strip_html(
+    value: str,
+) -> str:
+    """
+    Remove HTML markup and decode HTML entities.
+    """
 
     if not value:
         return ""
 
-    value = html.unescape(value)
+    value = html.unescape(
+        value
+    )
 
     value = re.sub(
         r"<script\b[^>]*>.*?</script>",
         " ",
         value,
-        flags=re.IGNORECASE | re.DOTALL,
+        flags=(
+            re.IGNORECASE
+            | re.DOTALL
+        ),
     )
 
     value = re.sub(
         r"<style\b[^>]*>.*?</style>",
         " ",
         value,
-        flags=re.IGNORECASE | re.DOTALL,
+        flags=(
+            re.IGNORECASE
+            | re.DOTALL
+        ),
     )
 
     value = re.sub(
@@ -312,12 +397,16 @@ def strip_html(value: str) -> str:
     return value.strip()
 
 
-def clean_title(value: str) -> str:
-    """Clean an article title."""
+def clean_title(
+    value: str,
+) -> str:
+    """
+    Clean an RSS article title.
+    """
 
-    value = strip_html(value)
-
-    return value.strip()
+    return strip_html(
+        value
+    ).strip()
 
 
 def make_blurb(
@@ -325,12 +414,14 @@ def make_blurb(
     maximum: int = 220,
 ) -> str:
     """
-    Create a short blurb from the RSS description.
+    Create a short description from the RSS feed.
 
-    We never invent a summary.
+    No information is invented.
     """
 
-    value = strip_html(value)
+    value = strip_html(
+        value
+    )
 
     if not value:
         return ""
@@ -338,10 +429,11 @@ def make_blurb(
     if len(value) <= maximum:
         return value
 
-    shortened = value[:maximum].rsplit(
-        " ",
-        1,
-    )[0].strip()
+    shortened = (
+        value[:maximum]
+        .rsplit(" ", 1)[0]
+        .strip()
+    )
 
     return shortened + "…"
 
@@ -350,14 +442,23 @@ def make_blurb(
 # Date helpers
 # ============================================================
 
-def format_date(value: str) -> str:
-    """Convert RSS date into '3 Sep 2026'."""
+def format_date(
+    value: str,
+) -> str:
+    """
+    Convert an RSS date into:
+
+        3 Sep 2026
+    """
 
     if not value:
         return ""
 
     try:
-        dt = parsedate_to_datetime(value)
+
+        dt = parsedate_to_datetime(
+            value
+        )
 
         return (
             f"{dt.day} "
@@ -372,8 +473,12 @@ def format_date(value: str) -> str:
         return ""
 
 
-def date_sort_value(value: str) -> datetime:
-    """Convert RSS date into a sortable datetime."""
+def date_sort_value(
+    value: str,
+) -> datetime:
+    """
+    Convert RSS date into a sortable datetime.
+    """
 
     if not value:
         return datetime.min.replace(
@@ -381,7 +486,10 @@ def date_sort_value(value: str) -> datetime:
         )
 
     try:
-        dt = parsedate_to_datetime(value)
+
+        dt = parsedate_to_datetime(
+            value
+        )
 
         if dt.tzinfo is None:
             dt = dt.replace(
@@ -404,13 +512,18 @@ def date_sort_value(value: str) -> datetime:
 # URL validation
 # ============================================================
 
-def is_kathmandu_post_url(url: str) -> bool:
+def is_kathmandu_post_url(
+    url: str,
+) -> bool:
     """
-    Accept only HTTPS URLs hosted by kathmandupost.com.
+    Accept only HTTPS Kathmandu Post URLs.
     """
 
     try:
-        parsed = urlparse(url)
+
+        parsed = urlparse(
+            url
+        )
 
         if parsed.scheme != "https":
             return False
@@ -445,7 +558,10 @@ def is_relevant(
     title: str,
     description: str,
 ) -> bool:
-    """Check whether an article concerns the flood situation."""
+    """
+    Determine whether an article is related to the
+    Nepal flood/disaster situation.
+    """
 
     text = (
         f"{title} "
@@ -466,7 +582,9 @@ def classify_tag(
     title: str,
     description: str,
 ) -> str:
-    """Assign one of the existing dashboard categories."""
+    """
+    Assign an existing Trishuli Pulse news category.
+    """
 
     text = (
         f"{title} "
@@ -505,7 +623,9 @@ def classify_tag(
 # ============================================================
 
 def fetch_rss() -> bytes:
-    """Download Kathmandu Post RSS."""
+    """
+    Download the Kathmandu Post RSS feed.
+    """
 
     request = Request(
         RSS_URL,
@@ -522,6 +642,7 @@ def fetch_rss() -> bytes:
     )
 
     try:
+
         with urlopen(
             request,
             timeout=FETCH_TIMEOUT,
@@ -530,23 +651,30 @@ def fetch_rss() -> bytes:
             data = response.read()
 
     except HTTPError as exc:
+
         raise RuntimeError(
-            f"Kathmandu Post RSS returned HTTP {exc.code}"
+            "Kathmandu Post RSS returned "
+            f"HTTP {exc.code}"
         ) from exc
 
     except URLError as exc:
+
         raise RuntimeError(
-            f"Could not reach Kathmandu Post RSS: {exc.reason}"
+            "Could not reach Kathmandu Post RSS: "
+            f"{exc.reason}"
         ) from exc
 
     except TimeoutError as exc:
+
         raise RuntimeError(
             "Kathmandu Post RSS request timed out"
         ) from exc
 
     if not data:
+
         raise RuntimeError(
-            "Kathmandu Post RSS returned empty data"
+            "Kathmandu Post RSS returned "
+            "an empty response"
         )
 
     return data
@@ -556,22 +684,29 @@ def fetch_rss() -> bytes:
 # Parse RSS
 # ============================================================
 
-def parse_feed(data: bytes) -> list[dict]:
-    """Parse RSS or Atom feed."""
+def parse_feed(
+    data: bytes,
+) -> list[dict]:
+    """
+    Parse the Kathmandu Post RSS/Atom feed.
+    """
 
-    cleaned_data = (
-        remove_invalid_xml_characters(data)
+    cleaned_data = repair_xml_entities(
+        data
     )
 
     try:
+
         root = ET.fromstring(
             cleaned_data
         )
 
     except ET.ParseError as exc:
+
         raise RuntimeError(
-            "Kathmandu Post RSS could not be parsed "
-            f"even after XML cleanup: {exc}"
+            "Kathmandu Post RSS could not "
+            "be parsed after XML repair: "
+            f"{exc}"
         ) from exc
 
     records = []
@@ -579,8 +714,9 @@ def parse_feed(data: bytes) -> list[dict]:
     for element in root.iter():
 
         element_name = (
-            local_name(element.tag)
-            .lower()
+            local_name(
+                element.tag
+            ).lower()
         )
 
         if element_name not in {
@@ -596,7 +732,9 @@ def parse_feed(data: bytes) -> list[dict]:
             )
         )
 
-        url = child_link(element)
+        url = child_link(
+            element
+        )
 
         description = child_text(
             element,
@@ -618,6 +756,10 @@ def parse_feed(data: bytes) -> list[dict]:
             ],
         )
 
+        # ----------------------------------------------------
+        # Basic validation
+        # ----------------------------------------------------
+
         if not title:
             continue
 
@@ -628,6 +770,10 @@ def parse_feed(data: bytes) -> list[dict]:
             url
         ):
             continue
+
+        # ----------------------------------------------------
+        # Flood relevance filter
+        # ----------------------------------------------------
 
         if not is_relevant(
             title,
@@ -663,7 +809,9 @@ def parse_feed(data: bytes) -> list[dict]:
 def deduplicate(
     records: list[dict],
 ) -> list[dict]:
-    """Remove duplicate URLs."""
+    """
+    Remove duplicate article URLs.
+    """
 
     seen = set()
     result = []
@@ -680,7 +828,10 @@ def deduplicate(
             continue
 
         seen.add(url)
-        result.append(record)
+
+        result.append(
+            record
+        )
 
     return result
 
@@ -693,12 +844,13 @@ def validate_records(
     records: list[dict],
 ) -> None:
     """
-    Validate generated news.
+    Validate all generated article records.
 
-    At least one relevant story must exist.
+    At least one relevant article must exist.
     """
 
     if not records:
+
         raise RuntimeError(
             "No relevant Kathmandu Post "
             "flood/disaster stories were found"
@@ -731,21 +883,24 @@ def validate_records(
             )
 
         if not record["title"].strip():
+
             raise RuntimeError(
                 "An article has an empty title"
             )
 
         if record["tag"] not in allowed_tags:
+
             raise RuntimeError(
-                f"Invalid article tag: "
+                "Invalid article tag: "
                 f"{record['tag']}"
             )
 
         if not is_kathmandu_post_url(
             record["url"]
         ):
+
             raise RuntimeError(
-                f"Unsafe URL rejected: "
+                "Unsafe URL rejected: "
                 f"{record['url']}"
             )
 
@@ -760,7 +915,7 @@ def write_json_atomically(
     """
     Safely replace news.json.
 
-    The old file remains intact if writing fails.
+    If writing fails, the original file remains intact.
     """
 
     OUTPUT_FILE.parent.mkdir(
@@ -794,7 +949,9 @@ def write_json_atomically(
                 indent=2,
             )
 
-            handle.write("\n")
+            handle.write(
+                "\n"
+            )
 
             handle.flush()
 
@@ -842,9 +999,9 @@ def main() -> int:
 
     try:
 
-        # ------------------------------------------------------
+        # ----------------------------------------------------
         # 1. Fetch
-        # ------------------------------------------------------
+        # ----------------------------------------------------
 
         print(
             "1. Fetching Kathmandu Post RSS..."
@@ -857,9 +1014,9 @@ def main() -> int:
             f"{len(rss_data):,} bytes."
         )
 
-        # ------------------------------------------------------
-        # 2. Parse
-        # ------------------------------------------------------
+        # ----------------------------------------------------
+        # 2. Clean + parse
+        # ----------------------------------------------------
 
         print(
             "2. Cleaning and parsing RSS feed..."
@@ -874,9 +1031,9 @@ def main() -> int:
             f"relevant stories."
         )
 
-        # ------------------------------------------------------
+        # ----------------------------------------------------
         # 3. Deduplicate
-        # ------------------------------------------------------
+        # ----------------------------------------------------
 
         print(
             "3. Removing duplicates..."
@@ -891,33 +1048,36 @@ def main() -> int:
             f"unique stories remain."
         )
 
-        # ------------------------------------------------------
+        # ----------------------------------------------------
         # 4. Sort newest first
-        # ------------------------------------------------------
+        # ----------------------------------------------------
 
         print(
             "4. Sorting newest first..."
         )
 
         records.sort(
-            key=lambda record: date_sort_value(
-                record.get(
-                    "_pub_date",
-                    "",
-                )
-            ),
+            key=lambda record:
+                date_sort_value(
+                    record.get(
+                        "_pub_date",
+                        "",
+                    )
+                ),
             reverse=True,
         )
 
-        records = records[:MAX_ITEMS]
+        records = records[
+            :MAX_ITEMS
+        ]
 
         print(
             f"   Keeping {len(records)} stories."
         )
 
-        # ------------------------------------------------------
+        # ----------------------------------------------------
         # 5. Validate
-        # ------------------------------------------------------
+        # ----------------------------------------------------
 
         print(
             "5. Validating generated data..."
@@ -927,9 +1087,9 @@ def main() -> int:
             records
         )
 
-        # ------------------------------------------------------
+        # ----------------------------------------------------
         # 6. Remove internal fields
-        # ------------------------------------------------------
+        # ----------------------------------------------------
 
         clean_items = []
 
@@ -945,9 +1105,9 @@ def main() -> int:
                 }
             )
 
-        # ------------------------------------------------------
-        # 7. Build final payload
-        # ------------------------------------------------------
+        # ----------------------------------------------------
+        # 7. Build final JSON
+        # ----------------------------------------------------
 
         payload = {
             "source": "The Kathmandu Post",
@@ -958,9 +1118,9 @@ def main() -> int:
             "items": clean_items,
         }
 
-        # ------------------------------------------------------
-        # 8. Atomic write
-        # ------------------------------------------------------
+        # ----------------------------------------------------
+        # 8. Write safely
+        # ----------------------------------------------------
 
         print(
             "6. Writing data/news.json..."
@@ -971,12 +1131,15 @@ def main() -> int:
         )
 
         print()
+
         print(
             "========================================"
         )
+
         print(
             "SUCCESS"
         )
+
         print(
             "========================================"
         )
@@ -987,7 +1150,7 @@ def main() -> int:
         )
 
         print(
-            f"File: {OUTPUT_FILE}"
+            f"Output: {OUTPUT_FILE}"
         )
 
         return 0
@@ -995,12 +1158,15 @@ def main() -> int:
     except Exception as exc:
 
         print()
+
         print(
             "========================================"
         )
+
         print(
             "UPDATE FAILED"
         )
+
         print(
             "========================================"
         )
@@ -1010,9 +1176,10 @@ def main() -> int:
         )
 
         print()
+
         print(
-            "The existing "
-            "data/news.json was left unchanged."
+            "The existing data/news.json "
+            "was left unchanged."
         )
 
         return 1

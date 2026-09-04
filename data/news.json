@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-04T05:53:31.261790+00:00",
+  "updated_at": "2026-09-04T10:34:25.396495+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Search and rescue team says ‘no more survivors in Upper Trishuli 3A tunnel’",
+      "blurb": "After rescuing two survivors and finding a dead body, rescuers say they could not locate any more survivors or bodies.",
+      "url": "https://kathmandupost.com/national/2026/09/04/search-and-rescue-team-says-no-more-survivors-in-upper-trishuli-3a-tunnel"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal home minister tells critics to focus on results, not where he works",
+      "blurb": "Sudan Gurung defends coordinating the flood response online after social media criticism of his role in Friday’s tunnel rescue.",
+      "url": "https://kathmandupost.com/national/2026/09/04/nepal-home-minister-tells-critics-to-focus-on-results-not-where-he-works"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal flood death toll reaches 1,287",
+      "blurb": "Bodies have been recovered across eight districts, with Chitwan reporting the highest number of bodies at 359, followed by Nawalparasi East and Nawalparasi West.",
+      "url": "https://kathmandupost.com/national/2026/09/04/nepal-flood-death-toll-reaches-1-287"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Prime Minister Balendra Shah, Australia’s Anthony Albanese discuss flood response",
+      "blurb": "Shah thanked Australia for its support in rescue and relief efforts and said Nepal was stepping up the search for Australians reported missing after the disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/04/prime-minister-balendra-shah-australia-s-anthony-albanese-discuss-flood-response"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "How two Nepal hydropower workers survived nine days trapped underground",
+      "blurb": "One stayed behind to help colleagues escape the flood; the other had travelled to the project for routine maintenance.",
+      "url": "https://kathmandupost.com/national/2026/09/04/how-two-nepal-hydropower-workers-survived-nine-days-trapped-underground"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -107,41 +142,6 @@
       "title": "114 Nepalis stranded in China return through Tatopani border",
       "blurb": "The returnees were among 147 Nepali citizens stranded in China after devastating flood in the Bhotekoshi river on August 26, with more expected to cross the border in the coming days.",
       "url": "https://kathmandupost.com/province-no-3/2026/09/03/114-nepalis-stranded-in-china-return-through-tatopani-border"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Q&A: How Nepal can still identify those who died in the flood",
-      "blurb": "Forensic scientist Lata Gautam on documenting the dead, the limits of DNA, the choices Nepal is making over the hundreds of unidentified flood victims — and the forensic capacity the country still lacks.",
-      "url": "https://kathmandupost.com/interviews/2026/09/03/q-a-how-nepal-can-still-identify-those-who-died-in-the-flood"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Silence underground does not mean death, says tunnel expert Dix",
-      "blurb": "The renowned tunnel expert says underground environments can remain survivable for a long time after devastation above ground, citing past rescues in Chile, Thailand and India.",
-      "url": "https://kathmandupost.com/national/2026/09/03/silence-underground-does-not-mean-death-says-tunnel-expert-dix"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "China sends third batch of emergency relief supplies to Nepal",
-      "blurb": "A Chinese Y-20A transport aircraft delivered mortuary freezers, epidemic prevention materials and daily necessities while 10 forensic experts arrived to assist with victim identification.",
-      "url": "https://kathmandupost.com/national/2026/09/03/china-sends-third-batch-of-emergency-relief-supplies-to-nepal"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal briefs diplomats on Bhotekoshi flood devastation",
-      "blurb": "Foreign Minister Shisir Khanal updated diplomats on the devastation across five districts, describing the disaster as a “Himalayan tsunami” and highlighting international support for the response.",
-      "url": "https://kathmandupost.com/national/2026/09/03/nepal-briefs-diplomats-on-bhotekoshi-flood-devastation"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal flood toll rises to 1,252 as at least 4,216 remain unaccounted for",
-      "blurb": "The death toll continues to rise as thousands remain unaccounted for, including nearly 900 hydropower workers still missing.",
-      "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
     }
   ]
 }

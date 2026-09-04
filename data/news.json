@@ -1,8 +1,50 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-04T01:09:16.995439+00:00",
+  "updated_at": "2026-09-04T05:53:31.261790+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Rescued tunnel worker says he stayed behind to save others",
+      "blurb": "Sanjay Sah told rescuers he delayed his escape to help others flee after the flood struck the Trishuli 3A tunnel, leaving him trapped inside for nine days.",
+      "url": "https://kathmandupost.com/national/2026/09/04/rescued-tunnel-worker-says-he-stayed-behind-to-save-others"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Wife says rescued husband has ‘a second life’ after nine days trapped in Nepal tunnel",
+      "blurb": "Hira Shobha said her family spent nine agonising days believing Kabir Maharjan was still alive inside the Trishuli 3A tunnel before rescuers pulled him out on Friday.",
+      "url": "https://kathmandupost.com/national/2026/09/04/wife-says-rescued-husband-has-a-second-life-after-nine-days-trapped-in-nepal-tunnel"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal flood survivors pulled alive from hydropower tunnel nine days later",
+      "blurb": "The rescue of two men came after rescuers heard voices from inside the Trishuli 3A tunnel, raising hopes that others trapped since the August 26 disaster may still be alive.",
+      "url": "https://kathmandupost.com/national/2026/09/04/voices-heard-from-inside-trishuli-3a-hydropower-tunnel-says-lawmaker"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal unveils relief package to help flood-hit businesses recover",
+      "blurb": "Customs and tax breaks, loan restructuring and cheaper credit offered to businesses affected by Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/money/2026/09/04/nepal-unveils-relief-package-to-help-flood-hit-businesses-recover"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "How engineers in a WhatsApp group are guiding Nepal’s flood rescue efforts",
+      "blurb": "As rescue teams search buried hydropower tunnels for survivors, a WhatsApp group of more than 500 engineers is providing vital drawings, technical advice and information on missing workers.",
+      "url": "https://kathmandupost.com/national/2026/09/04/how-engineers-in-a-whatsapp-group-are-guiding-nepal-s-flood-rescue-efforts"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "600 children unaccounted for in Rasuwa and Nuwakot. Verification hampered by crippled communication",
+      "blurb": "12 schools—four in Rasuwa and eight in Nuwakot—were completely destroyed in the August 26 mid-morning disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/04/600-children-unaccounted-for-in-rasuwa-and-nuwakot-verification-hampered-by-crippled-communication"
+    },
     {
       "tag": "people",
       "date": "",
@@ -100,48 +142,6 @@
       "title": "Nepal flood toll rises to 1,252 as at least 4,216 remain unaccounted for",
       "blurb": "The death toll continues to rise as thousands remain unaccounted for, including nearly 900 hydropower workers still missing.",
       "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-toll-rises-to-1-252-as-at-least-4-216-remain-unaccounted-for"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Flash-flood risk remains high in Nepal’s Bhotekoshi, Trishuli rivers",
-      "blurb": "More rain is expected in the upper reaches of the rivers, with water levels likely to rise significantly in Rasuwa and Nuwakot and surrounding areas.",
-      "url": "https://kathmandupost.com/national/2026/09/03/flash-flood-risk-remains-high-in-nepal-s-bhotekoshi-trishuli-rivers"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "In Nepal’s flood zone, pilots are flying by their “own discipline”",
-      "blurb": "Washed-out roads, altered river courses and unreliable radio links have left helicopter crews navigating narrow valleys with little help from ground-based air traffic control.",
-      "url": "https://kathmandupost.com/national/2026/09/03/in-nepal-s-flood-zone-pilots-are-flying-by-their-own-discipline"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bhotekoshi floods expose gaps in Nepal’s emergency communications",
-      "blurb": "Most mobile services have been restored, but damaged towers and fibre have forced operators onto slower backup systems as experts call for the implementation of a disaster communications plan drafted after the 2015…",
-      "url": "https://kathmandupost.com/national/2026/09/03/bhotekoshi-floods-expose-gaps-in-nepal-s-emergency-communications"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "School students cut snack money to help Bhotekoshi flood victims",
-      "blurb": "The contributions, meant for flood-affected children, demonstrate that even small gestures can provide meaningful relief in times of disaster, teachers say.",
-      "url": "https://kathmandupost.com/national/2026/09/03/school-students-cut-snack-money-to-help-bhotekoshi-flood-victims"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal flood survivors lack space even to mourn their dead",
-      "blurb": "Families perform funeral rites using effigies, mourners struggle to find cooking gas.",
-      "url": "https://kathmandupost.com/national/2026/09/03/nepal-flood-survivors-lack-space-even-to-mourn-their-dead"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "They escaped the 2015 earthquake. They couldn’t escape the Bhotekoshi flood",
-      "blurb": "After years of unfulfilled government promises to move them to safe ground, dozens of quake-affected families in Rasuwa and Nuwakot have now been swept away by the catastrophic Bhotekoshi flood.",
-      "url": "https://kathmandupost.com/national/2026/09/03/they-escaped-the-2015-earthquake-they-couldn-t-escape-the-bhotekoshi-flood"
     }
   ]
 }

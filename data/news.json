@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-04T10:34:25.396495+00:00",
+  "updated_at": "2026-09-04T14:32:53.628918+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Why climate change is a threat to Nepal’s hydropower sector",
+      "blurb": "Climate change is not a future risk to our hydropower sector; it is a present and recurring one. The August disaster proved it at a scale no prior monsoon had.",
+      "url": "https://kathmandupost.com/columns/2026/09/04/why-climate-change-is-a-threat-to-nepal-s-hydropower-sector"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Five of 15 drinking water sources in flood-hit Bidur contaminated with E. coli",
+      "blurb": "Officials mull cholera vaccination for around 100,000 vulnerable people and measles vaccine for over 75,000 children.",
+      "url": "https://kathmandupost.com/health/2026/09/04/five-of-15-drinking-water-sources-in-flood-hit-bidur-contaminated-with-e-coli"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nvidia donates $10 million to flood recovery, one of Nepal’s biggest corporate donations",
+      "blurb": "The contribution, deposited into the Prime Minister’s Disaster Relief Fund, was driven by more than 50 Nepali employees of the US technology giant.",
+      "url": "https://kathmandupost.com/national/2026/09/04/nvidia-donates-10-million-to-flood-recovery-one-of-nepal-s-biggest-corporate-donations"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Road department begins cutting new track to reopen flood-hit Prithvi Highway",
+      "blurb": "Authorities are widening a 50-metre temporary route around the Krishnabhir landslide on the highway.",
+      "url": "https://kathmandupost.com/national/2026/09/04/road-department-begins-cutting-new-track-to-reopen-flood-hit-prithvi-highway"
+    },
     {
       "tag": "people",
       "date": "",
@@ -114,34 +142,6 @@
       "title": "New bypass track to be built above collapsed Krishnabhir stretch",
       "blurb": "Authorities race to restore Kathmandu’s main supply route as a 70-metre stretch plunged into the Trishuli river on Sunday. Engineers are also exploring long-term alternatives.",
       "url": "https://kathmandupost.com/national/2026/09/03/new-bypass-track-to-be-built-above-collapsed-stretch-of-prithvi-highway"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bhotekoshi flood leaves Syafrubesi in ruins, cuts off road access",
-      "blurb": "Much of the settlement was swept away by the flood, while damaged roads have hampered relief, rescue and the search for people still missing.",
-      "url": "https://kathmandupost.com/visual-stories/2026/09/03/bhotekoshi-flood-leaves-syafrubesi-in-ruins-cuts-off-road-access"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "EU provides additional Rs89 million in aid for Nepal flood victims",
-      "blurb": "The new funding will support up to 20,000 people in Bagmati Province with shelter, cash assistance, healthcare, water and sanitation services, and other emergency aid.",
-      "url": "https://kathmandupost.com/national/2026/09/03/eu-provides-additional-rs89-million-in-aid-for-nepal-flood-victims"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal launches #NepalCalling campaign to counter flood-driven tourism cancellations",
-      "blurb": "The peak September-November season accounts for nearly 40 percent of Nepal’s annual tourist arrivals. That makes the coming months crucial for an industry still recovering from successive shocks.",
-      "url": "https://kathmandupost.com/national/2026/09/03/nepal-launches-nepalcalling-campaign-to-counter-flood-driven-tourism-cancellations"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "114 Nepalis stranded in China return through Tatopani border",
-      "blurb": "The returnees were among 147 Nepali citizens stranded in China after devastating flood in the Bhotekoshi river on August 26, with more expected to cross the border in the coming days.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/03/114-nepalis-stranded-in-china-return-through-tatopani-border"
     }
   ]
 }

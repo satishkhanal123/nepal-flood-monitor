@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-03T23:18:06.045726+00:00",
+  "updated_at": "2026-09-04T01:09:16.995439+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "The priest leading his people from grief to acceptance",
+      "blurb": "In a Rasuwa village, grieving families have begun performing Buddhist funeral rites without waiting for bodies, following the lead of chief priest Singi Lama, who lost his son and daughters-in-law in the disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/04/the-priest-leading-his-people-from-grief-to-acceptance"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal needs to overhaul its early warning system",
+      "blurb": "Modernised telemetry, cross-border data sharing and evacuation laws are essential to protect vulnerable communities.",
+      "url": "https://kathmandupost.com/editorial/2026/09/03/nepal-needs-to-overhaul-its-early-warning-system"
+    },
     {
       "tag": "people",
       "date": "",
@@ -128,20 +142,6 @@
       "title": "They escaped the 2015 earthquake. They couldn’t escape the Bhotekoshi flood",
       "blurb": "After years of unfulfilled government promises to move them to safe ground, dozens of quake-affected families in Rasuwa and Nuwakot have now been swept away by the catastrophic Bhotekoshi flood.",
       "url": "https://kathmandupost.com/national/2026/09/03/they-escaped-the-2015-earthquake-they-couldn-t-escape-the-bhotekoshi-flood"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Four hours under the rubble, 97 years above it",
-      "blurb": "Guna Maya Bohara was rescued from an elderly care home where she had lived for more than a decade. But her survival was only the latest chapter in a life marked by loss, resilience and a family she built around herself.",
-      "url": "https://kathmandupost.com/national/2026/09/02/at-97-she-survived-the-flood-that-swept-through-her-care-home"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal’s floods left thousands unidentified. DNA can help",
-      "blurb": "DNA testing can’t undo the flood. But it can help the affected families bid farewell to those they lost.",
-      "url": "https://kathmandupost.com/columns/2026/09/02/nepal-s-floods-left-thousands-unidentified-dna-can-help"
     }
   ]
 }

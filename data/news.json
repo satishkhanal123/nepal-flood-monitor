@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-05T04:47:47.252145+00:00",
+  "updated_at": "2026-09-05T08:47:47.937678+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Where rescue efforts stand at flood-hit hydropower projects",
+      "blurb": "Two workers have been rescued, and bodies recovered, but teams are still searching flooded tunnels and damaged sites for hundreds of missing people.",
+      "url": "https://kathmandupost.com/national/2026/09/05/where-rescue-efforts-stand-at-flood-hit-hydropower-projects"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Chinese national rescued alive after 10 days trapped in hydropower tunnel",
+      "blurb": "Rescue teams also save a woman from a debris-buried house as search operations continue in flood-hit areas.",
+      "url": "https://kathmandupost.com/national/2026/09/05/chinese-national-rescued-alive-after-10-days-trapped-in-hydropower-tunnel"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "NEPSE falls as flood concerns weigh on insurance, hydropower",
+      "blurb": "The index slips 0.57 percent in a four-session week, erasing about Rs30 billion in market value as thin trading and weak momentum keep the market near key support.",
+      "url": "https://kathmandupost.com/money/2026/09/05/nepse-falls-as-flood-concerns-weigh-on-insurance-hydropower"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal flood death toll reaches 1,342",
+      "blurb": "Police say 4,886 people remain missing and 1,030 bodies have been buried as search operations continue.",
+      "url": "https://kathmandupost.com/national/2026/09/05/nepal-flood-death-toll-reaches-1-342"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -114,34 +142,6 @@
       "title": "How two Nepal hydropower workers survived nine days trapped underground",
       "blurb": "One stayed behind to help colleagues escape the flood; the other had travelled to the project for routine maintenance.",
       "url": "https://kathmandupost.com/national/2026/09/04/how-two-nepal-hydropower-workers-survived-nine-days-trapped-underground"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Rescued tunnel worker says he stayed behind to save others",
-      "blurb": "Sanjay Sah told rescuers he delayed his escape to help others flee after the flood struck the Trishuli 3A tunnel, leaving him trapped inside for nine days.",
-      "url": "https://kathmandupost.com/national/2026/09/04/rescued-tunnel-worker-says-he-stayed-behind-to-save-others"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Wife says rescued husband has ‘a second life’ after nine days trapped in Nepal tunnel",
-      "blurb": "Hira Shobha said her family spent nine agonising days believing Kabir Maharjan was still alive inside the Trishuli 3A tunnel before rescuers pulled him out on Friday.",
-      "url": "https://kathmandupost.com/national/2026/09/04/wife-says-rescued-husband-has-a-second-life-after-nine-days-trapped-in-nepal-tunnel"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal flood survivors pulled alive from hydropower tunnel nine days later",
-      "blurb": "The rescue of two men came after rescuers heard voices from inside the Trishuli 3A tunnel, raising hopes that others trapped since the August 26 disaster may still be alive.",
-      "url": "https://kathmandupost.com/national/2026/09/04/voices-heard-from-inside-trishuli-3a-hydropower-tunnel-says-lawmaker"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal unveils relief package to help flood-hit businesses recover",
-      "blurb": "Customs and tax breaks, loan restructuring and cheaper credit offered to businesses affected by Bhotekoshi floods.",
-      "url": "https://kathmandupost.com/money/2026/09/04/nepal-unveils-relief-package-to-help-flood-hit-businesses-recover"
     }
   ]
 }

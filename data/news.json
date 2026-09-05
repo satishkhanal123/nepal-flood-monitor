@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-05T12:21:09.456840+00:00",
+  "updated_at": "2026-09-05T15:26:09.128326+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood-displaced mothers struggle for privacy and care",
+      "blurb": "In crowded shelters, pregnant women and new mothers are struggling for privacy, adequate food and access to maternity care as damaged roads cut them off from hospitals.",
+      "url": "https://kathmandupost.com/national/2026/09/05/flood-displaced-mothers-struggle-for-privacy-and-care"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Floods revive questions over an abandoned mountain airstrip",
+      "blurb": "Langtang airport sits at an elevation of 3,658 metres above sea level.",
+      "url": "https://kathmandupost.com/national/2026/09/05/floods-revive-questions-over-an-abandoned-mountain-airstrip"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Two killed in landslide at Super Seti hydropower project",
+      "blurb": "Workers were digging a road at the under-construction project in Kaski when a landslide struck the site on Saturday.",
+      "url": "https://kathmandupost.com/national/2026/09/05/two-killed-in-landslide-at-super-seti-hydropower-project"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal wants to be a clean-energy powerhouse. The indigenous people are paying the price",
+      "blurb": "A hydropower boom backed by billions in financing is colliding with local communities who say they were never really asked.",
+      "url": "https://kathmandupost.com/national/2026/09/05/nepal-wants-to-be-a-clean-energy-powerhouse-the-indigenous-people-are-paying-the-price"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -114,34 +142,6 @@
       "title": "Five of 15 drinking water sources in flood-hit Bidur contaminated with E. coli",
       "blurb": "Officials mull cholera vaccination for around 100,000 vulnerable people and measles vaccine for over 75,000 children.",
       "url": "https://kathmandupost.com/health/2026/09/04/five-of-15-drinking-water-sources-in-flood-hit-bidur-contaminated-with-e-coli"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nvidia donates $10 million to flood recovery, one of Nepal’s biggest corporate donations",
-      "blurb": "The contribution, deposited into the Prime Minister’s Disaster Relief Fund, was driven by more than 50 Nepali employees of the US technology giant.",
-      "url": "https://kathmandupost.com/national/2026/09/04/nvidia-donates-10-million-to-flood-recovery-one-of-nepal-s-biggest-corporate-donations"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Road department begins cutting new track to reopen flood-hit Prithvi Highway",
-      "blurb": "Authorities are widening a 50-metre temporary route around the Krishnabhir landslide on the highway.",
-      "url": "https://kathmandupost.com/national/2026/09/04/road-department-begins-cutting-new-track-to-reopen-flood-hit-prithvi-highway"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Search and rescue team says ‘no more survivors in Upper Trishuli 3A tunnel’",
-      "blurb": "After rescuing two survivors and finding a dead body, rescuers say they could not locate any more survivors or bodies.",
-      "url": "https://kathmandupost.com/national/2026/09/04/search-and-rescue-team-says-no-more-survivors-in-upper-trishuli-3a-tunnel"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal home minister tells critics to focus on results, not where he works",
-      "blurb": "Sudan Gurung defends coordinating the flood response online after social media criticism of his role in Friday’s tunnel rescue.",
-      "url": "https://kathmandupost.com/national/2026/09/04/nepal-home-minister-tells-critics-to-focus-on-results-not-where-he-works"
     }
   ]
 }

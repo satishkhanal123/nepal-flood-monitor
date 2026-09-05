@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-05T15:26:09.128326+00:00",
+  "updated_at": "2026-09-05T17:27:47.144216+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Panel formed to conduct PNDA has six weeks to prepare report",
+      "blurb": "A Rapid Damage and Needs Assessment estimates damage caused by the August 26 flood at Rs400 billion.",
+      "url": "https://kathmandupost.com/national/2026/09/05/panel-formed-to-conduct-pnda-has-six-weeks-to-prepare-report"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Late rescues renew hope for survivors in deadly Nepal floods",
+      "blurb": "A 64-year-old woman was rescued alive from beneath her buried home as her family performed her death rites, while three others—including a Chinese national—were pulled alive from hydropower tunnels in Rasuwa.",
+      "url": "https://kathmandupost.com/national/2026/09/05/miraculous-rescues-offer-renewed-hope-after-nepal-floods"
+    },
     {
       "tag": "access",
       "date": "",
@@ -128,20 +142,6 @@
       "title": "After nine days in darkness, two men walked back into the light",
       "blurb": "Rescuers pulled Sanjay Sah and Kabir Maharjan alive from the Trishuli 3A hydropower tunnel after more than 72 hours of painstaking search, but dozens of people remain unaccounted for.",
       "url": "https://kathmandupost.com/national/2026/09/04/ten-days-in-darkness-then-two-men-walked-back-into-the-light"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Why climate change is a threat to Nepal’s hydropower sector",
-      "blurb": "Climate change is not a future risk to our hydropower sector; it is a present and recurring one. The August disaster proved it at a scale no prior monsoon had.",
-      "url": "https://kathmandupost.com/columns/2026/09/04/why-climate-change-is-a-threat-to-nepal-s-hydropower-sector"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Five of 15 drinking water sources in flood-hit Bidur contaminated with E. coli",
-      "blurb": "Officials mull cholera vaccination for around 100,000 vulnerable people and measles vaccine for over 75,000 children.",
-      "url": "https://kathmandupost.com/health/2026/09/04/five-of-15-drinking-water-sources-in-flood-hit-bidur-contaminated-with-e-coli"
     }
   ]
 }

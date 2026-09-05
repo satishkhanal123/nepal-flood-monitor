@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-05T08:47:47.937678+00:00",
+  "updated_at": "2026-09-05T12:21:09.456840+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Security personnel install Nepali flag on the border with China in Rasuwagadhi",
+      "blurb": "With the entire settlement at the bordering town swept away by last week’s devastating floods, there was nothing that separated the Nepali territory from that of China in Rasuwagadhi.",
+      "url": "https://kathmandupost.com/national/2026/09/05/security-personnel-install-nepali-flag-on-the-border-with-china-in-rasuwagadhi"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Two people rescued alive on 11th day after floods",
+      "blurb": "A Chinese national was pulled from a hydropower tunnel in Rasuwa, while a 64-year-old woman was rescued from the upper floor of a house in Nuwakot.",
+      "url": "https://kathmandupost.com/national/2026/09/05/two-people-rescued-alive-on-11th-day-after-floods"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Woman rescued alive after 10 days trapped in debris-buried house",
+      "blurb": "Armed Police Force team pulls 64-year-old Chandika Kumari Shrestha from the upper floor of a four-storey building in Betrawati.",
+      "url": "https://kathmandupost.com/national/2026/09/05/woman-rescued-alive-after-10-days-trapped-in-debris-buried-house"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -13,8 +34,8 @@
     {
       "tag": "ops",
       "date": "",
-      "title": "Chinese national rescued alive after 10 days trapped in hydropower tunnel",
-      "blurb": "Rescue teams also save a woman from a debris-buried house as search operations continue in flood-hit areas.",
+      "title": "Chinese national pulled alive from hydropower tunnel in Nepal after 10 days",
+      "blurb": "Luhaitao was found about 225 metres inside the Upper Trishuli-1 tunnel as Nepali and foreign rescuers continued searching the site.",
       "url": "https://kathmandupost.com/national/2026/09/05/chinese-national-rescued-alive-after-10-days-trapped-in-hydropower-tunnel"
     },
     {
@@ -121,27 +142,6 @@
       "title": "Nepal home minister tells critics to focus on results, not where he works",
       "blurb": "Sudan Gurung defends coordinating the flood response online after social media criticism of his role in Friday’s tunnel rescue.",
       "url": "https://kathmandupost.com/national/2026/09/04/nepal-home-minister-tells-critics-to-focus-on-results-not-where-he-works"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal flood death toll reaches 1,287",
-      "blurb": "Bodies have been recovered across eight districts, with Chitwan reporting the highest number of bodies at 359, followed by Nawalparasi East and Nawalparasi West.",
-      "url": "https://kathmandupost.com/national/2026/09/04/nepal-flood-death-toll-reaches-1-287"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Prime Minister Balendra Shah, Australia’s Anthony Albanese discuss flood response",
-      "blurb": "Shah thanked Australia for its support in rescue and relief efforts and said Nepal was stepping up the search for Australians reported missing after the disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/04/prime-minister-balendra-shah-australia-s-anthony-albanese-discuss-flood-response"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "How two Nepal hydropower workers survived nine days trapped underground",
-      "blurb": "One stayed behind to help colleagues escape the flood; the other had travelled to the project for routine maintenance.",
-      "url": "https://kathmandupost.com/national/2026/09/04/how-two-nepal-hydropower-workers-survived-nine-days-trapped-underground"
     }
   ]
 }

@@ -1,8 +1,50 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-05T00:17:04.606198+00:00",
+  "updated_at": "2026-09-05T04:47:47.252145+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal PM Balendra Shah to address UN General Assembly on September 24",
+      "blurb": "His first foreign trip since taking office comes as Nepal seeks international support after devastating floods.",
+      "url": "https://kathmandupost.com/national/2026/09/05/nepal-pm-balendra-shah-to-address-un-general-assembly-on-september-24"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "27 US lawmakers urge Rubio to expand rescue, aid efforts in Nepal",
+      "blurb": "Lawmakers call for US disaster response team, high-altitude search assets and faster assistance as thousands remain missing.",
+      "url": "https://kathmandupost.com/national/2026/09/05/27-us-lawmakers-urge-rubio-to-expand-rescue-aid-efforts-in-nepal"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Where to support flood relief in Kathmandu this week and beyond",
+      "blurb": "From charity runs to creative workshops, these events offer ways to support flood-affected communities.",
+      "url": "https://kathmandupost.com/art-culture/2026/09/05/where-to-support-flood-relief-in-kathmandu-this-week-and-beyond"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "They stopped hoping to find him alive. Then they found a hand",
+      "blurb": "Raj Kumar Diyali went missing with his wife and four-year-old son in Nepal’s Bhotekoshi flood. His family is now waiting for DNA confirmation.",
+      "url": "https://kathmandupost.com/national/2026/09/05/they-stopped-hoping-to-find-him-alive-then-they-found-a-hand"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Barely saved, he cuts mourning short to help flood survivors",
+      "blurb": "Sudip Kumar Neupane watched a raging Trishuli swallow his younger brother and a close colleague, then came out of grief after two days.",
+      "url": "https://kathmandupost.com/national/2026/09/05/barely-saved-he-cuts-mourning-short-to-help-flood-survivors"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Can Nepal turn Himalayan vulnerability into a case for compensation?",
+      "blurb": "The Bhotekoshi disaster highlights rising climate risks in the Himalayas, but experts say Nepal needs stronger evidence, sharper diplomacy and a clear strategy to secure international grants.",
+      "url": "https://kathmandupost.com/national/2026/09/05/can-nepal-turn-himalayan-vulnerability-into-a-case-for-compensation"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -100,48 +142,6 @@
       "title": "Nepal unveils relief package to help flood-hit businesses recover",
       "blurb": "Customs and tax breaks, loan restructuring and cheaper credit offered to businesses affected by Bhotekoshi floods.",
       "url": "https://kathmandupost.com/money/2026/09/04/nepal-unveils-relief-package-to-help-flood-hit-businesses-recover"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "How engineers in a WhatsApp group are guiding Nepal’s flood rescue efforts",
-      "blurb": "As rescue teams search buried hydropower tunnels for survivors, a WhatsApp group of more than 500 engineers is providing vital drawings, technical advice and information on missing workers.",
-      "url": "https://kathmandupost.com/national/2026/09/04/how-engineers-in-a-whatsapp-group-are-guiding-nepal-s-flood-rescue-efforts"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "600 children unaccounted for in Rasuwa and Nuwakot. Verification hampered by crippled communication",
-      "blurb": "12 schools—four in Rasuwa and eight in Nuwakot—were completely destroyed in the August 26 mid-morning disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/04/600-children-unaccounted-for-in-rasuwa-and-nuwakot-verification-hampered-by-crippled-communication"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "The priest leading his people from grief to acceptance",
-      "blurb": "In a Rasuwa village, grieving families have begun performing Buddhist funeral rites without waiting for bodies, following the lead of chief priest Singi Lama, who lost his son and daughters-in-law in the disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/04/the-priest-leading-his-people-from-grief-to-acceptance"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal needs to overhaul its early warning system",
-      "blurb": "Modernised telemetry, cross-border data sharing and evacuation laws are essential to protect vulnerable communities.",
-      "url": "https://kathmandupost.com/editorial/2026/09/03/nepal-needs-to-overhaul-its-early-warning-system"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal weighing options to relocate Bhotekoshi flood survivors",
-      "blurb": "Authorities are mapping unsafe settlements and considering safer locations, but past disasters show that moving communities away from their land and livelihoods can be unsuitable.",
-      "url": "https://kathmandupost.com/national/2026/09/03/nepal-weighing-options-to-relocate-bhotekoshi-flood-survivors"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Prime Minister Balendra Shah to lead Nepali delegation to UN General Assembly",
-      "blurb": "Shah will take a small delegation to New York and make Nepal’s case on the Bhotekoshi disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/03/prime-minister-balendra-shah-to-lead-nepali-delegation-to-un-general-assembly"
     }
   ]
 }

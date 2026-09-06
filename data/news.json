@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-06T09:40:58.026699+00:00",
+  "updated_at": "2026-09-06T13:09:12.707170+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "How an IT engineer used AI to aid Nepal’s flood response",
+      "blurb": "Ministry of Finance’s Niraj Bhusal deployed an AI-driven web application to track casualties and streamline relief efforts, providing Nepal’s disaster management teams with a new tool for emergency coordination.",
+      "url": "https://kathmandupost.com/national/2026/09/06/how-an-it-engineer-used-ai-to-aid-nepal-s-flood-response"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -135,13 +142,6 @@
       "title": "NEPSE falls as flood concerns weigh on insurance, hydropower",
       "blurb": "The index slips 0.57 percent in a four-session week, erasing about Rs30 billion in market value as thin trading and weak momentum keep the market near key support.",
       "url": "https://kathmandupost.com/money/2026/09/05/nepse-falls-as-flood-concerns-weigh-on-insurance-hydropower"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal flood death toll reaches 1,342",
-      "blurb": "Police say 4,886 people remain missing and 1,030 bodies have been buried as search operations continue.",
-      "url": "https://kathmandupost.com/national/2026/09/05/nepal-flood-death-toll-reaches-1-342"
     }
   ]
 }

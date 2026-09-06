@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-06T13:09:12.707170+00:00",
+  "updated_at": "2026-09-06T16:16:21.499370+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "The flood is over, the fear remains",
+      "blurb": "Children who survived the August 26 flood are struggling with sleepless nights, panic, and memories of family members lost, while officials and aid workers race to address a quieter aftermath.",
+      "url": "https://kathmandupost.com/national/2026/09/06/the-flood-is-over-the-fear-remains"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Power restored in much of flood-hit Rasuwa and Nuwakot, but pockets remain dark",
+      "blurb": "The restoration is helping rescue and relief efforts. Solar units to reach settlements off-grid.",
+      "url": "https://kathmandupost.com/national/2026/09/06/power-restored-in-much-of-flood-hit-rasuwa-and-nuwakot-but-pockets-remain-dark"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Kulman Ghising on the lessons Nepal must learn from the hydropower disaster",
+      "blurb": "The former NEA chief discusses the damage to hydropower projects, lessons from the rescue operations and the design and safety reforms Nepal’s hydropower sector needs after the Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/interviews/2026/09/06/kulman-ghising-on-the-lessons-nepal-must-learn-from-the-hydropower-disaster"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Eleven days without a call: Three Kanchanpur families wait for news of men missing in the flood",
+      "blurb": "In Kanchanpur, wives, children and elderly parents are still waiting for relatives swept away or out of contact after the Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/national/2026/09/06/eleven-days-without-a-call-three-kanchanpur-families-wait-for-news-of-men-missing-in-the-flood"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -114,34 +142,6 @@
       "title": "Two people rescued alive on 11th day after floods",
       "blurb": "A Chinese national was pulled from a hydropower tunnel in Rasuwa, while a 64-year-old woman was rescued from the upper floor of a house in Nuwakot.",
       "url": "https://kathmandupost.com/national/2026/09/05/two-people-rescued-alive-on-11th-day-after-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Woman rescued alive after 10 days trapped in debris-buried house",
-      "blurb": "Armed Police Force team pulls 64-year-old Chandika Kumari Shrestha from the upper floor of a four-storey building in Betrawati.",
-      "url": "https://kathmandupost.com/national/2026/09/05/woman-rescued-alive-after-10-days-trapped-in-debris-buried-house"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Where rescue efforts stand at flood-hit hydropower projects",
-      "blurb": "Two workers have been rescued, and bodies recovered, but teams are still searching flooded tunnels and damaged sites for hundreds of missing people.",
-      "url": "https://kathmandupost.com/national/2026/09/05/where-rescue-efforts-stand-at-flood-hit-hydropower-projects"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Chinese national pulled alive from hydropower tunnel in Nepal after 10 days",
-      "blurb": "Luhaitao was found about 225 metres inside the Upper Trishuli-1 tunnel as Nepali and foreign rescuers continued searching the site.",
-      "url": "https://kathmandupost.com/national/2026/09/05/chinese-national-rescued-alive-after-10-days-trapped-in-hydropower-tunnel"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "NEPSE falls as flood concerns weigh on insurance, hydropower",
-      "blurb": "The index slips 0.57 percent in a four-session week, erasing about Rs30 billion in market value as thin trading and weak momentum keep the market near key support.",
-      "url": "https://kathmandupost.com/money/2026/09/05/nepse-falls-as-flood-concerns-weigh-on-insurance-hydropower"
     }
   ]
 }

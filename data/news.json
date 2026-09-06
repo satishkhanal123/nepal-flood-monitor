@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-06T05:43:58.237011+00:00",
+  "updated_at": "2026-09-06T09:40:58.026699+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal, South Korea discuss flood rescue, disaster recovery and climate finance",
+      "blurb": "Nepal seeks continued South Korean support for flood recovery as the two countries call for greater international action on climate-related losses.",
+      "url": "https://kathmandupost.com/national/2026/09/06/nepal-south-korea-discuss-flood-rescue-disaster-recovery-and-climate-finance"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Prithvi Highway collapse leaves Pokhara’s tourist buses idle as air traffic soars",
+      "blurb": "The Krishnabhir landslide has disrupted 150 tourist buses on the Pokhara-Kathmandu route, pushing daily air passenger numbers towards 3,500 and prompting tourism operators to explore an alternative route across the…",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/06/prithvi-highway-collapse-leaves-pokhara-s-tourist-buses-idle-as-air-traffic-soars"
+    },
     {
       "tag": "people",
       "date": "",
@@ -128,20 +142,6 @@
       "title": "Nepal flood death toll reaches 1,342",
       "blurb": "Police say 4,886 people remain missing and 1,030 bodies have been buried as search operations continue.",
       "url": "https://kathmandupost.com/national/2026/09/05/nepal-flood-death-toll-reaches-1-342"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal PM Balendra Shah to address UN General Assembly on September 24",
-      "blurb": "His first foreign trip since taking office comes as Nepal seeks international support after devastating floods.",
-      "url": "https://kathmandupost.com/national/2026/09/05/nepal-pm-balendra-shah-to-address-un-general-assembly-on-september-24"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "27 US lawmakers urge Rubio to expand rescue, aid efforts in Nepal",
-      "blurb": "Lawmakers call for US disaster response team, high-altitude search assets and faster assistance as thousands remain missing.",
-      "url": "https://kathmandupost.com/national/2026/09/05/27-us-lawmakers-urge-rubio-to-expand-rescue-aid-efforts-in-nepal"
     }
   ]
 }

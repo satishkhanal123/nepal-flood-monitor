@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-06T00:58:35.822076+00:00",
+  "updated_at": "2026-09-06T05:43:58.237011+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Scan, tap, done: How digital payments are changing disaster relief in Nepal",
+      "blurb": "A decade after the 2015 earthquake, mobile banking and QR payments have made it possible to raise over Rs10 billion for flood victims in days.",
+      "url": "https://kathmandupost.com/national/2026/09/06/scan-tap-done-how-digital-payments-are-changing-disaster-relief-in-nepal"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Reporter’s Diary: I went back to Rasuwa. The river had changed everything",
+      "blurb": "Fourteen months after covering the first Lhende Khola flood, I returned to the same disaster zone. This time, roads and homes were gone, families were searching for their loved ones, and the places I remembered were…",
+      "url": "https://kathmandupost.com/national/2026/09/06/reporter-s-diary-i-went-back-to-rasuwa-the-river-had-changed-everything"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood damages four houses and bridge in Gorkha",
+      "blurb": "A pre-dawn flood in remote Chumnubri Rural Municipality destroyed four houses and swept away a bridge, with no casualties reported.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/06/flood-damages-four-houses-and-bridge-in-gorkha"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Kathmandu supply lines rerouted after floods block main highway",
+      "blurb": "Fuel, food and other essentials are reaching the Capital through alternative roads, but transport disruption is pushing up prices and limiting cooking gas supplies.",
+      "url": "https://kathmandupost.com/money/2026/09/06/kathmandu-supply-lines-rerouted-after-floods-block-main-highway"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -114,34 +142,6 @@
       "title": "27 US lawmakers urge Rubio to expand rescue, aid efforts in Nepal",
       "blurb": "Lawmakers call for US disaster response team, high-altitude search assets and faster assistance as thousands remain missing.",
       "url": "https://kathmandupost.com/national/2026/09/05/27-us-lawmakers-urge-rubio-to-expand-rescue-aid-efforts-in-nepal"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Where to support flood relief in Kathmandu this week and beyond",
-      "blurb": "From charity runs to creative workshops, these events offer ways to support flood-affected communities.",
-      "url": "https://kathmandupost.com/art-culture/2026/09/05/where-to-support-flood-relief-in-kathmandu-this-week-and-beyond"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "They stopped hoping to find him alive. Then they found a hand",
-      "blurb": "Raj Kumar Diyali went missing with his wife and four-year-old son in Nepal’s Bhotekoshi flood. His family is now waiting for DNA confirmation.",
-      "url": "https://kathmandupost.com/national/2026/09/05/they-stopped-hoping-to-find-him-alive-then-they-found-a-hand"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Barely saved, he cuts mourning short to help flood survivors",
-      "blurb": "Sudip Kumar Neupane watched a raging Trishuli swallow his younger brother and a close colleague, then came out of grief after two days.",
-      "url": "https://kathmandupost.com/national/2026/09/05/barely-saved-he-cuts-mourning-short-to-help-flood-survivors"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Can Nepal turn Himalayan vulnerability into a case for compensation?",
-      "blurb": "The Bhotekoshi disaster highlights rising climate risks in the Himalayas, but experts say Nepal needs stronger evidence, sharper diplomacy and a clear strategy to secure international grants.",
-      "url": "https://kathmandupost.com/national/2026/09/05/can-nepal-turn-himalayan-vulnerability-into-a-case-for-compensation"
     }
   ]
 }

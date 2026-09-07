@@ -1,8 +1,50 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-07T05:01:21.033434+00:00",
+  "updated_at": "2026-09-07T10:16:46.870868+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "South Asian lawmakers call for stronger regional climate cooperation",
+      "blurb": "Parliamentarians back proposals for a regional climate council, electricity grid and cross-border disaster-warning system after Nepal’s recent glacial-related disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/07/south-asian-lawmakers-call-for-stronger-regional-climate-cooperation"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal flood death toll rises to 1,355, nearly 5,000 unaccounted for",
+      "blurb": "More than 21,000 security personnel remain deployed as rescue teams continue operations across eight flood-hit districts.",
+      "url": "https://kathmandupost.com/national/2026/09/07/nepal-flood-death-toll-rises-to-1-355-nearly-5-000-unaccounted-for"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepali Army says 121 people may be trapped in flood-hit hydropower tunnels",
+      "blurb": "About 900 people were initially reported unaccounted for at affected projects, but the army says only around 121 are believed to be inside tunnels.",
+      "url": "https://kathmandupost.com/national/2026/09/07/army-says-121-people-may-be-trapped-in-flood-hit-hydropower-tunnels"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nuwakot schools to reopen 14 days after Bhotekoshi floods",
+      "blurb": "Bidur Municipality will resume classes at 65 schools on Wednesday, while those destroyed or being used as holding centres will remain closed.",
+      "url": "https://kathmandupost.com/national/2026/09/07/nuwakot-schools-to-reopen-14-days-after-bhotekoshi-floods"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Families demand answers for missing hydropower workers",
+      "blurb": "Relatives of workers missing after the Rasuwa floods say delays in the search are deepening their anguish as they demand a faster, better-equipped rescue effort.",
+      "url": "https://kathmandupost.com/valley/2026/09/07/families-demand-answers-for-missing-hydropower-workers"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Rubio calls Rabi Lamichhane, offers additional support after Bhotekoshi floods",
+      "blurb": "US Secretary of State expresses condolences over loss of lives and says Washington is ready to provide additional assistance as Nepal continues search, rescue, and relief operations.",
+      "url": "https://kathmandupost.com/national/2026/09/07/rubio-calls-rabi-lamichhane-offers-us-additional-support-after-bhotekoshi-floods"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -100,48 +142,6 @@
       "title": "Nepal, South Korea discuss flood rescue, disaster recovery and climate finance",
       "blurb": "Nepal seeks continued South Korean support for flood recovery as the two countries call for greater international action on climate-related losses.",
       "url": "https://kathmandupost.com/national/2026/09/06/nepal-south-korea-discuss-flood-rescue-disaster-recovery-and-climate-finance"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Prithvi Highway collapse leaves Pokhara’s tourist buses idle as air traffic soars",
-      "blurb": "The Krishnabhir landslide has disrupted 150 tourist buses on the Pokhara-Kathmandu route, pushing daily air passenger numbers towards 3,500 and prompting tourism operators to explore an alternative route across the…",
-      "url": "https://kathmandupost.com/gandaki-province/2026/09/06/prithvi-highway-collapse-leaves-pokhara-s-tourist-buses-idle-as-air-traffic-soars"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Scan, tap, done: How digital payments are changing disaster relief in Nepal",
-      "blurb": "A decade after the 2015 earthquake, mobile banking and QR payments have made it possible to raise over Rs10 billion for flood victims in days.",
-      "url": "https://kathmandupost.com/national/2026/09/06/scan-tap-done-how-digital-payments-are-changing-disaster-relief-in-nepal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Reporter’s Diary: I went back to Rasuwa. The river had changed everything",
-      "blurb": "Fourteen months after covering the first Lhende Khola flood, I returned to the same disaster zone. This time, roads and homes were gone, families were searching for their loved ones, and the places I remembered were…",
-      "url": "https://kathmandupost.com/national/2026/09/06/reporter-s-diary-i-went-back-to-rasuwa-the-river-had-changed-everything"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood damages four houses and bridge in Gorkha",
-      "blurb": "A pre-dawn flood in remote Chumnubri Rural Municipality destroyed four houses and swept away a bridge, with no casualties reported.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/09/06/flood-damages-four-houses-and-bridge-in-gorkha"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Kathmandu supply lines rerouted after floods block main highway",
-      "blurb": "Fuel, food and other essentials are reaching the Capital through alternative roads, but transport disruption is pushing up prices and limiting cooking gas supplies.",
-      "url": "https://kathmandupost.com/money/2026/09/06/kathmandu-supply-lines-rerouted-after-floods-block-main-highway"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal is draining four glacial lakes. Scientists say it is not enough",
-      "blurb": "Risk assessment, early warning systems, outlet management and cautious building in the path of a potential flood matter just as much.",
-      "url": "https://kathmandupost.com/climate-environment/2026/09/06/nepal-is-draining-four-glacial-lakes-scientists-say-it-is-not-enough"
     }
   ]
 }

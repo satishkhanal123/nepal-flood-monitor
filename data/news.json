@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-07T10:16:46.870868+00:00",
+  "updated_at": "2026-09-07T15:58:51.043117+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "576 Nepalis stranded in China after Bhotekoshi floods repatriated",
+      "blurb": "The citizens were brought back through the Kodari border crossing with assistance from China and coordination by Nepal’s Armed Police Force.",
+      "url": "https://kathmandupost.com/national/2026/09/07/576-nepalis-stranded-in-china-after-bhotekoshi-floods-repatriated"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal president appeals for climate justice after devastating floods",
+      "blurb": "Ramchandra Paudel urges international action for vulnerable countries as Nepal mourns 1,355 deaths and continues the search for 4,996 people unaccounted for.",
+      "url": "https://kathmandupost.com/national/2026/09/07/nepal-president-appeals-for-climate-justice-after-devastating-floods"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -27,8 +41,8 @@
     {
       "tag": "sitrep",
       "date": "",
-      "title": "Nuwakot schools to reopen 14 days after Bhotekoshi floods",
-      "blurb": "Bidur Municipality will resume classes at 65 schools on Wednesday, while those destroyed or being used as holding centres will remain closed.",
+      "title": "65 schools in Bidur to reopen on Wednesday after August 26 floods",
+      "blurb": "Flood-affected children can attend any nearby school without uniforms as Bidur authorities work to restore classes after the Bhotekoshi disaster.",
       "url": "https://kathmandupost.com/national/2026/09/07/nuwakot-schools-to-reopen-14-days-after-bhotekoshi-floods"
     },
     {
@@ -128,20 +142,6 @@
       "title": "Eleven days without a call: Three Kanchanpur families wait for news of men missing in the flood",
       "blurb": "In Kanchanpur, wives, children and elderly parents are still waiting for relatives swept away or out of contact after the Bhotekoshi floods.",
       "url": "https://kathmandupost.com/national/2026/09/06/eleven-days-without-a-call-three-kanchanpur-families-wait-for-news-of-men-missing-in-the-flood"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "How an IT engineer used AI to aid Nepal’s flood response",
-      "blurb": "Ministry of Finance’s Niraj Bhusal deployed an AI-driven web application to track casualties and streamline relief efforts, providing Nepal’s disaster management teams with a new tool for emergency coordination.",
-      "url": "https://kathmandupost.com/national/2026/09/06/how-an-it-engineer-used-ai-to-aid-nepal-s-flood-response"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal, South Korea discuss flood rescue, disaster recovery and climate finance",
-      "blurb": "Nepal seeks continued South Korean support for flood recovery as the two countries call for greater international action on climate-related losses.",
-      "url": "https://kathmandupost.com/national/2026/09/06/nepal-south-korea-discuss-flood-rescue-disaster-recovery-and-climate-finance"
     }
   ]
 }

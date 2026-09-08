@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-08T14:10:55.952391+00:00",
+  "updated_at": "2026-09-08T17:55:07.651163+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Dhunche has relief supplies. Getting aid to flood-hit Rasuwa villages is the problem",
+      "blurb": "Destroyed roads have left communities in Rasuwa and Nuwakot districts reliant on helicopters, drones and temporary crossings.",
+      "url": "https://kathmandupost.com/national/2026/09/08/dhunche-has-relief-supplies-getting-aid-to-flood-hit-rasuwa-villages-is-the-problem"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal looks for grants for flood recovery, but loans may be unavoidable",
+      "blurb": "Officials expect the Post-Disaster Needs Assessment to put flood losses at around 30 percent above the initial estimate. Experts say Nepal may have to turn to soft loans to fill the funding gap.",
+      "url": "https://kathmandupost.com/national/2026/09/08/nepal-looks-for-grants-for-flood-recovery-but-loans-may-be-unavoidable"
+    },
     {
       "tag": "people",
       "date": "",
@@ -114,27 +128,6 @@
       "title": "Floods wash away 1,806 hectares of farmland, threaten food supplies",
       "blurb": "Bhotekoshi floods are expected to cut food production by 7,686 tonnes in affected areas.",
       "url": "https://kathmandupost.com/national/2026/09/07/floods-wash-away-1-806-hectares-of-farmland-threaten-food-supplies"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal moves against online abuse targeting flood survivors",
-      "blurb": "Cyber Bureau forms 10-member team to identify users posting hateful and demeaning comments about people affected by the Bhotekoshi floods.",
-      "url": "https://kathmandupost.com/national/2026/09/07/nepal-moves-against-online-abuse-targeting-flood-victims"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Mental wellbeing: How to help without feeling helpless after the floods",
-      "blurb": "From donating and sharing useful information to taking a break from distressing coverage, small actions can help us move beyond helplessness.",
-      "url": "https://kathmandupost.com/art-culture/2026/09/07/how-to-help-without-feeling-helpless-after-the-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "People in flood-hit Rasuwa villages call for help after supplies run out",
-      "blurb": "Residents of Aamachhodingmo Rural Municipality who have lost family members look up for help when they hear a helicopter fly. Their prayers mostly go unanswered.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/07/people-in-flood-hit-rasuwa-villages-call-for-help-after-supplies-run-out"
     }
   ]
 }

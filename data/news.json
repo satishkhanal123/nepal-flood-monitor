@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-08T00:38:22.837358+00:00",
+  "updated_at": "2026-09-08T05:15:25.650575+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal races to rebuild roads and bridges washed away by floods",
+      "blurb": "With 41 bridges destroyed between Rasuwa and Chitwan, authorities are reopening roads and seeking temporary bridges from China and India to restore key links.",
+      "url": "https://kathmandupost.com/national/2026/09/08/nepal-races-to-rebuild-roads-and-bridges-washed-away-by-floods"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "How two men survived nine days in a Nepal flood tunnel",
+      "blurb": "Trapped in an air pocket beneath the wreckage of a hydropower tunnel, two workers endured nine days of darkness, mud and dwindling hope before rescuers heard a faint sound from underground.",
+      "url": "https://kathmandupost.com/world/2026/09/08/how-two-men-survived-nine-days-in-a-nepal-flood-tunnel"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "How crypto found a ‘legal’ route into Nepal’s relief efforts",
+      "blurb": "A new US-based channel lets cryptocurrency users donate to Nepal’s disaster fund without the digital assets entering the country, where crypto trading and use are prohibited.",
+      "url": "https://kathmandupost.com/money/2026/09/08/how-crypto-found-a-legal-route-into-nepal-s-relief-efforts"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "A flood of bad news leaves Nepal’s tourist hubs eerily quiet",
+      "blurb": "Negative reports about the Bhotekoshi floods, road disruptions, and travel advisories have hit bookings in Pokhara, Chitwan and Lumbini just as the peak tourist season gets underway.",
+      "url": "https://kathmandupost.com/money/2026/09/08/a-flood-of-bad-news-leaves-nepal-s-tourist-hubs-eerily-quiet"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Democracy amid disaster: What kind of state do we need in a crisis?",
+      "blurb": "A disaster grants rulers extraordinary power and authority, raising the question of whether they will use that power to protect citizens or restrict them.",
+      "url": "https://kathmandupost.com/columns/2026/09/07/democracy-amid-disaster-what-kind-of-state-do-we-need-in-a-crisis"
+    },
     {
       "tag": "access",
       "date": "",
@@ -107,41 +142,6 @@
       "title": "Former Reconstruction Authority chief Govinda Raj Pokharel on the urgent need for a permanent, powerful disaster ministry",
       "blurb": "Warning against compounding risks from clustered dams and melting glaciers, Pokharel calls for strict infrastructure codes, cross-border early warning systems with China and India, and a rapid pivot toward high-altitude…",
       "url": "https://kathmandupost.com/interviews/2026/09/06/former-reconstruction-authority-chief-govinda-raj-pokharel-on-the-urgent-need-for-a-permanent-powerful-disaster-ministry-in-nepal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "When the ground disappears, the sky must be organised",
-      "blurb": "Nepal needs to know how to use the helicopters it already has before the next disaster arrives.",
-      "url": "https://kathmandupost.com/columns/2026/09/06/when-the-ground-disappears-the-sky-must-be-organised"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "The flood is over, the fear remains",
-      "blurb": "Children who survived the August 26 flood are struggling with sleepless nights, panic, and memories of family members lost, while officials and aid workers race to address a quieter aftermath.",
-      "url": "https://kathmandupost.com/national/2026/09/06/the-flood-is-over-the-fear-remains"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Power restored in much of flood-hit Rasuwa and Nuwakot, but pockets remain dark",
-      "blurb": "The restoration is helping rescue and relief efforts. Solar units to reach settlements off-grid.",
-      "url": "https://kathmandupost.com/national/2026/09/06/power-restored-in-much-of-flood-hit-rasuwa-and-nuwakot-but-pockets-remain-dark"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Kulman Ghising on the lessons Nepal must learn from the hydropower disaster",
-      "blurb": "The former NEA chief discusses the damage to hydropower projects, lessons from the rescue operations and the design and safety reforms Nepal’s hydropower sector needs after the Bhotekoshi floods.",
-      "url": "https://kathmandupost.com/interviews/2026/09/06/kulman-ghising-on-the-lessons-nepal-must-learn-from-the-hydropower-disaster"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Eleven days without a call: Three Kanchanpur families wait for news of men missing in the flood",
-      "blurb": "In Kanchanpur, wives, children and elderly parents are still waiting for relatives swept away or out of contact after the Bhotekoshi floods.",
-      "url": "https://kathmandupost.com/national/2026/09/06/eleven-days-without-a-call-three-kanchanpur-families-wait-for-news-of-men-missing-in-the-flood"
     }
   ]
 }

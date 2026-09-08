@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-08T05:15:25.650575+00:00",
+  "updated_at": "2026-09-08T09:56:06.862780+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Arsenal Foundation donates to Nepal flood relief",
+      "blurb": "The Premier League club says it will also pay tribute to flood victims before its Champions League match against Napoli this week.",
+      "url": "https://kathmandupost.com/national/2026/09/08/arsenal-foundation-donates-to-nepal-flood-relief"
+    },
     {
       "tag": "access",
       "date": "",
@@ -135,13 +142,6 @@
       "title": "Flood sends hydropower shares tumbling, but damage is uneven",
       "blurb": "The Bhotekoshi floods have hit a handful of listed hydropower projects, yet shares across the sector, and in insurance, have fallen as investors grapple with uncertainty over losses, claims and reconstruction.",
       "url": "https://kathmandupost.com/money/2026/09/07/flood-sends-hydropower-shares-tumbling-but-damage-is-uneven"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Former Reconstruction Authority chief Govinda Raj Pokharel on the urgent need for a permanent, powerful disaster ministry",
-      "blurb": "Warning against compounding risks from clustered dams and melting glaciers, Pokharel calls for strict infrastructure codes, cross-border early warning systems with China and India, and a rapid pivot toward high-altitude…",
-      "url": "https://kathmandupost.com/interviews/2026/09/06/former-reconstruction-authority-chief-govinda-raj-pokharel-on-the-urgent-need-for-a-permanent-powerful-disaster-ministry-in-nepal"
     }
   ]
 }

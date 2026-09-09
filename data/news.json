@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-09T01:11:00.328835+00:00",
+  "updated_at": "2026-09-09T05:59:03.919673+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Water flow returns to normal in Kaski river after temporary blockage",
+      "blurb": "The Kimrong Khola was temporarily blocked on Tuesday, prompting precautionary evacuations downstream, but the blockage began clearing overnight and the river has since returned to its normal flow.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/09/water-flow-returns-to-normal-in-kaski-river-after-temporary-blockage"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Global backing grows for Nepal’s climate aid appeal",
+      "blurb": "More than a dozen members of the UN-backed Loss and Damage Fund are pushing for an emergency board meeting to consider Nepal’s request for support after the Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/national/2026/09/09/global-backing-grows-for-nepal-s-climate-aid-appeal"
+    },
     {
       "tag": "access",
       "date": "",
@@ -93,34 +107,6 @@
       "title": "South Asian lawmakers call for stronger regional climate cooperation",
       "blurb": "Parliamentarians back proposals for a regional climate council, electricity grid and cross-border disaster-warning system after Nepal’s recent glacial-related disaster.",
       "url": "https://kathmandupost.com/national/2026/09/07/south-asian-lawmakers-call-for-stronger-regional-climate-cooperation"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal flood death toll rises to 1,355, nearly 5,000 unaccounted for",
-      "blurb": "More than 21,000 security personnel remain deployed as rescue teams continue operations across eight flood-hit districts.",
-      "url": "https://kathmandupost.com/national/2026/09/07/nepal-flood-death-toll-rises-to-1-355-nearly-5-000-unaccounted-for"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepali Army says 121 people may be trapped in flood-hit hydropower tunnels",
-      "blurb": "About 900 people were initially reported unaccounted for at affected projects, but the army says only around 121 are believed to be inside tunnels.",
-      "url": "https://kathmandupost.com/national/2026/09/07/army-says-121-people-may-be-trapped-in-flood-hit-hydropower-tunnels"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "65 schools in Bidur to reopen on Wednesday after August 26 floods",
-      "blurb": "Flood-affected children can attend any nearby school without uniforms as Bidur authorities work to restore classes after the Bhotekoshi disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/07/nuwakot-schools-to-reopen-14-days-after-bhotekoshi-floods"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Families demand answers for missing hydropower workers",
-      "blurb": "Relatives of workers missing after the Rasuwa floods say delays in the search are deepening their anguish as they demand a faster, better-equipped rescue effort.",
-      "url": "https://kathmandupost.com/valley/2026/09/07/families-demand-answers-for-missing-hydropower-workers"
     }
   ]
 }

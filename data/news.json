@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-09T05:59:03.919673+00:00",
+  "updated_at": "2026-09-09T11:10:48.144939+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Rabi Lamichhane urges action against those targeting flood victims online",
+      "blurb": "The RSP chair says the Bhotekoshi floods should be declared a national climate-related disaster and calls for a special all-party parliamentary committee to oversee the response and long-term recovery.",
+      "url": "https://kathmandupost.com/politics/2026/09/09/rabi-lamichhane-urges-action-against-those-targeting-flood-victims-online"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "‘You are not alone, Nepal’: UEFA Champions League pays tribute to flood victims",
+      "blurb": "European football’s elite competition will observe a moment of silence and display solidarity banners across all 18 opening-week matches following the late-August disaster in central Nepal.",
+      "url": "https://kathmandupost.com/sports/2026/09/09/you-are-not-alone-nepal-uefa-champions-league-honours-flood-victims"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal restores power, rebuilds links in flood-hit Rasuwa and Nuwakot",
+      "blurb": "Electricity has returned to more communities as the Nepali Army works to install a temporary bridge after floods destroyed key infrastructure.",
+      "url": "https://kathmandupost.com/national/2026/09/09/nepal-restores-power-rebuilds-links-in-flood-hit-rasuwa-and-nuwakot"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal waives health insurance fees in flood-hit districts",
+      "blurb": "Patients in Rasuwa, Nuwakot and Dhading will not have to pay co-payments or show physical insurance cards for three months.",
+      "url": "https://kathmandupost.com/national/2026/09/09/nepal-waives-health-insurance-fees-in-flood-hit-districts"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -86,27 +114,6 @@
       "title": "Democracy amid disaster: What kind of state do we need in a crisis?",
       "blurb": "A disaster grants rulers extraordinary power and authority, raising the question of whether they will use that power to protect citizens or restrict them.",
       "url": "https://kathmandupost.com/columns/2026/09/07/democracy-amid-disaster-what-kind-of-state-do-we-need-in-a-crisis"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "576 Nepalis stranded in China after Bhotekoshi floods repatriated",
-      "blurb": "The citizens were brought back through the Kodari border crossing with assistance from China and coordination by Nepal’s Armed Police Force.",
-      "url": "https://kathmandupost.com/national/2026/09/07/576-nepalis-stranded-in-china-after-bhotekoshi-floods-repatriated"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal president appeals for climate justice after devastating floods",
-      "blurb": "Ramchandra Paudel urges international action for vulnerable countries as Nepal mourns 1,355 deaths and continues the search for 4,996 people unaccounted for.",
-      "url": "https://kathmandupost.com/national/2026/09/07/nepal-president-appeals-for-climate-justice-after-devastating-floods"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "South Asian lawmakers call for stronger regional climate cooperation",
-      "blurb": "Parliamentarians back proposals for a regional climate council, electricity grid and cross-border disaster-warning system after Nepal’s recent glacial-related disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/07/south-asian-lawmakers-call-for-stronger-regional-climate-cooperation"
     }
   ]
 }

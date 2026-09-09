@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-08T22:59:34.008492+00:00",
+  "updated_at": "2026-09-09T01:11:00.328835+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Floods disrupt access to healthcare in Rasuwa and Nuwakot",
+      "blurb": "Damaged roads have made hospitals difficult to reach for the affected, including pregnant women.",
+      "url": "https://kathmandupost.com/health/2026/09/09/floods-disrupt-access-to-healthcare-in-rasuwa-and-nuwakot"
+    },
     {
       "tag": "access",
       "date": "",
@@ -16,6 +23,13 @@
       "title": "Nepal looks for grants for flood recovery, but loans may be unavoidable",
       "blurb": "Officials expect the Post-Disaster Needs Assessment to put flood losses at around 30 percent above the initial estimate. Experts say Nepal may have to turn to soft loans to fill the funding gap.",
       "url": "https://kathmandupost.com/national/2026/09/08/nepal-looks-for-grants-for-flood-recovery-but-loans-may-be-unavoidable"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Time to move past the basics in disaster response",
+      "blurb": "Assistance must go beyond immediate survival to restore safety, dignity, identity and community connections.",
+      "url": "https://kathmandupost.com/columns/2026/09/08/time-to-move-past-the-basics-in-disaster-response"
     },
     {
       "tag": "people",
@@ -107,27 +121,6 @@
       "title": "Families demand answers for missing hydropower workers",
       "blurb": "Relatives of workers missing after the Rasuwa floods say delays in the search are deepening their anguish as they demand a faster, better-equipped rescue effort.",
       "url": "https://kathmandupost.com/valley/2026/09/07/families-demand-answers-for-missing-hydropower-workers"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Rubio calls Rabi Lamichhane, offers additional support after Bhotekoshi floods",
-      "blurb": "US Secretary of State expresses condolences over loss of lives and says Washington is ready to provide additional assistance as Nepal continues search, rescue, and relief operations.",
-      "url": "https://kathmandupost.com/national/2026/09/07/rubio-calls-rabi-lamichhane-offers-us-additional-support-after-bhotekoshi-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Arnold Dix says Nepal rescue teams face challenge unlike any before",
-      "blurb": "The Australian tunnel expert, who arrived in Kathmandu on Saturday, joined Nepali and Indian teams searching for people believed to be trapped inside the Chilime hydropower tunnel.",
-      "url": "https://kathmandupost.com/national/2026/09/07/arnold-dix-says-nepal-rescue-teams-face-challenge-unlike-any-before"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Floods wash away 1,806 hectares of farmland, threaten food supplies",
-      "blurb": "Bhotekoshi floods are expected to cut food production by 7,686 tonnes in affected areas.",
-      "url": "https://kathmandupost.com/national/2026/09/07/floods-wash-away-1-806-hectares-of-farmland-threaten-food-supplies"
     }
   ]
 }

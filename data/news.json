@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-09T11:10:48.144939+00:00",
+  "updated_at": "2026-09-09T15:07:02.586055+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Two weeks on, families wait for DNA answers",
+      "blurb": "Relatives of people missing after the Bhotekoshi floods are turning to DNA testing to identify recovered bodies, but labs are overloaded and under-resourced.",
+      "url": "https://kathmandupost.com/national/2026/09/09/two-weeks-on-families-wait-for-dna-answers"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "An algorithm is trying to put names to Nepal’s flood dead",
+      "blurb": "Facial-recognition technology FaceTagr is helping families search for possible matches, but police say DNA testing remains the only reliable option for badly damaged remains.",
+      "url": "https://kathmandupost.com/national/2026/09/09/an-algorithm-is-trying-to-put-names-to-nepal-s-flood-dead"
+    },
     {
       "tag": "people",
       "date": "",
@@ -107,13 +121,6 @@
       "title": "A flood of bad news leaves Nepal’s tourist hubs eerily quiet",
       "blurb": "Negative reports about the Bhotekoshi floods, road disruptions, and travel advisories have hit bookings in Pokhara, Chitwan and Lumbini just as the peak tourist season gets underway.",
       "url": "https://kathmandupost.com/money/2026/09/08/a-flood-of-bad-news-leaves-nepal-s-tourist-hubs-eerily-quiet"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Democracy amid disaster: What kind of state do we need in a crisis?",
-      "blurb": "A disaster grants rulers extraordinary power and authority, raising the question of whether they will use that power to protect citizens or restrict them.",
-      "url": "https://kathmandupost.com/columns/2026/09/07/democracy-amid-disaster-what-kind-of-state-do-we-need-in-a-crisis"
     }
   ]
 }

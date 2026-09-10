@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-10T01:17:30.049297+00:00",
+  "updated_at": "2026-09-10T06:19:36.314251+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Germany provides €8 million in assistance to Nepal after Bhotekoshi floods",
+      "blurb": "The package includes emergency relief, humanitarian aid and development support for health, energy and disaster-resilient infrastructure.",
+      "url": "https://kathmandupost.com/money/2026/09/10/germany-provides-8-million-in-assistance-to-nepal-after-bhotekoshi-floods"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal’s climate problem is becoming an economic one",
+      "blurb": "Experts say the country needs to shift from rebuilding after disasters to planning development around climate risk.",
+      "url": "https://kathmandupost.com/national/2026/09/10/nepal-s-climate-problem-is-becoming-an-economic-one"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal announces ‘scholarship bank’ for children orphaned or displaced by floods",
+      "blurb": "The government says it will guarantee education through Grade 12 for affected children, with support ranging from residential care and full scholarships to educational materials.",
+      "url": "https://kathmandupost.com/national/2026/09/10/nepal-announces-scholarship-bank-for-children-orphaned-or-displaced-by-floods"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal must restore tourist confidence as floods threaten arrivals",
+      "blurb": "The August 26 floods have disrupted some tourism sites, but most of Nepal’s major destinations remain open.",
+      "url": "https://kathmandupost.com/editorial/2026/09/09/nepal-must-restore-tourist-confidence-as-floods-threaten-arrivals"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Disaster reaches children through their screens. This must stop",
+      "blurb": "Sometimes protecting a child can be as simple as deciding not to press ‘post’ or ‘share’.",
+      "url": "https://kathmandupost.com/columns/2026/09/09/disaster-reaches-children-through-their-screens-this-must-stop"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -93,41 +128,6 @@
       "title": "Time to move past the basics in disaster response",
       "blurb": "Assistance must go beyond immediate survival to restore safety, dignity, identity and community connections.",
       "url": "https://kathmandupost.com/columns/2026/09/08/time-to-move-past-the-basics-in-disaster-response"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Arsenal Foundation donates to Nepal flood relief",
-      "blurb": "The Premier League club says it will also pay tribute to flood victims before its Champions League match against Napoli this week.",
-      "url": "https://kathmandupost.com/national/2026/09/08/arsenal-foundation-donates-to-nepal-flood-relief"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal races to rebuild roads and bridges washed away by floods",
-      "blurb": "With 41 bridges destroyed between Rasuwa and Chitwan, authorities are reopening roads and seeking temporary bridges from China and India to restore key links.",
-      "url": "https://kathmandupost.com/national/2026/09/08/nepal-races-to-rebuild-roads-and-bridges-washed-away-by-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "How two men survived nine days in a Nepal flood tunnel",
-      "blurb": "Trapped in an air pocket beneath the wreckage of a hydropower tunnel, two workers endured nine days of darkness, mud and dwindling hope before rescuers heard a faint sound from underground.",
-      "url": "https://kathmandupost.com/world/2026/09/08/how-two-men-survived-nine-days-in-a-nepal-flood-tunnel"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "How crypto found a ‘legal’ route into Nepal’s relief efforts",
-      "blurb": "A new US-based channel lets cryptocurrency users donate to Nepal’s disaster fund without the digital assets entering the country, where crypto trading and use are prohibited.",
-      "url": "https://kathmandupost.com/money/2026/09/08/how-crypto-found-a-legal-route-into-nepal-s-relief-efforts"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "A flood of bad news leaves Nepal’s tourist hubs eerily quiet",
-      "blurb": "Negative reports about the Bhotekoshi floods, road disruptions, and travel advisories have hit bookings in Pokhara, Chitwan and Lumbini just as the peak tourist season gets underway.",
-      "url": "https://kathmandupost.com/money/2026/09/08/a-flood-of-bad-news-leaves-nepal-s-tourist-hubs-eerily-quiet"
     }
   ]
 }

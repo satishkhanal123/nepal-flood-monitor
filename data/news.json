@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-10T11:38:52.984039+00:00",
+  "updated_at": "2026-09-10T15:09:36.472582+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "A helicopter finally reaches flood-isolated Tiru of Rasuwa, 15 days after the devastating deluge",
+      "blurb": "With all roads and bridges washed away by the catastrophic August 26 floods, the village has been effectively cut off from the outside world.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/10/a-helicopter-finally-reaches-flood-isolated-tiru-of-rasuwa-15-days-after-the-devastating-deluge"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Rapid assessment puts Bhotekoshi recovery needs at Rs723 billion",
+      "blurb": "Three-quarters of the bill is tied to infrastructure, with hydropower, roads, homes, and essential services among the hardest hit.",
+      "url": "https://kathmandupost.com/national/2026/09/10/rs723-billion-needed-to-rebuild-flood-hit-areas-government-assessment-finds"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -107,27 +121,6 @@
       "title": "Global backing grows for Nepal’s climate aid appeal",
       "blurb": "More than a dozen members of the UN-backed Loss and Damage Fund are pushing for an emergency board meeting to consider Nepal’s request for support after the Bhotekoshi floods.",
       "url": "https://kathmandupost.com/national/2026/09/09/global-backing-grows-for-nepal-s-climate-aid-appeal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Floods disrupt access to healthcare in Rasuwa and Nuwakot",
-      "blurb": "Damaged roads have made hospitals difficult to reach for the affected, including pregnant women.",
-      "url": "https://kathmandupost.com/health/2026/09/09/floods-disrupt-access-to-healthcare-in-rasuwa-and-nuwakot"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Dhunche has relief supplies. Getting aid to flood-hit Rasuwa villages is the problem",
-      "blurb": "Destroyed roads have left communities in Rasuwa and Nuwakot districts reliant on helicopters, drones and temporary crossings.",
-      "url": "https://kathmandupost.com/national/2026/09/08/dhunche-has-relief-supplies-getting-aid-to-flood-hit-rasuwa-villages-is-the-problem"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal looks for grants for flood recovery, but loans may be unavoidable",
-      "blurb": "Officials expect the Post-Disaster Needs Assessment to put flood losses at around 30 percent above the initial estimate. Experts say Nepal may have to turn to soft loans to fill the funding gap.",
-      "url": "https://kathmandupost.com/national/2026/09/08/nepal-looks-for-grants-for-flood-recovery-but-loans-may-be-unavoidable"
     }
   ]
 }

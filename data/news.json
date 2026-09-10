@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-10T06:19:36.314251+00:00",
+  "updated_at": "2026-09-10T11:38:52.984039+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Climate loss and damage fund moves to consider urgent support for Nepal",
+      "blurb": "FRLD co-chairs say they are working with the Board to respond to Kathmandu’s request following the August 26 Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/national/2026/09/10/climate-loss-and-damage-fund-moves-to-consider-urgent-support-for-nepal"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -121,13 +128,6 @@
       "title": "Nepal looks for grants for flood recovery, but loans may be unavoidable",
       "blurb": "Officials expect the Post-Disaster Needs Assessment to put flood losses at around 30 percent above the initial estimate. Experts say Nepal may have to turn to soft loans to fill the funding gap.",
       "url": "https://kathmandupost.com/national/2026/09/08/nepal-looks-for-grants-for-flood-recovery-but-loans-may-be-unavoidable"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Time to move past the basics in disaster response",
-      "blurb": "Assistance must go beyond immediate survival to restore safety, dignity, identity and community connections.",
-      "url": "https://kathmandupost.com/columns/2026/09/08/time-to-move-past-the-basics-in-disaster-response"
     }
   ]
 }

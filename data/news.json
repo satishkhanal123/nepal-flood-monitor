@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-11T14:56:44.715716+00:00",
+  "updated_at": "2026-09-11T18:13:05.485882+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Philippine ferry fire death toll jumps to 35",
+      "blurb": "Thick smoke and extreme heat had earlier prevented rescuers from entering the ferry, which was carrying more than 130 people when it was engulfed in flames.",
+      "url": "https://kathmandupost.com/world/2026/09/11/philippine-ferry-fire-death-toll-jumps-to-35"
+    },
     {
       "tag": "sitrep",
       "date": "",

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-10T23:09:58.425649+00:00",
+  "updated_at": "2026-09-11T01:04:41.107385+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Lessons from Nepal’s past for families living without answers",
+      "blurb": "Physical closure may never come for those lost in the flood. But by walking hand-in-hand with survivors, we can provide the resources and empathy needed to navigate the uncertainty.",
+      "url": "https://kathmandupost.com/columns/2026/09/11/lessons-from-nepal-s-past-for-families-living-without-answers"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "How the melting glaciers are unlocking ancient superbugs we’ve never seen before",
+      "blurb": "Researchers warn that long-dormant pathogens and ancient antibiotic-resistance genes are slipping into freshwater systems.",
+      "url": "https://kathmandupost.com/columns/2026/09/11/how-the-melting-glaciers-are-unlocking-ancient-superbugs-we-ve-never-seen-before"
+    },
     {
       "tag": "access",
       "date": "",
@@ -93,34 +107,6 @@
       "title": "‘You are not alone, Nepal’: UEFA Champions League pays tribute to flood victims",
       "blurb": "European football’s elite competition will observe a moment of silence and display solidarity banners across all 18 opening-week matches following the late-August disaster in central Nepal.",
       "url": "https://kathmandupost.com/sports/2026/09/09/you-are-not-alone-nepal-uefa-champions-league-honours-flood-victims"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal restores power, rebuilds links in flood-hit Rasuwa and Nuwakot",
-      "blurb": "Electricity has returned to more communities as the Nepali Army works to install a temporary bridge after floods destroyed key infrastructure.",
-      "url": "https://kathmandupost.com/national/2026/09/09/nepal-restores-power-rebuilds-links-in-flood-hit-rasuwa-and-nuwakot"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal waives health insurance fees in flood-hit districts",
-      "blurb": "Patients in Rasuwa, Nuwakot and Dhading will not have to pay co-payments or show physical insurance cards for three months.",
-      "url": "https://kathmandupost.com/national/2026/09/09/nepal-waives-health-insurance-fees-in-flood-hit-districts"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Water flow returns to normal in Kaski river after temporary blockage",
-      "blurb": "The Kimrong Khola was temporarily blocked on Tuesday, prompting precautionary evacuations downstream, but the blockage began clearing overnight and the river has since returned to its normal flow.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/09/09/water-flow-returns-to-normal-in-kaski-river-after-temporary-blockage"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Global backing grows for Nepal’s climate aid appeal",
-      "blurb": "More than a dozen members of the UN-backed Loss and Damage Fund are pushing for an emergency board meeting to consider Nepal’s request for support after the Bhotekoshi floods.",
-      "url": "https://kathmandupost.com/national/2026/09/09/global-backing-grows-for-nepal-s-climate-aid-appeal"
     }
   ]
 }

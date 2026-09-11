@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-11T10:58:44.159158+00:00",
+  "updated_at": "2026-09-11T14:56:44.715716+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Prime Minister Shah to highlight Nepal’s outsized climate burden at UN",
+      "blurb": "Following devastating Bhotekoshi floods, Shah will press for financial support to help Nepal recover and build climate resilience.",
+      "url": "https://kathmandupost.com/national/2026/09/11/prime-minister-shah-to-highlight-nepal-s-outsized-climate-burden-at-un"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Water starts flowing through landslide-dammed Hunga Khola, easing flood risk",
+      "blurb": "Authorities had warned of possible flooding downstream after a landslide blocked the river in Solukhumbu and formed a roughly 100-metre-long dam on Friday morning.",
+      "url": "https://kathmandupost.com/national/2026/09/11/water-starts-flowing-through-landslide-dammed-hunga-khola-easing-flood-risk"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal estimates Rs2.34 billion to rebuild flood-hit education sector",
+      "blurb": "Eighteen schools were affected in Rasuwa, disrupting classes for more than 9,000 students after the August 26 Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/national/2026/09/11/nepal-estimates-rs2-34-billion-to-rebuild-flood-hit-education-sector"
+    },
     {
       "tag": "access",
       "date": "",
@@ -72,27 +93,6 @@
       "title": "Germany provides €8 million in assistance to Nepal after Bhotekoshi floods",
       "blurb": "The package includes emergency relief, humanitarian aid and development support for health, energy and disaster-resilient infrastructure.",
       "url": "https://kathmandupost.com/money/2026/09/10/germany-provides-8-million-in-assistance-to-nepal-after-bhotekoshi-floods"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal’s climate problem is becoming an economic one",
-      "blurb": "Experts say the country needs to shift from rebuilding after disasters to planning development around climate risk.",
-      "url": "https://kathmandupost.com/national/2026/09/10/nepal-s-climate-problem-is-becoming-an-economic-one"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal announces ‘scholarship bank’ for children orphaned or displaced by floods",
-      "blurb": "The government says it will guarantee education through Grade 12 for affected children, with support ranging from residential care and full scholarships to educational materials.",
-      "url": "https://kathmandupost.com/national/2026/09/10/nepal-announces-scholarship-bank-for-children-orphaned-or-displaced-by-floods"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal must restore tourist confidence as floods threaten arrivals",
-      "blurb": "The August 26 floods have disrupted some tourism sites, but most of Nepal’s major destinations remain open.",
-      "url": "https://kathmandupost.com/editorial/2026/09/09/nepal-must-restore-tourist-confidence-as-floods-threaten-arrivals"
     }
   ]
 }

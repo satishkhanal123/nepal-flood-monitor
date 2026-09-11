@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-11T01:04:41.107385+00:00",
+  "updated_at": "2026-09-11T05:58:11.956754+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "PM Shah, New Zealand counterpart Luxon discuss flood response",
+      "blurb": "Prime Minister Balendra Shah thanked New Zealand for NZ$2 million in humanitarian assistance and sought its support for climate-related loss and damage financing.",
+      "url": "https://kathmandupost.com/national/2026/09/11/pm-shah-new-zealand-counterpart-luxon-discuss-flood-response"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Landslide dams Solukhumbu river, spurring downstream flood warnings",
+      "blurb": "Water spills over temporary blockade on Hunga Khola, but authorities urge riverside communities to stay clear as burst risk remains high.",
+      "url": "https://kathmandupost.com/national/2026/09/11/landslide-dams-solukhumbu-river-spurring-downstream-flood-warnings"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "For people with disabilities, surviving Nepal’s floods was only the beginning",
+      "blurb": "From finding a safe route out to getting a wheelchair or a place in a shelter, survivors face barriers long after the waters recede.",
+      "url": "https://kathmandupost.com/national/2026/09/11/for-people-with-disabilities-surviving-nepal-s-floods-was-only-the-beginning"
+    },
     {
       "tag": "people",
       "date": "",
@@ -79,34 +100,6 @@
       "title": "Nepal secures $20 million from Loss and Damage Fund, awaits decision on Bhotekoshi plea",
       "blurb": "The funding was approved based on Nepal’s request made earlier this year. A separate emergency appeal filed after the August 26 disaster awaits approval.",
       "url": "https://kathmandupost.com/national/2026/09/09/nepal-secures-20-million-from-loss-and-damage-fund-awaits-decision-on-bhotekoshi-plea"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Two weeks on, families wait for DNA answers",
-      "blurb": "Relatives of people missing after the Bhotekoshi floods are turning to DNA testing to identify recovered bodies, but labs are overloaded and under-resourced.",
-      "url": "https://kathmandupost.com/national/2026/09/09/two-weeks-on-families-wait-for-dna-answers"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "An algorithm is trying to put names to Nepal’s flood dead",
-      "blurb": "Facial-recognition technology FaceTagr is helping families search for possible matches, but police say DNA testing remains the only reliable option for badly damaged remains.",
-      "url": "https://kathmandupost.com/national/2026/09/09/an-algorithm-is-trying-to-put-names-to-nepal-s-flood-dead"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Rabi Lamichhane urges action against those targeting flood victims online",
-      "blurb": "The RSP chair says the Bhotekoshi floods should be declared a national climate-related disaster and calls for a special all-party parliamentary committee to oversee the response and long-term recovery.",
-      "url": "https://kathmandupost.com/politics/2026/09/09/rabi-lamichhane-urges-action-against-those-targeting-flood-victims-online"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "‘You are not alone, Nepal’: UEFA Champions League pays tribute to flood victims",
-      "blurb": "European football’s elite competition will observe a moment of silence and display solidarity banners across all 18 opening-week matches following the late-August disaster in central Nepal.",
-      "url": "https://kathmandupost.com/sports/2026/09/09/you-are-not-alone-nepal-uefa-champions-league-honours-flood-victims"
     }
   ]
 }

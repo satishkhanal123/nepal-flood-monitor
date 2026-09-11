@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-11T05:58:11.956754+00:00",
+  "updated_at": "2026-09-11T10:58:44.159158+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal prepares Krishnabhir bypass as temporary fix remains uncertain",
+      "blurb": "Officials are upgrading a 12-km road along the opposite bank of the Trishuli river as the landslide-prone Krishnabhir section of the Prithvi Highway remains closed.",
+      "url": "https://kathmandupost.com/national/2026/09/11/nepal-prepares-krishnabhir-bypass-as-temporary-fix-remains-uncertain"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -86,20 +93,6 @@
       "title": "Nepal must restore tourist confidence as floods threaten arrivals",
       "blurb": "The August 26 floods have disrupted some tourism sites, but most of Nepal’s major destinations remain open.",
       "url": "https://kathmandupost.com/editorial/2026/09/09/nepal-must-restore-tourist-confidence-as-floods-threaten-arrivals"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Disaster reaches children through their screens. This must stop",
-      "blurb": "Sometimes protecting a child can be as simple as deciding not to press ‘post’ or ‘share’.",
-      "url": "https://kathmandupost.com/columns/2026/09/09/disaster-reaches-children-through-their-screens-this-must-stop"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal secures $20 million from Loss and Damage Fund, awaits decision on Bhotekoshi plea",
-      "blurb": "The funding was approved based on Nepal’s request made earlier this year. A separate emergency appeal filed after the August 26 disaster awaits approval.",
-      "url": "https://kathmandupost.com/national/2026/09/09/nepal-secures-20-million-from-loss-and-damage-fund-awaits-decision-on-bhotekoshi-plea"
     }
   ]
 }

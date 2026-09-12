@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-12T13:36:33.821031+00:00",
+  "updated_at": "2026-09-12T16:29:31.876288+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Bhotekoshi floods push Kulekhani into continuous power generation",
+      "blurb": "National power generation has lost over 400 megawatts following the August 26 floods.",
+      "url": "https://kathmandupost.com/national/2026/09/12/bhotekoshi-floods-push-kulekhani-into-continuous-power-generation"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "August flood death toll rises to 1386, with 5130 still missing",
+      "blurb": "Authorities have recovered 1,386 bodies from eight districts affected by the August 26 Bhotekoshi floods, but only 104 have been identified and handed over to families.",
+      "url": "https://kathmandupost.com/national/2026/09/12/august-flood-death-toll-rises-to-1386-with-5130-still-missing"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Korala border customs revenue surges as cargo diverts from closed crossings",
+      "blurb": "Customs collected Rs1.5 billion in 15 days after the August floods closed the Rasuwagadhi and Tatopani crossings, while transport costs to Kathmandu have risen 15-fold.",
+      "url": "https://kathmandupost.com/national/2026/09/12/korala-border-customs-revenue-surges-as-cargo-diverts-from-closed-crossings"
+    },
     {
       "tag": "access",
       "date": "",
@@ -107,20 +128,6 @@
       "title": "For people with disabilities, surviving Nepal’s floods was only the beginning",
       "blurb": "From finding a safe route out to getting a wheelchair or a place in a shelter, survivors face barriers long after the waters recede.",
       "url": "https://kathmandupost.com/national/2026/09/11/for-people-with-disabilities-surviving-nepal-s-floods-was-only-the-beginning"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Lessons from Nepal’s past for families living without answers",
-      "blurb": "Physical closure may never come for those lost in the flood. But by walking hand-in-hand with survivors, we can provide the resources and empathy needed to navigate the uncertainty.",
-      "url": "https://kathmandupost.com/columns/2026/09/11/lessons-from-nepal-s-past-for-families-living-without-answers"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "How the melting glaciers are unlocking ancient superbugs we’ve never seen before",
-      "blurb": "Researchers warn that long-dormant pathogens and ancient antibiotic-resistance genes are slipping into freshwater systems.",
-      "url": "https://kathmandupost.com/columns/2026/09/11/how-the-melting-glaciers-are-unlocking-ancient-superbugs-we-ve-never-seen-before"
     }
   ]
 }

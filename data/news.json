@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-12T10:04:21.133454+00:00",
+  "updated_at": "2026-09-12T13:36:33.821031+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "What a telecom licence means—and what happens when it expires",
+      "blurb": "UTL’s licence has been cancelled for non-payment. What does a telecom licence allow—and what happens when an operator fails to meet its obligations?",
+      "url": "https://kathmandupost.com/national/2026/09/12/what-a-telecom-licence-means-and-what-happens-when-it-expires"
+    },
     {
       "tag": "people",
       "date": "",
@@ -114,13 +121,6 @@
       "title": "How the melting glaciers are unlocking ancient superbugs we’ve never seen before",
       "blurb": "Researchers warn that long-dormant pathogens and ancient antibiotic-resistance genes are slipping into freshwater systems.",
       "url": "https://kathmandupost.com/columns/2026/09/11/how-the-melting-glaciers-are-unlocking-ancient-superbugs-we-ve-never-seen-before"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "A helicopter finally reaches flood-isolated Tiru of Rasuwa, 15 days after the devastating deluge",
-      "blurb": "With all roads and bridges washed away by the catastrophic August 26 floods, the village has been effectively cut off from the outside world.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/10/a-helicopter-finally-reaches-flood-isolated-tiru-of-rasuwa-15-days-after-the-devastating-deluge"
     }
   ]
 }

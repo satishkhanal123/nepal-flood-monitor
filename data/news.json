@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-13T00:36:40.036765+00:00",
+  "updated_at": "2026-09-13T05:23:07.468525+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Trapped nine days in a dark tunnel, Nepali man tells his survival story",
+      "blurb": "Rescued after 10 days underground, Sanjay Sah says prayer, hope and thoughts of his family helped him endure the darkness, hunger and injuries.",
+      "url": "https://kathmandupost.com/national/2026/09/13/trapped-nine-days-in-a-dark-tunnel-nepali-man-tells-his-survival-story"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood damage leaves Rasuwagadhi road facing long repairs",
+      "blurb": "The Department of Roads is opening temporary tracks and planning Bailey bridges after the Bhotekoshi flood washed away about 40 km of road, while officials aim to restore a link to the Chinese border before Dashain.",
+      "url": "https://kathmandupost.com/national/2026/09/13/flood-damage-leaves-rasuwagadhi-road-facing-long-repairs"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Farmers face dire consequences as floods devastate Nepal’s harvest",
+      "blurb": "Farmers affected by this disaster are the same people who help put food on our tables every day.",
+      "url": "https://kathmandupost.com/columns/2026/09/13/farmers-face-dire-consequences-as-floods-devastate-nepal-s-harvest"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -100,34 +121,6 @@
       "title": "Nepal estimates Rs2.34 billion to rebuild flood-hit education sector",
       "blurb": "Eighteen schools were affected in Rasuwa, disrupting classes for more than 9,000 students after the August 26 Bhotekoshi floods.",
       "url": "https://kathmandupost.com/national/2026/09/11/nepal-estimates-rs2-34-billion-to-rebuild-flood-hit-education-sector"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal prepares Krishnabhir bypass as temporary fix remains uncertain",
-      "blurb": "Officials are upgrading a 12-km road along the opposite bank of the Trishuli river as the landslide-prone Krishnabhir section of the Prithvi Highway remains closed.",
-      "url": "https://kathmandupost.com/national/2026/09/11/nepal-prepares-krishnabhir-bypass-as-temporary-fix-remains-uncertain"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "PM Shah, New Zealand counterpart Luxon discuss flood response",
-      "blurb": "Prime Minister Balendra Shah thanked New Zealand for NZ$2 million in humanitarian assistance and sought its support for climate-related loss and damage financing.",
-      "url": "https://kathmandupost.com/national/2026/09/11/pm-shah-new-zealand-counterpart-luxon-discuss-flood-response"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Landslide dams Solukhumbu river, spurring downstream flood warnings",
-      "blurb": "Water spills over temporary blockade on Hunga Khola, but authorities urge riverside communities to stay clear as burst risk remains high.",
-      "url": "https://kathmandupost.com/national/2026/09/11/landslide-dams-solukhumbu-river-spurring-downstream-flood-warnings"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "For people with disabilities, surviving Nepal’s floods was only the beginning",
-      "blurb": "From finding a safe route out to getting a wheelchair or a place in a shelter, survivors face barriers long after the waters recede.",
-      "url": "https://kathmandupost.com/national/2026/09/11/for-people-with-disabilities-surviving-nepal-s-floods-was-only-the-beginning"
     }
   ]
 }

@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-14T04:57:48.757653+00:00",
+  "updated_at": "2026-09-14T10:27:04.007828+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Himalayas approaching tipping point, millions of livelihoods at stake: Report",
+      "blurb": "Faster glacier melt is threatening water security and increasing the risk of glacial lake floods across the Hindu Kush-Himalaya, putting millions of people downstream at risk.",
+      "url": "https://kathmandupost.com/world/2026/09/14/himalayas-approaching-tipping-point-millions-of-livelihoods-at-stake-report"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "US approves $1m forensic support for Nepal flood victim identification",
+      "blurb": "The new funding takes US humanitarian, health and forensic assistance following the floods to more than $5 million.",
+      "url": "https://kathmandupost.com/national/2026/09/14/us-approves-1m-forensic-support-for-nepal-flood-victim-identification"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Beijing to ban drone possession, storage from November 15",
+      "blurb": "The new rules are part of a broader push to tighten airspace security, with limited exemptions for emergency, research, industrial and other authorised operations.",
+      "url": "https://kathmandupost.com/world/2026/09/14/beijing-to-ban-drone-possession-storage-from-november-15"
+    },
     {
       "tag": "access",
       "date": "",
@@ -114,13 +135,6 @@
       "title": "Korala border customs revenue surges as cargo diverts from closed crossings",
       "blurb": "Customs collected Rs1.5 billion in 15 days after the August floods closed the Rasuwagadhi and Tatopani crossings, while transport costs to Kathmandu have risen 15-fold.",
       "url": "https://kathmandupost.com/national/2026/09/12/korala-border-customs-revenue-surges-as-cargo-diverts-from-closed-crossings"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "What a telecom licence means—and what happens when it expires",
-      "blurb": "UTL’s licence has been cancelled for non-payment. What does a telecom licence allow—and what happens when an operator fails to meet its obligations?",
-      "url": "https://kathmandupost.com/national/2026/09/12/what-a-telecom-licence-means-and-what-happens-when-it-expires"
     }
   ]
 }

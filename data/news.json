@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-14T00:11:32.811012+00:00",
+  "updated_at": "2026-09-14T04:57:48.757653+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood blocks Jajarkot-Dolpa road, sweeps away homes and shops",
+      "blurb": "Torrential rain triggered flooding in Jajarkot’s Nalgad area, disrupting transport on the Bheri Corridor and destroying homes, businesses and other structures.",
+      "url": "https://kathmandupost.com/national/2026/09/14/flood-blocks-jajarkot-dolpa-road-sweeps-away-homes-and-shops"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal tunnel survivor finds solace in village homecoming",
+      "blurb": "Rescued after nine days trapped in a hydropower tunnel, Sanjay Sah returned to his family in a village still mourning workers missing after last month’s disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/14/nepal-tunnel-survivor-finds-solace-in-village-homecoming"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Beijing signals support for rebuilding flood-ravaged Rasuwagadhi route",
+      "blurb": "Nepal has sought Chinese assistance to rebuild the 16-km Syaphrubesi-Rasuwagadhi road, while the government prepares a temporary track to restore access to the border crossing.",
+      "url": "https://kathmandupost.com/money/2026/09/14/beijing-signals-support-for-rebuilding-flood-ravaged-rasuwagadhi-route"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Infrastructure Minister Sunil Lamsal on rebuilding after the Bhotekoshi floods",
+      "blurb": "The infrastructure development minister discusses plans for resettlement, damaged roads and bridges, the China border crossing and efforts to build safer settlements for disaster-prone communities.",
+      "url": "https://kathmandupost.com/interviews/2026/09/14/infrastructure-minister-sunil-lamsal-on-rebuilding-after-the-bhotekoshi-floods"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Why Nepal’s climate crisis is also a public-health emergency",
+      "blurb": "The Bhotekoshi flood shows why Nepal’s climate crisis must also be understood as a public-health crisis.",
+      "url": "https://kathmandupost.com/columns/2026/09/14/why-nepal-s-climate-crisis-is-also-a-public-health-emergency"
+    },
     {
       "tag": "access",
       "date": "",
@@ -86,48 +121,6 @@
       "title": "What a telecom licence means—and what happens when it expires",
       "blurb": "UTL’s licence has been cancelled for non-payment. What does a telecom licence allow—and what happens when an operator fails to meet its obligations?",
       "url": "https://kathmandupost.com/national/2026/09/12/what-a-telecom-licence-means-and-what-happens-when-it-expires"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Indian TV coverage of Nepal floods criticised for sensationalism",
-      "blurb": "Residents say some crews have turned their own difficulties at disaster sites into television drama and given less attention to those flood victims.",
-      "url": "https://kathmandupost.com/national/2026/09/12/indian-tv-coverage-of-nepal-floods-criticised-for-sensationalism"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Book Review: An ice factory, the great famine and the mystery of missing Dalit workers",
-      "blurb": "In ‘White Elephant’, we are made to confront the oppressors of our own time and, unnervingly, the oppressor within ourselves.",
-      "url": "https://kathmandupost.com/art-culture/2026/09/12/an-ice-factory-the-great-famine-and-the-mystery-of-missing-dalit-workers"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "What’s on in Kathmandu Valley this week",
-      "blurb": "Art, music, workshops, and community events to check out across the Valley, including fundraisers for flood-affected communities.",
-      "url": "https://kathmandupost.com/art-culture/2026/09/12/what-s-on-in-kathmandu-valley-this-week-1789178128"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "UTL licence lapses, company seeks more time to clear Rs31 billion dues",
-      "blurb": "The telecommunications company missed its September 4 renewal deadline after failing to pay its renewal fee and outstanding dues. The government says it must pay all dues to renew its licence.",
-      "url": "https://kathmandupost.com/money/2026/09/12/utl-licence-lapses-company-seeks-more-time-to-clear-rs31-billion-dues"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Saptari childbirth on street outside hospital raises questions over Nepal’s free maternity care",
-      "blurb": "A woman giving birth on a pavement outside a government hospital after her husband could not afford Rs3,200 in tests exposes the gap between Nepal’s free maternity care and access to emergency healthcare.",
-      "url": "https://kathmandupost.com/health/2026/09/12/saptari-childbirth-on-street-outside-hospital-raises-questions-over-nepal-s-free-maternity-care"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Decade-old alternative to a vital Prithvi Highway link remains on paper",
-      "blurb": "The collapse-prone Krishnabhir section of the Prithvi Highway has exposed the lack of a parallel route on the other side of the Trishuli river, despite plans dating back nearly a decade.",
-      "url": "https://kathmandupost.com/national/2026/09/12/decade-old-alternative-to-a-vital-prithvi-highway-link-remains-on-paper"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-14T23:18:58.052367+00:00",
+  "updated_at": "2026-09-15T01:42:05.769379+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "After the floods, Nepal’s survivors face the uncertainty of starting over",
+      "blurb": "With homes destroyed, families shattered and winter approaching, thousands of displaced people remain caught between unsafe villages and temporary shelters.",
+      "url": "https://kathmandupost.com/national/2026/09/15/after-the-floods-nepal-s-survivors-face-the-uncertainty-of-starting-over"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Private sector bears bulk of Bhotekoshi flood losses",
+      "blurb": "A preliminary government assessment estimates damage and economic losses at Rs408 billion. Nearly 4,800 businesses and 7,570 homes were damaged, while 13 hydropower projects and five solar plants were hit.",
+      "url": "https://kathmandupost.com/money/2026/09/15/private-sector-bears-bulk-of-bhotekoshi-flood-losses"
+    },
     {
       "tag": "people",
       "date": "",
@@ -128,20 +142,6 @@
       "title": "Trapped nine days in a dark tunnel, Nepali man tells his survival story",
       "blurb": "Rescued after 10 days underground, Sanjay Sah says prayer, hope and thoughts of his family helped him endure the darkness, hunger and injuries.",
       "url": "https://kathmandupost.com/national/2026/09/13/trapped-nine-days-in-a-dark-tunnel-nepali-man-tells-his-survival-story"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood damage leaves Rasuwagadhi road facing long repairs",
-      "blurb": "The Department of Roads is opening temporary tracks and planning Bailey bridges after the Bhotekoshi flood washed away about 40 km of road, while officials aim to restore a link to the Chinese border before Dashain.",
-      "url": "https://kathmandupost.com/national/2026/09/13/flood-damage-leaves-rasuwagadhi-road-facing-long-repairs"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Farmers face dire consequences as floods devastate Nepal’s harvest",
-      "blurb": "Farmers affected by this disaster are the same people who help put food on our tables every day.",
-      "url": "https://kathmandupost.com/columns/2026/09/13/farmers-face-dire-consequences-as-floods-devastate-nepal-s-harvest"
     }
   ]
 }

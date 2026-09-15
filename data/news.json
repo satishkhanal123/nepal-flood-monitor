@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-15T12:26:55.460629+00:00",
+  "updated_at": "2026-09-15T17:12:44.498779+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Repeated Tatopani closures deepen uncertainty for traders",
+      "blurb": "The latest shutdown has stranded more than 45 containers in China, while years of disruptions have caused heavy losses for traders and businesses.",
+      "url": "https://kathmandupost.com/money/2026/09/15/repeated-tatopani-closures-deepen-uncertainty-for-traders"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "More tigers, more conflict, but too little room for those rescued",
+      "blurb": "Nepal’s tiger population has grown to 429, but its only zoo and rescue centres lack adequate space and facilities for tigers rescued from settlements or too old or injured to survive in the wild.",
+      "url": "https://kathmandupost.com/national/2026/09/15/tiger-tiger-too-many-tigers-not-enough-space"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Pelega hill in Nawalparasi has been smoking for years. Now experts want answers",
+      "blurb": "Local residents say smoke has emerged from different spots on the hill for decades, but has grown thicker in recent months.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/15/pelega-hill-in-nawalparasi-has-been-smoking-for-years-now-experts-want-answers"
+    },
     {
       "tag": "people",
       "date": "",
@@ -100,27 +121,6 @@
       "title": "Nepal tunnel survivor finds solace in village homecoming",
       "blurb": "Rescued after nine days trapped in a hydropower tunnel, Sanjay Sah returned to his family in a village still mourning workers missing after last month’s disaster.",
       "url": "https://kathmandupost.com/national/2026/09/14/nepal-tunnel-survivor-finds-solace-in-village-homecoming"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Beijing signals support for rebuilding flood-ravaged Rasuwagadhi route",
-      "blurb": "Nepal has sought Chinese assistance to rebuild the 16-km Syaphrubesi-Rasuwagadhi road, while the government prepares a temporary track to restore access to the border crossing.",
-      "url": "https://kathmandupost.com/money/2026/09/14/beijing-signals-support-for-rebuilding-flood-ravaged-rasuwagadhi-route"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Infrastructure Minister Sunil Lamsal on rebuilding after the Bhotekoshi floods",
-      "blurb": "The infrastructure development minister discusses plans for resettlement, damaged roads and bridges, the China border crossing and efforts to build safer settlements for disaster-prone communities.",
-      "url": "https://kathmandupost.com/interviews/2026/09/14/infrastructure-minister-sunil-lamsal-on-rebuilding-after-the-bhotekoshi-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Why Nepal’s climate crisis is also a public-health emergency",
-      "blurb": "The Bhotekoshi flood shows why Nepal’s climate crisis must also be understood as a public-health crisis.",
-      "url": "https://kathmandupost.com/columns/2026/09/14/why-nepal-s-climate-crisis-is-also-a-public-health-emergency"
     }
   ]
 }

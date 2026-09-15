@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-15T01:42:05.769379+00:00",
+  "updated_at": "2026-09-15T06:45:10.421121+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Ten families at risk as landslide threatens Baitadi village",
+      "blurb": "A landslide that destroyed one house has left the entire village vulnerable, prompting authorities to urge households to relocate to safer areas.",
+      "url": "https://kathmandupost.com/sudurpaschim-province/2026/09/15/ten-families-at-risk-as-landslide-threatens-baitadi-village"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Footbridges rise again from flood wreckage",
+      "blurb": "Repairs and reconstruction are underway on 53 footbridges damaged by the August 26 flood along the Trishuli corridor, restoring vital links to markets, schools, health services and jobs.",
+      "url": "https://kathmandupost.com/visual-stories/2026/09/15/footbridges-rise-again-from-flood-wreckage"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Weeks after the Nepal flood disaster, families of the missing hold out hope",
+      "blurb": "With 5,130 people still missing in Nepal and hundreds unaccounted for in China, families are scouring hospitals, contacting authorities and tracking digital clues for any sign their loved ones survived.",
+      "url": "https://kathmandupost.com/world/2026/09/15/weeks-after-the-nepal-flood-disaster-families-of-the-missing-hold-out-hope"
+    },
     {
       "tag": "people",
       "date": "",
@@ -114,34 +135,6 @@
       "title": "At least 129 missing after Indonesian passenger ship capsizes",
       "blurb": "Crews managed to rescue 108 people from ​the stricken Virgo Transport 8 ship and were still searching for any other survivors, the rescue agency added.",
       "url": "https://kathmandupost.com/world/2026/09/13/at-least-129-missing-after-indonesian-passenger-ship-capsizes"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "The search dog helping find bodies buried by Nepal’s floods",
-      "blurb": "Samba, a Labrador trained to detect the scent of human remains, has helped rescuers locate around 20 bodies beneath mud and debris since the floods hit Rasuwa.",
-      "url": "https://kathmandupost.com/national/2026/09/13/the-search-dog-helping-find-bodies-buried-by-nepal-s-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Rescuers searching for 140 people from Indonesia passenger ship, official says",
-      "blurb": "Rough seas complicate rescue as authorities search for passengers still unaccounted for.",
-      "url": "https://kathmandupost.com/world/2026/09/13/rescuers-searching-for-140-people-from-indonesia-passenger-ship-official-says"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "India sends three Bailey bridges to restore flood-hit connectivity",
-      "blurb": "The first consignment of components for a 70-metre bridge has reached Hetauda, with the structures to be deployed in flood-hit Nuwakot.",
-      "url": "https://kathmandupost.com/national/2026/09/13/india-sends-three-bailey-bridges-to-restore-flood-hit-connectivity"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Trapped nine days in a dark tunnel, Nepali man tells his survival story",
-      "blurb": "Rescued after 10 days underground, Sanjay Sah says prayer, hope and thoughts of his family helped him endure the darkness, hunger and injuries.",
-      "url": "https://kathmandupost.com/national/2026/09/13/trapped-nine-days-in-a-dark-tunnel-nepali-man-tells-his-survival-story"
     }
   ]
 }

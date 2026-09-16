@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-16T06:24:18.761070+00:00",
+  "updated_at": "2026-09-16T11:54:38.815395+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Three bodies recovered from flood-hit Chilime hydropower project three weeks later",
+      "blurb": "Rescuers found the bodies inside a tunnel after the August 26 floods, with the search for additional victims continuing.",
+      "url": "https://kathmandupost.com/national/2026/09/16/three-bodies-recovered-from-flood-hit-chilime-hydropower-project-three-weeks-later"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Timure was a bustling border hub. In hours, the floods wiped it off the map",
+      "blurb": "More than 250 houses and other structures were swept away in the border settlement, leaving just six damaged houses standing and hundreds of people unaccounted for.",
+      "url": "https://kathmandupost.com/national/2026/09/16/the-august-26-floods-wiped-timure-off-the-map"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Bouldin meets Shah, offers US support for Nepal’s disaster recovery",
+      "blurb": "The US chargé d’affaires expressed condolences over the Rasuwa floods as the prime minister called for greater global cooperation on climate-related risks.",
+      "url": "https://kathmandupost.com/national/2026/09/16/bouldin-meets-shah-offers-us-support-for-nepal-s-disaster-recovery"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -79,20 +100,6 @@
       "title": "Weeks after the Nepal flood disaster, families of the missing hold out hope",
       "blurb": "With 5,130 people still missing in Nepal and hundreds unaccounted for in China, families are scouring hospitals, contacting authorities and tracking digital clues for any sign their loved ones survived.",
       "url": "https://kathmandupost.com/world/2026/09/15/weeks-after-the-nepal-flood-disaster-families-of-the-missing-hold-out-hope"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "After the floods, Nepal’s survivors face the uncertainty of starting over",
-      "blurb": "With homes destroyed, families shattered and winter approaching, thousands of displaced people remain caught between unsafe villages and temporary shelters.",
-      "url": "https://kathmandupost.com/national/2026/09/15/after-the-floods-nepal-s-survivors-face-the-uncertainty-of-starting-over"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Private sector bears bulk of Bhotekoshi flood losses",
-      "blurb": "A preliminary government assessment estimates damage and economic losses at Rs408 billion. Nearly 4,800 businesses and 7,570 homes were damaged, while 13 hydropower projects and five solar plants were hit.",
-      "url": "https://kathmandupost.com/money/2026/09/15/private-sector-bears-bulk-of-bhotekoshi-flood-losses"
     }
   ]
 }

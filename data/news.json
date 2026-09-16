@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-15T23:01:35.518329+00:00",
+  "updated_at": "2026-09-16T01:24:25.218112+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Their loved ones are gone. The law says they are still missing",
+      "blurb": "Families of those swept away by the August 26 flood are performing funeral rites without bodies. But they cannot secure death certificates or claim relief, compensation, insurance and other entitlements.",
+      "url": "https://kathmandupost.com/national/2026/09/16/their-loved-ones-are-gone-the-law-says-they-are-still-missing"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "A single landslide has choked Kathmandu for weeks. Dependable backup routes must be built",
+      "blurb": "The Prithvi Highway disruption underscores the need for dependable alternative routes.",
+      "url": "https://kathmandupost.com/editorial/2026/09/15/a-single-landslide-has-choked-kathmandu-for-weeks-dependable-backup-routes-must-be-built"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "How disasters create fertile ground for human trafficking",
+      "blurb": "There is seemingly an almost curated web of favourable conditions laid out especially for traffickers.",
+      "url": "https://kathmandupost.com/columns/2026/09/15/how-disasters-create-fertile-ground-for-human-trafficking"
+    },
     {
       "tag": "access",
       "date": "",
@@ -86,41 +107,6 @@
       "title": "Finance Minister Wagle to visit India on September 17-18",
       "blurb": "The two-day visit will be the first high-level visit from Nepal to India since the August 26 floods devastated parts of the country.",
       "url": "https://kathmandupost.com/national/2026/09/14/finance-minister-wagle-to-visit-india-on-september-17-18"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Himalayas approaching tipping point, millions of livelihoods at stake: Report",
-      "blurb": "Faster glacier melt is threatening water security and increasing the risk of glacial lake floods across the Hindu Kush-Himalaya, putting millions of people downstream at risk.",
-      "url": "https://kathmandupost.com/world/2026/09/14/himalayas-approaching-tipping-point-millions-of-livelihoods-at-stake-report"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "US approves $1m forensic support for Nepal flood victim identification",
-      "blurb": "The new funding takes US humanitarian, health and forensic assistance following the floods to more than $5 million.",
-      "url": "https://kathmandupost.com/national/2026/09/14/us-approves-1m-forensic-support-for-nepal-flood-victim-identification"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Beijing to ban drone possession, storage from November 15",
-      "blurb": "The new rules are part of a broader push to tighten airspace security, with limited exemptions for emergency, research, industrial and other authorised operations.",
-      "url": "https://kathmandupost.com/world/2026/09/14/beijing-to-ban-drone-possession-storage-from-november-15"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood blocks Jajarkot-Dolpa road, sweeps away homes and shops",
-      "blurb": "Torrential rain triggered flooding in Jajarkot’s Nalgad area, disrupting transport on the Bheri Corridor and destroying homes, businesses and other structures.",
-      "url": "https://kathmandupost.com/national/2026/09/14/flood-blocks-jajarkot-dolpa-road-sweeps-away-homes-and-shops"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal tunnel survivor finds solace in village homecoming",
-      "blurb": "Rescued after nine days trapped in a hydropower tunnel, Sanjay Sah returned to his family in a village still mourning workers missing after last month’s disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/14/nepal-tunnel-survivor-finds-solace-in-village-homecoming"
     }
   ]
 }

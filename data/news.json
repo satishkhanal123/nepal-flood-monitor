@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-16T01:24:25.218112+00:00",
+  "updated_at": "2026-09-16T06:24:18.761070+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Wagle to hold three high-level policy dialogues during India visit",
+      "blurb": "Finance minister will engage Indian diplomats, business leaders and development policymakers, with flood reconstruction, investment, trade and connectivity expected to feature in his meetings.",
+      "url": "https://kathmandupost.com/national/2026/09/16/wagle-to-hold-three-high-level-policy-dialogues-during-india-visit"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "India renews Nepal’s power import permit but leaves export approvals pending",
+      "blurb": "Three hydropower projects have lost their export permits as Nepal seeks to sell surplus monsoon electricity while relying on India for winter supplies.",
+      "url": "https://kathmandupost.com/money/2026/09/16/india-renews-nepal-s-power-import-permit-but-leaves-export-approvals-pending"
+    },
     {
       "tag": "people",
       "date": "",
@@ -79,34 +93,6 @@
       "title": "Private sector bears bulk of Bhotekoshi flood losses",
       "blurb": "A preliminary government assessment estimates damage and economic losses at Rs408 billion. Nearly 4,800 businesses and 7,570 homes were damaged, while 13 hydropower projects and five solar plants were hit.",
       "url": "https://kathmandupost.com/money/2026/09/15/private-sector-bears-bulk-of-bhotekoshi-flood-losses"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Flood survivors face water shortages, disease risk in crowded holding centres",
-      "blurb": "More than 3,600 people are staying in 37 holding centres across Rasuwa, Nuwakot and Dhading districts. No major outbreak has been reported, but cases of colds, coughs and viral fever are common.",
-      "url": "https://kathmandupost.com/health/2026/09/14/flood-survivors-face-water-shortages-disease-risk-in-crowded-holding-centres"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal begins overhaul of school curriculum, with AI and indigenous knowledge in focus",
-      "blurb": "Nationwide consultations seek to reshape Nepal’s school curriculum by integrating AI, disaster preparedness, entrepreneurship and indigenous knowledge.",
-      "url": "https://kathmandupost.com/national/2026/09/14/nepal-begins-overhaul-of-school-curriculum-with-ai-and-indigenous-knowledge-in-focus"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "India approves additional 654 MW power exports to Nepal",
-      "blurb": "The additional supply is expected to help Nepal manage winter power shortages after floods damaged hydropower plants and transmission infrastructure.",
-      "url": "https://kathmandupost.com/money/2026/09/14/india-approves-additional-654-mw-power-exports-to-nepal"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Finance Minister Wagle to visit India on September 17-18",
-      "blurb": "The two-day visit will be the first high-level visit from Nepal to India since the August 26 floods devastated parts of the country.",
-      "url": "https://kathmandupost.com/national/2026/09/14/finance-minister-wagle-to-visit-india-on-september-17-18"
     }
   ]
 }

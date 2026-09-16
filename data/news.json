@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-16T11:54:38.815395+00:00",
+  "updated_at": "2026-09-16T16:06:37.580190+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Families of missing foreign nationals want answers Nepal can’t give",
+      "blurb": "Hundreds of foreigners remain unaccounted for as families press for cross-border searches, clearer information and official confirmation of their relatives’ status.",
+      "url": "https://kathmandupost.com/national/2026/09/16/nepal-can-t-call-them-dead-it-can-t-find-them-alive-either"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Five bodies found in flood-damaged Upper Trishuli-1 tunnel",
+      "blurb": "The discovery comes three weeks after devastating floods hit Rasuwa and left people missing inside the hydropower project.",
+      "url": "https://kathmandupost.com/national/2026/09/16/five-bodies-found-in-upper-trishuli-1-tunnel"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Five bodies recovered from flood-hit Chilime hydropower project",
+      "blurb": "Rescuers discovered the bodies while searching tunnels for people missing since the August 26 floods.",
+      "url": "https://kathmandupost.com/national/2026/09/16/five-bodies-found-inside-flood-hit-chilime-hydropower-project"
+    },
     {
       "tag": "people",
       "date": "",
@@ -79,27 +100,6 @@
       "title": "Pelega hill in Nawalparasi has been smoking for years. Now experts want answers",
       "blurb": "Local residents say smoke has emerged from different spots on the hill for decades, but has grown thicker in recent months.",
       "url": "https://kathmandupost.com/gandaki-province/2026/09/15/pelega-hill-in-nawalparasi-has-been-smoking-for-years-now-experts-want-answers"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Ten families at risk as landslide threatens Baitadi village",
-      "blurb": "A landslide that destroyed one house has left the entire village vulnerable, prompting authorities to urge households to relocate to safer areas.",
-      "url": "https://kathmandupost.com/sudurpaschim-province/2026/09/15/ten-families-at-risk-as-landslide-threatens-baitadi-village"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Footbridges rise again from flood wreckage",
-      "blurb": "Repairs and reconstruction are underway on 53 footbridges damaged by the August 26 flood along the Trishuli corridor, restoring vital links to markets, schools, health services and jobs.",
-      "url": "https://kathmandupost.com/visual-stories/2026/09/15/footbridges-rise-again-from-flood-wreckage"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Weeks after the Nepal flood disaster, families of the missing hold out hope",
-      "blurb": "With 5,130 people still missing in Nepal and hundreds unaccounted for in China, families are scouring hospitals, contacting authorities and tracking digital clues for any sign their loved ones survived.",
-      "url": "https://kathmandupost.com/world/2026/09/15/weeks-after-the-nepal-flood-disaster-families-of-the-missing-hold-out-hope"
     }
   ]
 }

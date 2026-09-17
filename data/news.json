@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-17T10:27:01.083756+00:00",
+  "updated_at": "2026-09-17T15:11:38.638145+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal, India finance ministers discuss post-flood reconstruction and economic ties",
+      "blurb": "Talks covered reconstruction, trade, investment, energy and connectivity as Nepal seeks closer economic cooperation with India.",
+      "url": "https://kathmandupost.com/national/2026/09/17/nepal-india-finance-ministers-discuss-post-flood-reconstruction-and-economic-ties"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Bridges gone, roads damaged, villages cut off from relief",
+      "blurb": "Helicopters and temporary crossings are helping deliver food and other essentials to cut-off communities in Rasuwa and Nuwakot, but officials say restoring roads and bridges must be an immediate priority.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/17/bridges-gone-roads-damaged-villages-cut-off-from-relief"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -100,13 +114,6 @@
       "title": "Wagle to hold three high-level policy dialogues during India visit",
       "blurb": "Finance minister will engage Indian diplomats, business leaders and development policymakers, with flood reconstruction, investment, trade and connectivity expected to feature in his meetings.",
       "url": "https://kathmandupost.com/national/2026/09/16/wagle-to-hold-three-high-level-policy-dialogues-during-india-visit"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "India renews Nepal’s power import permit but leaves export approvals pending",
-      "blurb": "Three hydropower projects have lost their export permits as Nepal seeks to sell surplus monsoon electricity while relying on India for winter supplies.",
-      "url": "https://kathmandupost.com/money/2026/09/16/india-renews-nepal-s-power-import-permit-but-leaves-export-approvals-pending"
     }
   ]
 }

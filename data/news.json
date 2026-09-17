@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-17T05:42:37.219690+00:00",
+  "updated_at": "2026-09-17T10:27:01.083756+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "India warns new US tariffs over Russian oil could hit ties, vows to protect energy security",
+      "blurb": "New Delhi’s response could complicate already difficult trade negotiations with Washington, while refiners seek relief to manage existing Russian oil purchases.",
+      "url": "https://kathmandupost.com/world/2026/09/17/india-warns-new-us-tariffs-over-russian-oil-could-hit-ties-vows-to-protect-energy-security"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal Electricity Authority offers relief to families of flood-missing workers",
+      "blurb": "Families of missing employees will receive Rs50,000 immediately, while relatives of permanent staff will get half their starting salary for up to six months.",
+      "url": "https://kathmandupost.com/national/2026/09/17/nepal-electricity-authority-offers-relief-to-families-of-flood-missing-workers"
+    },
     {
       "tag": "access",
       "date": "",
@@ -93,27 +107,6 @@
       "title": "India renews Nepal’s power import permit but leaves export approvals pending",
       "blurb": "Three hydropower projects have lost their export permits as Nepal seeks to sell surplus monsoon electricity while relying on India for winter supplies.",
       "url": "https://kathmandupost.com/money/2026/09/16/india-renews-nepal-s-power-import-permit-but-leaves-export-approvals-pending"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Their loved ones are gone. The law says they are still missing",
-      "blurb": "Families of those swept away by the August 26 flood are performing funeral rites without bodies. But they cannot secure death certificates or claim relief, compensation, insurance and other entitlements.",
-      "url": "https://kathmandupost.com/national/2026/09/16/their-loved-ones-are-gone-the-law-says-they-are-still-missing"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "A single landslide has choked Kathmandu for weeks. Dependable backup routes must be built",
-      "blurb": "The Prithvi Highway disruption underscores the need for dependable alternative routes.",
-      "url": "https://kathmandupost.com/editorial/2026/09/15/a-single-landslide-has-choked-kathmandu-for-weeks-dependable-backup-routes-must-be-built"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "How disasters create fertile ground for human trafficking",
-      "blurb": "There is seemingly an almost curated web of favourable conditions laid out especially for traffickers.",
-      "url": "https://kathmandupost.com/columns/2026/09/15/how-disasters-create-fertile-ground-for-human-trafficking"
     }
   ]
 }

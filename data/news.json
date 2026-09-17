@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-17T00:45:33.454330+00:00",
+  "updated_at": "2026-09-17T05:42:37.219690+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Krishnabhir road reopens on Thursday",
+      "blurb": "After 18 days of closure, a new track cut above the flood-damaged section is now carrying traffic in both directions.",
+      "url": "https://kathmandupost.com/national/2026/09/17/krishnabhir-road-reopens-on-thursday"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Finance Minister Swarnim Wagle reaches New Delhi",
+      "blurb": "Wagle is set to meet his Indian counterparts and business leaders to discuss reconstruction and wider economic cooperation.",
+      "url": "https://kathmandupost.com/politics/2026/09/17/finance-minister-swarnim-wagle-heads-to-new-delhi"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Climate change likely to have helped trigger Nepal glacier collapse, scientists say",
+      "blurb": "Researchers say warming temperatures, thinning glaciers, thawing permafrost and excess meltwater likely created conditions that made the late-August collapse more likely.",
+      "url": "https://kathmandupost.com/world/2026/09/17/climate-change-likely-to-have-helped-trigger-nepal-glacier-collapse-scientists-say"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nuwakot substation destruction disrupts evacuation of 176.1 MW",
+      "blurb": "Nepal Electricity Authority says disruption will exacerbate winter grid management.",
+      "url": "https://kathmandupost.com/money/2026/09/17/nuwakot-substation-destruction-disrupts-evacuation-of-176-1-mw"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Resolve legal hurdles to relief and property rights for families of the missing",
+      "blurb": "Families of the missing face legal barriers to relief and property rights. The government must act now.",
+      "url": "https://kathmandupost.com/editorial/2026/09/16/resolve-legal-hurdles-to-relief-and-property-rights-for-families-of-the-missing"
+    },
     {
       "tag": "people",
       "date": "",
@@ -79,27 +114,6 @@
       "title": "How disasters create fertile ground for human trafficking",
       "blurb": "There is seemingly an almost curated web of favourable conditions laid out especially for traffickers.",
       "url": "https://kathmandupost.com/columns/2026/09/15/how-disasters-create-fertile-ground-for-human-trafficking"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Repeated Tatopani closures deepen uncertainty for traders",
-      "blurb": "The latest shutdown has stranded more than 45 containers in China, while years of disruptions have caused heavy losses for traders and businesses.",
-      "url": "https://kathmandupost.com/money/2026/09/15/repeated-tatopani-closures-deepen-uncertainty-for-traders"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "More tigers, more conflict, but too little room for those rescued",
-      "blurb": "Nepal’s tiger population has grown to 429, but its only zoo and rescue centres lack adequate space and facilities for tigers rescued from settlements or too old or injured to survive in the wild.",
-      "url": "https://kathmandupost.com/national/2026/09/15/tiger-tiger-too-many-tigers-not-enough-space"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Pelega hill in Nawalparasi has been smoking for years. Now experts want answers",
-      "blurb": "Local residents say smoke has emerged from different spots on the hill for decades, but has grown thicker in recent months.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/09/15/pelega-hill-in-nawalparasi-has-been-smoking-for-years-now-experts-want-answers"
     }
   ]
 }

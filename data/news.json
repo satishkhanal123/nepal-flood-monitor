@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-18T13:51:19.869954+00:00",
+  "updated_at": "2026-09-18T17:28:44.150843+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal youths begin hunger strike at 4,900 metres over glacial lake risks",
+      "blurb": "Protesters at Manaslu base camp demand monitoring of glacial lakes and measures to reduce climate-related risks.",
+      "url": "https://kathmandupost.com/national/2026/09/18/nepal-youths-begin-hunger-strike-at-4-900-metres-over-glacial-lake-risks"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "24 days after flood, hunger grips three Rusuwa wards",
+      "blurb": "Food is running out in villages cut off after the Bhotekoshi flood swept away bridges.",
+      "url": "https://kathmandupost.com/health/2026/09/18/24-days-after-flood-hunger-grips-three-rusuwa-wards"
+    },
     {
       "tag": "people",
       "date": "",
@@ -86,20 +100,6 @@
       "title": "Climate change likely to have helped trigger Nepal glacier collapse, scientists say",
       "blurb": "Researchers say warming temperatures, thinning glaciers, thawing permafrost and excess meltwater likely created conditions that made the late-August collapse more likely.",
       "url": "https://kathmandupost.com/world/2026/09/17/climate-change-likely-to-have-helped-trigger-nepal-glacier-collapse-scientists-say"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nuwakot substation destruction disrupts evacuation of 176.1 MW",
-      "blurb": "Nepal Electricity Authority says disruption will exacerbate winter grid management.",
-      "url": "https://kathmandupost.com/money/2026/09/17/nuwakot-substation-destruction-disrupts-evacuation-of-176-1-mw"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Resolve legal hurdles to relief and property rights for families of the missing",
-      "blurb": "Families of the missing face legal barriers to relief and property rights. The government must act now.",
-      "url": "https://kathmandupost.com/editorial/2026/09/16/resolve-legal-hurdles-to-relief-and-property-rights-for-families-of-the-missing"
     }
   ]
 }

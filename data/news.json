@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-18T04:59:18.167032+00:00",
+  "updated_at": "2026-09-18T09:35:01.615761+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Six bodies recovered from Upper Trishuli-1 tunnel",
+      "blurb": "Rescue teams find the bodies of people missing since the August 26 Bhotekoshi floods as search continues inside the tunnel for possible further victims.",
+      "url": "https://kathmandupost.com/national/2026/09/18/six-bodies-recovered-from-upper-trishuli-1-tunnel"
+    },
     {
       "tag": "people",
       "date": "",
@@ -93,13 +100,6 @@
       "title": "Resolve legal hurdles to relief and property rights for families of the missing",
       "blurb": "Families of the missing face legal barriers to relief and property rights. The government must act now.",
       "url": "https://kathmandupost.com/editorial/2026/09/16/resolve-legal-hurdles-to-relief-and-property-rights-for-families-of-the-missing"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Families of missing foreign nationals want answers Nepal can’t give",
-      "blurb": "Hundreds of foreigners remain unaccounted for as families press for cross-border searches, clearer information and official confirmation of their relatives’ status.",
-      "url": "https://kathmandupost.com/national/2026/09/16/nepal-can-t-call-them-dead-it-can-t-find-them-alive-either"
     }
   ]
 }

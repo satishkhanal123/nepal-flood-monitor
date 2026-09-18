@@ -1,14 +1,42 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-18T00:17:54.499939+00:00",
+  "updated_at": "2026-09-18T04:59:18.167032+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Two teenage girls rescued while being taken to India on false job promise",
+      "blurb": "Two 16-year-olds from Bardiya were stopped in Banke after officials received a tip-off about their suspected trafficking across the Suiya border point.",
+      "url": "https://kathmandupost.com/province-no-5/2026/09/18/two-teenage-girls-rescued-while-being-taken-to-india-on-false-job-promise"
+    },
     {
       "tag": "ops",
       "date": "",
-      "title": "Nepal, India finance ministers discuss post-flood reconstruction and economic ties",
-      "blurb": "Talks covered reconstruction, trade, investment, energy and connectivity as Nepal seeks closer economic cooperation with India.",
-      "url": "https://kathmandupost.com/national/2026/09/17/nepal-india-finance-ministers-discuss-post-flood-reconstruction-and-economic-ties"
+      "title": "Wagle seeks India’s support for post-flood reconstruction",
+      "blurb": "In his first foreign visit as finance minister, Wagle asks Sitharaman for help in rebuilding infrastructure destroyed by the Bhotekoshi floods and discusses trade, investment and connectivity.",
+      "url": "https://kathmandupost.com/national/2026/09/18/wagle-seeks-india-s-support-for-post-flood-reconstruction"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Bhotekoshi floods disrupt schooling for 14,500 children in three districts",
+      "blurb": "More than 9,400 students have been directly affected, while schools being used as shelters are delaying the return to classes for thousands more.",
+      "url": "https://kathmandupost.com/national/2026/09/18/bhotekoshi-floods-disrupt-schooling-for-14-500-children-in-three-districts"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Why Nepal’s youth-led government inherited the toughest job in Asia",
+      "blurb": "Wedged between nuclear giants and battered by melting glaciers, Nepal’s untested new leadership faces a test of survival and strategic equilibrium.",
+      "url": "https://kathmandupost.com/columns/2026/09/18/why-nepal-s-youth-led-government-inherited-the-toughest-job-in-asia"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Answer the mountain’s call",
+      "blurb": "Nepal’s government must respond to the disasters with greater accountability and leadership.",
+      "url": "https://kathmandupost.com/columns/2026/09/18/answer-the-mountain-s-call"
     },
     {
       "tag": "access",
@@ -72,48 +100,6 @@
       "title": "Families of missing foreign nationals want answers Nepal can’t give",
       "blurb": "Hundreds of foreigners remain unaccounted for as families press for cross-border searches, clearer information and official confirmation of their relatives’ status.",
       "url": "https://kathmandupost.com/national/2026/09/16/nepal-can-t-call-them-dead-it-can-t-find-them-alive-either"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Five bodies found in flood-damaged Upper Trishuli-1 tunnel",
-      "blurb": "The discovery comes three weeks after devastating floods hit Rasuwa and left people missing inside the hydropower project.",
-      "url": "https://kathmandupost.com/national/2026/09/16/five-bodies-found-in-upper-trishuli-1-tunnel"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Five bodies recovered from flood-hit Chilime hydropower project",
-      "blurb": "Rescuers discovered the bodies while searching tunnels for people missing since the August 26 floods.",
-      "url": "https://kathmandupost.com/national/2026/09/16/five-bodies-found-inside-flood-hit-chilime-hydropower-project"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Three bodies recovered from flood-hit Chilime hydropower project three weeks later",
-      "blurb": "Rescuers found the bodies inside a tunnel after the August 26 floods, with the search for additional victims continuing.",
-      "url": "https://kathmandupost.com/national/2026/09/16/three-bodies-recovered-from-flood-hit-chilime-hydropower-project-three-weeks-later"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Timure was a bustling border hub. In hours, the floods wiped it off the map",
-      "blurb": "More than 250 houses and other structures were swept away in the border settlement, leaving just six damaged houses standing and hundreds of people unaccounted for.",
-      "url": "https://kathmandupost.com/national/2026/09/16/the-august-26-floods-wiped-timure-off-the-map"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Bouldin meets Shah, offers US support for Nepal’s disaster recovery",
-      "blurb": "The US chargé d’affaires expressed condolences over the Rasuwa floods as the prime minister called for greater global cooperation on climate-related risks.",
-      "url": "https://kathmandupost.com/national/2026/09/16/bouldin-meets-shah-offers-us-support-for-nepal-s-disaster-recovery"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Wagle to hold three high-level policy dialogues during India visit",
-      "blurb": "Finance minister will engage Indian diplomats, business leaders and development policymakers, with flood reconstruction, investment, trade and connectivity expected to feature in his meetings.",
-      "url": "https://kathmandupost.com/national/2026/09/16/wagle-to-hold-three-high-level-policy-dialogues-during-india-visit"
     }
   ]
 }

@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-19T00:28:45.891038+00:00",
+  "updated_at": "2026-09-19T04:55:18.091501+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Ronaldo, Chitwan’s famed wild elephant, found dead",
+      "blurb": "The bull was a key breeding partner for captive female elephants, with 38 calves attributed to him.",
+      "url": "https://kathmandupost.com/national/2026/09/19/ronaldo-chitwan-s-famed-wild-elephant-found-dead"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Finance Minister Swarnim Wagle takes post-disaster reconstruction, climate justice push to global forums",
+      "blurb": "After talks in New Delhi, Wagle is set to raise Nepal’s reconstruction needs and climate vulnerability at upcoming meetings in Doha and Bangkok, with a US visit also being considered.",
+      "url": "https://kathmandupost.com/politics/2026/09/19/finance-minister-swarnim-wagle-takes-post-disaster-reconstruction-climate-justice-push-to-global-forums"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Poor rains, poor harvests drive Sudurpaschim Dalits from their villages",
+      "blurb": "Crop failures and landslides are driving families to India and elsewhere, and in the process migration is eroding the traditions, skills and community ties that sustained their villages.",
+      "url": "https://kathmandupost.com/national/2026/09/19/poor-rains-poor-harvests-drive-sudurpaschim-dalits-from-their-villages"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Jumla waits for its young men who left to earn and never returned",
+      "blurb": "Forty-nine people from Jumla’s Patarasi Rural Municipality remain unaccounted for since the Bhotekoshi floods, including 15 young men from Lamri who had gone to Rasuwa for work.",
+      "url": "https://kathmandupost.com/national/2026/09/19/jumla-waits-for-its-young-men-who-left-to-earn-and-never-returned"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -13,7 +41,7 @@
     {
       "tag": "access",
       "date": "",
-      "title": "24 days after flood, hunger grips three Rusuwa wards",
+      "title": "24 days after flood, hunger grips three Rasuwa wards",
       "blurb": "Food is running out in villages cut off after the Bhotekoshi flood swept away bridges.",
       "url": "https://kathmandupost.com/health/2026/09/18/24-days-after-flood-hunger-grips-three-rusuwa-wards"
     },
@@ -65,41 +93,6 @@
       "title": "Bridges gone, roads damaged, villages cut off from relief",
       "blurb": "Helicopters and temporary crossings are helping deliver food and other essentials to cut-off communities in Rasuwa and Nuwakot, but officials say restoring roads and bridges must be an immediate priority.",
       "url": "https://kathmandupost.com/province-no-3/2026/09/17/bridges-gone-roads-damaged-villages-cut-off-from-relief"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "India warns new US tariffs over Russian oil could hit ties, vows to protect energy security",
-      "blurb": "New Delhi’s response could complicate already difficult trade negotiations with Washington, while refiners seek relief to manage existing Russian oil purchases.",
-      "url": "https://kathmandupost.com/world/2026/09/17/india-warns-new-us-tariffs-over-russian-oil-could-hit-ties-vows-to-protect-energy-security"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal Electricity Authority offers relief to families of flood-missing workers",
-      "blurb": "Families of missing employees will receive Rs50,000 immediately, while relatives of permanent staff will get half their starting salary for up to six months.",
-      "url": "https://kathmandupost.com/national/2026/09/17/nepal-electricity-authority-offers-relief-to-families-of-flood-missing-workers"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Krishnabhir road reopens on Thursday",
-      "blurb": "After 18 days of closure, a new track cut above the flood-damaged section is now carrying traffic in both directions.",
-      "url": "https://kathmandupost.com/national/2026/09/17/krishnabhir-road-reopens-on-thursday"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Finance Minister Swarnim Wagle reaches New Delhi",
-      "blurb": "Wagle is set to meet his Indian counterparts and business leaders to discuss reconstruction and wider economic cooperation.",
-      "url": "https://kathmandupost.com/politics/2026/09/17/finance-minister-swarnim-wagle-heads-to-new-delhi"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Climate change likely to have helped trigger Nepal glacier collapse, scientists say",
-      "blurb": "Researchers say warming temperatures, thinning glaciers, thawing permafrost and excess meltwater likely created conditions that made the late-August collapse more likely.",
-      "url": "https://kathmandupost.com/world/2026/09/17/climate-change-likely-to-have-helped-trigger-nepal-glacier-collapse-scientists-say"
     }
   ]
 }

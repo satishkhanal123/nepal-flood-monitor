@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-19T09:10:48.144867+00:00",
+  "updated_at": "2026-09-19T13:10:08.916908+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Mud and steep cliffs hamper efforts to reopen flood-hit roads",
+      "blurb": "Twenty-four days after the Bhotekoshi floods, Rasuwa and Nuwakot remain cut off from each other, while Dhading district headquarters also lacks a direct road link.",
+      "url": "https://kathmandupost.com/national/2026/09/19/mud-and-steep-cliffs-hamper-efforts-to-reopen-flood-hit-roads"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -79,20 +86,6 @@
       "title": "Bhotekoshi floods disrupt schooling for 14,500 children in three districts",
       "blurb": "More than 9,400 students have been directly affected, while schools being used as shelters are delaying the return to classes for thousands more.",
       "url": "https://kathmandupost.com/national/2026/09/18/bhotekoshi-floods-disrupt-schooling-for-14-500-children-in-three-districts"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Why Nepal’s youth-led government inherited the toughest job in Asia",
-      "blurb": "Wedged between nuclear giants and battered by melting glaciers, Nepal’s untested new leadership faces a test of survival and strategic equilibrium.",
-      "url": "https://kathmandupost.com/columns/2026/09/18/why-nepal-s-youth-led-government-inherited-the-toughest-job-in-asia"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Answer the mountain’s call",
-      "blurb": "Nepal’s government must respond to the disasters with greater accountability and leadership.",
-      "url": "https://kathmandupost.com/columns/2026/09/18/answer-the-mountain-s-call"
     }
   ]
 }

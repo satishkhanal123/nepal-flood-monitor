@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-19T04:55:18.091501+00:00",
+  "updated_at": "2026-09-19T09:10:48.144867+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal begins probe into what triggered Bhotekoshi disaster",
+      "blurb": "A seven-member expert panel will trace the August 26 disaster from its source to downstream areas and examine geological, glacial and hydrological hazards, as well as the possible role of climate change.",
+      "url": "https://kathmandupost.com/national/2026/09/19/nepal-begins-probe-into-what-triggered-bhotekoshi-disaster"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -86,13 +93,6 @@
       "title": "Answer the mountain’s call",
       "blurb": "Nepal’s government must respond to the disasters with greater accountability and leadership.",
       "url": "https://kathmandupost.com/columns/2026/09/18/answer-the-mountain-s-call"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bridges gone, roads damaged, villages cut off from relief",
-      "blurb": "Helicopters and temporary crossings are helping deliver food and other essentials to cut-off communities in Rasuwa and Nuwakot, but officials say restoring roads and bridges must be an immediate priority.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/17/bridges-gone-roads-damaged-villages-cut-off-from-relief"
     }
   ]
 }

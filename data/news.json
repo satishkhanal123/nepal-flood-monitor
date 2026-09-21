@@ -1,13 +1,34 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-21T01:04:02.801892+00:00",
+  "updated_at": "2026-09-21T06:19:42.111605+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Swarnim Wagle calls for a reset in Nepal-India ties, says era of anti-India nationalism is over",
+      "blurb": "In an interview with The Hindu, the finance minister says Kathmandu wants to focus on trade, connectivity, energy, and reconstruction while constructively addressing contentious issues such as the boundary dispute.",
+      "url": "https://kathmandupost.com/national/2026/09/21/swarnim-wagle-calls-for-a-reset-in-nepal-india-ties-says-era-of-anti-india-nationalism-is-over"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "AfD leads as Merz rues ‘disaster’ in worst state election result in postwar Germany",
+      "blurb": "The AfD’s strong showing in Mecklenburg-Western Pomerania and gains in Berlin deepen pressure on Merz as his coalition faces voter anger over economic reforms and rising living costs.",
+      "url": "https://kathmandupost.com/world/2026/09/21/afd-leads-as-merz-rues-disaster-in-worst-state-election-result-in-postwar-germany"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Welcome to a terrifying new climate era",
+      "blurb": "The Bhotekoshi crisis must be recognised as a clear signal that we have entered a new era in our rapidly warming world.",
+      "url": "https://kathmandupost.com/columns/2026/09/21/welcome-to-a-terrifying-new-climate-era"
+    },
     {
       "tag": "access",
       "date": "",
-      "title": "Nepal Airlines reforms never took off—it continues to bleed",
-      "blurb": "The simultaneous grounding of its two Airbus A330s has disrupted international flights, stranded passengers and pushed the cash-strapped national carrier’s estimated losses towards nearly Rs1 billion.",
+      "title": "Nepal Airlines’ only two wide-bodies are stuck in Japan and Italy. The bill is nearing Rs1 billion",
+      "blurb": "The grounding of both aircraft has disrupted international services, left passengers stranded and put further strain on the cash-strapped national carrier.",
       "url": "https://kathmandupost.com/money/2026/09/20/nepal-airlines-reforms-never-took-off-it-continues-to-bleed"
     },
     {
@@ -16,34 +37,6 @@
       "title": "Wagle to tour US, Doha and Bangkok seeking help after climate-triggered Rasuwa floods",
       "blurb": "Prime Minister Balendra Shah is also expected to raise the issue of climate justice at the 81st session of the United Nations General Assembly in New York.",
       "url": "https://kathmandupost.com/national/2026/09/19/wagle-to-tour-us-doha-and-bangkok-seeking-help-after-climate-triggered-rasuwa-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Mud and steep cliffs hamper efforts to reopen flood-hit roads",
-      "blurb": "Twenty-four days after the Bhotekoshi floods, Rasuwa and Nuwakot remain cut off from each other, while Dhading district headquarters also lacks a direct road link.",
-      "url": "https://kathmandupost.com/national/2026/09/19/mud-and-steep-cliffs-hamper-efforts-to-reopen-flood-hit-roads"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal begins probe into what triggered Bhotekoshi disaster",
-      "blurb": "A seven-member expert panel will trace the August 26 disaster from its source to downstream areas and examine geological, glacial and hydrological hazards, as well as the possible role of climate change.",
-      "url": "https://kathmandupost.com/national/2026/09/19/nepal-begins-probe-into-what-triggered-bhotekoshi-disaster"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Ronaldo, Chitwan’s famed wild elephant, found dead",
-      "blurb": "The bull was a key breeding partner for captive female elephants, with 38 calves attributed to him.",
-      "url": "https://kathmandupost.com/national/2026/09/19/ronaldo-chitwan-s-famed-wild-elephant-found-dead"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Finance Minister Swarnim Wagle takes post-disaster reconstruction, climate justice push to global forums",
-      "blurb": "After talks in New Delhi, Wagle is set to raise Nepal’s reconstruction needs and climate vulnerability at upcoming meetings in Doha and Bangkok, with a US visit also being considered.",
-      "url": "https://kathmandupost.com/politics/2026/09/19/finance-minister-swarnim-wagle-takes-post-disaster-reconstruction-climate-justice-push-to-global-forums"
     }
   ]
 }

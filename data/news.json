@@ -1,8 +1,50 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-23T00:32:11.023528+00:00",
+  "updated_at": "2026-09-23T05:11:41.637871+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Guterres recalls Nepal glacier warning as climate risks grow",
+      "blurb": "The UN chief said the impacts of climate change are arriving sooner and hitting harder, calling for more adaptation finance and a stronger Loss and Damage Fund as Nepal seeks international support after the August…",
+      "url": "https://kathmandupost.com/national/2026/09/23/guterres-recalls-nepal-glacier-warning-as-climate-impacts-intensify"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Flood destroys equipment, pushing back Siddhababa tunnel opening",
+      "blurb": "Replacement electromechanical equipment must be brought through the Korala border, delaying the planned start of traffic by at least a month.",
+      "url": "https://kathmandupost.com/province-no-5/2026/09/23/flood-destroys-equipment-pushing-back-siddhababa-tunnel-opening"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Khanal holds multiple diplomatic meetings in New York as Nepal establishes ties with Grenada",
+      "blurb": "The foreign minister discusses flood recovery, development cooperation and stronger economic ties with his Indian counterpart, US officials and other foreign ministers during the UN General Assembly sidelines.",
+      "url": "https://kathmandupost.com/national/2026/09/23/khanal-holds-multiple-diplomatic-meetings-in-new-york-as-nepal-establishes-ties-with-grenada"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "US announces additional $31 million support for Nepal’s flood recovery",
+      "blurb": "The package includes funding for permanent bridges, humanitarian assistance and US-made drones, taking Washington’s total flood response and recovery support to more than $36 million.",
+      "url": "https://kathmandupost.com/national/2026/09/23/us-announces-additional-31-million-support-for-nepal-s-flood-recovery"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "What it means to be a peripheral country in the age of uncertainties",
+      "blurb": "The government tricks the public into feeling that it is steering a steady ship, while structural policy, economic reality and disaster response crumble underneath.",
+      "url": "https://kathmandupost.com/columns/2026/09/23/what-it-means-to-be-a-peripheral-country-in-the-age-of-uncertainties"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "For Bhotekoshi flood survivors, the tuin is an ordeal",
+      "blurb": "In Nuwakot, locals walk for five to six hours to reach the tuin, an improvised cable crossing, then wait for another four to five hours to cross.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/23/for-bhotekoshi-flood-survivors-the-tuin-is-an-ordeal"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -37,13 +79,6 @@
       "title": "The nurse who wanted to heal Rasuwa",
       "blurb": "Pratima Tamang Lama was a nurse, community worker, and ambitious local leader who dreamed of becoming Nepal’s health minister. The Bhotekoshi flood cut those dreams short.",
       "url": "https://kathmandupost.com/province-no-3/2026/09/22/the-nurse-who-wanted-to-heal-rasuwa"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal unlikely to hold donor conference for reconstruction",
-      "blurb": "The government plans to seek funds through bilateral negotiations with major donors.",
-      "url": "https://kathmandupost.com/national/2026/09/21/nepal-unlikely-to-hold-donor-conference-for-reconstruction"
     }
   ]
 }

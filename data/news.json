@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-23T05:11:41.637871+00:00",
+  "updated_at": "2026-09-23T09:59:42.368161+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "What kind of international environment is China trying to build?",
+      "blurb": "Nepal-China relations can advance simultaneously across development, connectivity, technology, trade, tourism, education, disaster management, multilateral diplomacy, and global governance.",
+      "url": "https://kathmandupost.com/opinion/2026/09/23/what-kind-of-international-environment-is-china-trying-to-build"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Hydropower producers seek changes to proposed IPO rules",
+      "blurb": "Producers say the proposed eligibility framework does not reflect the financing needs and development cycle of hydropower projects.",
+      "url": "https://kathmandupost.com/money/2026/09/23/hydropower-producers-seek-changes-to-proposed-ipo-rules"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Over 800 people remain missing from hydropower projects after Bhotekoshi floods, says energy minister Shrestha",
+      "blurb": "Shrestha tells Parliament that search and rescue teams are still looking for workers believed to be trapped in underground structures or swept away by the August 26 disaster.",
+      "url": "https://kathmandupost.com/national/2026/09/23/over-800-people-remain-missing-from-hydropower-projects-after-bhotekoshi-floods-says-energy-minister-shrestha"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -58,27 +79,6 @@
       "title": "Balendra Shah’s UN appearance draws diplomatic interest in New York",
       "blurb": "Nepal’s prime minister is set to address the General Assembly on climate justice, the Bhotekoshi floods and the concerns of mountain countries.",
       "url": "https://kathmandupost.com/national/2026/09/22/balendra-shah-s-un-appearance-draws-diplomatic-interest-in-new-york"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "What the Bhotekoshi flood revealed about Nepal’s health system",
-      "blurb": "The emergency phase of the flood has largely been contained, but the most demanding work still lies ahead.",
-      "url": "https://kathmandupost.com/columns/2026/09/22/what-the-bhotekoshi-flood-revealed-about-nepal-s-health-system"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "New hybrid maize variety ‘Saugat’ promises relief for farmers facing extreme weather",
-      "blurb": "The variety is on the verge of official certification and release after nearly 11 years of rigorous multi-stage field trials and continuous testing.",
-      "url": "https://kathmandupost.com/national/2026/09/20/new-hybrid-maize-variety-saugat-promises-relief-for-farmers-facing-extreme-weather"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "The nurse who wanted to heal Rasuwa",
-      "blurb": "Pratima Tamang Lama was a nurse, community worker, and ambitious local leader who dreamed of becoming Nepal’s health minister. The Bhotekoshi flood cut those dreams short.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/22/the-nurse-who-wanted-to-heal-rasuwa"
     }
   ]
 }

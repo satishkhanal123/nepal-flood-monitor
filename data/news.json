@@ -1,14 +1,49 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-23T09:59:42.368161+00:00",
+  "updated_at": "2026-09-23T14:52:27.113634+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "BP Highway to close at night in Kavrepalanchok from September 24 to 28 amid flood risk",
+      "blurb": "Authorities will stop vehicles from using the highway from 5 pm to 5 am, while the weather office has urged people to postpone long-distance travel from September 25 to 27.",
+      "url": "https://kathmandupost.com/national/2026/09/23/bp-highway-to-close-at-night-in-kavrepalanchok-from-september-24-to-28-amid-flood-risk"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Kali Gandaki river settlements face rising flood risk",
+      "blurb": "Around a dozen settlements along the river are exposed to sudden flooding, while authorities assess the threat from landslides and glacial hazards.",
+      "url": "https://kathmandupost.com/national/2026/09/23/kali-gandaki-river-settlements-face-rising-flood-risk"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Death toll from capsized ship in Indonesia rises to 26 as search continues for 109 missing passengers",
+      "blurb": "Divers managed to break the windows of the cabins on Tuesday but could not enter due to murky water and strong currents, making it impossible to retrieve bodies that had already been spotted.",
+      "url": "https://kathmandupost.com/world/2026/09/23/death-toll-from-capsized-ship-in-indonesia-rises-to-26-as-search-continues-for-109-missing-passengers"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Bhotekoshi floods prompt ADB to cut Nepal’s growth forecast to 4.1 percent",
+      "blurb": "The Asian Development Bank has raised its inflation forecast to 5.3 percent and expects the fiscal deficit to widen as reconstruction spending increases following the devastation.",
+      "url": "https://kathmandupost.com/money/2026/09/23/bhotekoshi-floods-prompt-adb-to-cut-nepal-s-growth-forecast-to-4-1-percent"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Helicopters put on standby as heavy rain forecast",
+      "blurb": "The Air Service Operators Association has directed its member companies to remain ready for possible rescue operations as heavy rain is forecast across Nepal from Thursday.",
+      "url": "https://kathmandupost.com/national/2026/09/23/helicopters-put-on-standby-as-heavy-rain-forecast"
+    },
     {
       "tag": "sitrep",
       "date": "",
       "title": "What kind of international environment is China trying to build?",
       "blurb": "Nepal-China relations can advance simultaneously across development, connectivity, technology, trade, tourism, education, disaster management, multilateral diplomacy, and global governance.",
-      "url": "https://kathmandupost.com/opinion/2026/09/23/what-kind-of-international-environment-is-china-trying-to-build"
+      "url": "https://kathmandupost.com/columns/2026/09/23/what-kind-of-international-environment-is-china-trying-to-build"
     },
     {
       "tag": "ops",
@@ -65,20 +100,6 @@
       "title": "For Bhotekoshi flood survivors, the tuin is an ordeal",
       "blurb": "In Nuwakot, locals walk for five to six hours to reach the tuin, an improvised cable crossing, then wait for another four to five hours to cross.",
       "url": "https://kathmandupost.com/province-no-3/2026/09/23/for-bhotekoshi-flood-survivors-the-tuin-is-an-ordeal"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Foreign Minister Khanal begins bilateral meetings in New York",
-      "blurb": "Foreign leaders and senior officials voice solidarity over Nepal’s climate justice position and flood recovery on the sidelines of the UN General Assembly.",
-      "url": "https://kathmandupost.com/national/2026/09/22/foreign-minister-khanal-begins-bilateral-meetings-in-new-york"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Balendra Shah’s UN appearance draws diplomatic interest in New York",
-      "blurb": "Nepal’s prime minister is set to address the General Assembly on climate justice, the Bhotekoshi floods and the concerns of mountain countries.",
-      "url": "https://kathmandupost.com/national/2026/09/22/balendra-shah-s-un-appearance-draws-diplomatic-interest-in-new-york"
     }
   ]
 }

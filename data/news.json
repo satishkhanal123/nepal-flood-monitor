@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-23T14:52:27.113634+00:00",
+  "updated_at": "2026-09-23T18:49:13.204563+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "NEA working on winter power management",
+      "blurb": "Officials say there won’t be load-shedding this winter despite flood damage to hydropower infrastructure along Trishuli corridor.",
+      "url": "https://kathmandupost.com/money/2026/09/23/nea-working-on-winter-power-management"
+    },
     {
       "tag": "access",
       "date": "",

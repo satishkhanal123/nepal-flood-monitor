@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-24T10:20:11.824842+00:00",
+  "updated_at": "2026-09-24T15:22:24.522325+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "What is a ‘super El Niño’ and how will it affect the weather?",
+      "blurb": "A potentially record-strength El Niño could drive extreme heat, floods and droughts worldwide, with major risks to crops, food security and public health.",
+      "url": "https://kathmandupost.com/climate-environment/2026/09/24/what-is-a-super-el-nio-and-how-will-it-affect-the-weather"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -114,27 +121,6 @@
       "title": "Guterres recalls Nepal glacier warning as climate risks grow",
       "blurb": "The UN chief said the impacts of climate change are arriving sooner and hitting harder, calling for more adaptation finance and a stronger Loss and Damage Fund as Nepal seeks international support after the August…",
       "url": "https://kathmandupost.com/national/2026/09/23/guterres-recalls-nepal-glacier-warning-as-climate-impacts-intensify"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Flood destroys equipment, pushing back Siddhababa tunnel opening",
-      "blurb": "Replacement electromechanical equipment must be brought through the Korala border, delaying the planned start of traffic by at least a month.",
-      "url": "https://kathmandupost.com/province-no-5/2026/09/23/flood-destroys-equipment-pushing-back-siddhababa-tunnel-opening"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Khanal holds multiple diplomatic meetings in New York as Nepal establishes ties with Grenada",
-      "blurb": "The foreign minister discusses flood recovery, development cooperation and stronger economic ties with his Indian counterpart, US officials and other foreign ministers during the UN General Assembly sidelines.",
-      "url": "https://kathmandupost.com/national/2026/09/23/khanal-holds-multiple-diplomatic-meetings-in-new-york-as-nepal-establishes-ties-with-grenada"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "US announces additional $31 million support for Nepal’s flood recovery",
-      "blurb": "The package includes funding for permanent bridges, humanitarian assistance and US-made drones, taking Washington’s total flood response and recovery support to more than $36 million.",
-      "url": "https://kathmandupost.com/national/2026/09/23/us-announces-additional-31-million-support-for-nepal-s-flood-recovery"
     }
   ]
 }

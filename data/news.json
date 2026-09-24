@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-24T15:22:24.522325+00:00",
+  "updated_at": "2026-09-24T19:23:26.669971+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "At the UN, Shah to bring Nepal’s climate crisis into focus",
+      "blurb": "The world’s youngest national leader makes his UN debut as Nepal seeks greater support for communities bearing the costs of climate disasters.",
+      "url": "https://kathmandupost.com/national/2026/09/24/at-the-un-shah-to-bring-nepal-s-climate-crisis-into-focus"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -114,13 +121,6 @@
       "title": "Over 800 people remain missing from hydropower projects after Bhotekoshi floods, says energy minister Shrestha",
       "blurb": "Shrestha tells Parliament that search and rescue teams are still looking for workers believed to be trapped in underground structures or swept away by the August 26 disaster.",
       "url": "https://kathmandupost.com/national/2026/09/23/over-800-people-remain-missing-from-hydropower-projects-after-bhotekoshi-floods-says-energy-minister-shrestha"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Guterres recalls Nepal glacier warning as climate risks grow",
-      "blurb": "The UN chief said the impacts of climate change are arriving sooner and hitting harder, calling for more adaptation finance and a stronger Loss and Damage Fund as Nepal seeks international support after the August…",
-      "url": "https://kathmandupost.com/national/2026/09/23/guterres-recalls-nepal-glacier-warning-as-climate-impacts-intensify"
     }
   ]
 }

@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-24T00:29:39.873073+00:00",
+  "updated_at": "2026-09-24T05:15:37.223837+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Foreign Minister Shisir Khanal seeks greater international support for Nepal’s recovery and climate resilience",
+      "blurb": "Khanal calls for more support for Nepal’s post-disaster recovery, climate-resilient infrastructure, disaster preparedness and financing for climate-vulnerable countries.",
+      "url": "https://kathmandupost.com/national/2026/09/24/foreign-minister-shisir-khanal-seeks-greater-international-support-for-nepal-s-recovery-and-climate-resilience"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Rasuwa flash floods recede, health risks loom",
+      "blurb": "Reliable systems for providing safe drinking water, sustained hygiene promotion and community awareness programmes are urgently needed.",
+      "url": "https://kathmandupost.com/columns/2026/09/24/rasuwa-flash-floods-recede-health-risks-loom"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "At UN, Prime Minister Balendra Shah to make Nepal’s case for climate justice",
+      "blurb": "Shah will cite the Bhotekoshi flood devastation and ask wealthy nations to provide more money, technology and support for reconstruction.",
+      "url": "https://kathmandupost.com/politics/2026/09/24/at-un-pm-to-make-nepal-s-case-for-climate-justice"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -100,13 +121,6 @@
       "title": "What it means to be a peripheral country in the age of uncertainties",
       "blurb": "The government tricks the public into feeling that it is steering a steady ship, while structural policy, economic reality and disaster response crumble underneath.",
       "url": "https://kathmandupost.com/columns/2026/09/23/what-it-means-to-be-a-peripheral-country-in-the-age-of-uncertainties"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "For Bhotekoshi flood survivors, the tuin is an ordeal",
-      "blurb": "In Nuwakot, locals walk for five to six hours to reach the tuin, an improvised cable crossing, then wait for another four to five hours to cross.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/23/for-bhotekoshi-flood-survivors-the-tuin-is-an-ordeal"
     }
   ]
 }

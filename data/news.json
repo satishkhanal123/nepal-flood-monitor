@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-24T05:15:37.223837+00:00",
+  "updated_at": "2026-09-24T10:20:11.824842+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Heavy rain prompts travel curbs, school closures across Nepal",
+      "blurb": "Authorities suspend night-time transport, close schools and urge people to postpone travel as heavy rainfall raises the risk of floods and landslides.",
+      "url": "https://kathmandupost.com/national/2026/09/24/heavy-rain-prompts-travel-curbs-school-closures-across-nepal"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Narayanghat-Muglin road to shut overnight as rain raises landslide risk",
+      "blurb": "Chitwan authorities will halt all traffic from 8pm Thursday to 5am Friday as forecasters warn of heavy rain, floods and landslides across Nepal.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/24/narayanghat-muglin-road-to-shut-overnight-as-rain-raises-landslide-risk"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "What Nepal actually needs from global leaders in New York",
+      "blurb": "Former under-secretary-general of the UN argues Balendra Shah’s UNGA debut is a critical pulpit to demand climate justice, secure reconstruction aid and champion the fragile future of the world’s mountains.",
+      "url": "https://kathmandupost.com/columns/2026/09/24/what-nepal-actually-needs-from-global-leaders-in-new-york"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -114,13 +135,6 @@
       "title": "US announces additional $31 million support for Nepal’s flood recovery",
       "blurb": "The package includes funding for permanent bridges, humanitarian assistance and US-made drones, taking Washington’s total flood response and recovery support to more than $36 million.",
       "url": "https://kathmandupost.com/national/2026/09/23/us-announces-additional-31-million-support-for-nepal-s-flood-recovery"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "What it means to be a peripheral country in the age of uncertainties",
-      "blurb": "The government tricks the public into feeling that it is steering a steady ship, while structural policy, economic reality and disaster response crumble underneath.",
-      "url": "https://kathmandupost.com/columns/2026/09/23/what-it-means-to-be-a-peripheral-country-in-the-age-of-uncertainties"
     }
   ]
 }

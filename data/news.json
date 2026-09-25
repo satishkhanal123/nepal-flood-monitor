@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-25T05:47:06.303949+00:00",
+  "updated_at": "2026-09-25T11:07:09.593304+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Roshi flood washes away two BP Highway diversions",
+      "blurb": "Traffic has been disrupted after temporary crossings at Chaukidanda and Ghumaune were swept away.",
+      "url": "https://kathmandupost.com/province-no-3/2026/09/25/roshi-flood-washes-away-two-bp-highway-diversions"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Heavy rain, flood risk rise as low-pressure system moves across Nepal",
+      "blurb": "Weather officials warn of very heavy rain in parts of Lumbini and Gandaki, while 12 districts face a high risk of flooding.",
+      "url": "https://kathmandupost.com/weather/2026/09/25/heavy-rain-flood-risk-rise-as-low-pressure-system-moves-across-nepal"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "From Nepal’s floods to the world order: Reading Shah’s first UN address",
+      "blurb": "Nepal Prime Minister turns a warning from ‘roof of the world’ into a broader argument for climate justice, stronger regional cooperation and a multilateral system more responsive to vulnerable countries.",
+      "url": "https://kathmandupost.com/national/2026/09/25/from-nepal-s-floods-to-the-world-order-reading-shah-s-first-un-address"
+    },
     {
       "tag": "people",
       "date": "",
@@ -100,27 +121,6 @@
       "title": "What Nepal actually needs from global leaders in New York",
       "blurb": "Former under-secretary-general of the UN argues Balendra Shah’s UNGA debut is a critical pulpit to demand climate justice, secure reconstruction aid and champion the fragile future of the world’s mountains.",
       "url": "https://kathmandupost.com/columns/2026/09/24/what-nepal-actually-needs-from-global-leaders-in-new-york"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Foreign Minister Shisir Khanal seeks greater international support for Nepal’s recovery and climate resilience",
-      "blurb": "Khanal calls for more support for Nepal’s post-disaster recovery, climate-resilient infrastructure, disaster preparedness and financing for climate-vulnerable countries.",
-      "url": "https://kathmandupost.com/national/2026/09/24/foreign-minister-shisir-khanal-seeks-greater-international-support-for-nepal-s-recovery-and-climate-resilience"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Rasuwa flash floods recede, health risks loom",
-      "blurb": "Reliable systems for providing safe drinking water, sustained hygiene promotion and community awareness programmes are urgently needed.",
-      "url": "https://kathmandupost.com/columns/2026/09/24/rasuwa-flash-floods-recede-health-risks-loom"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "At UN, Prime Minister Balendra Shah to make Nepal’s case for climate justice",
-      "blurb": "Shah will cite the Bhotekoshi flood devastation and ask wealthy nations to provide more money, technology and support for reconstruction.",
-      "url": "https://kathmandupost.com/politics/2026/09/24/at-un-pm-to-make-nepal-s-case-for-climate-justice"
     }
   ]
 }

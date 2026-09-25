@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-24T22:38:02.854156+00:00",
+  "updated_at": "2026-09-25T00:50:35.382293+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "From flood disaster to climate warning, Shah makes the Himalayas his UN message",
+      "blurb": "Nepal’s prime minister calls for a Himalayan climate-resilience mechanism, more grant-based finance, and stronger regional early-warning systems as climate extremes threaten mountain communities.",
+      "url": "https://kathmandupost.com/national/2026/09/25/from-flood-disaster-to-climate-warning-shah-makes-the-himalayas-his-un-message"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Shah raises climate risks and Bhotekoshi disaster with Guterres",
+      "blurb": "PM seeks UN support for riverbank resettlement, green reconstruction and an extension of Nepal’s LDC graduation timeline.",
+      "url": "https://kathmandupost.com/national/2026/09/25/shah-raises-climate-risks-and-bhotekoshi-disaster-with-guterres"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -114,13 +128,6 @@
       "title": "Hydropower producers seek changes to proposed IPO rules",
       "blurb": "Producers say the proposed eligibility framework does not reflect the financing needs and development cycle of hydropower projects.",
       "url": "https://kathmandupost.com/money/2026/09/23/hydropower-producers-seek-changes-to-proposed-ipo-rules"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Over 800 people remain missing from hydropower projects after Bhotekoshi floods, says energy minister Shrestha",
-      "blurb": "Shrestha tells Parliament that search and rescue teams are still looking for workers believed to be trapped in underground structures or swept away by the August 26 disaster.",
-      "url": "https://kathmandupost.com/national/2026/09/23/over-800-people-remain-missing-from-hydropower-projects-after-bhotekoshi-floods-says-energy-minister-shrestha"
     }
   ]
 }

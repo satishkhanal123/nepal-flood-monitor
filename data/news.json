@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-26T01:32:40.869227+00:00",
+  "updated_at": "2026-09-26T06:36:55.424437+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "From the Himalayas to the islands, Nepal calls for a united climate response",
+      "blurb": "Nepal brings mountain and island nations together under its “Sagarmatha to the Sea” banner to push for climate finance, stronger early-warning systems and deeper cooperation.",
+      "url": "https://kathmandupost.com/politics/2026/09/26/from-the-himalayas-to-the-islands-nepal-calls-for-a-united-climate-response"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -107,27 +114,6 @@
       "title": "At the UN, Shah to bring Nepal’s climate crisis into focus",
       "blurb": "The world’s youngest national leader makes his UN debut as Nepal seeks greater support for communities bearing the costs of climate disasters.",
       "url": "https://kathmandupost.com/national/2026/09/24/at-the-un-shah-to-bring-nepal-s-climate-crisis-into-focus"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "What is a ‘super El Niño’ and how will it affect the weather?",
-      "blurb": "A potentially record-strength El Niño could drive extreme heat, floods and droughts worldwide, with major risks to crops, food security and public health.",
-      "url": "https://kathmandupost.com/climate-environment/2026/09/24/what-is-a-super-el-nio-and-how-will-it-affect-the-weather"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Heavy rain prompts travel curbs, school closures across Nepal",
-      "blurb": "Authorities suspend night-time transport, close schools and urge people to postpone travel as heavy rainfall raises the risk of floods and landslides.",
-      "url": "https://kathmandupost.com/national/2026/09/24/heavy-rain-prompts-travel-curbs-school-closures-across-nepal"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Narayanghat-Muglin road to shut overnight as rain raises landslide risk",
-      "blurb": "Chitwan authorities will halt all traffic from 8pm Thursday to 5am Friday as forecasters warn of heavy rain, floods and landslides across Nepal.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/24/narayanghat-muglin-road-to-shut-overnight-as-rain-raises-landslide-risk"
     }
   ]
 }

@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-26T06:36:55.424437+00:00",
+  "updated_at": "2026-09-26T11:47:47.100122+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Koshi floods inundate 157 homes in Saptari",
+      "blurb": "Floodwaters entered homes in Tilathi Koiladi and Hanumannagar Kankalini, damaging food stocks and forcing residents to seek shelter on higher ground.",
+      "url": "https://kathmandupost.com/province-no-1/2026/09/26/koshi-floods-inundate-157-homes-in-saptari"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "A month on, Nepal flood victims remain missing as hope and posters fade",
+      "blurb": "Relatives plastered hospital walls in Kathmandu with notices searching for loved ones swept away by the Bhotekoshi floods. With thousands still unaccounted for, many families have turned to symbolic last rites.",
+      "url": "https://kathmandupost.com/visual-stories/2026/09/26/a-month-on-nepal-flood-victims-remain-missing-as-hope-and-posters-fade"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Thai capital Bangkok declared disaster zone amid flooding",
+      "blurb": "Torrential rain floods Bangkok roads, homes and public spaces, prompting authorities to open shelters, deploy the army and urge residents near canals to move to higher ground.",
+      "url": "https://kathmandupost.com/world/2026/09/26/thai-capital-bangkok-declared-disaster-zone-amid-flooding"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Landslide kills one as heavy rain disrupts life across Nepal",
+      "blurb": "Rising rivers, landslides and blocked roads have disrupted communities across several districts, while hundreds of residents have been moved to safer locations.",
+      "url": "https://kathmandupost.com/national/2026/09/26/rain-across-nepal-where-the-impact-is-being-felt"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "NEPSE slips as investors rotate into banks and manufacturing",
+      "blurb": "The benchmark index fell 0.66 percent to close at 2,629.81 in a shortened trading week, while average daily turnover edged up to Rs6.12 billion as investors shifted away from hydropower and finance stocks.",
+      "url": "https://kathmandupost.com/money/2026/09/26/nepse-slips-as-investors-rotate-into-banks-and-manufacturing"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -79,41 +114,6 @@
       "title": "Nobody knows how to count a smile like that",
       "blurb": "A glacier fell in Nepal. In the two weeks that followed, I watched three separate systems fail the same woman.",
       "url": "https://kathmandupost.com/art-culture/2026/09/25/nobody-knows-how-to-count-a-smile-like-that"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Flood-hit women entrepreneurs determined to rebuild their businesses",
-      "blurb": "With family members dead or missing, many women see the need to rise up and find work to support their children and remaining ones.",
-      "url": "https://kathmandupost.com/money/2026/09/25/flood-hit-women-entrepreneurs-determined-to-rebuild-their-business"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Dhunibesi taxes scrap despite constitutional ban",
-      "blurb": "The municipality in Dhading collects Rs3.39 per kg from scrap trucks leaving the Valley, although the constitution bars local governments from taxing goods moving from one jurisdiction to another.",
-      "url": "https://kathmandupost.com/money/2026/09/25/dhunibesi-taxes-scrap-despite-constitutional-ban"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "From flood disaster to climate warning, Shah makes the Himalayas his UN message",
-      "blurb": "Nepal’s prime minister calls for a Himalayan climate-resilience mechanism, more grant-based finance, and stronger regional early-warning systems as climate extremes threaten mountain communities.",
-      "url": "https://kathmandupost.com/national/2026/09/25/from-flood-disaster-to-climate-warning-shah-makes-the-himalayas-his-un-message"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Shah raises climate risks and Bhotekoshi disaster with Guterres",
-      "blurb": "PM seeks UN support for riverbank resettlement, green reconstruction and an extension of Nepal’s LDC graduation timeline.",
-      "url": "https://kathmandupost.com/national/2026/09/25/shah-raises-climate-risks-and-bhotekoshi-disaster-with-guterres"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "At the UN, Shah to bring Nepal’s climate crisis into focus",
-      "blurb": "The world’s youngest national leader makes his UN debut as Nepal seeks greater support for communities bearing the costs of climate disasters.",
-      "url": "https://kathmandupost.com/national/2026/09/24/at-the-un-shah-to-bring-nepal-s-climate-crisis-into-focus"
     }
   ]
 }

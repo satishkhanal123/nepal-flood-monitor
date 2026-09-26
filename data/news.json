@@ -1,8 +1,50 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-26T11:47:47.100122+00:00",
+  "updated_at": "2026-09-26T15:45:01.158560+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Incessant rains trigger widespread flooding in Tarai, disrupt key highway links across Nepal",
+      "blurb": "Swollen Narayani and Saptakoshi rivers submerge hundreds of homes in Nawalparasi West and Saptari, forcing rescues. Landslides and road erosion cut off vital routes, including Prithvi and BP highways.",
+      "url": "https://kathmandupost.com/national/2026/09/26/incessant-rains-trigger-widespread-flooding-in-tarai-disrupt-key-highway-links-across-nepal"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Finance Minister Wagle leaves for Doha",
+      "blurb": "Wagle is expected to seek support for post-flood reconstruction and climate finance while advancing infrastructure projects with the multilateral lender.",
+      "url": "https://kathmandupost.com/national/2026/09/26/finance-minister-wagle-leaves-for-doha"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Vegetable prices skyrocket in Valley as landslides disrupt transport",
+      "blurb": "Arrivals have fallen by nearly two-thirds since Thursday as highways to major vegetable-producing districts are damaged in places, leading to a steep price rises.",
+      "url": "https://kathmandupost.com/money/2026/09/26/vegetable-prices-skyrocket-in-valley-as-landslides-disrupt-transport"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "As rain returns, flood survivors endure cold—and leaking tents",
+      "blurb": "Damp weather has raised health concerns for infants and vulnerable groups as permanent resettlement plan awaits central government approval.",
+      "url": "https://kathmandupost.com/national/2026/09/26/as-rain-returns-flood-survivors-endure-cold-and-leaking-tents"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Dhap Dam remains fully safe, says energy ministry",
+      "blurb": "The dam’s water level has fallen by 2.38 metres after authorities began releasing water following a landslide near a saddle dam.",
+      "url": "https://kathmandupost.com/valley/2026/09/26/dhap-dam-remains-fully-safe-says-energy-ministry"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Shah returns from UNGA after putting climate crisis at centre of Nepal’s global pitch",
+      "blurb": "Nepal’s prime minister highlighted the Bhotekoshi floods, climate justice and Himalayan risks at the UN General Assembly, while seeking greater international support for resilience and reconstruction.",
+      "url": "https://kathmandupost.com/national/2026/09/26/shah-returns-from-unga-after-putting-climate-crisis-at-centre-of-nepal-s-global-pitch"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -86,34 +128,6 @@
       "title": "Shah meets Albanese, Australia reiterates support for flood-hit Nepal",
       "blurb": "The Australian prime minister expressed solidarity with Nepal and families of missing Australians during the meeting on the sidelines of the UN General Assembly.",
       "url": "https://kathmandupost.com/national/2026/09/25/shah-meets-albanese-australia-reiterates-support-for-flood-hit-nepal"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Major highways hit by landslides as heavy rain persists",
-      "blurb": "Persistent rain has blocked or restricted several major roads, with authorities imposing overnight closures and warning travellers of further landslide risks.",
-      "url": "https://kathmandupost.com/national/2026/09/25/major-highways-hit-by-landslides-as-heavy-rain-persists"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Balendra Shah UN speech: Full transcript of Nepal prime minister’s address to the 81st UN General Assembly",
-      "blurb": "Nepal Prime Minister Balendra Shah’s full UN speech on the Bhotekoshi floods, climate justice, Himalayan cooperation, climate finance and reform of the global order.",
-      "url": "https://kathmandupost.com/national/2026/09/25/balendra-shah-un-speech-full-transcript-of-nepal-prime-minister-s-address-to-the-81st-un-general-assembly"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Five takeaways from Prime Minister Balendra Shah’s UN address",
-      "blurb": "The prime minister linked Nepal’s floods to climate risks, proposed cooperation in the Himalayas, and called for fairer climate finance and a more equitable global order.",
-      "url": "https://kathmandupost.com/national/2026/09/25/from-himalayan-tsunami-to-global-reform-five-takeaways-from-balendra-shah-s-un-address"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nobody knows how to count a smile like that",
-      "blurb": "A glacier fell in Nepal. In the two weeks that followed, I watched three separate systems fail the same woman.",
-      "url": "https://kathmandupost.com/art-culture/2026/09/25/nobody-knows-how-to-count-a-smile-like-that"
     }
   ]
 }

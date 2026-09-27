@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-27T14:50:00.353926+00:00",
+  "updated_at": "2026-09-27T18:53:15.018272+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Heavy rain kills at least 17 across western Nepal",
+      "blurb": "At least 1,451 people have been displaced. Floods and landslides have completely damaged 179 houses and partially damaged 26 others, while another 270 houses are at risk, according to police.",
+      "url": "https://kathmandupost.com/national/2026/09/27/heavy-rain-kills-at-least-17-across-western-nepal"
+    },
     {
       "tag": "people",
       "date": "",
@@ -135,13 +142,6 @@
       "title": "A month on, Nepal flood victims remain missing as hope and posters fade",
       "blurb": "Relatives plastered hospital walls in Kathmandu with notices searching for loved ones swept away by the Bhotekoshi floods. With thousands still unaccounted for, many families have turned to symbolic last rites.",
       "url": "https://kathmandupost.com/visual-stories/2026/09/26/a-month-on-nepal-flood-victims-remain-missing-as-hope-and-posters-fade"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Thai capital Bangkok declared disaster zone amid flooding",
-      "blurb": "Torrential rain floods Bangkok roads, homes and public spaces, prompting authorities to open shelters, deploy the army and urge residents near canals to move to higher ground.",
-      "url": "https://kathmandupost.com/world/2026/09/26/thai-capital-bangkok-declared-disaster-zone-amid-flooding"
     }
   ]
 }

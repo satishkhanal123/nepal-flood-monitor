@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-27T03:37:12.998202+00:00",
+  "updated_at": "2026-09-27T09:31:46.861417+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "14 Nepalis missing on Himlung after avalanche as bad weather hampers rescue",
+      "blurb": "Helicopters are on standby in Kathmandu and Pokhara, but poor weather has so far prevented rescuers from reaching the mountain.",
+      "url": "https://kathmandupost.com/national/2026/09/27/14-nepalis-missing-on-himlung-after-avalanche-as-bad-weather-hampers-rescue"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Bangkok floodwaters recede after torrential rain as residents count losses",
+      "blurb": "Torrential rain flooded roads and homes across Bangkok, forcing thousands into temporary shelters as authorities warned that some areas remained under water despite improving weather.",
+      "url": "https://kathmandupost.com/world/2026/09/27/bangkok-floodwaters-recede-after-torrential-rain-as-residents-count-losses"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Flood washes away around 80 houses in Parbat as landslide kills one in Palpa",
+      "blurb": "The Kaligandaki river flooded the Farse settlement, while a landslide buried a house and a cattle shed in Palpa, leaving one dead and two missing.",
+      "url": "https://kathmandupost.com/national/2026/09/27/flood-washes-away-around-80-houses-in-parbat-as-landslide-kills-one-in-palpa"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "10 missing after avalanche hits Himlung Himal",
+      "blurb": "Climbers and support staff are unaccounted for after an avalanche struck the 7,126-metre peak in Manang’s Nar Phu area.",
+      "url": "https://kathmandupost.com/national/2026/09/27/10-missing-after-avalanche-hits-himlung-himal"
+    },
     {
       "tag": "access",
       "date": "",
@@ -114,27 +142,6 @@
       "title": "NEPSE slips as investors rotate into banks and manufacturing",
       "blurb": "The benchmark index fell 0.66 percent to close at 2,629.81 in a shortened trading week, while average daily turnover edged up to Rs6.12 billion as investors shifted away from hydropower and finance stocks.",
       "url": "https://kathmandupost.com/money/2026/09/26/nepse-slips-as-investors-rotate-into-banks-and-manufacturing"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "From the Himalayas to the islands, Nepal calls for a united climate response",
-      "blurb": "Nepal brings mountain and island nations together under its “Sagarmatha to the Sea” banner to push for climate finance, stronger early-warning systems and deeper cooperation.",
-      "url": "https://kathmandupost.com/politics/2026/09/26/from-the-himalayas-to-the-islands-nepal-calls-for-a-united-climate-response"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "International media highlight Shah’s climate message, regional proposal—and shades",
-      "blurb": "Coverage of the prime minister’s UN address has centred on Nepal’s floods, climate justice and a proposed Himalayan climate resilience mechanism.",
-      "url": "https://kathmandupost.com/national/2026/09/25/international-media-highlight-shah-s-climate-message-regional-proposal-and-shades"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Heavy rain disrupts travel, raises flood and landslide risks across Nepal",
-      "blurb": "Roads reopen in Taplejung but night travel is restricted in several districts, while rising river levels, damaged homes and snowfall affect communities across the country",
-      "url": "https://kathmandupost.com/national/2026/09/25/heavy-rain-disrupts-travel-raises-flood-and-landslide-risks-across-nepal"
     }
   ]
 }

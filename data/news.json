@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-27T09:31:46.861417+00:00",
+  "updated_at": "2026-09-27T14:50:00.353926+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Two bodies recovered from Himlung avalanche site",
+      "blurb": "Identities of the victims remain unknown as rescuers search the area after an avalanche left 14 people unaccounted for.",
+      "url": "https://kathmandupost.com/national/2026/09/27/two-bodies-recovered-from-himlung-avalanche-site"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Floods and landslides kill 12 across Nepal",
+      "blurb": "Seven people remain missing and more than 1,100 have been evacuated as heavy rain raises the risk of further disasters.",
+      "url": "https://kathmandupost.com/national/2026/09/27/floods-and-landslides-kill-12-across-nepal"
+    },
     {
       "tag": "access",
       "date": "",
@@ -128,20 +142,6 @@
       "title": "Thai capital Bangkok declared disaster zone amid flooding",
       "blurb": "Torrential rain floods Bangkok roads, homes and public spaces, prompting authorities to open shelters, deploy the army and urge residents near canals to move to higher ground.",
       "url": "https://kathmandupost.com/world/2026/09/26/thai-capital-bangkok-declared-disaster-zone-amid-flooding"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Landslide kills one as heavy rain disrupts life across Nepal",
-      "blurb": "Rising rivers, landslides and blocked roads have disrupted communities across several districts, while hundreds of residents have been moved to safer locations.",
-      "url": "https://kathmandupost.com/national/2026/09/26/rain-across-nepal-where-the-impact-is-being-felt"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "NEPSE slips as investors rotate into banks and manufacturing",
-      "blurb": "The benchmark index fell 0.66 percent to close at 2,629.81 in a shortened trading week, while average daily turnover edged up to Rs6.12 billion as investors shifted away from hydropower and finance stocks.",
-      "url": "https://kathmandupost.com/money/2026/09/26/nepse-slips-as-investors-rotate-into-banks-and-manufacturing"
     }
   ]
 }

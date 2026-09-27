@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-26T23:54:30.442648+00:00",
+  "updated_at": "2026-09-27T03:37:12.998202+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Relentless rain triggers floods, landslides across Nepal",
+      "blurb": "Floodwaters sweep away six houses in Butwal, major rivers cross danger marks in Chitwan and landslides disrupt highways and roads in several districts.",
+      "url": "https://kathmandupost.com/national/2026/09/27/relentless-rain-triggers-floods-landslides-across-nepal"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Why Nepal’s latest disaster needs a local name—not just a scientific label",
+      "blurb": "We use words like ‘tsunami’ and ‘monsoon’ to honour the communities who know these disasters best. It’s time for Nepal to do the same.",
+      "url": "https://kathmandupost.com/columns/2026/09/27/why-nepal-s-latest-disaster-needs-a-local-name-not-just-a-scientific-label"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Khanal meets UAE counterpart, thanks Abu Dhabi for $25m flood aid",
+      "blurb": "Foreign minister Shisir Khanal also holds talks with his Armenian counterpart on expanding bilateral cooperation",
+      "url": "https://kathmandupost.com/national/2026/09/27/khanal-meets-uae-counterpart-thanks-abu-dhabi-for-25m-flood-aid"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood sweeps away bridge linking Syangja and Gulmi",
+      "blurb": "The bridge over the Kaligandaki river was washed away after four days of continuous rain caused the river to swell.",
+      "url": "https://kathmandupost.com/province-no-5/2026/09/27/flood-sweeps-away-bridge-linking-syangja-and-gulmi"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal’s tourism industry keeps absorbing one crisis after another — and keeps coming back",
+      "blurb": "Despite the pandemic, political unrest and natural disasters, Nepal’s tourism industry has endured, with visitors returning after each shock. But is that resilience masking the need to build a safer, more diversified…",
+      "url": "https://kathmandupost.com/money/2026/09/27/nepal-s-tourism-industry-keeps-absorbing-one-crisis-after-another-and-keeps-coming-back"
+    },
     {
       "tag": "access",
       "date": "",
@@ -100,34 +135,6 @@
       "title": "Heavy rain disrupts travel, raises flood and landslide risks across Nepal",
       "blurb": "Roads reopen in Taplejung but night travel is restricted in several districts, while rising river levels, damaged homes and snowfall affect communities across the country",
       "url": "https://kathmandupost.com/national/2026/09/25/heavy-rain-disrupts-travel-raises-flood-and-landslide-risks-across-nepal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Roshi flood washes away two BP Highway diversions",
-      "blurb": "Traffic has been disrupted after temporary crossings at Chaukidanda and Ghumaune were swept away.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/25/roshi-flood-washes-away-two-bp-highway-diversions"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Heavy rain, flood risk rise as low-pressure system moves across Nepal",
-      "blurb": "Weather officials warn of very heavy rain in parts of Lumbini and Gandaki, while 12 districts face a high risk of flooding.",
-      "url": "https://kathmandupost.com/weather/2026/09/25/heavy-rain-flood-risk-rise-as-low-pressure-system-moves-across-nepal"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "From Nepal’s floods to the world order: Reading Shah’s first UN address",
-      "blurb": "Nepal Prime Minister turns a warning from ‘roof of the world’ into a broader argument for climate justice, stronger regional cooperation and a multilateral system more responsive to vulnerable countries.",
-      "url": "https://kathmandupost.com/national/2026/09/25/from-nepal-s-floods-to-the-world-order-reading-shah-s-first-un-address"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Shah meets Albanese, Australia reiterates support for flood-hit Nepal",
-      "blurb": "The Australian prime minister expressed solidarity with Nepal and families of missing Australians during the meeting on the sidelines of the UN General Assembly.",
-      "url": "https://kathmandupost.com/national/2026/09/25/shah-meets-albanese-australia-reiterates-support-for-flood-hit-nepal"
     }
   ]
 }

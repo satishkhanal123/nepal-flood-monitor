@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-28T12:00:21.466189+00:00",
+  "updated_at": "2026-09-28T19:40:21.029401+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Welcome tourists back—but build resilient systems to keep them safe",
+      "blurb": "The Bhotekoshi flood has once again reminded us that Nepal needs a resilient tourism system to withstand major shocks.",
+      "url": "https://kathmandupost.com/editorial/2026/09/28/welcome-tourists-back-but-build-resilient-systems-to-keep-them-safe"
+    },
     {
       "tag": "people",
       "date": "",
@@ -100,27 +107,6 @@
       "title": "Bangkok floodwaters recede after torrential rain as residents count losses",
       "blurb": "Torrential rain flooded roads and homes across Bangkok, forcing thousands into temporary shelters as authorities warned that some areas remained under water despite improving weather.",
       "url": "https://kathmandupost.com/world/2026/09/27/bangkok-floodwaters-recede-after-torrential-rain-as-residents-count-losses"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Flood washes away around 80 houses in Parbat as landslide kills one in Palpa",
-      "blurb": "The Kaligandaki river flooded the Farse settlement, while a landslide buried a house and a cattle shed in Palpa, leaving one dead and two missing.",
-      "url": "https://kathmandupost.com/national/2026/09/27/flood-washes-away-around-80-houses-in-parbat-as-landslide-kills-one-in-palpa"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "10 missing after avalanche hits Himlung Himal",
-      "blurb": "Climbers and support staff are unaccounted for after an avalanche struck the 7,126-metre peak in Manang’s Nar Phu area.",
-      "url": "https://kathmandupost.com/national/2026/09/27/10-missing-after-avalanche-hits-himlung-himal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Relentless rain triggers floods, landslides across Nepal",
-      "blurb": "Floodwaters sweep away six houses in Butwal, major rivers cross danger marks in Chitwan and landslides disrupt highways and roads in several districts.",
-      "url": "https://kathmandupost.com/national/2026/09/27/relentless-rain-triggers-floods-landslides-across-nepal"
     }
   ]
 }

@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-28T05:41:50.311549+00:00",
+  "updated_at": "2026-09-28T12:00:21.466189+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "A month in tents, Jajarkot landslide survivors face fresh misery in the rain",
+      "blurb": "Twenty-nine families displaced by a landslide in Bheri-2 have been living under tarpaulins for a month, with continuing rain forcing some to spend nights at a nearby school.",
+      "url": "https://kathmandupost.com/national/2026/09/28/a-month-in-tents-jajarkot-landslide-survivors-face-fresh-misery-in-the-rain"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Four bodies found after Himlung avalanche, 12 still missing",
+      "blurb": "Search teams recovered two more bodies on Monday, while efforts continued to locate 12 workers and guides who have remained unaccounted for since Sunday’s avalanche.",
+      "url": "https://kathmandupost.com/national/2026/09/28/four-bodies-found-after-himlung-avalanche-12-still-missing"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Flood risk eases, displaced Manang residents return home",
+      "blurb": "Residents who fled to forest shelters after the Marsyangdi river was partially blocked by a landslide on Sunday returned home as the river level fell and the weather cleared.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/28/flood-risk-eases-displaced-manang-residents-return-home"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -100,41 +121,6 @@
       "title": "Relentless rain triggers floods, landslides across Nepal",
       "blurb": "Floodwaters sweep away six houses in Butwal, major rivers cross danger marks in Chitwan and landslides disrupt highways and roads in several districts.",
       "url": "https://kathmandupost.com/national/2026/09/27/relentless-rain-triggers-floods-landslides-across-nepal"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Why Nepal’s latest disaster needs a local name—not just a scientific label",
-      "blurb": "We use words like ‘tsunami’ and ‘monsoon’ to honour the communities who know these disasters best. It’s time for Nepal to do the same.",
-      "url": "https://kathmandupost.com/columns/2026/09/27/why-nepal-s-latest-disaster-needs-a-local-name-not-just-a-scientific-label"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Khanal meets UAE counterpart, thanks Abu Dhabi for $25m flood aid",
-      "blurb": "Foreign minister Shisir Khanal also holds talks with his Armenian counterpart on expanding bilateral cooperation",
-      "url": "https://kathmandupost.com/national/2026/09/27/khanal-meets-uae-counterpart-thanks-abu-dhabi-for-25m-flood-aid"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood sweeps away bridge linking Syangja and Gulmi",
-      "blurb": "The bridge over the Kaligandaki river was washed away after four days of continuous rain caused the river to swell.",
-      "url": "https://kathmandupost.com/province-no-5/2026/09/27/flood-sweeps-away-bridge-linking-syangja-and-gulmi"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal’s tourism industry keeps absorbing one crisis after another — and keeps coming back",
-      "blurb": "Despite the pandemic, political unrest and natural disasters, Nepal’s tourism industry has endured, with visitors returning after each shock. But is that resilience masking the need to build a safer, more diversified…",
-      "url": "https://kathmandupost.com/money/2026/09/27/nepal-s-tourism-industry-keeps-absorbing-one-crisis-after-another-and-keeps-coming-back"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Incessant rains trigger widespread flooding in Tarai, disrupt key highway links across Nepal",
-      "blurb": "Swollen Narayani and Saptakoshi rivers submerge hundreds of homes in Nawalparasi West and Saptari, forcing rescues. Landslides and road erosion cut off vital routes, including Prithvi and BP highways.",
-      "url": "https://kathmandupost.com/national/2026/09/26/incessant-rains-trigger-widespread-flooding-in-tarai-disrupt-key-highway-links-across-nepal"
     }
   ]
 }

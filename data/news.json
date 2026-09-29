@@ -1,14 +1,35 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-28T23:56:50.569164+00:00",
+  "updated_at": "2026-09-29T04:47:05.618886+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "12 dead in Baglung floods, landslides over past week",
+      "blurb": "The deaths occurred over several days as incessant rainfall triggered floods and landslides across the district, destroying 51 houses and damaging dozens of others.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/29/12-dead-in-baglung-floods-landslides-over-past-week"
+    },
     {
       "tag": "people",
       "date": "",
       "title": "Welcome tourists back—but build resilient systems to keep them safe",
       "blurb": "The Bhotekoshi flood has once again reminded us that Nepal needs a resilient tourism system to withstand major shocks.",
       "url": "https://kathmandupost.com/editorial/2026/09/28/welcome-tourists-back-but-build-resilient-systems-to-keep-them-safe"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "All three major Nepal-China crossings hit by monsoon disruptions ahead of Dashain",
+      "blurb": "Floods and landslides have halted trade through Rasuwagadhi-Kerung, Tatopani, and Korala border points. Hundreds of containers remain stranded and supplies disrupted ahead of the festive season.",
+      "url": "https://kathmandupost.com/money/2026/09/29/all-three-major-nepal-china-crossings-hit-by-monsoon-disruptions-ahead-of-dashain"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "After the flood, the grey list is now a national emergency",
+      "blurb": "Nepal is about to ask the world for billions, but the world is also asking whether Nepal can keep dirty money out.",
+      "url": "https://kathmandupost.com/columns/2026/09/28/after-the-flood-the-grey-list-is-now-a-national-emergency"
     },
     {
       "tag": "people",
@@ -79,34 +100,6 @@
       "title": "Heavy rain kills at least 21 across western Nepal",
       "blurb": "At least 1,500 people have been displaced. Floods and landslides have completely damaged 179 houses.",
       "url": "https://kathmandupost.com/national/2026/09/27/heavy-rain-kills-at-least-17-across-western-nepal"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Two bodies recovered from Himlung avalanche site, 14 missing",
-      "blurb": "Identities of victims unknown. Rescuers are searching the area.",
-      "url": "https://kathmandupost.com/national/2026/09/27/two-bodies-recovered-from-himlung-avalanche-site"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Floods and landslides kill 12 across Nepal",
-      "blurb": "Seven people remain missing and more than 1,100 have been evacuated as heavy rain raises the risk of further disasters.",
-      "url": "https://kathmandupost.com/national/2026/09/27/floods-and-landslides-kill-12-across-nepal"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "14 Nepalis missing on Himlung after avalanche as bad weather hampers rescue",
-      "blurb": "Helicopters are on standby in Kathmandu and Pokhara, but poor weather has so far prevented rescuers from reaching the mountain.",
-      "url": "https://kathmandupost.com/national/2026/09/27/14-nepalis-missing-on-himlung-after-avalanche-as-bad-weather-hampers-rescue"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bangkok floodwaters recede after torrential rain as residents count losses",
-      "blurb": "Torrential rain flooded roads and homes across Bangkok, forcing thousands into temporary shelters as authorities warned that some areas remained under water despite improving weather.",
-      "url": "https://kathmandupost.com/world/2026/09/27/bangkok-floodwaters-recede-after-torrential-rain-as-residents-count-losses"
     }
   ]
 }

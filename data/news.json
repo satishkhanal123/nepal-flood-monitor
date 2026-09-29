@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-29T11:04:21.337252+00:00",
+  "updated_at": "2026-09-29T16:53:15.112107+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "NDRRMA Chief Upreti on what Nepal must change after the Bhotekoshi disaster",
+      "blurb": "A month after the Bhotekoshi flood, Nepal’s disaster authorities are assessing the damage, planning reconstruction and considering the relocation of settlements in high-risk areas.",
+      "url": "https://kathmandupost.com/interviews/2026/09/29/ndrrma-chief-upreti-on-what-nepal-must-change-after-the-bhotekoshi-disaster"
+    },
     {
       "tag": "access",
       "date": "",
@@ -72,13 +79,6 @@
       "title": "Rescuers search for 14 missing after Himlung avalanche",
       "blurb": "A rescue team has reached the base camp, while two bodies recovered from the avalanche are being flown to Kathmandu.",
       "url": "https://kathmandupost.com/national/2026/09/28/rescuers-search-for-14-missing-after-himlung-avalanche"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Wagle seeks AIIB support for Nepal’s disaster recovery",
-      "blurb": "Finance Minister Swarnim Wagle has sought support from the Asian Infrastructure Investment Bank for relief and reconstruction efforts following the recent disaster in Nepal.",
-      "url": "https://kathmandupost.com/national/2026/09/28/wagle-seeks-aiib-support-for-nepal-s-disaster-recovery"
     }
   ]
 }

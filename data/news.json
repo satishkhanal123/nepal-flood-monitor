@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-29T04:47:05.618886+00:00",
+  "updated_at": "2026-09-29T11:04:21.337252+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "BP Highway reopens after five-day disruption",
+      "blurb": "Traffic resumed Tuesday morning on an under-construction permanent track after floods damaged the highway at eight locations.",
+      "url": "https://kathmandupost.com/national/2026/09/29/bp-highway-reopens-after-five-day-disruption-1790674800"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -72,34 +79,6 @@
       "title": "Wagle seeks AIIB support for Nepal’s disaster recovery",
       "blurb": "Finance Minister Swarnim Wagle has sought support from the Asian Infrastructure Investment Bank for relief and reconstruction efforts following the recent disaster in Nepal.",
       "url": "https://kathmandupost.com/national/2026/09/28/wagle-seeks-aiib-support-for-nepal-s-disaster-recovery"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Will flood-damaged highways be travel-ready by Dashain?",
-      "blurb": "Road links between Lamjung-Manang, Parbat-Baglung and Myagdi-Mustang severed after rain since Saturday night.",
-      "url": "https://kathmandupost.com/national/2026/09/28/will-flood-damaged-highways-be-travel-ready-by-dashain"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Landslides knock 358MW offline in Kaligandaki corridor",
-      "blurb": "Damage to pylons along the Dana-Kushma section of the 220kV line has cut off 12 hydropower projects. Precautionary shutdown of projects has pushed the total generation loss to over 790MW.",
-      "url": "https://kathmandupost.com/money/2026/09/28/landslides-knock-358mw-offline-in-kaligandaki-corridor"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Flood took his home. His old citizenship photo is denying him relief",
-      "blurb": "Juthe Tamang is living under a tarp in Nuwakot after losing his shelter and work, but the image on his citizenship certificate has been an issue for opening a bank account, a must for receiving relief money.",
-      "url": "https://kathmandupost.com/province-no-3/2026/09/28/flood-took-his-home-his-old-citizenship-photo-is-denying-him-relief"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Heavy rain kills at least 21 across western Nepal",
-      "blurb": "At least 1,500 people have been displaced. Floods and landslides have completely damaged 179 houses.",
-      "url": "https://kathmandupost.com/national/2026/09/27/heavy-rain-kills-at-least-17-across-western-nepal"
     }
   ]
 }

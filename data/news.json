@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-30T12:23:40.430931+00:00",
+  "updated_at": "2026-09-30T18:03:39.876028+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal flood survivors are leaving temporary camps as government delays rehabilitation",
+      "blurb": "Most displaced families have moved into rented rooms or elsewhere as makeshift shelters become uninhabitable and the government delays resettlement and promised financial assistance.",
+      "url": "https://kathmandupost.com/national/2026/09/30/nepal-flood-survivors-are-leaving-temporary-camps-as-government-delays-rehabilitation"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Three more bodies recovered from Himlung avalanche site",
+      "blurb": "The latest recovery takes the number of bodies found so far to seven, while nine Nepalis remain missing after the September 27 avalanche.",
+      "url": "https://kathmandupost.com/national/2026/09/30/three-more-bodies-recovered-from-himlung-avalanche-site"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -65,27 +79,6 @@
       "title": "BP Highway reopens after five-day disruption",
       "blurb": "Traffic resumed Tuesday morning on an under-construction permanent track after floods damaged the highway at eight locations.",
       "url": "https://kathmandupost.com/national/2026/09/29/bp-highway-reopens-after-five-day-disruption-1790674800"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "12 dead in Baglung floods, landslides over past week",
-      "blurb": "The deaths occurred over several days as incessant rainfall triggered floods and landslides across the district, destroying 51 houses and damaging dozens of others.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/09/29/12-dead-in-baglung-floods-landslides-over-past-week"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Welcome tourists back—but build resilient systems to keep them safe",
-      "blurb": "The Bhotekoshi flood has once again reminded us that Nepal needs a resilient tourism system to withstand major shocks.",
-      "url": "https://kathmandupost.com/editorial/2026/09/28/welcome-tourists-back-but-build-resilient-systems-to-keep-them-safe"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "All three major Nepal-China crossings hit by monsoon disruptions ahead of Dashain",
-      "blurb": "Floods and landslides have halted trade through Rasuwagadhi-Kerung, Tatopani, and Korala border points. Hundreds of containers remain stranded and supplies disrupted ahead of the festive season.",
-      "url": "https://kathmandupost.com/money/2026/09/29/all-three-major-nepal-china-crossings-hit-by-monsoon-disruptions-ahead-of-dashain"
     }
   ]
 }

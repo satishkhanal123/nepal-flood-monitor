@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-09-30T05:58:58.132466+00:00",
+  "updated_at": "2026-09-30T12:23:40.430931+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Israel-bound flight diverted to Saudi Arabia after brawl between pilots, Israeli official says",
+      "blurb": "The Flydubai flight diverted to Tabuk after the pilots allegedly got into a physical altercation, triggering emergency signals and a major security response in Israel.",
+      "url": "https://kathmandupost.com/world/2026/09/30/israel-bound-flight-diverted-to-saudi-arabia-after-brawl-between-pilots-israeli-official-says"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood-swollen Marsyangdi river cuts off Upper Manang",
+      "blurb": "A submerged bridge and debris-choked river have blocked the main road to Upper Manang, leaving residents unable to reach Chame.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/09/30/flood-swollen-marsyangdi-river-cuts-off-upper-manang"
+    },
     {
       "tag": "people",
       "date": "",
@@ -72,13 +86,6 @@
       "title": "All three major Nepal-China crossings hit by monsoon disruptions ahead of Dashain",
       "blurb": "Floods and landslides have halted trade through Rasuwagadhi-Kerung, Tatopani, and Korala border points. Hundreds of containers remain stranded and supplies disrupted ahead of the festive season.",
       "url": "https://kathmandupost.com/money/2026/09/29/all-three-major-nepal-china-crossings-hit-by-monsoon-disruptions-ahead-of-dashain"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "After the flood, the grey list is now a national emergency",
-      "blurb": "Nepal is about to ask the world for billions, but the world is also asking whether Nepal can keep dirty money out.",
-      "url": "https://kathmandupost.com/columns/2026/09/28/after-the-flood-the-grey-list-is-now-a-national-emergency"
     }
   ]
 }

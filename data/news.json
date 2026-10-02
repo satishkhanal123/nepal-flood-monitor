@@ -1,7 +1,7 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-02T02:34:51.314116+00:00",
+  "updated_at": "2026-10-02T09:00:58.423319+00:00",
   "items": [
     {
       "tag": "warning",
@@ -58,13 +58,6 @@
       "title": "Nepal flood survivors are leaving temporary camps as government delays rehabilitation",
       "blurb": "The number of people in makeshift shelters has fallen to around 1,000 from 4,500, as poor conditions force survivors to leave while the government delays rehabilitation and financial assistance.",
       "url": "https://kathmandupost.com/national/2026/09/30/nepal-flood-survivors-are-leaving-temporary-camps-as-government-delays-rehabilitation"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Three more bodies recovered from Himlung avalanche site",
-      "blurb": "The latest recovery takes the number of bodies found so far to seven, while nine Nepalis remain missing after the September 27 avalanche.",
-      "url": "https://kathmandupost.com/national/2026/09/30/three-more-bodies-recovered-from-himlung-avalanche-site"
     }
   ]
 }

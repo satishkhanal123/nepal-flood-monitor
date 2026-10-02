@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-02T15:48:13.892048+00:00",
+  "updated_at": "2026-10-02T20:20:47.893104+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Foreign delegates arriving for Congress convention",
+      "blurb": "The inaugural event not expected to see a big number of political representatives from abroad, allegedly due to the disasters that struck Nepal recently.",
+      "url": "https://kathmandupost.com/politics/2026/10/02/foreign-delegates-arriving-for-congress-convention"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -58,13 +65,6 @@
       "title": "In disaster’s wake, Nepal government allegedly rushes climate policy for COP 31",
       "blurb": "Stakeholders have grouped to collect and forward recommendations to the government to be incorporated into the draft policy.",
       "url": "https://kathmandupost.com/national/2026/10/01/in-disaster-s-wake-nepal-government-allegedly-rushes-climate-policy-for-cop-31"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Digging through the mud for leftover memories",
-      "blurb": "More than a month after the catastrophic floods, people in Nuwakot are combing the wreckage of their homes and shops for documents, photo frames, keepsakes, and anything else they can salvage.",
-      "url": "https://kathmandupost.com/national/2026/10/01/digging-through-the-mud-for-leftover-memories"
     }
   ]
 }

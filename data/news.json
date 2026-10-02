@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-01T23:40:17.217740+00:00",
+  "updated_at": "2026-10-02T02:34:51.314116+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal must turn satellite observations into early warnings",
+      "blurb": "If scientists can detect potentially significant deformation after an event, why is there no operational system routinely monitoring for similar changes before disaster strikes?",
+      "url": "https://kathmandupost.com/columns/2026/10/02/nepal-must-turn-satellite-observations-into-early-warnings"
+    },
     {
       "tag": "access",
       "date": "",
@@ -58,13 +65,6 @@
       "title": "Three more bodies recovered from Himlung avalanche site",
       "blurb": "The latest recovery takes the number of bodies found so far to seven, while nine Nepalis remain missing after the September 27 avalanche.",
       "url": "https://kathmandupost.com/national/2026/09/30/three-more-bodies-recovered-from-himlung-avalanche-site"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Israel-bound flight diverted to Saudi Arabia after brawl between pilots, Israeli official says",
-      "blurb": "The Flydubai flight diverted to Tabuk after the pilots allegedly got into a physical altercation, triggering emergency signals and a major security response in Israel.",
-      "url": "https://kathmandupost.com/world/2026/09/30/israel-bound-flight-diverted-to-saudi-arabia-after-brawl-between-pilots-israeli-official-says"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-03T04:10:00.877631+00:00",
+  "updated_at": "2026-10-03T09:51:43.716496+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Prime Minister Balendra Shah largely absent as Parliament wraps up session",
+      "blurb": "Shah attended the House of Representatives for just six days and the National Assembly once, while lawmakers repeatedly sought his answers on issues ranging from floods and border disputes to foreign policy.",
+      "url": "https://kathmandupost.com/politics/2026/10/03/prime-minister-balendra-shah-largely-absent-as-parliament-wraps-up-session"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Six killed, 12 injured as bus crashes in Nawalparasi East",
+      "blurb": "The bus, carrying 17 passengers from Nepalgunj to Kathmandu, plunged into a roadside drain after its brakes failed early Saturday.",
+      "url": "https://kathmandupost.com/national/2026/10/03/six-killed-12-injured-as-bus-crashes-in-nawalparasi-east"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,13 +51,6 @@
       "title": "Floods disrupt livelihoods of 21,400 workers in Nepal: ILO",
       "blurb": "The UN agency says damage to homes, workplaces, roads, bridges and energy infrastructure could spread employment and income losses far beyond flood-hit areas.",
       "url": "https://kathmandupost.com/money/2026/10/01/floods-disrupt-livelihoods-of-21-400-workers-in-nepal-ilo"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Celebrating new China’s remarkable achievements, writing a new chapter in Nepal-China relations",
-      "blurb": "As China marks the 77th anniversary of its founding, its ambassador to Nepal, Zhang Maoming, reflects on the countries’ longstanding ties, growing cooperation and joint response to cross-border disasters.",
-      "url": "https://kathmandupost.com/sponsored-content/2026/10/01/celebrating-new-china-s-remarkable-achievements-writing-a-new-chapter-in-nepal-china-relations"
     }
   ]
 }

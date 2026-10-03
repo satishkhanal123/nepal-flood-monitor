@@ -1,7 +1,7 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-03T09:51:43.716496+00:00",
+  "updated_at": "2026-10-03T14:33:23.680619+00:00",
   "items": [
     {
       "tag": "sitrep",
@@ -44,13 +44,6 @@
       "title": "Nepal must turn satellite observations into early warnings",
       "blurb": "If scientists can detect potentially significant deformation after an event, why is there no operational system routinely monitoring for similar changes before disaster strikes?",
       "url": "https://kathmandupost.com/columns/2026/10/02/nepal-must-turn-satellite-observations-into-early-warnings"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Floods disrupt livelihoods of 21,400 workers in Nepal: ILO",
-      "blurb": "The UN agency says damage to homes, workplaces, roads, bridges and energy infrastructure could spread employment and income losses far beyond flood-hit areas.",
-      "url": "https://kathmandupost.com/money/2026/10/01/floods-disrupt-livelihoods-of-21-400-workers-in-nepal-ilo"
     }
   ]
 }

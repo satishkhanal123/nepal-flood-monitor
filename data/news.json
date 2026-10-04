@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-04T05:51:06.827479+00:00",
+  "updated_at": "2026-10-04T11:46:12.074619+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Haunted by grief, Gaza’s displaced still wait overseas for return",
+      "blurb": "More than 100,000 Gazans who fled the war remain overseas, waiting for security and reconstruction before returning to an enclave still largely devastated.",
+      "url": "https://kathmandupost.com/world/2026/10/04/haunted-by-grief-gaza-s-displaced-still-wait-overseas-for-return"
+    },
     {
       "tag": "people",
       "date": "",
@@ -37,20 +44,6 @@
       "title": "Foreign delegates arriving for Congress convention",
       "blurb": "The inaugural event not expected to see a big number of political representatives from abroad, allegedly due to the disasters that struck Nepal recently.",
       "url": "https://kathmandupost.com/politics/2026/10/02/foreign-delegates-arriving-for-congress-convention"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "The children left behind by Nepal’s deadliest floods",
-      "blurb": "The Post spoke to 12 children from the flood-affected areas and gathered their experiences and the nightmares that still follow them.",
-      "url": "https://kathmandupost.com/national/2026/10/02/the-children-left-behind-by-nepal-s-deadliest-floods-1790943981"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Floods drive 33 pregnant women to Kathmandu for childbirth",
-      "blurb": "Local maternity clinics and services remain disrupted in Rasuwa and Nuwakot since the August 26 floods. But many women cannot travel to Kathmandu because of damaged roads.",
-      "url": "https://kathmandupost.com/health/2026/10/02/floods-drive-33-pregnant-women-to-kathmandu-for-childbirth"
     }
   ]
 }

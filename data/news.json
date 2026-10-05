@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-05T07:25:22.487056+00:00",
+  "updated_at": "2026-10-05T16:17:05.459845+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal scales back flood search as Rs559b reconstruction effort begins",
+      "blurb": "The government has suspended search and rescue operations for Bhotekoshi-Trishuli floods except in emergencies, directing authorities to accelerate reconstruction and rehabilitation in flood-hit areas.",
+      "url": "https://kathmandupost.com/national/2026/10/05/nepal-scales-back-flood-search-as-rs559b-reconstruction-effort-begins"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,13 +44,6 @@
       "title": "Police shoot and arrest man suspected of abducting 10-year-old girl",
       "blurb": "The girl was rescued unharmed after nearly 40 hours, while the suspect was found hiding in a paddy field and shot in the leg when he resisted arrest.",
       "url": "https://kathmandupost.com/national/2026/10/04/police-shoot-and-arrest-man-suspected-of-abducting-10-year-old-girl"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nisikhola flood-displaced move to relatives’ homes with resettlement uncertain",
-      "blurb": "Over 300 residents face housing and educational crises in Baglung and Parbat following the late September flash floods and landslides along the Nisikhola and Kaligandaki rivers.",
-      "url": "https://kathmandupost.com/national/2026/10/03/nisikhola-flood-displaced-move-to-relatives-homes-with-resettlement-uncertain"
     }
   ]
 }

@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-05T01:16:56.358771+00:00",
+  "updated_at": "2026-10-05T07:25:22.487056+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Two workers killed as earth collapses during road work in Baglung",
+      "blurb": "Three workers were buried while building a road in Nisikhola, days after a landslide killed five people in the same area.",
+      "url": "https://kathmandupost.com/national/2026/10/05/two-workers-killed-as-earth-collapses-during-road-work-in-baglung"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Journalist Kunda Dixit on a young, fragile Himalayas—and the risks Nepal is ignoring",
+      "blurb": "Dixit, who has written about climate and environment for decades, says Nepal must rethink how it builds and plans for disasters in a rapidly changing mountain landscape.",
+      "url": "https://kathmandupost.com/interviews/2026/10/05/journalist-kunda-dixit-on-a-young-fragile-himalayas-and-the-risks-nepal-is-ignoring"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Prioritise economic recovery and job accessibility for flood-affected communities",
+      "blurb": "While disasters require immediate rescue and relief, enabling flood survivors to access income opportunities is equally vital.",
+      "url": "https://kathmandupost.com/editorial/2026/10/05/prioritise-economic-recovery-and-job-accessibility-for-flood-affected-communities"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -23,20 +44,6 @@
       "title": "Nisikhola flood-displaced move to relatives’ homes with resettlement uncertain",
       "blurb": "Over 300 residents face housing and educational crises in Baglung and Parbat following the late September flash floods and landslides along the Nisikhola and Kaligandaki rivers.",
       "url": "https://kathmandupost.com/national/2026/10/03/nisikhola-flood-displaced-move-to-relatives-homes-with-resettlement-uncertain"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Prime Minister Balendra Shah largely absent as Parliament wraps up session",
-      "blurb": "Shah attended the House of Representatives for just six days and the National Assembly once, while lawmakers repeatedly sought his answers on issues ranging from floods and border disputes to foreign policy.",
-      "url": "https://kathmandupost.com/politics/2026/10/03/prime-minister-balendra-shah-largely-absent-as-parliament-wraps-up-session"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Six killed, 12 injured as bus crashes in Nawalparasi East",
-      "blurb": "The bus, carrying 17 passengers from Nepalgunj to Kathmandu, plunged into a roadside drain after its brakes failed early Saturday.",
-      "url": "https://kathmandupost.com/national/2026/10/03/six-killed-12-injured-as-bus-crashes-in-nawalparasi-east"
     }
   ]
 }

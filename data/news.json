@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-06T02:40:41.467051+00:00",
+  "updated_at": "2026-10-06T09:25:34.892923+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "34 blackbucks die; 20 go missing in 15 months",
+      "blurb": "The population in the Khairapur conservation area has fallen to 210, with leopard attacks accounting for the most deaths.",
+      "url": "https://kathmandupost.com/national/2026/10/06/34-blackbucks-die-20-go-missing-in-15-months"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal’s disaster panel is debating what to call the Bhotekoshi floods. ‘Himalayan tsunami’ isn’t on the list",
+      "blurb": "Prime Minister Balendra Shah used the term at the UN, but experts on the government panel say they are considering other names for the August 26 disaster.",
+      "url": "https://kathmandupost.com/national/2026/10/06/nepal-s-disaster-panel-is-debating-what-to-call-the-bhotekoshi-floods-himalayan-tsunami-isn-t-on-the-list"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "India renews export approvals for four Nepali hydropower projects",
+      "blurb": "The approvals had expired during the peak export season.",
+      "url": "https://kathmandupost.com/money/2026/10/06/india-renews-export-approvals-for-four-nepali-hydropower-projects"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -23,13 +44,6 @@
       "title": "Journalist Kunda Dixit on a young, fragile Himalayas—and the risks Nepal is ignoring",
       "blurb": "Dixit, who has written about climate and environment for decades, says Nepal must rethink how it builds and plans for disasters in a rapidly changing mountain landscape.",
       "url": "https://kathmandupost.com/interviews/2026/10/05/journalist-kunda-dixit-on-a-young-fragile-himalayas-and-the-risks-nepal-is-ignoring"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Prioritise economic recovery and job accessibility for flood-affected communities",
-      "blurb": "While disasters require immediate rescue and relief, enabling flood survivors to access income opportunities is equally vital.",
-      "url": "https://kathmandupost.com/editorial/2026/10/05/prioritise-economic-recovery-and-job-accessibility-for-flood-affected-communities"
     }
   ]
 }

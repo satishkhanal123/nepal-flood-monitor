@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-06T09:25:34.892923+00:00",
+  "updated_at": "2026-10-06T16:07:12.975281+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal’s growth to slow to 3.7 percent after devastating Rasuwa flood",
+      "blurb": "The World Bank estimates $1.66 billion in direct damage to physical assets, with infrastructure accounting for 83 percent of the losses.",
+      "url": "https://kathmandupost.com/money/2026/10/06/nepal-s-growth-to-slow-to-3-7-percent-after-devastating-rasuwa-flood"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -30,20 +37,6 @@
       "title": "Nepal scales back flood search as Rs559b reconstruction effort begins",
       "blurb": "The government has suspended search and rescue operations for Bhotekoshi-Trishuli floods except in emergencies, directing authorities to accelerate reconstruction and rehabilitation in flood-hit areas.",
       "url": "https://kathmandupost.com/national/2026/10/05/nepal-scales-back-flood-search-as-rs559b-reconstruction-effort-begins"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Two workers killed as earth collapses during road work in Baglung",
-      "blurb": "Three workers were buried while building a road in Nisikhola, days after a landslide killed five people in the same area.",
-      "url": "https://kathmandupost.com/national/2026/10/05/two-workers-killed-as-earth-collapses-during-road-work-in-baglung"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Journalist Kunda Dixit on a young, fragile Himalayas—and the risks Nepal is ignoring",
-      "blurb": "Dixit, who has written about climate and environment for decades, says Nepal must rethink how it builds and plans for disasters in a rapidly changing mountain landscape.",
-      "url": "https://kathmandupost.com/interviews/2026/10/05/journalist-kunda-dixit-on-a-young-fragile-himalayas-and-the-risks-nepal-is-ignoring"
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-07T00:31:24.177768+00:00",
+  "updated_at": "2026-10-07T06:29:30.387870+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood-hit districts remain cut off from national road network",
+      "blurb": "Repairs are underway in Manang, Mustang, Baglung and Rasuwa, but damaged bridges and approach roads continue to disrupt direct road links.",
+      "url": "https://kathmandupost.com/national/2026/10/07/flood-hit-districts-remain-cut-off-from-national-road-network"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -30,13 +37,6 @@
       "title": "India renews export approvals for four Nepali hydropower projects",
       "blurb": "The approvals had expired during the peak export season.",
       "url": "https://kathmandupost.com/money/2026/10/06/india-renews-export-approvals-for-four-nepali-hydropower-projects"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal scales back flood search as Rs559b reconstruction effort begins",
-      "blurb": "The government has suspended search and rescue operations for Bhotekoshi-Trishuli floods except in emergencies, directing authorities to accelerate reconstruction and rehabilitation in flood-hit areas.",
-      "url": "https://kathmandupost.com/national/2026/10/05/nepal-scales-back-flood-search-as-rs559b-reconstruction-effort-begins"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-07T06:29:30.387870+00:00",
+  "updated_at": "2026-10-07T13:47:37.269487+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Rain damage hits Mustang as tourism and harvest season begins",
+      "blurb": "Landslides and river erosion have disrupted the main road, while power and internet outages are hitting tourism, apple farmers and local trade.",
+      "url": "https://kathmandupost.com/national/2026/10/07/rain-damage-hits-mustang-as-tourism-and-harvest-season-begins"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood cuts off market access for Rasuwa farmers as vegetables pile up",
+      "blurb": "Farmers in Gatlang had expanded cultivation after strong returns last year, but damaged roads and bridges now threaten to leave this year’s harvest rotting in the fields.",
+      "url": "https://kathmandupost.com/national/2026/10/07/flood-cuts-off-market-access-for-rasuwa-farmers-as-vegetables-pile-up"
+    },
     {
       "tag": "access",
       "date": "",
@@ -30,13 +44,6 @@
       "title": "Nepal’s disaster panel is debating what to call the Bhotekoshi floods. ‘Himalayan tsunami’ isn’t on the list",
       "blurb": "Prime Minister Balendra Shah used the term at the UN, but experts on the government panel say they are considering other names for the August 26 disaster.",
       "url": "https://kathmandupost.com/national/2026/10/06/nepal-s-disaster-panel-is-debating-what-to-call-the-bhotekoshi-floods-himalayan-tsunami-isn-t-on-the-list"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "India renews export approvals for four Nepali hydropower projects",
-      "blurb": "The approvals had expired during the peak export season.",
-      "url": "https://kathmandupost.com/money/2026/10/06/india-renews-export-approvals-for-four-nepali-hydropower-projects"
     }
   ]
 }

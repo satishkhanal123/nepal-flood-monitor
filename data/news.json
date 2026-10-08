@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-07T23:51:16.378808+00:00",
+  "updated_at": "2026-10-08T04:27:37.198217+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Flood destroyed homes, but power utility still bills victims",
+      "blurb": "Some victims say the Nepal Electricity Authority refused ward office recommendations to disconnect electricity meters from destroyed homes, saying they needed a police report instead.",
+      "url": "https://kathmandupost.com/national/2026/10/08/flood-destroyed-homes-but-power-utility-still-bills-victims"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "From blankets to handmade dolls, two foreign women bring comfort to flood survivors",
+      "blurb": "A Malaysian music teacher and a Czech mother travelled to Nepal’s flood-hit communities with relief supplies--and a simple desire to help.",
+      "url": "https://kathmandupost.com/national/2026/10/08/from-blankets-to-handmade-dolls-two-foreign-women-bring-comfort-to-flood-survivors"
+    },
     {
       "tag": "access",
       "date": "",
@@ -23,20 +37,6 @@
       "title": "Flood-hit districts remain cut off from national road network",
       "blurb": "Repairs are underway in Manang, Mustang, Baglung and Rasuwa, but damaged bridges and approach roads continue to disrupt direct road links.",
       "url": "https://kathmandupost.com/national/2026/10/07/flood-hit-districts-remain-cut-off-from-national-road-network"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepal’s growth to slow to 3.7 percent after devastating Rasuwa flood",
-      "blurb": "The World Bank estimates $1.66 billion in direct damage to physical assets, with infrastructure accounting for 83 percent of the losses.",
-      "url": "https://kathmandupost.com/money/2026/10/06/nepal-s-growth-to-slow-to-3-7-percent-after-devastating-rasuwa-flood"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "34 blackbucks die; 20 go missing in 15 months",
-      "blurb": "The population in the Khairapur conservation area has fallen to 210, with leopard attacks accounting for the most deaths.",
-      "url": "https://kathmandupost.com/national/2026/10/06/34-blackbucks-die-20-go-missing-in-15-months"
     }
   ]
 }

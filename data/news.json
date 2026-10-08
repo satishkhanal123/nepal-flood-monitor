@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-08T04:27:37.198217+00:00",
+  "updated_at": "2026-10-08T11:32:59.151597+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Bagmati province seeks Rs1 billion for Bhotekoshi flood reconstruction",
+      "blurb": "Province to provide Rs25 million to 12 affected local units as preliminary assessment puts damage to roads, bridges and government buildings at Rs5.69 billion.",
+      "url": "https://kathmandupost.com/national/2026/10/08/bagmati-province-seeks-rs1-billion-for-bhotekoshi-flood-reconstruction"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Bodies of two Mugu men missing in avalanche found",
+      "blurb": "The two had been missing since September 18 after setting out with a 13-member group to collect medicinal herbs near the Mugu-Humla border.",
+      "url": "https://kathmandupost.com/national/2026/10/08/bodies-of-two-mugu-men-missing-in-avalanche-found"
+    },
     {
       "tag": "people",
       "date": "",
@@ -14,7 +28,7 @@
       "tag": "access",
       "date": "",
       "title": "From blankets to handmade dolls, two foreign women bring comfort to flood survivors",
-      "blurb": "A Malaysian music teacher and a Czech mother travelled to Nepal’s flood-hit communities with relief supplies--and a simple desire to help.",
+      "blurb": "A Malaysian music teacher and a Czech mother travelled to Nepal’s flood-hit communities with relief supplies—and a simple desire to help.",
       "url": "https://kathmandupost.com/national/2026/10/08/from-blankets-to-handmade-dolls-two-foreign-women-bring-comfort-to-flood-survivors"
     },
     {

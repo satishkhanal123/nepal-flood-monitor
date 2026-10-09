@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-09T03:00:47.307461+00:00",
+  "updated_at": "2026-10-09T10:31:53.468972+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Storms and heavy rain destroy crops just before harvest",
+      "blurb": "Farmers in Kailali, Bardiya, Salyan and Dang have suffered losses to paddy, fruit and vegetables, raising fears of lower yields and increasing demands for government relief.",
+      "url": "https://kathmandupost.com/national/2026/10/09/storms-and-heavy-rain-destroy-crops-just-before-harvest"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "At least five killed in Pokhara school bus crash",
+      "blurb": "Four students and a parent who hitched a ride on the bus died after it plunged 150 to 200 metres down a slope. Rescue teams are searching for survivors.",
+      "url": "https://kathmandupost.com/national/2026/10/09/three-killed-as-school-bus-plunges-off-slope-in-pokhara"
+    },
     {
       "tag": "access",
       "date": "",
@@ -16,27 +30,6 @@
       "title": "Bodies of two Mugu men missing in avalanche found",
       "blurb": "The two had been missing since September 18 after setting out with a 13-member group to collect medicinal herbs near the Mugu-Humla border.",
       "url": "https://kathmandupost.com/national/2026/10/08/bodies-of-two-mugu-men-missing-in-avalanche-found"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Flood destroyed homes, but power utility still bills victims",
-      "blurb": "Some victims say the Nepal Electricity Authority refused ward office recommendations to disconnect electricity meters from destroyed homes, saying they needed a police report instead.",
-      "url": "https://kathmandupost.com/national/2026/10/08/flood-destroyed-homes-but-power-utility-still-bills-victims"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "From blankets to handmade dolls, two foreign women bring comfort to flood survivors",
-      "blurb": "A Malaysian music teacher and a Czech mother travelled to Nepal’s flood-hit communities with relief supplies—and a simple desire to help.",
-      "url": "https://kathmandupost.com/national/2026/10/08/from-blankets-to-handmade-dolls-two-foreign-women-bring-comfort-to-flood-survivors"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Rain damage hits Mustang as tourism and harvest season begins",
-      "blurb": "Landslides and river erosion have disrupted the main road, while power and internet outages are hitting tourism, apple farmers and local trade.",
-      "url": "https://kathmandupost.com/national/2026/10/07/rain-damage-hits-mustang-as-tourism-and-harvest-season-begins"
     }
   ]
 }

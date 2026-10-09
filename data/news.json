@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-09T10:31:53.468972+00:00",
+  "updated_at": "2026-10-09T17:11:07.258215+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Bhotekoshi floods leave 269 children without one or both parents",
+      "blurb": "A study of 584 children living in holding centres in Kathmandu, Nuwakot and Rasuwa finds that 41 had lost both parents, 161 their fathers and 67 their mothers.",
+      "url": "https://kathmandupost.com/national/2026/10/09/bhotekoshi-floods-leave-269-children-without-one-or-both-parents"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Storms and heavy rain devastate crops across western Nepal",
+      "blurb": "Farmers in Kailali, Bardiya, Salyan and Dang have suffered losses to paddy, fruits, and vegetables, raising fears of lower yields and increasing demands for government relief.",
+      "url": "https://kathmandupost.com/money/2026/10/09/storms-and-heavy-rain-devastate-crops-across-western-nepal"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Thousands of flood-displaced children remain out of reach of measles vaccination",
+      "blurb": "Health officials have indefinitely stalled vaccination in three flood-hit districts, warning that displaced children face a heightened risk of infectious disease outbreaks.",
+      "url": "https://kathmandupost.com/health/2026/10/09/thousands-of-flood-displaced-children-remain-out-of-reach-of-measles-vaccination"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Inside the deadlock at the world’s top climate science body",
+      "blurb": "The UN Environment Programme has said repeatedly that global efforts to limit warming are falling short and that faster emissions cuts are needed to avoid more extreme weather and climate-related disasters.",
+      "url": "https://kathmandupost.com/world/2026/10/09/inside-the-deadlock-at-the-world-s-top-climate-science-body"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Road subsidence halts traffic on Prithvi Highway near Gajuri",
+      "blurb": "A nearly 100-metre stretch of road has developed cracks, while a 20-metre section has subsided, raising fears of further damage and landslides.",
+      "url": "https://kathmandupost.com/province-no-3/2026/10/09/road-subsidence-halts-traffic-on-prithvi-highway-near-gajuri"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -16,20 +51,6 @@
       "title": "At least five killed in Pokhara school bus crash",
       "blurb": "Four students and a parent who hitched a ride on the bus died after it plunged 150 to 200 metres down a slope. Rescue teams are searching for survivors.",
       "url": "https://kathmandupost.com/national/2026/10/09/three-killed-as-school-bus-plunges-off-slope-in-pokhara"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bagmati province seeks Rs1 billion for Bhotekoshi flood reconstruction",
-      "blurb": "Province to provide Rs25 million to 12 affected local units as preliminary assessment puts damage to roads, bridges and government buildings at Rs5.69 billion.",
-      "url": "https://kathmandupost.com/national/2026/10/08/bagmati-province-seeks-rs1-billion-for-bhotekoshi-flood-reconstruction"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Bodies of two Mugu men missing in avalanche found",
-      "blurb": "The two had been missing since September 18 after setting out with a 13-member group to collect medicinal herbs near the Mugu-Humla border.",
-      "url": "https://kathmandupost.com/national/2026/10/08/bodies-of-two-mugu-men-missing-in-avalanche-found"
     }
   ]
 }

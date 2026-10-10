@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-10T13:56:46.322145+00:00",
+  "updated_at": "2026-10-10T18:15:42.903619+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Damaged highways disrupt Dashain travel, airlines prepare late-night flights",
+      "blurb": "With over a million people expected to leave Kathmandu Valley by road, the collapse of a section of the Prithvi Highway has stranded travellers and forced authorities to expand transport arrangements.",
+      "url": "https://kathmandupost.com/national/2026/10/10/damaged-highways-disrupt-dashain-travel-airlines-prepare-late-night-flights"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Selective buying offers little lift to Nepse as turnover declines",
+      "blurb": "Banking shares gained, and hydropower stocks dominated trading, but weak turnover and losses across most sectors point to limited investor confidence.",
+      "url": "https://kathmandupost.com/money/2026/10/10/selective-buying-fails-to-lift-nepse-as-turnover-falls"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -37,13 +51,6 @@
       "title": "Road subsidence halts traffic on Prithvi Highway near Gajuri",
       "blurb": "A nearly 100-metre stretch of road has developed cracks, while a 20-metre section has subsided, raising fears of further damage and landslides.",
       "url": "https://kathmandupost.com/province-no-3/2026/10/09/road-subsidence-halts-traffic-on-prithvi-highway-near-gajuri"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Storms and heavy rain destroy crops just before harvest",
-      "blurb": "Farmers in Kailali, Bardiya, Salyan and Dang have suffered losses to paddy, fruit and vegetables, raising fears of lower yields and increasing demands for government relief.",
-      "url": "https://kathmandupost.com/national/2026/10/09/storms-and-heavy-rain-destroy-crops-just-before-harvest"
     }
   ]
 }

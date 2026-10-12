@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-12T01:31:40.224768+00:00",
+  "updated_at": "2026-10-12T07:59:08.144434+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Prithvi Highway’s Galaudi section to close overnight for repairs to damaged section",
+      "blurb": "Traffic will be halted from 11pm Monday to 5am Tuesday at Galaudi in Dhading, where a section of the road subsided last week.",
+      "url": "https://kathmandupost.com/national/2026/10/12/prithvi-highway-s-galaudi-section-to-close-overnight-for-repairs-to-damaged-section"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood cuts off two villages along Budhigandaki in Gorkha",
+      "blurb": "The river has washed away foot trail connecting Jagat and Salleri, leaving residents, workers and more than 100 trekkers stranded.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/10/12/flood-cuts-off-two-villages-along-budhigandaki-in-gorkha"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Mud and debris mark the trail of a flash flood in Budhigandaki",
+      "blurb": "Photographs taken on Monday morning show the extent of the flood’s destruction.",
+      "url": "https://kathmandupost.com/visual-stories/2026/10/12/mud-and-debris-mark-the-trail-of-a-flash-flood-in-budhigandaki"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Army helicopter rescues three trapped by landslide in Gorkha",
+      "blurb": "The three were stranded near Ungilung river after a landslide hit the area on Sunday morning and were flown to Philim.",
+      "url": "https://kathmandupost.com/province-no-3/2026/10/12/army-helicopter-rescues-three-trapped-by-landslide-in-gorkha"
+    },
     {
       "tag": "access",
       "date": "",
@@ -100,13 +128,6 @@
       "title": "Smuggling networks exploit Nepal’s open border to flood markets with untaxed goods",
       "blurb": "From sugar and fertiliser to clothes, mobile phones and medicines, illicit consignments continue to enter Nepal through southern border crossings, depriving the state of revenue and undercutting legitimate traders.",
       "url": "https://kathmandupost.com/national/2026/10/11/smuggling-networks-exploit-nepal-s-open-border-to-flood-markets-with-untaxed-goods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Damaged highways disrupt Dashain travel, airlines prepare late-night flights",
-      "blurb": "With over a million people expected to leave Kathmandu Valley by road, the collapse of a section of the Prithvi Highway has stranded travellers and forced authorities to expand transport arrangements.",
-      "url": "https://kathmandupost.com/national/2026/10/10/damaged-highways-disrupt-dashain-travel-airlines-prepare-late-night-flights"
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-12T07:59:08.144434+00:00",
+  "updated_at": "2026-10-12T17:43:20.266818+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Budhigandaki flood: What the report says about the gap between local warnings and official records",
+      "blurb": "A driver received a flood warning at 4:45am on Sunday and posted an alert on Facebook minutes later, while the disaster authority’s report says a landslide blocked the river at 5:30am.",
+      "url": "https://kathmandupost.com/national/2026/10/12/budhigandaki-flood-what-the-report-says-about-the-gap-between-local-warnings-and-official-records"
+    },
     {
       "tag": "access",
       "date": "",
@@ -79,55 +86,6 @@
       "title": "Five things to know about the Budhi Gandaki flash flood",
       "blurb": "An estimated 35 to 40 houses and several bridges have been swept away in Gorkha, while a suspected landslide may have triggered the flooding. Five people have been reported missing as rescue efforts continue.",
       "url": "https://kathmandupost.com/gandaki-province/2026/10/11/five-things-to-know-about-the-budhi-gandaki-flash-flood"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bailey bridge restores road link between Rasuwa and Nuwakot after six weeks",
-      "blurb": "A 73-metre bridge over the Phalakhu river has reopened the route between the two districts, whose road connection was severed by floods in August.",
-      "url": "https://kathmandupost.com/national/2026/10/11/bailey-bridge-restores-road-link-between-rasuwa-and-nuwakot-after-six-weeks"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Landslide may have triggered flash flooding in Budhi Gandaki, officials say",
-      "blurb": "A landslide in Chumchet may have blocked a tributary before water surged downstream. Authorities warn of high flood risks along the Trishuli river as far as Chitwan and Nawalparasi.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/11/landslide-may-have-triggered-flash-flooding-in-budhi-gandaki"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Four people unaccounted for after Budhi Gandaki floods",
-      "blurb": "The four locals were living in a shed on the banks of the Ungilung river in Chumchet, Gorkha.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/11/four-people-unaccounted-for-after-budhi-gandaki-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "What we know so far about the damage caused by Budhi Gandaki floods",
-      "blurb": "Flooding has swept away houses and bridges in Gorkha’s Chumnubri and Dharche rural municipalities, while a hydropower project’s construction site has also been damaged. The full extent of the damage remains unclear.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/11/what-we-know-so-far-about-the-damage-caused-by-budhi-gandaki-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Budhi Gandaki flood washes away three bridges in Gorkha",
-      "blurb": "Two suspension footbridges and a steel bridge have been swept away, while several houses have been destroyed or inundated, Nepal Police say.",
-      "url": "https://kathmandupost.com/national/2026/10/11/budhi-gandaki-flood-washes-away-three-bridges-in-gorkha"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Flood sweeps away houses, bridges in Gorkha",
-      "blurb": "Helicopters deployed for rescue and evacuations as rising waters force residents and tourists to flee.",
-      "url": "https://kathmandupost.com/national/2026/10/11/flood-sweeps-away-seven-houses-in-gorkha"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Smuggling networks exploit Nepal’s open border to flood markets with untaxed goods",
-      "blurb": "From sugar and fertiliser to clothes, mobile phones and medicines, illicit consignments continue to enter Nepal through southern border crossings, depriving the state of revenue and undercutting legitimate traders.",
-      "url": "https://kathmandupost.com/national/2026/10/11/smuggling-networks-exploit-nepal-s-open-border-to-flood-markets-with-untaxed-goods"
     }
   ]
 }

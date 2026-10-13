@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-12T23:46:40.761278+00:00",
+  "updated_at": "2026-10-13T05:26:05.350356+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Budhigandaki flood victims struggle to find shelter",
+      "blurb": "More than 200 homes were swept away in Gorkha, while destroyed bridges and trails have left northern settlements cut off from relief supplies.",
+      "url": "https://kathmandupost.com/national/2026/10/13/budhigandaki-flood-victims-struggle-to-find-shelter"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Their flood videos went viral. They are still haunted by what they saw",
+      "blurb": "Millions watched videos of the August 26 flood that devastated entire towns. The men behind two of the clips survived, but one lost his home and farmland, the other his mother.",
+      "url": "https://kathmandupost.com/national/2026/10/13/their-flood-videos-went-viral-they-are-still-haunted-by-what-they-saw"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Can Himalayan floods bridge the India-China divide?",
+      "blurb": "When a few hours’ notice can save lives, fragmented or missing cross-country information becomes dangerous.",
+      "url": "https://kathmandupost.com/columns/2026/10/12/can-himalayan-floods-bridge-the-india-china-divide"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -65,27 +86,6 @@
       "title": "Bhotekoshi flood wasn’t a freak event. It’s the Himalaya doing what it does",
       "blurb": "From the 51,000-year-old Tsergo Ri collapse to the 2015 Langtang landslide, rockfalls are part of the Himalayan ecosystem, and global warming is making them more dangerous.",
       "url": "https://kathmandupost.com/columns/2026/10/11/bhotekoshi-flood-wasn-t-a-freak-event-it-s-the-himalaya-doing-what-it-does"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "SMS alerts helped avert loss of life in Budhi Gandaki floods, says disaster management chief",
-      "blurb": "Dharmaraj Uprety says early warnings prompted residents to move to higher ground, while the flood swept away bridges and damaged settlements and hydropower infrastructure.",
-      "url": "https://kathmandupost.com/interviews/2026/10/11/sms-alerts-helped-avert-loss-of-life-in-budhi-gandaki-floods-says-disaster-management-chief"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "‘It reminded me of the Bhotekoshi floods’: Gorkha residents recount escape",
-      "blurb": "A flash flood in the Budhi Gandaki swept away houses and bridges early Sunday, forcing residents of Chumnubri and Dharche to flee to higher ground in the dark. Five people are missing, and six have been rescued by air.",
-      "url": "https://kathmandupost.com/national/2026/10/11/it-reminded-me-of-the-bhotekoshi-floods-gorkha-residents-recount-escape"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Five things to know about the Budhi Gandaki flash flood",
-      "blurb": "An estimated 35 to 40 houses and several bridges have been swept away in Gorkha, while a suspected landslide may have triggered the flooding. Five people have been reported missing as rescue efforts continue.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/11/five-things-to-know-about-the-budhi-gandaki-flash-flood"
     }
   ]
 }

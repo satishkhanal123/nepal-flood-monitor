@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-13T05:26:05.350356+00:00",
+  "updated_at": "2026-10-13T12:52:29.422086+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Bailey bridge planned at flood-damaged Arughat crossing",
+      "blurb": "A 22-metre section of the bridge was washed away by the Budhi Gandaki flood on Sunday, halting traffic between Gorkha and Dhading. Authorities aim to complete the temporary crossing within 10 days.",
+      "url": "https://kathmandupost.com/national/2026/10/13/bailey-bridge-planned-at-flood-damaged-arughat-crossing"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "14 internet providers fined for overcharging customers",
+      "blurb": "The Nepal Telecommunications Authority has fined the companies Rs50,000 each, ordered the withdrawal of unauthorised packages and directed compensation for customers who suffered losses.",
+      "url": "https://kathmandupost.com/national/2026/10/13/14-internet-providers-fined-for-overcharging-customers"
+    },
     {
       "tag": "access",
       "date": "",
@@ -58,34 +72,6 @@
       "title": "Army helicopter rescues three trapped by landslide in Gorkha",
       "blurb": "The three were stranded near Ungilung river after a landslide hit the area on Sunday morning and were flown to Philim.",
       "url": "https://kathmandupost.com/province-no-3/2026/10/12/army-helicopter-rescues-three-trapped-by-landslide-in-gorkha"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood damage makes journeys longer and costlier in Rasuwa",
-      "blurb": "Many settlements across the district have become inaccessible after the August 26 flood damaged roads and bridges. In Amachhodingmo, dwindling relief supplies are adding to residents’ hardship.",
-      "url": "https://kathmandupost.com/national/2026/10/12/flood-damage-makes-journeys-longer-and-costlier-in-rasuwa"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Locals alerted each other of Budhigandaki flood an hour before official warning",
-      "blurb": "Locals began alerting one another at 4:45 am, but the local police post in Gorkha released the first official warning only at 5:30am.",
-      "url": "https://kathmandupost.com/national/2026/10/12/locals-alerted-each-other-of-budhigandaki-flood-an-hour-before-official-warning"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Torrent of black mud and rocks engulfs settlements along Budhigandaki",
-      "blurb": "Homes, bridges and trekking trails swept away in Chumnubri. Settlements cut off, tourists stranded, five people missing.",
-      "url": "https://kathmandupost.com/national/2026/10/12/torrent-of-black-mud-and-rocks-engulfs-settlements-along-budhigandaki"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Bhotekoshi flood wasn’t a freak event. It’s the Himalaya doing what it does",
-      "blurb": "From the 51,000-year-old Tsergo Ri collapse to the 2015 Langtang landslide, rockfalls are part of the Himalayan ecosystem, and global warming is making them more dangerous.",
-      "url": "https://kathmandupost.com/columns/2026/10/11/bhotekoshi-flood-wasn-t-a-freak-event-it-s-the-himalaya-doing-what-it-does"
     }
   ]
 }

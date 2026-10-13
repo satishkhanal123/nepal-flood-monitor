@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-13T12:52:29.422086+00:00",
+  "updated_at": "2026-10-13T19:44:25.164586+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Flood-displaced Rasuwa students resume classes in Lalitpur",
+      "blurb": "Hakubesi Basic School from Amachhodingmo Rural Municipality is now operating from the premises of Kitini Secondary School in Godawari.",
+      "url": "https://kathmandupost.com/national/2026/10/13/flood-displaced-rasuwa-students-resume-classes-in-lalitpur"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Eleven sailors missing after drone sinks ship off Bulgaria",
+      "blurb": "Bulgaria stopped short of explicitly accusing Russia of carrying out the attacks but Prime Minister Rumen Radev said their outcome“benefits the Russian Federation”.",
+      "url": "https://kathmandupost.com/world/2026/10/13/eleven-sailors-missing-after-drone-sinks-ship-off-bulgaria"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal, India discuss border security, transnational crime and disaster response",
+      "blurb": "The two neighbours also seek closer coordination on disaster preparedness as floods and landslides threaten border communities, transport links and infrastructure.",
+      "url": "https://kathmandupost.com/national/2026/10/13/nepal-india-discuss-border-security-transnational-crime-and-disaster-response"
+    },
     {
       "tag": "access",
       "date": "",
@@ -58,20 +79,6 @@
       "title": "Flood cuts off two villages along Budhigandaki in Gorkha",
       "blurb": "The river has washed away foot trail connecting Jagat and Salleri, leaving residents, workers and more than 100 trekkers stranded.",
       "url": "https://kathmandupost.com/gandaki-province/2026/10/12/flood-cuts-off-two-villages-along-budhigandaki-in-gorkha"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Mud and debris mark the trail of a flash flood in Budhigandaki",
-      "blurb": "Photographs taken on Monday morning show the extent of the flood’s destruction.",
-      "url": "https://kathmandupost.com/visual-stories/2026/10/12/mud-and-debris-mark-the-trail-of-a-flash-flood-in-budhigandaki"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Army helicopter rescues three trapped by landslide in Gorkha",
-      "blurb": "The three were stranded near Ungilung river after a landslide hit the area on Sunday morning and were flown to Philim.",
-      "url": "https://kathmandupost.com/province-no-3/2026/10/12/army-helicopter-rescues-three-trapped-by-landslide-in-gorkha"
     }
   ]
 }

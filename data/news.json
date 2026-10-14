@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-14T13:05:27.672516+00:00",
+  "updated_at": "2026-10-14T18:00:29.877363+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Father cannot afford last rites for son missing in Bhotekoshi floods",
+      "blurb": "Forty-seven days after 25-year-old Pradip Sapkota went missing, his family has yet to recover his body and is struggling to pay for his funeral rites.",
+      "url": "https://kathmandupost.com/national/2026/10/14/father-cannot-afford-last-rites-for-son-missing-in-bhotekoshi-floods"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Makawanpur begins process to declare 58 missing people dead",
+      "blurb": "Authorities have begun verifying the status of those missing since the August 26 Bhotekoshi floods under a special government procedure, with local units required to collect applications and check claims.",
+      "url": "https://kathmandupost.com/national/2026/10/14/makawanpur-begins-process-to-declare-58-missing-people-dead"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -79,20 +93,6 @@
       "title": "14 internet providers fined for overcharging customers",
       "blurb": "The Nepal Telecommunications Authority has fined the companies Rs50,000 each, ordered the withdrawal of unauthorised packages and directed compensation for customers who suffered losses.",
       "url": "https://kathmandupost.com/national/2026/10/13/14-internet-providers-fined-for-overcharging-customers"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Budhigandaki flood victims struggle to find shelter",
-      "blurb": "More than 200 homes were swept away in Gorkha, while destroyed bridges and trails have left northern settlements cut off from relief supplies.",
-      "url": "https://kathmandupost.com/national/2026/10/13/budhigandaki-flood-victims-struggle-to-find-shelter"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Their flood videos went viral. They are still haunted by what they saw",
-      "blurb": "Millions watched videos of the August 26 flood that devastated entire towns. The men behind two of the clips survived, but one lost his home and farmland, the other his mother.",
-      "url": "https://kathmandupost.com/national/2026/10/13/their-flood-videos-went-viral-they-are-still-haunted-by-what-they-saw"
     }
   ]
 }

@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-13T23:27:03.127386+00:00",
+  "updated_at": "2026-10-14T02:04:46.825059+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Flood cuts off northern Gorkha’s lifeline, disrupts Manaslu trekking season",
+      "blurb": "Five bridges and key roads and trails have been washed away, damaging tourism businesses and leaving trekkers stranded.",
+      "url": "https://kathmandupost.com/national/2026/10/14/flood-cuts-off-northern-gorkha-s-lifeline-disrupts-manaslu-trekking-season"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "What it means to live with the disaster paradox",
+      "blurb": "Recurring disasters in Nepal destroy crops, permanently erode farmland, displace families and worsen economic inequality.",
+      "url": "https://kathmandupost.com/columns/2026/10/13/what-it-means-to-live-with-the-disaster-paradox"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Escalating catastrophes, mounting health crisis",
+      "blurb": "The government must immediately secure clean water, enforce emergency sanitation and monitor emerging infections.",
+      "url": "https://kathmandupost.com/columns/2026/10/13/escalating-catastrophes-mounting-health-crisis"
+    },
     {
       "tag": "people",
       "date": "",
@@ -58,27 +79,6 @@
       "title": "Can Himalayan floods bridge the India-China divide?",
       "blurb": "When a few hours’ notice can save lives, fragmented or missing cross-country information becomes dangerous.",
       "url": "https://kathmandupost.com/columns/2026/10/12/can-himalayan-floods-bridge-the-india-china-divide"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Budhigandaki flood: What the report says about the gap between local warnings and official records",
-      "blurb": "A driver received a flood warning at 4:45am on Sunday and posted an alert on Facebook minutes later, while the disaster authority’s report says a landslide blocked the river at 5:30am.",
-      "url": "https://kathmandupost.com/national/2026/10/12/budhigandaki-flood-what-the-report-says-about-the-gap-between-local-warnings-and-official-records"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Prithvi Highway’s Galaudi section to close overnight for repairs to damaged section",
-      "blurb": "Traffic will be halted from 11pm Monday to 5am Tuesday at Galaudi in Dhading, where a section of the road subsided last week.",
-      "url": "https://kathmandupost.com/national/2026/10/12/prithvi-highway-s-galaudi-section-to-close-overnight-for-repairs-to-damaged-section"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood cuts off two villages along Budhigandaki in Gorkha",
-      "blurb": "The river has washed away foot trail connecting Jagat and Salleri, leaving residents, workers and more than 100 trekkers stranded.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/12/flood-cuts-off-two-villages-along-budhigandaki-in-gorkha"
     }
   ]
 }

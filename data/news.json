@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-15T09:26:15.925971+00:00",
+  "updated_at": "2026-10-15T14:18:10.871273+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "How will Nepal verify those missing after the Bhotekoshi floods?",
+      "blurb": "The government has begun compiling an official list of people missing in the August 26 disaster. The process will determine who can be declared dead and whose families qualify for relief.",
+      "url": "https://kathmandupost.com/national/2026/10/15/how-will-nepal-verify-those-missing-after-the-bhotekoshi-floods"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "More than 1,200 farm animals lost in Budhigandaki floods",
+      "blurb": "The disaster also destroyed 34 livestock sheds and 12 pig pens, while veterinary teams treat rescued animals and deliver feed and medicines to affected areas.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/10/15/more-than-1-200-farm-animals-lost-in-budhigandaki-floods"
+    },
     {
       "tag": "access",
       "date": "",
@@ -65,41 +79,6 @@
       "title": "Flood cuts off northern Gorkha’s lifeline, disrupts Manaslu trekking season",
       "blurb": "Five bridges and key roads and trails have been washed away, damaging tourism businesses and leaving trekkers stranded.",
       "url": "https://kathmandupost.com/national/2026/10/14/flood-cuts-off-northern-gorkha-s-lifeline-disrupts-manaslu-trekking-season"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "What it means to live with the disaster paradox",
-      "blurb": "Recurring disasters in Nepal destroy crops, permanently erode farmland, displace families and worsen economic inequality.",
-      "url": "https://kathmandupost.com/columns/2026/10/13/what-it-means-to-live-with-the-disaster-paradox"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Escalating catastrophes, mounting health crisis",
-      "blurb": "The government must immediately secure clean water, enforce emergency sanitation and monitor emerging infections.",
-      "url": "https://kathmandupost.com/columns/2026/10/13/escalating-catastrophes-mounting-health-crisis"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Flood-displaced Rasuwa students resume classes in Lalitpur",
-      "blurb": "Hakubesi Basic School from Amachhodingmo Rural Municipality is now operating from the premises of Kitini Secondary School in Godawari.",
-      "url": "https://kathmandupost.com/national/2026/10/13/flood-displaced-rasuwa-students-resume-classes-in-lalitpur"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Eleven sailors missing after drone sinks ship off Bulgaria",
-      "blurb": "Bulgaria stopped short of explicitly accusing Russia of carrying out the attacks but Prime Minister Rumen Radev said their outcome“benefits the Russian Federation”.",
-      "url": "https://kathmandupost.com/world/2026/10/13/eleven-sailors-missing-after-drone-sinks-ship-off-bulgaria"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal, India discuss border security, transnational crime and disaster response",
-      "blurb": "The two neighbours also seek closer coordination on disaster preparedness as floods and landslides threaten border communities, transport links and infrastructure.",
-      "url": "https://kathmandupost.com/national/2026/10/13/nepal-india-discuss-border-security-transnational-crime-and-disaster-response"
     }
   ]
 }

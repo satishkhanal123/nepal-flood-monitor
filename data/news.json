@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-15T00:06:48.498220+00:00",
+  "updated_at": "2026-10-15T04:36:56.979600+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Contractor builds 268-metre suspension bridge in a month after floods cut off communities",
+      "blurb": "Shailendra Raj Pyakurel tapped the construction industry’s own fund to build a vital crossing over the Trishuli river for Rs17.5 million, nearly half the government’s estimate.",
+      "url": "https://kathmandupost.com/national/2026/10/15/contractor-builds-268-metre-suspension-bridge-in-a-month-after-floods-cut-off-communities"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Disaster, royalty and revolution: What makes Nepal newsworthy?",
+      "blurb": "Stories from Nepal have become more common internationally in recent decades, although positive ones are rare.",
+      "url": "https://kathmandupost.com/columns/2026/10/14/disaster-royalty-and-revolution-what-makes-nepal-newsworthy"
+    },
     {
       "tag": "people",
       "date": "",
@@ -79,20 +93,6 @@
       "title": "Nepal, India discuss border security, transnational crime and disaster response",
       "blurb": "The two neighbours also seek closer coordination on disaster preparedness as floods and landslides threaten border communities, transport links and infrastructure.",
       "url": "https://kathmandupost.com/national/2026/10/13/nepal-india-discuss-border-security-transnational-crime-and-disaster-response"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Bailey bridge planned at flood-damaged Arughat crossing",
-      "blurb": "A 22-metre section of the bridge was washed away by the Budhi Gandaki flood on Sunday, halting traffic between Gorkha and Dhading. Authorities aim to complete the temporary crossing within 10 days.",
-      "url": "https://kathmandupost.com/national/2026/10/13/bailey-bridge-planned-at-flood-damaged-arughat-crossing"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "14 internet providers fined for overcharging customers",
-      "blurb": "The Nepal Telecommunications Authority has fined the companies Rs50,000 each, ordered the withdrawal of unauthorised packages and directed compensation for customers who suffered losses.",
-      "url": "https://kathmandupost.com/national/2026/10/13/14-internet-providers-fined-for-overcharging-customers"
     }
   ]
 }

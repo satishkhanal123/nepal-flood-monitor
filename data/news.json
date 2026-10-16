@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-16T03:05:11.678468+00:00",
+  "updated_at": "2026-10-16T08:09:07.321644+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Dashain shopping picks up, but livestock sales lag in Chitwan",
+      "blurb": "Traders who brought goats and Himalayan goats from western Nepal had hoped for brisk business, but buyers have been slower to arrive than expected.",
+      "url": "https://kathmandupost.com/money/2026/10/16/dashain-shopping-picks-up-but-livestock-sales-lag-in-chitwan"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -72,13 +79,6 @@
       "title": "Relief helicopter gives Rasuwa farmers a route to market",
       "blurb": "The WFP has flown around eight tonnes of vegetables from flood-isolated Aamachhodingmo to Bidur, helping growers salvage part of their harvest.",
       "url": "https://kathmandupost.com/money/2026/10/14/relief-helicopter-gives-rasuwa-farmers-a-route-to-market"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Salyan villages have little heart for Dashain celebrations",
-      "blurb": "Dozens remain missing after the Bhotekoshi floods in Rasuwa, leaving families and neighbours across the district with little to celebrate this year.",
-      "url": "https://kathmandupost.com/national/2026/10/14/salyan-villages-have-little-heart-for-dashain-celebrations"
     }
   ]
 }

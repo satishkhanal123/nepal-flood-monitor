@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-16T08:09:07.321644+00:00",
+  "updated_at": "2026-10-16T13:14:42.718900+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "30MW Khani Khola hydropower project begins test generation",
+      "blurb": "The project in Dolakha district is supplying electricity to the national grid during a 15-day testing period before commercial operations begin.",
+      "url": "https://kathmandupost.com/money/2026/10/16/30mw-khani-khola-hydropower-project-begins-test-generation"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Government declares flood- and landslide-hit areas in three districts disaster zones",
+      "blurb": "The three-month designation covers six local units or parts of them in Gorkha, Dhading and Baglung, with affected families eligible for monthly housing and livelihood assistance of at least Rs15,000.",
+      "url": "https://kathmandupost.com/national/2026/10/16/nepal-declares-flood-and-landslide-hit-areas-in-three-districts-disaster-zones"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -51,34 +65,6 @@
       "title": "Disaster, royalty and revolution: What makes Nepal newsworthy?",
       "blurb": "Stories from Nepal have become more common internationally in recent decades, although positive ones are rare.",
       "url": "https://kathmandupost.com/columns/2026/10/14/disaster-royalty-and-revolution-what-makes-nepal-newsworthy"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Father cannot afford last rites for son missing in Bhotekoshi floods",
-      "blurb": "Forty-seven days after 25-year-old Pradip Sapkota went missing, his family has yet to recover his body and is struggling to pay for his funeral rites.",
-      "url": "https://kathmandupost.com/national/2026/10/14/father-cannot-afford-last-rites-for-son-missing-in-bhotekoshi-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Makawanpur begins process to declare 58 missing people dead",
-      "blurb": "Authorities have begun verifying the status of those missing since the August 26 Bhotekoshi floods under a special government procedure, with local units required to collect applications and check claims.",
-      "url": "https://kathmandupost.com/national/2026/10/14/makawanpur-begins-process-to-declare-58-missing-people-dead"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "India boat capsizes, drowning 13, mostly children",
-      "blurb": "Police are ​investigating the ​cause of the incident, regional police ​officer Subodh Kumar ​told Reuters on Wednesday, giving the tally of those ​rescued.",
-      "url": "https://kathmandupost.com/world/2026/10/14/india-boat-capsizes-drowning-13-mostly-children"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Relief helicopter gives Rasuwa farmers a route to market",
-      "blurb": "The WFP has flown around eight tonnes of vegetables from flood-isolated Aamachhodingmo to Bidur, helping growers salvage part of their harvest.",
-      "url": "https://kathmandupost.com/money/2026/10/14/relief-helicopter-gives-rasuwa-farmers-a-route-to-market"
     }
   ]
 }

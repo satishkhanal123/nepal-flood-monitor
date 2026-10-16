@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-15T23:52:43.286853+00:00",
+  "updated_at": "2026-10-16T03:05:11.678468+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Build infrastructure that stands the test of time",
+      "blurb": "From now on, disaster resilience must guide every stage of Nepal’s reconstruction.",
+      "url": "https://kathmandupost.com/editorial/2026/10/15/build-infrastructure-that-stands-the-test-of-time"
+    },
     {
       "tag": "people",
       "date": "",
@@ -72,13 +79,6 @@
       "title": "Salyan villages have little heart for Dashain celebrations",
       "blurb": "Dozens remain missing after the Bhotekoshi floods in Rasuwa, leaving families and neighbours across the district with little to celebrate this year.",
       "url": "https://kathmandupost.com/national/2026/10/14/salyan-villages-have-little-heart-for-dashain-celebrations"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Flood cuts off northern Gorkha’s lifeline, disrupts Manaslu trekking season",
-      "blurb": "Five bridges and key roads and trails have been washed away, damaging tourism businesses and leaving trekkers stranded.",
-      "url": "https://kathmandupost.com/national/2026/10/14/flood-cuts-off-northern-gorkha-s-lifeline-disrupts-manaslu-trekking-season"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-17T05:35:35.819511+00:00",
+  "updated_at": "2026-10-17T09:41:02.130113+00:00",
   "items": [
     {
       "tag": "people",
@@ -58,13 +58,6 @@
       "title": "Build infrastructure that stands the test of time",
       "blurb": "From now on, disaster resilience must guide every stage of Nepal’s reconstruction.",
       "url": "https://kathmandupost.com/editorial/2026/10/15/build-infrastructure-that-stands-the-test-of-time"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "How will Nepal verify those missing after the Bhotekoshi floods?",
-      "blurb": "The government has begun compiling an official list of people missing in the August 26 disaster. The process will determine who can be declared dead and whose families qualify for relief.",
-      "url": "https://kathmandupost.com/national/2026/10/15/how-will-nepal-verify-those-missing-after-the-bhotekoshi-floods"
     }
   ]
 }

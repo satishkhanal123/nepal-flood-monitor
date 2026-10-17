@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-17T01:02:06.997158+00:00",
+  "updated_at": "2026-10-17T05:35:35.819511+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Nepal’s leaders call for unity as Shah highlights Dashain’s financial strain",
+      "blurb": "Prime Minister Balendra Shah said financial hardship should not make the festival a burden, while the president and vice-president stressed social harmony and support for families affected by disasters.",
+      "url": "https://kathmandupost.com/national/2026/10/17/nepal-s-leaders-call-for-unity-as-shah-highlights-dashain-s-financial-strain"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Bhotekoshi flood displaced 777 students. Nepal plans five-year school recovery",
+      "blurb": "Of the 57 educational institutions assessed in Rasuwa, Nuwakot, and Dhading districts, 28 were damaged and 15 were completely destroyed.",
+      "url": "https://kathmandupost.com/national/2026/10/17/bhotekoshi-flood-displaced-777-students-nepal-plans-five-year-school-recovery"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Beijing’s security concerns cloud Nepal’s push to reopen Tatopani",
+      "blurb": "Flood damage to Rasuwagadhi and the high cost of Korala leave the Sindhupalchok crossing vital to Nepal’s trade with China, but Beijing remains reluctant to reopen it over concerns about Tibet.",
+      "url": "https://kathmandupost.com/national/2026/10/17/beijing-s-security-concerns-cloud-nepal-s-push-to-reopen-tatopani"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Over 1,500 flood-hit children suffer acute malnutrition",
+      "blurb": "Thirteen children have severe acute malnutrition, while experts warn that delayed intervention could push more children into life-threatening conditions.",
+      "url": "https://kathmandupost.com/health/2026/10/17/over-1-500-flood-hit-children-suffer-acute-malnutrition-1792201083"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,27 +65,6 @@
       "title": "How will Nepal verify those missing after the Bhotekoshi floods?",
       "blurb": "The government has begun compiling an official list of people missing in the August 26 disaster. The process will determine who can be declared dead and whose families qualify for relief.",
       "url": "https://kathmandupost.com/national/2026/10/15/how-will-nepal-verify-those-missing-after-the-bhotekoshi-floods"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "More than 1,200 farm animals lost in Budhigandaki floods",
-      "blurb": "The disaster also destroyed 34 livestock sheds and 12 pig pens, while veterinary teams treat rescued animals and deliver feed and medicines to affected areas.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/15/more-than-1-200-farm-animals-lost-in-budhigandaki-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Late-September rains cause Rs65.1 million damage to Kaligandaki Corridor",
-      "blurb": "Landslides and road subsidence have disrupted traffic, while building nine unfinished bridges along the corridor is estimated to cost Rs720 million.",
-      "url": "https://kathmandupost.com/national/2026/10/15/late-september-rains-cause-rs65-1-million-damage-to-kaligandaki-corridor"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Contractor builds 268-metre suspension bridge in a month after floods cut off communities",
-      "blurb": "Shailendra Raj Pyakurel tapped the construction industry’s own fund to build a vital crossing over the Trishuli river for Rs17.5 million, nearly half the government’s estimate.",
-      "url": "https://kathmandupost.com/national/2026/10/15/contractor-builds-268-metre-suspension-bridge-in-a-month-after-floods-cut-off-communities"
     }
   ]
 }

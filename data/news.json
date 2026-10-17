@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-17T13:13:31.736114+00:00",
+  "updated_at": "2026-10-17T16:27:37.911197+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Journalist Shrestha released after artist Panta agrees to approach Press Council",
+      "blurb": "Police had taken Shrestha from his residence to Cyber Bureau following a complaint over a report concerning the alleged takeover of 10-ropani land in Dhading.",
+      "url": "https://kathmandupost.com/national/2026/10/17/journalist-shrestha-released-after-artist-panta-agrees-to-approach-press-council"
+    },
     {
       "tag": "people",
       "date": "",
@@ -51,13 +58,6 @@
       "title": "Dashain shopping picks up, but livestock sales lag in Chitwan",
       "blurb": "Traders who brought goats and Himalayan goats from western Nepal had hoped for brisk business, but buyers have been slower to arrive than expected.",
       "url": "https://kathmandupost.com/money/2026/10/16/dashain-shopping-picks-up-but-livestock-sales-lag-in-chitwan"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Build infrastructure that stands the test of time",
-      "blurb": "From now on, disaster resilience must guide every stage of Nepal’s reconstruction.",
-      "url": "https://kathmandupost.com/editorial/2026/10/15/build-infrastructure-that-stands-the-test-of-time"
     }
   ]
 }

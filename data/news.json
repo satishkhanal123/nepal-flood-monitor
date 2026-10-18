@@ -1,14 +1,42 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-18T01:01:23.613568+00:00",
+  "updated_at": "2026-10-18T05:53:04.447682+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "For Saptari’s fire-hit families, there is little to celebrate this Dashain",
+      "blurb": "With their homes and belongings reduced to ashes, families in Badgama and Mainakaderi are relying on emergency aid while facing the daunting cost of rebuilding.",
+      "url": "https://kathmandupost.com/national/2026/10/18/for-saptari-s-fire-hit-families-there-is-little-to-celebrate-this-dashain"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Can Nepal’s hydropower boom withstand a changing Himalaya?",
+      "blurb": "As floods and landslides expose the vulnerabilities of hydropower projects, Nepal’s push to generate 30,000 MW by 2035 raises urgent questions about safety, sustainability and who benefits from the country’s rivers.",
+      "url": "https://kathmandupost.com/national/2026/10/18/can-nepal-s-hydropower-boom-withstand-a-changing-himalaya"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Three women killed, three missing as jeep plunges into Sunkoshi",
+      "blurb": "The Tata Sumo jeep fell about 200 metres from the Mid-Hill Highway into the river in Sindhuli at 2:30am on Sunday. Four passengers, including the driver, were rescued.",
+      "url": "https://kathmandupost.com/national/2026/10/18/three-dead-three-missing-as-jeep-plunges-into-sunkoshi-river"
+    },
     {
       "tag": "ops",
       "date": "",
       "title": "Journalist Shrestha released after artist Panta agrees to approach Press Council",
       "blurb": "Police had taken Shrestha from his residence to Cyber Bureau following a complaint over a report concerning the alleged takeover of 10-ropani land in Dhading.",
       "url": "https://kathmandupost.com/national/2026/10/17/journalist-shrestha-released-after-artist-panta-agrees-to-approach-press-council"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepal’s maternal healthcare system has a blind spot",
+      "blurb": "Nepal’s shift to fewer, stronger maternal facilities is sound. The floods show those facilities also have to hold up in a disaster.",
+      "url": "https://kathmandupost.com/columns/2026/10/17/the-two-hour-map"
     },
     {
       "tag": "people",
@@ -37,27 +65,6 @@
       "title": "Over 1,500 flood-hit children suffer acute malnutrition",
       "blurb": "Thirteen children have severe acute malnutrition, while experts warn that delayed intervention could push more children into life-threatening conditions.",
       "url": "https://kathmandupost.com/health/2026/10/17/over-1-500-flood-hit-children-suffer-acute-malnutrition-1792201083"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "30MW Khani Khola hydropower project begins test generation",
-      "blurb": "The project in Dolakha district is supplying electricity to the national grid during a 15-day testing period before commercial operations begin.",
-      "url": "https://kathmandupost.com/money/2026/10/16/30mw-khani-khola-hydropower-project-begins-test-generation"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Government declares flood- and landslide-hit areas in three districts disaster zones",
-      "blurb": "The three-month designation covers six local units or parts of them in Gorkha, Dhading and Baglung, with affected families eligible for monthly housing and livelihood assistance of at least Rs15,000.",
-      "url": "https://kathmandupost.com/national/2026/10/16/nepal-declares-flood-and-landslide-hit-areas-in-three-districts-disaster-zones"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Dashain shopping picks up, but livestock sales lag in Chitwan",
-      "blurb": "Traders who brought goats and Himalayan goats from western Nepal had hoped for brisk business, but buyers have been slower to arrive than expected.",
-      "url": "https://kathmandupost.com/money/2026/10/16/dashain-shopping-picks-up-but-livestock-sales-lag-in-chitwan"
     }
   ]
 }

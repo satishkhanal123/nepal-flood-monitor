@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-18T23:54:00.371773+00:00",
+  "updated_at": "2026-10-19T03:12:52.867259+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "How Nepal played a big role in South Africa’s liberation",
+      "blurb": "Anil Sooklal, South Africa’s top envoy to Nepal, on apartheid-era solidarity, climate justice after the Rasuwa flood, and why Kathmandu and Cape Town should be twinned.",
+      "url": "https://kathmandupost.com/interviews/2026/10/19/how-nepal-played-a-big-role-in-south-africa-s-liberation"
+    },
     {
       "tag": "people",
       "date": "",
@@ -51,13 +58,6 @@
       "title": "Nepal’s leaders call for unity as Shah highlights Dashain’s financial strain",
       "blurb": "Prime Minister Balendra Shah said financial hardship should not make the festival a burden, while the president and vice-president stressed social harmony and support for families affected by disasters.",
       "url": "https://kathmandupost.com/national/2026/10/17/nepal-s-leaders-call-for-unity-as-shah-highlights-dashain-s-financial-strain"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Bhotekoshi flood displaced 777 students. Nepal plans five-year school recovery",
-      "blurb": "Of the 57 educational institutions assessed in Rasuwa, Nuwakot, and Dhading districts, 28 were damaged and 15 were completely destroyed.",
-      "url": "https://kathmandupost.com/national/2026/10/17/bhotekoshi-flood-displaced-777-students-nepal-plans-five-year-school-recovery"
     }
   ]
 }

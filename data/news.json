@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-20T00:19:17.302944+00:00",
+  "updated_at": "2026-10-20T05:06:03.612112+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Baglung flood survivors face Dashain without homes as rebuilding stalls",
+      "blurb": "Families in Baglung are living in a cooperative building, relatives’ homes and a buffalo shed after floods swept away their houses and farmland. Many struggle to secure land and meet government requirements for…",
+      "url": "https://kathmandupost.com/national/2026/10/20/baglung-flood-survivors-face-dashain-without-homes-as-rebuilding-stalls"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Tourist arrivals in Mustang plunge 41.5 percent",
+      "blurb": "Floods, heavy rain and prolonged closure of the Beni-Jomsom road disrupt access to the Himalayan district during the autumn tourism season.",
+      "url": "https://kathmandupost.com/national/2026/10/19/tourist-arrivals-in-mustang-plunge-41-5-percent"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -44,13 +58,6 @@
       "title": "Three women killed, three missing as jeep plunges into Sunkoshi",
       "blurb": "The Tata Sumo jeep fell about 200 metres from the Mid-Hill Highway into the river in Sindhuli at 2:30am on Sunday. Four passengers, including the driver, were rescued.",
       "url": "https://kathmandupost.com/national/2026/10/18/three-dead-three-missing-as-jeep-plunges-into-sunkoshi-river"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Journalist Shrestha released after artist Panta agrees to approach Press Council",
-      "blurb": "Police had taken Shrestha from his residence to Cyber Bureau following a complaint over a report concerning the alleged takeover of 10-ropani land in Dhading.",
-      "url": "https://kathmandupost.com/national/2026/10/17/journalist-shrestha-released-after-artist-panta-agrees-to-approach-press-council"
     }
   ]
 }

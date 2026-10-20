@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-20T05:06:03.612112+00:00",
+  "updated_at": "2026-10-20T10:03:13.562675+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "In Gorkha’s flood-hit villages, even cooking a meal is a struggle",
+      "blurb": "The Budhigandaki flood destroyed homes and disrupted road links, leaving families dependent on limited helicopter deliveries for food and other essentials.",
+      "url": "https://kathmandupost.com/national/2026/10/20/in-gorkha-s-flood-hit-villages-even-cooking-a-meal-is-a-struggle"
+    },
     {
       "tag": "people",
       "date": "",
@@ -51,13 +58,6 @@
       "title": "Can Nepal’s hydropower boom withstand a changing Himalaya?",
       "blurb": "As floods and landslides expose the vulnerabilities of hydropower projects, Nepal’s push to generate 30,000 MW by 2035 raises urgent questions about safety, sustainability and who benefits from the country’s rivers.",
       "url": "https://kathmandupost.com/national/2026/10/18/can-nepal-s-hydropower-boom-withstand-a-changing-himalaya"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Three women killed, three missing as jeep plunges into Sunkoshi",
-      "blurb": "The Tata Sumo jeep fell about 200 metres from the Mid-Hill Highway into the river in Sindhuli at 2:30am on Sunday. Four passengers, including the driver, were rescued.",
-      "url": "https://kathmandupost.com/national/2026/10/18/three-dead-three-missing-as-jeep-plunges-into-sunkoshi-river"
     }
   ]
 }

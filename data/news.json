@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-22T01:11:51.071458+00:00",
+  "updated_at": "2026-10-22T06:07:34.420864+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "After Nepal’s recent disaster, it wants to test whether COP31 can deliver climate justice",
+      "blurb": "Nepal has made an emergency appeal to the UN’s loss-and-damage fund, which has yet to disburse any money. Meanwhile, families wait for relief, and the country takes on more loans to rebuild.",
+      "url": "https://kathmandupost.com/climate-environment/2026/10/22/after-nepal-s-recent-disaster-it-wants-to-test-whether-cop31-can-deliver-climate-justice"
+    },
     {
       "tag": "people",
       "date": "",
@@ -30,13 +37,6 @@
       "title": "Tourist arrivals in Mustang plunge 41.5 percent",
       "blurb": "Floods, heavy rain and prolonged closure of the Beni-Jomsom road disrupt access to the Himalayan district during the autumn tourism season.",
       "url": "https://kathmandupost.com/national/2026/10/19/tourist-arrivals-in-mustang-plunge-41-5-percent"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal set Oman 281-run target after Paudel-Airee rescue act",
-      "blurb": "Their record 139-run fourth-wicket stand helped Nepal recover from an early collapse in a must-win Cricket World Cup League 2 match.",
-      "url": "https://kathmandupost.com/sports/2026/10/19/nepal-set-oman-281-run-target-after-paudel-airee-rescue-act"
     }
   ]
 }

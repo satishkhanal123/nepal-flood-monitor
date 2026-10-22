@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-22T11:50:22.003807+00:00",
+  "updated_at": "2026-10-22T16:43:39.762048+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Loss and damage fund approves $20 million for Nepal",
+      "blurb": "The funding is intended to help flood-hit communities in the Bhotekoshi–Trishuli region recover and rebuild.",
+      "url": "https://kathmandupost.com/national/2026/10/22/loss-and-damage-fund-allocates-20-million-to-nepal"
+    },
     {
       "tag": "people",
       "date": "",
@@ -16,13 +23,6 @@
       "title": "For Timure’s flood survivors, Dashain brings memories of the lives they lost",
       "blurb": "Displaced by the Bhotekoshi flood, 111 families are spending the festival in a Kathmandu monastery, grieving loved ones and wondering when they can return home.",
       "url": "https://kathmandupost.com/national/2026/10/20/for-timure-s-flood-survivors-dashain-brings-memories-of-the-lives-they-lost"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "In Gorkha’s flood-hit villages, even cooking a meal is a struggle",
-      "blurb": "The Budhigandaki flood destroyed homes and disrupted road links, leaving families dependent on limited helicopter deliveries for food and other essentials.",
-      "url": "https://kathmandupost.com/national/2026/10/20/in-gorkha-s-flood-hit-villages-even-cooking-a-meal-is-a-struggle"
     }
   ]
 }

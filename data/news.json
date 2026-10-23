@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-22T23:29:24.773692+00:00",
+  "updated_at": "2026-10-23T01:49:28.238096+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal takes government websites offline over critical PHP flaws",
+      "blurb": "Emergency patching is underway after two vulnerabilities exposed systems worldwide to attacks that could allow hackers to run code on servers without logging in.",
+      "url": "https://kathmandupost.com/science-technology/2026/10/23/nepal-takes-government-websites-offline-over-critical-php-flaws"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Earthquake of magnitude 7 strikes China’s Tibet, killing 16",
+      "blurb": "The quake struck a sparsely populated, high-altitude area of northern Tibet, injuring 32 people and prompting rescue teams to mobilise.",
+      "url": "https://kathmandupost.com/world/2026/10/23/earthquake-of-magnitude-7-strikes-china-s-tibet-killing-16"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -16,13 +30,6 @@
       "title": "After Nepal’s recent disaster, it wants to test whether COP31 can deliver climate justice",
       "blurb": "Nepal has made an emergency appeal to the UN’s loss-and-damage fund, which has yet to disburse any money. Meanwhile, families wait for relief, and the country takes on more loans to rebuild.",
       "url": "https://kathmandupost.com/climate-environment/2026/10/22/after-nepal-s-recent-disaster-it-wants-to-test-whether-cop31-can-deliver-climate-justice"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "For Timure’s flood survivors, Dashain brings memories of the lives they lost",
-      "blurb": "Displaced by the Bhotekoshi flood, 111 families are spending the festival in a Kathmandu monastery, grieving loved ones and wondering when they can return home.",
-      "url": "https://kathmandupost.com/national/2026/10/20/for-timure-s-flood-survivors-dashain-brings-memories-of-the-lives-they-lost"
     }
   ]
 }

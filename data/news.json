@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-24T07:09:25.846415+00:00",
+  "updated_at": "2026-10-24T11:59:40.646451+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Two Japanese climbers found dead on Gangapurna",
+      "blurb": "Hidesuke Taneishi, 40, and Tetsu Hashimoto, 25, went missing at around 7,050 metres while climbing the 7,455-metre peak in Manang.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/10/24/two-japanese-climbers-found-dead-on-gangapurna"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Bhandari calls for long-term climate support for vulnerable countries",
+      "blurb": "Nepal’s former president Bidya Devi Bhandari urges Himalayan nations to cooperate on glacier monitoring and disaster preparedness, while calling for long-term international support for climate-vulnerable countries.",
+      "url": "https://kathmandupost.com/politics/2026/10/24/bhandari-calls-for-long-term-climate-support-for-vulnerable-countries"
+    },
     {
       "tag": "access",
       "date": "",

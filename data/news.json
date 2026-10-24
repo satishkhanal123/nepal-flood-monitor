@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-24T11:59:40.646451+00:00",
+  "updated_at": "2026-10-24T15:48:37.392657+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Houthi attacks raise safety fears among Nepali workers in Saudi Arabia",
+      "blurb": "Around 400,000 Nepalis work in Saudi Arabia. Recent attacks have raised fresh concerns about their safety as workers call for better protection and emergency arrangements.",
+      "url": "https://kathmandupost.com/nepali-diaspora/2026/10/24/houthi-attacks-raise-safety-fears-among-nepali-workers-in-saudi-arabia"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -51,13 +58,6 @@
       "title": "Loss and damage fund approves $20 million for Nepal",
       "blurb": "The funding is intended to help flood-hit communities in the Bhotekoshi–Trishuli region recover and rebuild.",
       "url": "https://kathmandupost.com/national/2026/10/22/loss-and-damage-fund-allocates-20-million-to-nepal"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "After Nepal’s recent disaster, it wants to test whether COP31 can deliver climate justice",
-      "blurb": "Nepal has made an emergency appeal to the UN’s loss-and-damage fund, which has yet to disburse any money. Meanwhile, families wait for relief, and the country takes on more loans to rebuild.",
-      "url": "https://kathmandupost.com/climate-environment/2026/10/22/after-nepal-s-recent-disaster-it-wants-to-test-whether-cop31-can-deliver-climate-justice"
     }
   ]
 }

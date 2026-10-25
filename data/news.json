@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-25T01:24:12.297189+00:00",
+  "updated_at": "2026-10-25T06:31:22.369860+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Will Nepal’s lights stay on at 7pm in the winter?",
+      "blurb": "The Bhotekoshi flood and the Kaligandaki landslides exposed a grid that depends on a few valleys and on river flow. Winter evenings, when demand peaks and India’s imports stop, will show how much of Nepal’s power is…",
+      "url": "https://kathmandupost.com/columns/2026/10/25/will-nepal-s-lights-stay-on-at-7pm-in-the-winter"
+    },
     {
       "tag": "ops",
       "date": "",

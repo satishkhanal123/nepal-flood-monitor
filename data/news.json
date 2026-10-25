@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-25T06:31:22.369860+00:00",
+  "updated_at": "2026-10-25T11:59:59.967731+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Chitwan farmers face a race against rain and wild elephants",
+      "blurb": "Rain forecasts are delaying the harvest in Madi, but waiting leaves ripe paddy vulnerable to elephant raids.",
+      "url": "https://kathmandupost.com/money/2026/10/25/chitwan-farmers-face-a-race-against-rain-and-wild-elephants"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Tourism resumes in Manaslu after Budhi Gandaki floods",
+      "blurb": "A total of 116 tourists entered the Manaslu Conservation Area in a week after flood damage disrupted trekking routes, but access to the Tsum Valley remains blocked.",
+      "url": "https://kathmandupost.com/national/2026/10/25/tourism-resumes-in-manaslu-after-budhi-gandaki-floods"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal resumes power exports to Bangladesh after flood disruption",
+      "blurb": "Nepal has restarted its 40MW electricity supply through India’s transmission network, using Solu Khola and Kabeli B1 to replace the flood-damaged Trishuli and Chilime hydropower plants.",
+      "url": "https://kathmandupost.com/money/2026/10/25/nepal-resumes-power-exports-to-bangladesh-after-flood-disruption"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -58,13 +79,6 @@
       "title": "Earthquake of magnitude 7 strikes China’s Tibet, killing 16",
       "blurb": "The quake struck a sparsely populated, high-altitude area of northern Tibet, injuring 32 people and prompting rescue teams to mobilise.",
       "url": "https://kathmandupost.com/world/2026/10/23/earthquake-of-magnitude-7-strikes-china-s-tibet-killing-16"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Loss and damage fund approves $20 million for Nepal",
-      "blurb": "The funding is intended to help flood-hit communities in the Bhotekoshi–Trishuli region recover and rebuild.",
-      "url": "https://kathmandupost.com/national/2026/10/22/loss-and-damage-fund-allocates-20-million-to-nepal"
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-25T11:59:59.967731+00:00",
+  "updated_at": "2026-10-25T15:59:43.609147+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Three dead, three missing in motorboat accident in eastern Nepal",
+      "blurb": "The boat was carrying 15 passengers and its operator from Bhojpur to Chatara when it crashed in Dhankuta district on Sunday afternoon, reportedly after its brakes failed.",
+      "url": "https://kathmandupost.com/province-no-1/2026/10/25/three-dead-three-missing-in-motorboat-accident-in-eastern-nepal"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -65,20 +72,6 @@
       "title": "They never fought in the decade-long ‘People’s War’. They still bear its scars",
       "blurb": "Civilians injured or disabled during the conflict, despite having no affiliation with either side, say the state has excluded them from relief and compensation programmes.",
       "url": "https://kathmandupost.com/national/2026/10/23/they-never-fought-in-the-decade-long-people-s-war-they-still-bear-its-scars"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal takes government websites offline over critical PHP flaws",
-      "blurb": "Emergency patching is underway after two vulnerabilities exposed systems worldwide to attacks that could allow hackers to run code on servers without logging in.",
-      "url": "https://kathmandupost.com/science-technology/2026/10/23/nepal-takes-government-websites-offline-over-critical-php-flaws"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Earthquake of magnitude 7 strikes China’s Tibet, killing 16",
-      "blurb": "The quake struck a sparsely populated, high-altitude area of northern Tibet, injuring 32 people and prompting rescue teams to mobilise.",
-      "url": "https://kathmandupost.com/world/2026/10/23/earthquake-of-magnitude-7-strikes-china-s-tibet-killing-16"
     }
   ]
 }

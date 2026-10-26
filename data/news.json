@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-26T01:28:49.510649+00:00",
+  "updated_at": "2026-10-26T06:50:54.559160+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Divers search for three missing after boat accident in Saptakoshi river",
+      "blurb": "Seven divers and teams from Nepal’s Armed Police Force and Nepal Police have resumed the search for three people, including a seven-year-old boy, after a passenger boat suffered mechanical failure on Sunday.",
+      "url": "https://kathmandupost.com/province-no-1/2026/10/26/divers-search-for-three-missing-after-boat-accident-in-saptakoshi-river"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal to expand flood warning systems across six river basins",
+      "blurb": "A new white paper outlines plans to lower water levels in four high-risk glacial lakes and strengthen disaster preparedness as climate change intensifies risks in the Himalayas.",
+      "url": "https://kathmandupost.com/national/2026/10/26/nepal-to-expand-flood-warning-systems-across-six-river-basins"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Can a cricket league comfort a country in mourning?",
+      "blurb": "Nepal Premier League cannot rebuild Rasuwa, but it can give a grieving nation somewhere to gather.",
+      "url": "https://kathmandupost.com/editorial/2026/10/26/can-a-cricket-league-comfort-a-country-in-mourning"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -51,27 +72,6 @@
       "title": "Two Japanese climbers found dead on Gangapurna",
       "blurb": "Hidesuke Taneishi, 40, and Tetsu Hashimoto, 25, went missing at around 7,050 metres while climbing the 7,455-metre peak in Manang.",
       "url": "https://kathmandupost.com/gandaki-province/2026/10/24/two-japanese-climbers-found-dead-on-gangapurna"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Bhandari calls for long-term climate support for vulnerable countries",
-      "blurb": "Nepal’s former president Bidya Devi Bhandari urges Himalayan nations to cooperate on glacier monitoring and disaster preparedness, while calling for long-term international support for climate-vulnerable countries.",
-      "url": "https://kathmandupost.com/politics/2026/10/24/bhandari-calls-for-long-term-climate-support-for-vulnerable-countries"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Dashain brings fewer domestic tourists to Sauraha",
-      "blurb": "Hoteliers say fears of renewed road closures have kept visitors away, although international tourists are gradually returning after flood-related cancellations.",
-      "url": "https://kathmandupost.com/money/2026/10/23/dashain-brings-fewer-domestic-tourists-to-sauraha"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "They never fought in the decade-long ‘People’s War’. They still bear its scars",
-      "blurb": "Civilians injured or disabled during the conflict, despite having no affiliation with either side, say the state has excluded them from relief and compensation programmes.",
-      "url": "https://kathmandupost.com/national/2026/10/23/they-never-fought-in-the-decade-long-people-s-war-they-still-bear-its-scars"
     }
   ]
 }

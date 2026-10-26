@@ -1,7 +1,7 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-26T13:52:13.439306+00:00",
+  "updated_at": "2026-10-26T19:43:34.866697+00:00",
   "items": [
     {
       "tag": "access",
@@ -51,20 +51,6 @@
       "title": "Tourism resumes in Manaslu after Budhi Gandaki floods",
       "blurb": "A total of 116 tourists entered the Manaslu Conservation Area in a week after flood damage disrupted trekking routes, but access to the Tsum Valley remains blocked.",
       "url": "https://kathmandupost.com/national/2026/10/25/tourism-resumes-in-manaslu-after-budhi-gandaki-floods"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal resumes power exports to Bangladesh after flood disruption",
-      "blurb": "Nepal has restarted its 40MW electricity supply through India’s transmission network, using Solu Khola and Kabeli B1 to replace the flood-damaged Trishuli and Chilime hydropower plants.",
-      "url": "https://kathmandupost.com/money/2026/10/25/nepal-resumes-power-exports-to-bangladesh-after-flood-disruption"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Will Nepal’s lights stay on at 7pm in the winter?",
-      "blurb": "The Bhotekoshi flood and the Kaligandaki landslides exposed a grid that depends on a few valleys and on river flow. Winter evenings, when demand peaks and India’s imports stop, will show how much of Nepal’s power is…",
-      "url": "https://kathmandupost.com/columns/2026/10/25/will-nepal-s-lights-stay-on-at-7pm-in-the-winter"
     }
   ]
 }

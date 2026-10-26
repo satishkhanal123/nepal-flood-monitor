@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-26T06:50:54.559160+00:00",
+  "updated_at": "2026-10-26T13:52:13.439306+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Dust, bottlenecks slow Dashain traffic on BP Highway",
+      "blurb": "Two years after floods damaged the highway, unfinished roads, narrow bridges and a surge in festive traffic are making the journey back to Kathmandu miserable.",
+      "url": "https://kathmandupost.com/national/2026/10/26/dust-bottlenecks-slow-dashain-traffic-on-bp-highway"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -58,20 +65,6 @@
       "title": "Will Nepal’s lights stay on at 7pm in the winter?",
       "blurb": "The Bhotekoshi flood and the Kaligandaki landslides exposed a grid that depends on a few valleys and on river flow. Winter evenings, when demand peaks and India’s imports stop, will show how much of Nepal’s power is…",
       "url": "https://kathmandupost.com/columns/2026/10/25/will-nepal-s-lights-stay-on-at-7pm-in-the-winter"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Houthi attacks raise safety fears among Nepali workers in Saudi Arabia",
-      "blurb": "Around 400,000 Nepalis work in Saudi Arabia. Recent attacks have raised fresh concerns about their safety as workers call for better protection and emergency arrangements.",
-      "url": "https://kathmandupost.com/nepali-diaspora/2026/10/24/houthi-attacks-raise-safety-fears-among-nepali-workers-in-saudi-arabia"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Two Japanese climbers found dead on Gangapurna",
-      "blurb": "Hidesuke Taneishi, 40, and Tetsu Hashimoto, 25, went missing at around 7,050 metres while climbing the 7,455-metre peak in Manang.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/10/24/two-japanese-climbers-found-dead-on-gangapurna"
     }
   ]
 }

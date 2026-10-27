@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-26T23:22:37.816534+00:00",
+  "updated_at": "2026-10-27T02:17:08.888288+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Restore hope for Bhotekoshi flood victims",
+      "blurb": "The Bhotekoshi flood victims deserve answers; they cannot remain in uncertainty any longer.",
+      "url": "https://kathmandupost.com/editorial/2026/10/27/restore-hope-for-bhotekoshi-flood-victims"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Devoid of options, flood survivors return to damaged homes",
+      "blurb": "The government has announced rent assistance, temporary shelters and new land for resettlement. Survivors and local officials say little of it has reached them.",
+      "url": "https://kathmandupost.com/national/2026/10/27/devoid-of-options-flood-survivors-return-to-damaged-homes"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,20 +51,6 @@
       "title": "Three dead, three missing in motorboat accident in eastern Nepal",
       "blurb": "The boat was carrying 15 passengers and its operator from Bhojpur to Chatara when it crashed in Dhankuta district on Sunday afternoon, reportedly after its brakes failed.",
       "url": "https://kathmandupost.com/province-no-1/2026/10/25/three-dead-three-missing-in-motorboat-accident-in-eastern-nepal"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Chitwan farmers face a race against rain and wild elephants",
-      "blurb": "Rain forecasts are delaying the harvest in Madi, but waiting leaves ripe paddy vulnerable to elephant raids.",
-      "url": "https://kathmandupost.com/money/2026/10/25/chitwan-farmers-face-a-race-against-rain-and-wild-elephants"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Tourism resumes in Manaslu after Budhi Gandaki floods",
-      "blurb": "A total of 116 tourists entered the Manaslu Conservation Area in a week after flood damage disrupted trekking routes, but access to the Tsum Valley remains blocked.",
-      "url": "https://kathmandupost.com/national/2026/10/25/tourism-resumes-in-manaslu-after-budhi-gandaki-floods"
     }
   ]
 }

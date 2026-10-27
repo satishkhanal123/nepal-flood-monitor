@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-27T08:11:40.587475+00:00",
+  "updated_at": "2026-10-27T14:32:06.639125+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Chitwan Rhinos defeat Biratnagar Kings by eight runs",
+      "blurb": "Kamal Singh Airee took four wickets as Biratnagar fell short of a 158-run target despite Andre Russell’s late 33 off 17 balls.",
+      "url": "https://kathmandupost.com/sports/2026/10/27/chitwan-rhinos-defeat-biratnagar-kings-by-eight-runs"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Biratnagar Kings need 158 to win",
+      "blurb": "Losing the toss and batting first, Chitwan Rhinos managed 157/3 in the first innings on the back of Dawid Malan’s 70 off 50.",
+      "url": "https://kathmandupost.com/sports/2026/10/27/biratnagar-kings-need-158-to-win"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -30,34 +44,6 @@
       "title": "Devoid of options, flood survivors return to damaged homes",
       "blurb": "The government has announced rent assistance, temporary shelters and new land for resettlement. Survivors and local officials say little of it has reached them.",
       "url": "https://kathmandupost.com/national/2026/10/27/devoid-of-options-flood-survivors-return-to-damaged-homes"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Dust, bottlenecks slow Dashain traffic on BP Highway",
-      "blurb": "Two years after floods damaged the highway, unfinished roads, narrow bridges and a surge in festive traffic are making the journey back to Kathmandu miserable.",
-      "url": "https://kathmandupost.com/national/2026/10/26/dust-bottlenecks-slow-dashain-traffic-on-bp-highway"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Divers search for three missing after boat accident in Saptakoshi river",
-      "blurb": "Seven divers and teams from Nepal’s Armed Police Force and Nepal Police have resumed the search for three people, including a seven-year-old boy, after a passenger boat suffered mechanical failure on Sunday.",
-      "url": "https://kathmandupost.com/province-no-1/2026/10/26/divers-search-for-three-missing-after-boat-accident-in-saptakoshi-river"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal to expand flood warning systems across six river basins",
-      "blurb": "A new white paper outlines plans to lower water levels in four high-risk glacial lakes and strengthen disaster preparedness as climate change intensifies risks in the Himalayas.",
-      "url": "https://kathmandupost.com/national/2026/10/26/nepal-to-expand-flood-warning-systems-across-six-river-basins"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Can a cricket league comfort a country in mourning?",
-      "blurb": "Nepal Premier League cannot rebuild Rasuwa, but it can give a grieving nation somewhere to gather.",
-      "url": "https://kathmandupost.com/editorial/2026/10/26/can-a-cricket-league-comfort-a-country-in-mourning"
     }
   ]
 }

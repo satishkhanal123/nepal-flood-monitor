@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-27T02:17:08.888288+00:00",
+  "updated_at": "2026-10-27T08:11:40.587475+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal’s historic loss and damage allocation falls short of its needs",
+      "blurb": "The UN fund has provisionally set aside 21.6 million for Nepal after the Rasuwa disaster, marking a first while covering less than 0.5 percent of the country’s estimated $4.7 billion recovery and reconstruction needs.",
+      "url": "https://kathmandupost.com/climate-environment/2026/10/27/nepal-s-historic-loss-and-damage-allocation-falls-short-of-its-needs"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Biratnagar take on Chitwan as Janakpur face Karnali in NPL double-header",
+      "blurb": "Andre Russell and Angelo Mathews add star power to Biratnagar, while former champions Janakpur look to bounce back after a disappointing second season.",
+      "url": "https://kathmandupost.com/cricket/2026/10/27/biratnagar-take-on-chitwan-as-janakpur-face-karnali-in-npl-double-header"
+    },
     {
       "tag": "people",
       "date": "",
@@ -44,13 +58,6 @@
       "title": "Can a cricket league comfort a country in mourning?",
       "blurb": "Nepal Premier League cannot rebuild Rasuwa, but it can give a grieving nation somewhere to gather.",
       "url": "https://kathmandupost.com/editorial/2026/10/26/can-a-cricket-league-comfort-a-country-in-mourning"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Three dead, three missing in motorboat accident in eastern Nepal",
-      "blurb": "The boat was carrying 15 passengers and its operator from Bhojpur to Chatara when it crashed in Dhankuta district on Sunday afternoon, reportedly after its brakes failed.",
-      "url": "https://kathmandupost.com/province-no-1/2026/10/25/three-dead-three-missing-in-motorboat-accident-in-eastern-nepal"
     }
   ]
 }

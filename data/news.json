@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-28T08:50:47.358511+00:00",
+  "updated_at": "2026-10-28T15:43:01.127228+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Insurers have paid just 4 percent of Bhotekoshi flood claims",
+      "blurb": "Payouts total Rs821.39 million against Rs20.9 billion in claims nearly two months after the disaster, with the final bill expected to rise.",
+      "url": "https://kathmandupost.com/money/2026/10/28/insurers-have-paid-just-4-percent-of-bhotekoshi-flood-claims"
+    },
     {
       "tag": "access",
       "date": "",
@@ -30,27 +37,6 @@
       "title": "Nuwakot flood victims form struggle committee to pressure federal government for help",
       "blurb": "Victims decry the lackadaisical approach from Kathmandu to the resettlement of displaced people, only prolonging their plight.",
       "url": "https://kathmandupost.com/national/2026/10/27/nuwakot-flood-victims-form-struggle-committee-to-pressure-federal-government-for-help"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Chitwan Rhinos defeat Biratnagar Kings by eight runs",
-      "blurb": "Kamal Singh Airee took four wickets as Biratnagar fell short of a 158-run target despite Andre Russell’s late 33 off 17 balls.",
-      "url": "https://kathmandupost.com/sports/2026/10/27/chitwan-rhinos-defeat-biratnagar-kings-by-eight-runs"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Biratnagar Kings need 158 to win",
-      "blurb": "Losing the toss and batting first, Chitwan Rhinos managed 157/3 in the first innings on the back of Dawid Malan’s 70 off 50.",
-      "url": "https://kathmandupost.com/sports/2026/10/27/biratnagar-kings-need-158-to-win"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal’s historic loss and damage allocation falls short of its needs",
-      "blurb": "The UN fund has provisionally set aside 21.6 million for Nepal after the Rasuwa disaster, marking a first while covering less than 0.5 percent of the country’s estimated $4.7 billion recovery and reconstruction needs.",
-      "url": "https://kathmandupost.com/climate-environment/2026/10/27/nepal-s-historic-loss-and-damage-allocation-falls-short-of-its-needs"
     }
   ]
 }

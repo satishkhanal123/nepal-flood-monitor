@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-28T02:19:02.549060+00:00",
+  "updated_at": "2026-10-28T08:50:47.358511+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Users turn to Nepal Telecom as private ISPs raise internet prices",
+      "blurb": "The state-owned provider’s discounted annual 30 Mbps fibre package has drawn a surge of interest, but customers have raised concerns about delays, service quality and outdated routers.",
+      "url": "https://kathmandupost.com/money/2026/10/28/users-turn-to-nepal-telecom-as-private-isps-raise-internet-prices"
+    },
     {
       "tag": "access",
       "date": "",
@@ -44,27 +51,6 @@
       "title": "Nepal’s historic loss and damage allocation falls short of its needs",
       "blurb": "The UN fund has provisionally set aside 21.6 million for Nepal after the Rasuwa disaster, marking a first while covering less than 0.5 percent of the country’s estimated $4.7 billion recovery and reconstruction needs.",
       "url": "https://kathmandupost.com/climate-environment/2026/10/27/nepal-s-historic-loss-and-damage-allocation-falls-short-of-its-needs"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Biratnagar take on Chitwan as Janakpur face Karnali in NPL double-header",
-      "blurb": "Andre Russell and Angelo Mathews add star power to Biratnagar, while former champions Janakpur look to bounce back after a disappointing second season.",
-      "url": "https://kathmandupost.com/cricket/2026/10/27/biratnagar-take-on-chitwan-as-janakpur-face-karnali-in-npl-double-header"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Restore hope for Bhotekoshi flood victims",
-      "blurb": "The Bhotekoshi flood victims deserve answers; they cannot remain in uncertainty any longer.",
-      "url": "https://kathmandupost.com/editorial/2026/10/27/restore-hope-for-bhotekoshi-flood-victims"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Devoid of options, flood survivors return to damaged homes",
-      "blurb": "The government has announced rent assistance, temporary shelters and new land for resettlement. Survivors and local officials say little of it has reached them.",
-      "url": "https://kathmandupost.com/national/2026/10/27/devoid-of-options-flood-survivors-return-to-damaged-homes"
     }
   ]
 }

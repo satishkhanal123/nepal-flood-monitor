@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-29T00:25:48.419388+00:00",
+  "updated_at": "2026-10-29T06:13:08.235333+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Pakistan’s last-minute NOC demand hits NPL franchises hard",
+      "blurb": "A sudden $25,000 fee requirement from the Pakistan Cricket Board forces NPL teams to scramble for emergency replacements, dampening global appeal and leaving fans disappointed.",
+      "url": "https://kathmandupost.com/sports/2026/10/29/pakistan-s-last-minute-noc-demand-hits-npl-franchises-hard"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -30,13 +37,6 @@
       "title": "Two-day weekend boosts tourism across hill stations",
       "blurb": "Introduced as an emergency measure to curb fuel consumption following the US-Israeli war on Iran, the new weekend policy has changed Nepalis’ travel habits and revitalised the country's hospitality sector.",
       "url": "https://kathmandupost.com/money/2026/10/28/two-day-weekend-boosts-tourism-across-hill-stations"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nuwakot flood victims form struggle committee to pressure federal government for help",
-      "blurb": "Victims decry the lackadaisical approach from Kathmandu to the resettlement of displaced people, only prolonging their plight.",
-      "url": "https://kathmandupost.com/national/2026/10/27/nuwakot-flood-victims-form-struggle-committee-to-pressure-federal-government-for-help"
     }
   ]
 }

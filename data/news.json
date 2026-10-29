@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-29T13:06:40.665948+00:00",
+  "updated_at": "2026-10-29T18:57:18.635734+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Spanish train crash death toll rises to 69 as rescuers search for victims",
+      "blurb": "The crash, Spain’s second fatal high-speed rail accident this year, has killed 69 people and injured dozens, prompting a nationwide mourning period, a train drivers’ strike over safety funding and calls for a full…",
+      "url": "https://kathmandupost.com/world/2026/10/29/spanish-train-crash-death-toll-rises-to-69-as-rescuers-search-for-victims"
+    },
     {
       "tag": "access",
       "date": "",
@@ -30,13 +37,6 @@
       "title": "Pakistan’s last-minute NOC demand hits NPL franchises hard",
       "blurb": "A sudden $25,000 fee requirement from the Pakistan Cricket Board forces NPL teams to scramble for emergency replacements, dampening global appeal and leaving fans disappointed.",
       "url": "https://kathmandupost.com/sports/2026/10/29/pakistan-s-last-minute-noc-demand-hits-npl-franchises-hard"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Insurers have paid just 4 percent of Bhotekoshi flood claims",
-      "blurb": "Payouts total Rs821.39 million against Rs20.9 billion in claims nearly two months after the disaster, with the final bill expected to rise.",
-      "url": "https://kathmandupost.com/money/2026/10/28/insurers-have-paid-just-4-percent-of-bhotekoshi-flood-claims"
     }
   ]
 }

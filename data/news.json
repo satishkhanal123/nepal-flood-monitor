@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-29T06:13:08.235333+00:00",
+  "updated_at": "2026-10-29T13:06:40.665948+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Cyclone Arnab’s remnants raise landslide risk on Nepal’s main highways",
+      "blurb": "Authorities have flagged key routes as vulnerable to landslides, rockfalls and flooding as the storm that struck India’s Andhra Pradesh coast weakens and brings rain to Nepal.",
+      "url": "https://kathmandupost.com/national/2026/10/29/cyclone-arnab-s-remnants-raise-landslide-risk-on-nepal-s-main-highways"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "At least 68 people dead in Spain’s second major train crash this year",
+      "blurb": "A Renfe train collided with a stationary Iryo service after being cleared to proceed despite a red signal, with 80 people injured and investigators probing a possible communications failure.",
+      "url": "https://kathmandupost.com/world/2026/10/29/at-least-68-people-dead-in-spain-s-second-major-train-crash-this-year"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Annapurna Circuit sees trekking arrivals rebound after floods",
+      "blurb": "More than 5,300 foreign tourists trekked the route during Dashain, 769 more than in the same period last year, as improving weather and repairs restored access.",
+      "url": "https://kathmandupost.com/money/2026/10/29/annapurna-circuit-sees-trekking-arrivals-rebound-after-floods"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -16,27 +37,6 @@
       "title": "Insurers have paid just 4 percent of Bhotekoshi flood claims",
       "blurb": "Payouts total Rs821.39 million against Rs20.9 billion in claims nearly two months after the disaster, with the final bill expected to rise.",
       "url": "https://kathmandupost.com/money/2026/10/28/insurers-have-paid-just-4-percent-of-bhotekoshi-flood-claims"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Users turn to Nepal Telecom as private ISPs raise internet prices",
-      "blurb": "The state-owned provider’s discounted annual 30 Mbps fibre package has drawn a surge of interest, but customers have raised concerns about delays, service quality and outdated routers.",
-      "url": "https://kathmandupost.com/money/2026/10/28/users-turn-to-nepal-telecom-as-private-isps-raise-internet-prices"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Fresh signings deliver immediate results for NPL franchises amid late arrival and PCB-related chaos",
-      "blurb": "From Hussain Talat’s match-winning bowling spell for Karnali to Chitwan’s airport-to-ground reinforcements, teams adapt swiftly to sudden changes.",
-      "url": "https://kathmandupost.com/cricket/2026/10/28/fresh-signings-deliver-immediate-results-for-npl-franchises-amid-late-arrival-and-pcb-related-chaos"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Two-day weekend boosts tourism across hill stations",
-      "blurb": "Introduced as an emergency measure to curb fuel consumption following the US-Israeli war on Iran, the new weekend policy has changed Nepalis’ travel habits and revitalised the country's hospitality sector.",
-      "url": "https://kathmandupost.com/money/2026/10/28/two-day-weekend-boosts-tourism-across-hill-stations"
     }
   ]
 }

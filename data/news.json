@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-30T09:00:03.496754+00:00",
+  "updated_at": "2026-10-30T15:48:39.166859+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Night-time traffic halted on Kanti Lokpath amid cyclone-related rain",
+      "blurb": "Vehicles will be barred from using the route between 5pm and 5am on October 30 and 31 as authorities warn of possible floods and landslides.",
+      "url": "https://kathmandupost.com/national/2026/10/30/night-time-traffic-halted-on-kanti-lokpath-amid-cyclone-related-rain"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "No bridge, no market: Vegetables rot in fields after Bhotekoshi floods",
+      "blurb": "Farmers in Rasuwa’s Aamachhodingmo struggle to sell their produce as damaged roads, costly transport and the lack of a bridge at Syafrubesi leave millions of rupees’ worth of vegetables stranded.",
+      "url": "https://kathmandupost.com/money/2026/10/30/no-bridge-no-market-vegetables-rot-in-fields-after-bhotekoshi-floods"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -23,27 +37,6 @@
       "title": "Spanish train crash death toll rises to 69 as rescuers search for victims",
       "blurb": "The crash, Spain’s second fatal high-speed rail accident this year, has killed 69 people and injured dozens, prompting a nationwide mourning period, a train drivers’ strike over safety funding and calls for a full…",
       "url": "https://kathmandupost.com/world/2026/10/29/spanish-train-crash-death-toll-rises-to-69-as-rescuers-search-for-victims"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Cyclone Arnab’s remnants raise landslide risk on Nepal’s main highways",
-      "blurb": "Authorities have flagged key routes as vulnerable to landslides, rockfalls and flooding as the storm that struck India’s Andhra Pradesh coast weakens and brings rain to Nepal.",
-      "url": "https://kathmandupost.com/national/2026/10/29/cyclone-arnab-s-remnants-raise-landslide-risk-on-nepal-s-main-highways"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "At least 68 people dead in Spain’s second major train crash this year",
-      "blurb": "A Renfe train collided with a stationary Iryo service after being cleared to proceed despite a red signal, with 80 people injured and investigators probing a possible communications failure.",
-      "url": "https://kathmandupost.com/world/2026/10/29/at-least-68-people-dead-in-spain-s-second-major-train-crash-this-year"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Annapurna Circuit sees trekking arrivals rebound after floods",
-      "blurb": "More than 5,300 foreign tourists trekked the route during Dashain, 769 more than in the same period last year, as improving weather and repairs restored access.",
-      "url": "https://kathmandupost.com/money/2026/10/29/annapurna-circuit-sees-trekking-arrivals-rebound-after-floods"
     }
   ]
 }

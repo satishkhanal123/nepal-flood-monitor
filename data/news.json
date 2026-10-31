@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-10-31T04:34:52.718494+00:00",
+  "updated_at": "2026-10-31T10:36:44.891982+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Rising Kulekhani reservoir prompts flood alert along Bagmati river",
+      "blurb": "Rautahat authorities warn riverside residents to prepare for possible sudden rises in water levels if water is released from the reservoir in neighbouring Makwanpur district.",
+      "url": "https://kathmandupost.com/national/2026/10/31/rising-kulekhani-reservoir-prompts-flood-alert-along-bagmati-river"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Rain washes out Lumbini-Chitwan match on Saturday",
+      "blurb": "Persistent rain leaves Lumbini Lions and Chitwan Rhinos with a point each, while the Biratnagar Kings-Sudurpaschim Royals match is also in doubt.",
+      "url": "https://kathmandupost.com/sports/2026/10/31/rain-washes-out-lumbini-chitwan-match-on-saturday"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Rain triggers landslides, washes away roads and disrupts travel across Nepal",
+      "blurb": "Landslides have disrupted the Prithvi Highway, washed away a road diversion in Gorkha and buried a house in Kavre, while heavy snow has hit the Kanchenjunga region.",
+      "url": "https://kathmandupost.com/national/2026/10/31/rain-triggers-landslides-washes-away-roads-and-disrupts-travel-across-nepal"
+    },
     {
       "tag": "people",
       "date": "",
@@ -37,13 +58,6 @@
       "title": "Nepal plans temporary bridges to reopen flood-hit Rasuwagadhi border crossing",
       "blurb": "Authorities aim to restore road access to the Chinese border before rebuilding permanently, while also considering an expressway to Kerung in place of a proposed railway.",
       "url": "https://kathmandupost.com/money/2026/10/30/nepal-plans-temporary-bridges-to-reopen-flood-hit-rasuwagadhi-border-crossing"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Spanish train crash death toll rises to 69 as rescuers search for victims",
-      "blurb": "The crash, Spain’s second fatal high-speed rail accident this year, has killed 69 people and injured dozens, prompting a nationwide mourning period, a train drivers’ strike over safety funding and calls for a full…",
-      "url": "https://kathmandupost.com/world/2026/10/29/spanish-train-crash-death-toll-rises-to-69-as-rescuers-search-for-victims"
     }
   ]
 }

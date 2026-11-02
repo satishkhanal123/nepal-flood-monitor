@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-02T09:58:23.143028+00:00",
+  "updated_at": "2026-11-02T20:07:14.852373+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Sudurpaschim climb to third after five-wicket win over Chitwan",
+      "blurb": "Brandon McMullen’s 43 and an unbeaten 20 from Aarif Sheikh helped the Royals chase down a target of 130 in 16.4 overs.",
+      "url": "https://kathmandupost.com/cricket/2026/11/02/sudurpaschim-climb-to-third-after-five-wicket-win-over-chitwan"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "US overtakes India as Nepal’s largest tourism source market for first time",
+      "blurb": "American arrivals surged 31 percent in October, while Indian visitors fell 30 percent as the August floods disrupted pilgrimage routes and dampened travel from Nepal’s traditionally biggest source market.",
+      "url": "https://kathmandupost.com/money/2026/11/02/us-overtakes-india-as-nepal-s-largest-tourism-source-market-for-first-time"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Sudurpaschim restrict Chitwan to 129 in NPL clash",
+      "blurb": "Scott Kuggeleijn takes two wickets while Ravi Bopara top-scores with 49 as the Rhinos struggle to build a competitive total.",
+      "url": "https://kathmandupost.com/sports/2026/11/02/sudurpaschim-restrict-chitwan-to-129-in-npl-clash"
+    },
     {
       "tag": "access",
       "date": "",
@@ -23,13 +44,6 @@
       "title": "Dashain gone, Tihar uncertain: Nepali workers stranded in Saudi Arabia as Houthi attacks disrupt flights",
       "blurb": "Houthi attacks have disrupted nearly half of scheduled flights from Saudi airports, leaving migrant workers without clear information as their leave runs out and exit-re-entry permits near expiry.",
       "url": "https://kathmandupost.com/national/2026/11/02/dashain-gone-tihar-uncertain-nepali-workers-stranded-in-saudi-arabia-as-houthi-attacks-disrupt-flights"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Army helicopter to rescue six Indian tourists stranded by snow in Dolpa",
-      "blurb": "The tourists are stranded in Danigad of Shey Phoksundo Rural Municipality as several days of heavy snowfall disrupt life in the high Himalayan region.",
-      "url": "https://kathmandupost.com/karnali-province/2026/11/01/army-helicopter-to-rescue-six-indian-tourists-stranded-by-snow-in-dolpa"
     }
   ]
 }

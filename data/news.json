@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-03T09:50:28.800696+00:00",
+  "updated_at": "2026-11-03T17:31:22.722655+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Three years after Jajarkot earthquake, survivors still wait for safer homes",
+      "blurb": "Delays in identifying beneficiaries, assessing damage and approving reconstruction grants have left thousands of families in temporary shelters, with rebuilding barely underway.",
+      "url": "https://kathmandupost.com/national/2026/11/03/three-years-after-jajarkot-earthquake-survivors-still-wait-for-safer-homes"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -51,20 +58,6 @@
       "title": "Sudurpaschim restrict Chitwan to 129 in NPL clash",
       "blurb": "Scott Kuggeleijn takes two wickets while Ravi Bopara top-scores with 49 as the Rhinos struggle to build a competitive total.",
       "url": "https://kathmandupost.com/sports/2026/11/02/sudurpaschim-restrict-chitwan-to-129-in-npl-clash"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Construction boom pushes Nepal’s mountain settlements into flood-prone areas",
-      "blurb": "A new study finds at least 108,500 people in Nepal are exposed to potential flooding, as hydropower development, road expansion and unplanned urbanisation increase risks in vulnerable mountain regions.",
-      "url": "https://kathmandupost.com/climate-environment/2026/11/02/construction-boom-pushes-nepal-s-mountain-settlements-into-flood-prone-areas"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Indigenous climate activist Pema Wangmo Lama on flood recovery, loans and who gets to say no to hydropower",
-      "blurb": "Lama, who recently attended the UN biodiversity talks, says post-disaster work in Nepal focuses on infrastructure rather than communities, and that safeguards for Indigenous people near hydropower projects rarely work…",
-      "url": "https://kathmandupost.com/interviews/2026/11/02/indigenous-climate-activist-pema-wangmo-lama-on-flood-recovery-loans-and-who-gets-to-say-no-to-hydropower"
     }
   ]
 }

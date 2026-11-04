@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-03T22:30:37.500140+00:00",
+  "updated_at": "2026-11-04T02:42:15.414838+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Improving disaster communication",
+      "blurb": "Early warning begins with understanding hazards and assessing risks, and continues through clear communication, interpretation of alerts, risk perceptions and decisive actions.",
+      "url": "https://kathmandupost.com/columns/2026/11/04/improving-disaster-communication"
+    },
     {
       "tag": "people",
       "date": "",
@@ -37,27 +44,6 @@
       "title": "Where are Chitwan Rhinos heading this season?",
       "blurb": "After a third-place finish in 2024 and a slump in 2025, the Rhinos are still searching for form in NPL Season 3.",
       "url": "https://kathmandupost.com/cricket/2026/11/03/where-are-chitwan-rhinos-heading-this-season"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Sudurpaschim climb to third after five-wicket win over Chitwan",
-      "blurb": "Brandon McMullen’s 43 and an unbeaten 20 from Aarif Sheikh helped the Royals chase down a target of 130 in 16.4 overs.",
-      "url": "https://kathmandupost.com/cricket/2026/11/02/sudurpaschim-climb-to-third-after-five-wicket-win-over-chitwan"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "US overtakes India as Nepal’s largest tourism source market for first time",
-      "blurb": "American arrivals surged 31 percent in October, while Indian visitors fell 30 percent as the August floods disrupted pilgrimage routes and dampened travel from Nepal’s traditionally biggest source market.",
-      "url": "https://kathmandupost.com/money/2026/11/02/us-overtakes-india-as-nepal-s-largest-tourism-source-market-for-first-time"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Sudurpaschim restrict Chitwan to 129 in NPL clash",
-      "blurb": "Scott Kuggeleijn takes two wickets while Ravi Bopara top-scores with 49 as the Rhinos struggle to build a competitive total.",
-      "url": "https://kathmandupost.com/sports/2026/11/02/sudurpaschim-restrict-chitwan-to-129-in-npl-clash"
     }
   ]
 }

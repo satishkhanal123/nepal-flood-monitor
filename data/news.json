@@ -1,49 +1,28 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-04T02:42:15.414838+00:00",
+  "updated_at": "2026-11-04T17:48:54.361462+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Vikram Misri says India ready to help rebuild Nepal’s flood-hit infrastructure",
+      "blurb": "New Delhi is prepared to consider Nepal’s proposals for assistance and reconstruction projects following the Bhotekoshi flood.",
+      "url": "https://kathmandupost.com/national/2026/11/04/vikram-misri-says-india-ready-to-help-rebuild-nepal-s-flood-hit-infrastructure"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Floods push back Siddhababa tunnel opening to mid-January",
+      "blurb": "The Bhotekoshi and Kaligandaki floods disrupted the delivery of electrical and safety equipment, delaying plans to open the tunnel to traffic.",
+      "url": "https://kathmandupost.com/national/2026/11/04/floods-push-back-siddhababa-tunnel-opening-to-mid-january"
+    },
     {
       "tag": "warning",
       "date": "",
       "title": "Improving disaster communication",
       "blurb": "Early warning begins with understanding hazards and assessing risks, and continues through clear communication, interpretation of alerts, risk perceptions and decisive actions.",
       "url": "https://kathmandupost.com/columns/2026/11/04/improving-disaster-communication"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Three years after Jajarkot earthquake, survivors still wait for safer homes",
-      "blurb": "Delays in identifying beneficiaries, assessing damage and approving reconstruction grants have left thousands of families in temporary shelters, with rebuilding barely underway.",
-      "url": "https://kathmandupost.com/national/2026/11/03/three-years-after-jajarkot-earthquake-survivors-still-wait-for-safer-homes"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Six reasons Democrats may fall short of a midterm landslide",
-      "blurb": "A shrinking number of competitive races, uncertain Senate contests, turnout challenges and a Republican fundraising edge could limit Democratic gains despite widespread voter dissatisfaction with Donald Trump.",
-      "url": "https://kathmandupost.com/world/2026/11/03/six-reasons-democrats-may-fall-short-of-a-midterm-landslide"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Protect Nepalis in Saudi Arabia",
-      "blurb": "Houthi drones have killed a Nepali worker. Diplomacy must protect the rest and bring the stranded home.",
-      "url": "https://kathmandupost.com/editorial/2026/11/03/protect-nepalis-in-saudi-arabia"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Bhotekoshi floods leave older survivors grappling with loss, uncertainty and trauma",
-      "blurb": "Two months on, many elderly survivors remain displaced, haunted by memories of the disaster and waiting for news of missing family members. Authorities are yet to establish how many older people were affected.",
-      "url": "https://kathmandupost.com/national/2026/11/03/bhotekoshi-floods-leave-older-survivors-grappling-with-loss-uncertainty-and-trauma"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Where are Chitwan Rhinos heading this season?",
-      "blurb": "After a third-place finish in 2024 and a slump in 2025, the Rhinos are still searching for form in NPL Season 3.",
-      "url": "https://kathmandupost.com/cricket/2026/11/03/where-are-chitwan-rhinos-heading-this-season"
     }
   ]
 }

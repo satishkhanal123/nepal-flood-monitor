@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-04T22:54:29.355343+00:00",
+  "updated_at": "2026-11-05T03:07:40.259055+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "India secures 4,700MW in Nepal, but little progress on projects",
+      "blurb": "Despite deals for seven major hydropower projects, only one is under construction, raising questions about Nepal’s export ambitions and the benefits of its power agreements with India.",
+      "url": "https://kathmandupost.com/money/2026/11/05/india-secures-4-700mw-in-nepal-but-little-progress-on-projects"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -16,13 +23,6 @@
       "title": "Floods push back Siddhababa tunnel opening to mid-January",
       "blurb": "The Bhotekoshi and Kaligandaki floods disrupted the delivery of electrical and safety equipment, delaying plans to open the tunnel to traffic.",
       "url": "https://kathmandupost.com/national/2026/11/04/floods-push-back-siddhababa-tunnel-opening-to-mid-january"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Improving disaster communication",
-      "blurb": "Early warning begins with understanding hazards and assessing risks, and continues through clear communication, interpretation of alerts, risk perceptions and decisive actions.",
-      "url": "https://kathmandupost.com/columns/2026/11/04/improving-disaster-communication"
     }
   ]
 }

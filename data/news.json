@@ -1,12 +1,26 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-06T12:55:59.746048+00:00",
+  "updated_at": "2026-11-06T19:51:37.006333+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Chitwan beat Pokhara by 30 runs to move into third position in the NPL",
+      "blurb": "Sikandar Raza and Ravi Bopara added 60 for the fifth wicket before Rijan Dhakal and Kamal Singh Airee shared seven wickets to leave Pokhara facing a fourth straight defeat.",
+      "url": "https://kathmandupost.com/sports/2026/11/06/chitwan-beat-pokhara-by-30-runs-to-move-into-third-position-in-the-npl"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Chitwan set Pokhara 152-run target in must-win NPL clash",
+      "blurb": "Sikandar Raza and Ravi Bopara added 60 for the fifth wicket as the Rhinos posted 151 for six, leaving Pokhara chasing their first win of the season.",
+      "url": "https://kathmandupost.com/sports/2026/11/06/chitwan-set-pokhara-152-run-target-in-must-win-npl-clash"
+    },
     {
       "tag": "access",
       "date": "",
-      "title": "Five key issues on the agenda during Prime Minister Shah’s India visit",
+      "title": "Five key issues on the agenda during Prime Minister Balendra Shah’s India visit",
       "blurb": "Kathmandu is seeking $2 billion for flood recovery, more air routes and progress on the Pancheshwar project, while hoping border disputes feature in the agenda.",
       "url": "https://kathmandupost.com/national/2026/11/06/five-key-issues-on-the-agenda-during-prime-minister-shah-s-india-visit"
     },
@@ -44,13 +58,6 @@
       "title": "Why the NPL can turn Nepal’s promises into wins",
       "blurb": "Close losses to South Africa and England show what is missing. The league, and a home qualifier in December, offer a chance to fix it.",
       "url": "https://kathmandupost.com/columns/2026/11/05/why-the-npl-can-turn-nepal-s-promises-into-wins"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nearly 10 million Nepali children exposed to unhealthy air, UNICEF warns",
-      "blurb": "Millions more face drought, extreme heat and landslides, with overlapping climate and environmental hazards threatening children's health, education and protection, a new report says.",
-      "url": "https://kathmandupost.com/health/2026/11/05/nearly-10-million-nepali-children-exposed-to-unhealthy-air-unicef-warns"
     }
   ]
 }

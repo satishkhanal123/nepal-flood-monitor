@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-06T05:02:30.242481+00:00",
+  "updated_at": "2026-11-06T12:55:59.746048+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Five key issues on the agenda during Prime Minister Shah’s India visit",
+      "blurb": "Kathmandu is seeking $2 billion for flood recovery, more air routes and progress on the Pancheshwar project, while hoping border disputes feature in the agenda.",
+      "url": "https://kathmandupost.com/national/2026/11/06/five-key-issues-on-the-agenda-during-prime-minister-shah-s-india-visit"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Landslide dams river, forming lake in Gorkha",
+      "blurb": "Water continues to flow from the newly formed lake in Chumnubri, with conservation officials reporting no immediate danger but urging residents to remain alert.",
+      "url": "https://kathmandupost.com/national/2026/11/06/landslide-dams-river-forming-lake-in-gorkha"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,13 +51,6 @@
       "title": "Nearly 10 million Nepali children exposed to unhealthy air, UNICEF warns",
       "blurb": "Millions more face drought, extreme heat and landslides, with overlapping climate and environmental hazards threatening children's health, education and protection, a new report says.",
       "url": "https://kathmandupost.com/health/2026/11/05/nearly-10-million-nepali-children-exposed-to-unhealthy-air-unicef-warns"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "India secures 4,700MW in Nepal, but little progress on projects",
-      "blurb": "Despite deals for seven major hydropower projects, only one is under construction, raising questions about Nepal’s export ambitions and the benefits of its power agreements with India.",
-      "url": "https://kathmandupost.com/money/2026/11/05/india-secures-4-700mw-in-nepal-but-little-progress-on-projects"
     }
   ]
 }

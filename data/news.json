@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-07T11:37:49.844148+00:00",
+  "updated_at": "2026-11-07T16:59:12.020872+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Rusted pontoon bridge left unused for 13 years shifted from Bardiya to be installed at flood-hit Phurkekhola, Dhading",
+      "blurb": "The pontoon bridge, which once connected Rajapur with other parts of Bardiya, is being refurbished to restore transport links between Gajuri and Siddhalek after floods swept away the concrete bridge.",
+      "url": "https://kathmandupost.com/national/2026/11/07/rusted-pontoon-bridge-left-unused-for-13-years-shifted-from-bardiya-to-be-installed-at-flood-hit-phurkekhola-dhading"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -44,13 +51,6 @@
       "title": "Nepal sets up round-the-clock centre to combat online financial scams",
       "blurb": "Police, banks, payment firms and telecom operators will work under one roof to trace stolen funds, freeze accounts and disable the digital infrastructure used by fraudsters.",
       "url": "https://kathmandupost.com/money/2026/11/06/nepal-sets-up-round-the-clock-centre-to-combat-online-financial-scams"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Reconstruction aid, strategic ties, pending disputes on PM’s India visit agenda",
-      "blurb": "Prime Minister Balendra Shah’s proposed four-day visit starting November 22 comes at a critical juncture in Nepal-India relations. Kathmandu is seeking billions in aid for post-flood recovery, air connectivity, and…",
-      "url": "https://kathmandupost.com/national/2026/11/06/reconstruction-aid-strategic-ties-pending-disputes-on-pm-s-india-visit-agenda"
     }
   ]
 }

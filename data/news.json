@@ -1,13 +1,20 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-08T00:10:56.758942+00:00",
+  "updated_at": "2026-11-08T05:59:44.122310+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "From flood-hit areas to crime scenes, Nepal’s police dogs sniff out vital clues",
+      "blurb": "One of 107 dogs in the police force, Leo located two bodies and human remains during a 20-day search after the Bhotekoshi floods.",
+      "url": "https://kathmandupost.com/national/2026/11/08/from-flood-hit-areas-to-crime-scenes-nepal-s-police-dogs-sniff-out-vital-clues"
+    },
     {
       "tag": "access",
       "date": "",
-      "title": "Rusted pontoon bridge left unused for 13 years shifted from Bardiya to be installed at flood-hit Phurkekhola, Dhading",
-      "blurb": "The pontoon bridge, which once connected Rajapur with other parts of Bardiya, is being refurbished to restore transport links between Gajuri and Siddhalek after floods swept away the concrete bridge.",
+      "title": "A pontoon bridge unused for 13 years finds a new home in Dhading",
+      "blurb": "The bridge, which once connected Rajapur with other parts of Bardiya, is being refurbished to restore transport links between Gajuri and Siddhalek after floods swept away the concrete bridge.",
       "url": "https://kathmandupost.com/national/2026/11/07/rusted-pontoon-bridge-left-unused-for-13-years-shifted-from-bardiya-to-be-installed-at-flood-hit-phurkekhola-dhading"
     },
     {
@@ -30,27 +37,6 @@
       "title": "Chitwan set Pokhara 152-run target in must-win NPL clash",
       "blurb": "Sikandar Raza and Ravi Bopara added 60 for the fifth wicket as the Rhinos posted 151 for six, leaving Pokhara chasing their first win of the season.",
       "url": "https://kathmandupost.com/sports/2026/11/06/chitwan-set-pokhara-152-run-target-in-must-win-npl-clash"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Five key issues on the agenda during Prime Minister Balendra Shah’s India visit",
-      "blurb": "Kathmandu is seeking $2 billion for flood recovery, more air routes and progress on the Pancheshwar project, while hoping border disputes feature in the agenda.",
-      "url": "https://kathmandupost.com/national/2026/11/06/five-key-issues-on-the-agenda-during-prime-minister-shah-s-india-visit"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Landslide dams river, forming lake in Gorkha",
-      "blurb": "Water continues to flow from the newly formed lake in Chumnubri, with conservation officials reporting no immediate danger but urging residents to remain alert.",
-      "url": "https://kathmandupost.com/national/2026/11/06/landslide-dams-river-forming-lake-in-gorkha"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal sets up round-the-clock centre to combat online financial scams",
-      "blurb": "Police, banks, payment firms and telecom operators will work under one roof to trace stolen funds, freeze accounts and disable the digital infrastructure used by fraudsters.",
-      "url": "https://kathmandupost.com/money/2026/11/06/nepal-sets-up-round-the-clock-centre-to-combat-online-financial-scams"
     }
   ]
 }

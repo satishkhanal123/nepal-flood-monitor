@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-08T22:19:42.024719+00:00",
+  "updated_at": "2026-11-09T01:49:35.838543+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal’s game developers seek tax relief, Google access to scale globally",
+      "blurb": "Industry leaders say high taxes and restrictions on Google Play merchant accounts are stifling local developers, as the prime minister pledges to create conditions for a home-grown technology unicorn.",
+      "url": "https://kathmandupost.com/money/2026/11/09/nepal-s-game-developers-seek-tax-relief-google-access-to-scale-globally"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -23,13 +30,6 @@
       "title": "Pokhara Avengers’ losing streak continues in NPL",
       "blurb": "Chitwan Rhinos hand Avengers fourth straight defeat, leaving them bottom of the table without a point after three matches.",
       "url": "https://kathmandupost.com/sports/2026/11/07/pokhara-avengers-losing-streak-continues-in-npl"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Chitwan beat Pokhara by 30 runs to move into third position in the NPL",
-      "blurb": "Sikandar Raza and Ravi Bopara added 60 for the fifth wicket before Rijan Dhakal and Kamal Singh Airee shared seven wickets to leave Pokhara facing a fourth straight defeat.",
-      "url": "https://kathmandupost.com/sports/2026/11/06/chitwan-beat-pokhara-by-30-runs-to-move-into-third-position-in-the-npl"
     }
   ]
 }

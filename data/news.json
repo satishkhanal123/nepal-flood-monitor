@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-09T09:04:03.692798+00:00",
+  "updated_at": "2026-11-09T19:47:28.485675+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Kathmandu move to top with fourth straight win, beat Chitwan by 10 runs",
+      "blurb": "Ravi Bopara's half-century did not suffice as the Gorkhas defended a target of 181 to strengthen their chances of reaching the NPL playoffs.",
+      "url": "https://kathmandupost.com/cricket/2026/11/09/kathmandu-move-to-top-with-fourth-straight-win-beat-chitwan-by-10-runs"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "TIME names Finance Minister Wagle among 100 influential climate leaders of 2026",
+      "blurb": "The magazine has recognised the finance minister's efforts to highlight Nepal's climate vulnerability and push for international compensation following devastating glacial floods",
+      "url": "https://kathmandupost.com/national/2026/11/09/time-names-finance-minister-wagle-among-100-influential-climate-leaders-of-2026"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Rashid’s half-century lifts Kathmandu to 180 against Chitwan",
+      "blurb": "The all-rounder struck 52 off 30 balls to help the Gorkhas recover from an early collapse and post a challenging total in the NPL.",
+      "url": "https://kathmandupost.com/cricket/2026/11/09/rashid-s-half-century-lifts-kathmandu-to-180-against-chitwan"
+    },
     {
       "tag": "access",
       "date": "",
@@ -30,13 +51,6 @@
       "title": "From flood-hit areas to crime scenes, Nepal’s police dogs sniff out vital clues",
       "blurb": "One of 107 dogs in the police force, Leo located two bodies and human remains during a 20-day search after the Bhotekoshi floods.",
       "url": "https://kathmandupost.com/national/2026/11/08/from-flood-hit-areas-to-crime-scenes-nepal-s-police-dogs-sniff-out-vital-clues"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "A pontoon bridge unused for 13 years finds a new home in Dhading",
-      "blurb": "The bridge, which once connected Rajapur with other parts of Bardiya, is being refurbished to restore transport links between Gajuri and Siddhalek after floods swept away the concrete bridge.",
-      "url": "https://kathmandupost.com/national/2026/11/07/rusted-pontoon-bridge-left-unused-for-13-years-shifted-from-bardiya-to-be-installed-at-flood-hit-phurkekhola-dhading"
     }
   ]
 }

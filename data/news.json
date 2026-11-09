@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-09T01:49:35.838543+00:00",
+  "updated_at": "2026-11-09T09:04:03.692798+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Landslides block Prithvi Highway, disrupting Tihar travel",
+      "blurb": "Travellers heading home for Tihar celebrations face delays after repeated landslides block the highway in Chitwan, with crews working to reopen both lanes by 1pm.",
+      "url": "https://kathmandupost.com/national/2026/11/09/landslides-block-prithvi-highway-disrupting-tihar-travel"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "How many Nepalis are one flood away from poverty?",
+      "blurb": "Bhotekoshi flood pushed poverty up 2.7 percentage points. Prevention, not just relief, must be the answer.",
+      "url": "https://kathmandupost.com/editorial/2026/11/09/one-disaster-away"
+    },
     {
       "tag": "access",
       "date": "",
@@ -23,13 +37,6 @@
       "title": "A pontoon bridge unused for 13 years finds a new home in Dhading",
       "blurb": "The bridge, which once connected Rajapur with other parts of Bardiya, is being refurbished to restore transport links between Gajuri and Siddhalek after floods swept away the concrete bridge.",
       "url": "https://kathmandupost.com/national/2026/11/07/rusted-pontoon-bridge-left-unused-for-13-years-shifted-from-bardiya-to-be-installed-at-flood-hit-phurkekhola-dhading"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Pokhara Avengers’ losing streak continues in NPL",
-      "blurb": "Chitwan Rhinos hand Avengers fourth straight defeat, leaving them bottom of the table without a point after three matches.",
-      "url": "https://kathmandupost.com/sports/2026/11/07/pokhara-avengers-losing-streak-continues-in-npl"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-12T00:22:17.547638+00:00",
+  "updated_at": "2026-11-12T07:30:18.391896+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepal seeks mountain-specific early warning systems after devastating flood",
+      "blurb": "Foreign Minister Shisir Khanal calls for better cross-border data sharing, improved high-altitude monitoring and predictable climate finance to protect vulnerable communities.",
+      "url": "https://kathmandupost.com/national/2026/11/12/nepal-seeks-mountain-specific-early-warning-systems-after-devastating-flood"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "10 killed, five injured as electric microbus plunges off road in Makawanpur",
+      "blurb": "The vehicle was carrying passengers from Sarlahi returning home for Chhath. The driver and one passenger have been identified, while a three-year-old boy was rescued alive.",
+      "url": "https://kathmandupost.com/national/2026/11/12/10-killed-as-electric-passenger-vehicle-plunges-off-road-in-makawanpur"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -44,13 +58,6 @@
       "title": "Rashid’s half-century lifts Kathmandu to 180 against Chitwan",
       "blurb": "The all-rounder struck 52 off 30 balls to help the Gorkhas recover from an early collapse and post a challenging total in the NPL.",
       "url": "https://kathmandupost.com/cricket/2026/11/09/rashid-s-half-century-lifts-kathmandu-to-180-against-chitwan"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Landslides block Prithvi Highway, disrupting Tihar travel",
-      "blurb": "Travellers heading home for Tihar celebrations face delays after repeated landslides block the highway in Chitwan, with crews working to reopen both lanes by 1pm.",
-      "url": "https://kathmandupost.com/national/2026/11/09/landslides-block-prithvi-highway-disrupting-tihar-travel"
     }
   ]
 }

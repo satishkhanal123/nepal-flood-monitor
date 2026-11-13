@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-12T22:22:17.132553+00:00",
+  "updated_at": "2026-11-13T02:46:27.530352+00:00",
   "items": [
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Nepali negotiators at COP31 cling to hope for mountain agenda",
+      "blurb": "Nepal, Bhutan and other mountain countries are pushing for measures to save glaciers and mountain ecosystems.",
+      "url": "https://kathmandupost.com/national/2026/11/13/nepali-negotiators-at-cop31-cling-to-hope-for-mountain-agenda"
+    },
     {
       "tag": "warning",
       "date": "",
@@ -16,13 +23,6 @@
       "title": "10 killed, five injured as electric microbus plunges off road in Makawanpur",
       "blurb": "The vehicle was carrying passengers from Sarlahi returning home for Chhath. The driver and one passenger have been identified, while a three-year-old boy was rescued alive.",
       "url": "https://kathmandupost.com/national/2026/11/12/10-killed-as-electric-passenger-vehicle-plunges-off-road-in-makawanpur"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal PM’s India visit to cover entire spectrum of bilateral ties, says New Delhi",
-      "blurb": "Kathmandu is seeking progress on reconstruction assistance, air connectivity, energy cooperation and longstanding bilateral issues as the two sides discuss arrangements for the prime minister’s visit.",
-      "url": "https://kathmandupost.com/national/2026/11/10/nepal-pm-s-india-visit-to-cover-entire-spectrum-of-bilateral-ties-says-new-delhi"
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-13T23:27:44.846280+00:00",
+  "updated_at": "2026-11-14T03:28:18.647359+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "For Mamta Kafle’s family, a guilty verdict is not enough",
+      "blurb": "A US jury convicted Naresh Bhatt of murdering his wife, whose body remains missing. Her family and advocates say the case highlights the difficulties Nepali women face in leaving abusive relationships abroad.",
+      "url": "https://kathmandupost.com/national/2026/11/14/for-mamta-kafle-s-family-a-guilty-verdict-is-not-enough"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -30,20 +37,6 @@
       "title": "Nepali negotiators at COP31 cling to hope for mountain agenda",
       "blurb": "Nepal, Bhutan and other mountain countries are pushing for measures to save glaciers and mountain ecosystems.",
       "url": "https://kathmandupost.com/national/2026/11/13/nepali-negotiators-at-cop31-cling-to-hope-for-mountain-agenda"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal seeks mountain-specific early warning systems after devastating flood",
-      "blurb": "Foreign Minister Shisir Khanal calls for better cross-border data sharing, improved high-altitude monitoring and predictable climate finance to protect vulnerable communities.",
-      "url": "https://kathmandupost.com/national/2026/11/12/nepal-seeks-mountain-specific-early-warning-systems-after-devastating-flood"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "10 killed, five injured as electric microbus plunges off road in Makawanpur",
-      "blurb": "The vehicle was carrying passengers from Sarlahi returning home for Chhath. The driver and one passenger have been identified, while a three-year-old boy was rescued alive.",
-      "url": "https://kathmandupost.com/national/2026/11/12/10-killed-as-electric-passenger-vehicle-plunges-off-road-in-makawanpur"
     }
   ]
 }

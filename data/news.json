@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-14T10:48:55.904168+00:00",
+  "updated_at": "2026-11-14T16:50:39.703975+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Who is the real prime minister?",
+      "blurb": "After the IGP removal and journalist detentions, Lamichhane’s claim of a right to intervene has reopened a question the RSP’s landslide was meant to settle.",
+      "url": "https://kathmandupost.com/columns/2026/11/14/who-is-the-real-prime-minister"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,13 +44,6 @@
       "title": "Community forests turn to tourism, but potential remains untapped",
       "blurb": "Jeep, elephant and boat safaris bring in millions for some forests but most of Chitwan’s 93 forests outside the park buffer zone have yet to follow suit.",
       "url": "https://kathmandupost.com/national/2026/11/13/community-forests-turn-to-tourism-but-potential-remains-untapped"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepali negotiators at COP31 cling to hope for mountain agenda",
-      "blurb": "Nepal, Bhutan and other mountain countries are pushing for measures to save glaciers and mountain ecosystems.",
-      "url": "https://kathmandupost.com/national/2026/11/13/nepali-negotiators-at-cop31-cling-to-hope-for-mountain-agenda"
     }
   ]
 }

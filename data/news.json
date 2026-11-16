@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-16T06:38:46.729926+00:00",
+  "updated_at": "2026-11-16T16:26:19.465832+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Six wild elephants die in two months, raising conservation concerns",
+      "blurb": "From Chitwan to eastern Nepal, a series of elephant deaths has alarmed conservationists, who warn that shrinking habitats, human activities and unsafe migration routes could threaten the country’s wild elephant…",
+      "url": "https://kathmandupost.com/national/2026/11/16/six-wild-elephants-die-in-two-months-raising-conservation-concerns"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -30,27 +37,6 @@
       "title": "Bhattarai urges Prime Minister Shah to put five issues on agenda for India visit",
       "blurb": "In an interview with Kantipur, the former prime minister says Nepal should press India on the border dispute, trade deficit, air routes and hydropower, while seeking trilateral cooperation on the Himalayan climate…",
       "url": "https://kathmandupost.com/national/2026/11/15/bhattarai-urges-prime-minister-shah-to-put-five-issues-on-agenda-for-india-visit"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Hydropower firms to need 50 percent construction progress for IPOs",
-      "blurb": "The proposed ordinance would allow companies to issue shares before commercial production begins, provided their projects have completed at least half of the physical work.",
-      "url": "https://kathmandupost.com/money/2026/11/15/hydropower-firms-to-need-50-percent-construction-progress-for-ipos"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Karnali set Chitwan a target of 154 in final league match",
-      "blurb": "Hasan Talat hits an unbeaten half-century as Karnali Yakss, already out of playoff contention, post 153-8; Chitwan have secured a playoff berth.",
-      "url": "https://kathmandupost.com/cricket/2026/11/15/karnali-set-chitwan-a-target-of-154-in-final-league-match"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "And then there were four: Lumbini lead NPL playoff pack",
-      "blurb": "The defending champions sealed the top spot with a four-wicket win over Biratnagar, leaving Sudurpaschim, Kathmandu and Chitwan to fight over second to fourth on Sunday.",
-      "url": "https://kathmandupost.com/cricket/2026/11/15/and-then-there-were-four-lumbini-lead-npl-playoff-pack"
     }
   ]
 }

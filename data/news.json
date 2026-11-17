@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-17T08:16:19.886411+00:00",
+  "updated_at": "2026-11-17T17:44:33.935680+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Nepali youth press COP31 presidency for grants to rebuild after disasters",
+      "blurb": "Activists tell Australian negotiators in Antalya that countries that did little to cause the climate crisis should not have to borrow to recover from it.",
+      "url": "https://kathmandupost.com/climate-environment/2026/11/17/nepali-youth-press-cop31-presidency-for-grants-to-rebuild-after-disasters"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Police seize Rs16.7 million in unaccounted cash in Lalitpur",
+      "blurb": "A team from the Kathmandu Valley Crime Investigation Office recovered the money after receiving information about a suspicious financial transaction.",
+      "url": "https://kathmandupost.com/province-no-3/2026/11/17/police-seize-rs16-7-million-in-unaccounted-cash-in-lalitpur"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal gets India’s approval to import 350MW and export 56MW",
+      "blurb": "The approval allows the NEA to purchase electricity for up to 17 hours a day to meet winter demand while continuing exports from three hydropower projects.",
+      "url": "https://kathmandupost.com/money/2026/11/17/nepal-gets-india-s-approval-to-import-350mw-and-export-56mw"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -23,13 +44,6 @@
       "title": "Opposition urges PM to forge national consensus before India visit",
       "blurb": "Leaders say Prime Minister Shah should prioritise restoring trust and resolving longstanding disputes over border, treaties, trade, hydropower, and air routes.",
       "url": "https://kathmandupost.com/politics/2026/11/17/opposition-urges-pm-to-forge-national-consensus-before-india-visit"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Six wild elephants die in two months, raising conservation concerns",
-      "blurb": "From Chitwan to eastern Nepal, a series of elephant deaths has alarmed conservationists, who warn that shrinking habitats, human activities and unsafe migration routes could threaten the country’s wild elephant…",
-      "url": "https://kathmandupost.com/national/2026/11/16/six-wild-elephants-die-in-two-months-raising-conservation-concerns"
     }
   ]
 }

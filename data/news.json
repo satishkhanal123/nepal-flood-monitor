@@ -1,8 +1,36 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-18T06:58:08.054439+00:00",
+  "updated_at": "2026-11-18T16:18:39.579079+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Mishara’s record century sends Chitwan into Qualifier 2",
+      "blurb": "Chitwan Rhinos beat Kathmandu Gorkhas by 61 runs in the Eliminator after Kamil Mishara smashed an unbeaten 120, the highest individual score in Nepal Premier League history.",
+      "url": "https://kathmandupost.com/cricket/2026/11/18/mishara-s-record-century-sends-chitwan-into-qualifier-2"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Mishara’s record-breaking 120 gives Chitwan 204 against Kathmandu",
+      "blurb": "The Sri Lankan batter struck an unbeaten century and shared a 154-run stand with captain Ravi Bopara as Chitwan Rhinos set Kathmandu Gorkhas a target of 205 in the NPL Eliminator.",
+      "url": "https://kathmandupost.com/cricket/2026/11/18/mishara-s-record-breaking-120-gives-chitwan-204-against-kathmandu"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Chitwan and Kathmandu look to go beyond the Eliminator in NPL",
+      "blurb": "Kathmandu finished third and Chitwan fourth in the league stage, setting up a knockout clash for a place in the second qualifier of the Nepal Premier League.",
+      "url": "https://kathmandupost.com/sports/2026/11/18/chitwan-and-kathmandu-look-to-go-beyond-the-eliminator-in-npl"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Luxembourg prince visits development projects in Kavre",
+      "blurb": "During a private visit to Bethanchok, Prince Louis pledged continued support for education and environmental conservation and met local representatives to discuss post-disaster recovery.",
+      "url": "https://kathmandupost.com/national/2026/11/18/luxembourg-prince-visits-development-projects-in-kavre"
+    },
     {
       "tag": "access",
       "date": "",
@@ -44,34 +72,6 @@
       "title": "Police seize Rs16.7 million in unaccounted cash in Lalitpur",
       "blurb": "A team from the Kathmandu Valley Crime Investigation Office recovered the money after receiving information about a suspicious financial transaction.",
       "url": "https://kathmandupost.com/province-no-3/2026/11/17/police-seize-rs16-7-million-in-unaccounted-cash-in-lalitpur"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal gets India’s approval to import 350MW and export 56MW",
-      "blurb": "The approval allows the NEA to purchase electricity for up to 17 hours a day to meet winter demand while continuing exports from three hydropower projects.",
-      "url": "https://kathmandupost.com/money/2026/11/17/nepal-gets-india-s-approval-to-import-350mw-and-export-56mw"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Flood-hit Rani Mahal still awaits cleanup two months on",
-      "blurb": "Sand, gravel and debris remain scattered across the historic palace grounds, while riverbank erosion threatens its foundations and local businesses struggle with a decline in visitors.",
-      "url": "https://kathmandupost.com/province-no-5/2026/11/17/flood-hit-rani-mahal-still-awaits-cleanup-two-months-on"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal considers stricter IPO rules for hydropower projects",
-      "blurb": "A draft amendment would require projects to complete at least 50 percent of construction before issuing shares, drawing mixed reactions from investors and developers.",
-      "url": "https://kathmandupost.com/money/2026/11/17/nepal-considers-stricter-ipo-rules-for-hydropower-projects"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Opposition urges PM to forge national consensus before India visit",
-      "blurb": "Leaders say Prime Minister Shah should prioritise restoring trust and resolving longstanding disputes over border, treaties, trade, hydropower, and air routes.",
-      "url": "https://kathmandupost.com/politics/2026/11/17/opposition-urges-pm-to-forge-national-consensus-before-india-visit"
     }
   ]
 }

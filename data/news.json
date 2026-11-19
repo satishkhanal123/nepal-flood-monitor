@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-18T22:59:51.916885+00:00",
+  "updated_at": "2026-11-19T04:03:59.037285+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Chitwan Rhinos knock Kathmandu Gorkhas out and progress to Qualifier 2",
+      "blurb": "Chitwan defeated Kathmandu by 61 runs and entered Qualifier 2, where Sudurpaschim Royals are waiting. Chitwan and Sudurpaschim will vie for a spot in the final on Thursday.",
+      "url": "https://kathmandupost.com/cricket/2026/11/19/chitwan-rhinos-knock-kathmandu-gorkhas-out-and-progress-to-qualifier-2"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -58,20 +65,6 @@
       "title": "Flood victims occupy Nepal Electricity Authority land, erect tents",
       "blurb": "More than 250 displaced families from Trishuli Bazar cleared the land using an excavator, accusing the government of delaying their rehabilitation.",
       "url": "https://kathmandupost.com/national/2026/11/18/flood-victims-occupy-nepal-electricity-authority-land-erect-tents"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Nepali youth press COP31 presidency for grants to rebuild after disasters",
-      "blurb": "Activists tell Australian negotiators in Antalya that countries that did little to cause the climate crisis should not have to borrow to recover from it.",
-      "url": "https://kathmandupost.com/climate-environment/2026/11/17/nepali-youth-press-cop31-presidency-for-grants-to-rebuild-after-disasters"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Police seize Rs16.7 million in unaccounted cash in Lalitpur",
-      "blurb": "A team from the Kathmandu Valley Crime Investigation Office recovered the money after receiving information about a suspicious financial transaction.",
-      "url": "https://kathmandupost.com/province-no-3/2026/11/17/police-seize-rs16-7-million-in-unaccounted-cash-in-lalitpur"
     }
   ]
 }

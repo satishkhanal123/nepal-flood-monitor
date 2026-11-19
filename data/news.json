@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-19T13:03:13.825411+00:00",
+  "updated_at": "2026-11-19T21:31:25.066925+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Sudurpaschim reach third straight NPL final, set up title clash with Lumbini",
+      "blurb": "Tharindu Ratnayake’s unbeaten 53 guides Sudurpaschim Royals to a three-wicket victory over Chitwan Rhinos in Qualifier 2.",
+      "url": "https://kathmandupost.com/cricket/2026/11/19/sudurpaschim-reach-third-straight-npl-final-set-up-title-clash-with-lumbini"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "At Seto Gumba, there’s more to being a nun than prayer and meditation",
+      "blurb": "Over 80 Buddhist nuns at the monastery in western Kathmandu blend daily kung fu practice with meditation, disaster relief, environmental advocacy, and skills traditionally associated with men.",
+      "url": "https://kathmandupost.com/national/2026/11/19/at-seto-gumba-there-s-more-to-being-a-nun-than-prayer-and-meditation"
+    },
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Malan’s 71 takes Chitwan to 133 against Sudurpaschim",
+      "blurb": "Chitwan Rhinos set the Royals a target of 134 in Qualifier 2, with the winner advancing to the final against Lumbini Lions.",
+      "url": "https://kathmandupost.com/cricket/2026/11/19/malan-s-71-takes-chitwan-to-133-against-sudurpaschim"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -44,13 +65,6 @@
       "title": "Nepal urges China to reopen Tatopani border crossing",
       "blurb": "Foreign Minister Shisir Khanal tells a visiting Chinese delegation that the crossing is crucial to connectivity, as the Rasuwagadhi route remains shut following the August floods.",
       "url": "https://kathmandupost.com/national/2026/11/18/nepal-urges-china-to-reopen-tatopani-border-crossing"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Kathmandu is going digital. Its birds and animals are paying the price",
-      "blurb": "Telecom towers, data centres, floodlights and tangled fibre networks are disrupting the habitats and natural cycle of birds and animals. Yet the ecological consequences of this expanding infrastructure remain largely…",
-      "url": "https://kathmandupost.com/climate-environment/2026/11/18/kathmandu-is-going-digital-its-birds-and-animals-are-paying-the-price"
     }
   ]
 }

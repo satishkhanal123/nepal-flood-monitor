@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-20T02:36:47.626661+00:00",
+  "updated_at": "2026-11-20T10:31:10.706924+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Salyan to reassess 756 earthquake-hit households",
+      "blurb": "Repeated assessments have delayed relief and reconstruction for earthquake survivors in Darma Rural Municipality, where 1,600 households have yet to receive even the first instalment of government assistance.",
+      "url": "https://kathmandupost.com/karnali-province/2026/11/20/salyan-to-reassess-756-earthquake-hit-households"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -37,13 +44,6 @@
       "title": "Chitwan Rhinos knock Kathmandu Gorkhas out and progress to Qualifier 2",
       "blurb": "Chitwan defeated Kathmandu by 61 runs and entered Qualifier 2, where Sudurpaschim Royals are waiting. Chitwan and Sudurpaschim will vie for a spot in the final on Thursday.",
       "url": "https://kathmandupost.com/cricket/2026/11/19/chitwan-rhinos-knock-kathmandu-gorkhas-out-and-progress-to-qualifier-2"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Mishara’s record century sends Chitwan into Qualifier 2",
-      "blurb": "Chitwan Rhinos beat Kathmandu Gorkhas by 61 runs in the Eliminator after Kamil Mishara smashed an unbeaten 120, the highest individual score in Nepal Premier League history.",
-      "url": "https://kathmandupost.com/cricket/2026/11/18/mishara-s-record-century-sends-chitwan-into-qualifier-2"
     }
   ]
 }

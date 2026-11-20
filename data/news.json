@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-20T10:31:10.706924+00:00",
+  "updated_at": "2026-11-20T18:50:02.758113+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Months after Bhotekoshi floods, families still await bodies and closure",
+      "blurb": "DNA matches alone cannot establish which missing family member the recovered remains belong to, and this has delayed identification and the return of bodies.",
+      "url": "https://kathmandupost.com/national/2026/11/20/months-after-bhotekoshi-floods-families-still-await-bodies-and-closure"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Lack of verified data delays scholarships for flood-hit students",
+      "blurb": "Nearly three months after the Bhotekoshi catastrophe, the government has approved scholarships for 27 students, but the number of other children who lost their parents or homes remains unknown.",
+      "url": "https://kathmandupost.com/national/2026/11/20/lack-of-verified-data-delays-scholarships-for-flood-hit-students"
+    },
     {
       "tag": "people",
       "date": "",
@@ -37,13 +51,6 @@
       "title": "Malan’s 71 takes Chitwan to 133 against Sudurpaschim",
       "blurb": "Chitwan Rhinos set the Royals a target of 134 in Qualifier 2, with the winner advancing to the final against Lumbini Lions.",
       "url": "https://kathmandupost.com/cricket/2026/11/19/malan-s-71-takes-chitwan-to-133-against-sudurpaschim"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Chitwan Rhinos knock Kathmandu Gorkhas out and progress to Qualifier 2",
-      "blurb": "Chitwan defeated Kathmandu by 61 runs and entered Qualifier 2, where Sudurpaschim Royals are waiting. Chitwan and Sudurpaschim will vie for a spot in the final on Thursday.",
-      "url": "https://kathmandupost.com/cricket/2026/11/19/chitwan-rhinos-knock-kathmandu-gorkhas-out-and-progress-to-qualifier-2"
     }
   ]
 }

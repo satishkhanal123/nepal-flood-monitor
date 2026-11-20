@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-19T21:31:25.066925+00:00",
+  "updated_at": "2026-11-20T02:36:47.626661+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Three seasons, three finals—Sudurpaschim Royals do it again",
+      "blurb": "The Royals defeated Chitwan Rhinos in Qualifier 2 on Thursday to book a seat in the final for the third consecutive season.",
+      "url": "https://kathmandupost.com/cricket/2026/11/20/npl-final-will-not-miss-out-sudurpaschim-royals"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -37,34 +44,6 @@
       "title": "Mishara’s record century sends Chitwan into Qualifier 2",
       "blurb": "Chitwan Rhinos beat Kathmandu Gorkhas by 61 runs in the Eliminator after Kamil Mishara smashed an unbeaten 120, the highest individual score in Nepal Premier League history.",
       "url": "https://kathmandupost.com/cricket/2026/11/18/mishara-s-record-century-sends-chitwan-into-qualifier-2"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Mishara’s record-breaking 120 gives Chitwan 204 against Kathmandu",
-      "blurb": "The Sri Lankan batter struck an unbeaten century and shared a 154-run stand with captain Ravi Bopara as Chitwan Rhinos set Kathmandu Gorkhas a target of 205 in the NPL Eliminator.",
-      "url": "https://kathmandupost.com/cricket/2026/11/18/mishara-s-record-breaking-120-gives-chitwan-204-against-kathmandu"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Chitwan and Kathmandu look to go beyond the Eliminator in NPL",
-      "blurb": "Kathmandu finished third and Chitwan fourth in the league stage, setting up a knockout clash for a place in the second qualifier of the Nepal Premier League.",
-      "url": "https://kathmandupost.com/sports/2026/11/18/chitwan-and-kathmandu-look-to-go-beyond-the-eliminator-in-npl"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Luxembourg prince visits development projects in Kavre",
-      "blurb": "During a private visit to Bethanchok, Prince Louis pledged continued support for education and environmental conservation and met local representatives to discuss post-disaster recovery.",
-      "url": "https://kathmandupost.com/national/2026/11/18/luxembourg-prince-visits-development-projects-in-kavre"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Nepal urges China to reopen Tatopani border crossing",
-      "blurb": "Foreign Minister Shisir Khanal tells a visiting Chinese delegation that the crossing is crucial to connectivity, as the Rasuwagadhi route remains shut following the August floods.",
-      "url": "https://kathmandupost.com/national/2026/11/18/nepal-urges-china-to-reopen-tatopani-border-crossing"
     }
   ]
 }

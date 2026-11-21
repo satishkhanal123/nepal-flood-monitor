@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-21T00:35:42.248874+00:00",
+  "updated_at": "2026-11-21T07:42:29.971736+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Resettling disaster survivors takes more than finding them new homes",
+      "blurb": "Past relocation schemes have left families in unsafe settlements or driven them home. A 55-year-old settlement in Kanchanpur offers lessons as the government plans to relocate Bhotekoshi flood survivors.",
+      "url": "https://kathmandupost.com/national/2026/11/21/resettling-disaster-survivors-takes-more-than-finding-them-new-homes"
+    },
     {
       "tag": "people",
       "date": "",
@@ -44,13 +51,6 @@
       "title": "At Seto Gumba, there’s more to being a nun than prayer and meditation",
       "blurb": "Over 80 Buddhist nuns at the monastery in western Kathmandu blend daily kung fu practice with meditation, disaster relief, environmental advocacy, and skills traditionally associated with men.",
       "url": "https://kathmandupost.com/national/2026/11/19/at-seto-gumba-there-s-more-to-being-a-nun-than-prayer-and-meditation"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Malan’s 71 takes Chitwan to 133 against Sudurpaschim",
-      "blurb": "Chitwan Rhinos set the Royals a target of 134 in Qualifier 2, with the winner advancing to the final against Lumbini Lions.",
-      "url": "https://kathmandupost.com/cricket/2026/11/19/malan-s-71-takes-chitwan-to-133-against-sudurpaschim"
     }
   ]
 }

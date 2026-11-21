@@ -1,12 +1,33 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-21T07:42:29.971736+00:00",
+  "updated_at": "2026-11-21T15:38:15.093333+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Government plans floodlit home grounds for all eight NPL clubs",
+      "blurb": "Prime Minister Balendra Shah announces stadium construction plans as part of preparations to introduce a home-and-away format from the league’s sixth edition.",
+      "url": "https://kathmandupost.com/national/2026/11/21/government-plans-floodlit-home-grounds-for-all-eight-npl-clubs"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "As e-bike battery fires mount, New York weighs tougher restrictions",
+      "blurb": "The deaths of 10 people in two recent New York ​fires prompted the New York City Council to hold ‌an emergency hearing on Friday on a raft of stricter rules for e-bike storage and battery safety.",
+      "url": "https://kathmandupost.com/world/2026/11/21/as-e-bike-battery-fires-mount-new-york-weighs-tougher-restrictions"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepse loses ground as trading slows and investors favour select stocks",
+      "blurb": "Banking and selected hydropower stocks show relative strength, but falling daily turnover and weak economic growth prospects limit the market’s recovery.",
+      "url": "https://kathmandupost.com/money/2026/11/21/nepse-loses-ground-as-trading-slows-and-investors-favour-select-stocks"
+    },
     {
       "tag": "people",
       "date": "",
-      "title": "Resettling disaster survivors takes more than finding them new homes",
+      "title": "Nepal has failed disaster survivors before. Can Bhotekoshi be different?",
       "blurb": "Past relocation schemes have left families in unsafe settlements or driven them home. A 55-year-old settlement in Kanchanpur offers lessons as the government plans to relocate Bhotekoshi flood survivors.",
       "url": "https://kathmandupost.com/national/2026/11/21/resettling-disaster-survivors-takes-more-than-finding-them-new-homes"
     },
@@ -30,27 +51,6 @@
       "title": "Salyan to reassess 756 earthquake-hit households",
       "blurb": "Repeated assessments have delayed relief and reconstruction for earthquake survivors in Darma Rural Municipality, where 1,600 households have yet to receive even the first instalment of government assistance.",
       "url": "https://kathmandupost.com/karnali-province/2026/11/20/salyan-to-reassess-756-earthquake-hit-households"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Three seasons, three finals—Sudurpaschim Royals do it again",
-      "blurb": "The Royals defeated Chitwan Rhinos in Qualifier 2 on Thursday to book a seat in the final for the third consecutive season.",
-      "url": "https://kathmandupost.com/cricket/2026/11/20/npl-final-will-not-miss-out-sudurpaschim-royals"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Sudurpaschim reach third straight NPL final, set up title clash with Lumbini",
-      "blurb": "Tharindu Ratnayake’s unbeaten 53 guides Sudurpaschim Royals to a three-wicket victory over Chitwan Rhinos in Qualifier 2.",
-      "url": "https://kathmandupost.com/cricket/2026/11/19/sudurpaschim-reach-third-straight-npl-final-set-up-title-clash-with-lumbini"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "At Seto Gumba, there’s more to being a nun than prayer and meditation",
-      "blurb": "Over 80 Buddhist nuns at the monastery in western Kathmandu blend daily kung fu practice with meditation, disaster relief, environmental advocacy, and skills traditionally associated with men.",
-      "url": "https://kathmandupost.com/national/2026/11/19/at-seto-gumba-there-s-more-to-being-a-nun-than-prayer-and-meditation"
     }
   ]
 }

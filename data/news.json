@@ -1,14 +1,28 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-21T21:09:45.515772+00:00",
+  "updated_at": "2026-11-22T01:17:06.593379+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "What happens to passengers’ belongings after a road accident?",
+      "blurb": "Families repeatedly complain about missing cash, jewellery, and phones after crashes, exposing shortcomings in how victims’ possessions are collected, documented, and returned.",
+      "url": "https://kathmandupost.com/national/2026/11/22/what-happens-to-passengers-belongings-after-a-road-accident"
+    },
     {
       "tag": "ops",
       "date": "",
       "title": "Government plans floodlit home grounds for all eight NPL clubs",
       "blurb": "Prime Minister Balendra Shah announces stadium construction plans as part of preparations to introduce a home-and-away format from the league’s sixth edition.",
       "url": "https://kathmandupost.com/national/2026/11/21/government-plans-floodlit-home-grounds-for-all-eight-npl-clubs"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Why Nepal must separate crypto from the future of banking",
+      "blurb": "Disaster relief that began as cryptocurrency has exposed a policy blind spot. Nepal must tell crypto assets, tokenised money and payment rails apart.",
+      "url": "https://kathmandupost.com/columns/2026/11/21/why-nepal-must-separate-crypto-from-the-future-of-banking"
     },
     {
       "tag": "ops",
@@ -44,13 +58,6 @@
       "title": "Lack of verified data delays scholarships for flood-hit students",
       "blurb": "Nearly three months after the Bhotekoshi catastrophe, the government has approved scholarships for 27 students, but the number of other children who lost their parents or homes remains unknown.",
       "url": "https://kathmandupost.com/national/2026/11/20/lack-of-verified-data-delays-scholarships-for-flood-hit-students"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Salyan to reassess 756 earthquake-hit households",
-      "blurb": "Repeated assessments have delayed relief and reconstruction for earthquake survivors in Darma Rural Municipality, where 1,600 households have yet to receive even the first instalment of government assistance.",
-      "url": "https://kathmandupost.com/karnali-province/2026/11/20/salyan-to-reassess-756-earthquake-hit-households"
     }
   ]
 }

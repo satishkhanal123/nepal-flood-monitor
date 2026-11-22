@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-22T08:29:02.644649+00:00",
+  "updated_at": "2026-11-22T16:34:28.295499+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Seven body bags recovered, 50 missing after Indonesian factory fire",
+      "blurb": "The factory is part of Indonesia’s United Family Food company, founded in 1981.",
+      "url": "https://kathmandupost.com/world/2026/11/22/seven-body-bags-recovered-50-missing-after-indonesian-factory-fire"
+    },
     {
       "tag": "access",
       "date": "",
@@ -37,13 +44,6 @@
       "title": "Nepse loses ground as trading slows and investors favour select stocks",
       "blurb": "Banking and selected hydropower stocks show relative strength, but falling daily turnover and weak economic growth prospects limit the market’s recovery.",
       "url": "https://kathmandupost.com/money/2026/11/21/nepse-loses-ground-as-trading-slows-and-investors-favour-select-stocks"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Nepal has failed disaster survivors before. Can Bhotekoshi be different?",
-      "blurb": "Past relocation schemes have left families in unsafe settlements or driven them home. A 55-year-old settlement in Kanchanpur offers lessons as the government plans to relocate Bhotekoshi flood survivors.",
-      "url": "https://kathmandupost.com/national/2026/11/21/resettling-disaster-survivors-takes-more-than-finding-them-new-homes"
     }
   ]
 }

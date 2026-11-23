@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-22T22:03:03.473045+00:00",
+  "updated_at": "2026-11-23T02:43:33.034281+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Months after flood devastated families, survivors live in trauma",
+      "blurb": "Loss of loved ones, homes and livelihoods, coupled with uncertainty over the future, is taking a heavy toll on the people displaced by the Bhotekoshi disaster.",
+      "url": "https://kathmandupost.com/health/2026/11/23/months-after-flood-devastated-families-survivors-live-in-trauma"
+    },
     {
       "tag": "people",
       "date": "",
@@ -30,20 +37,6 @@
       "title": "Why Nepal must separate crypto from the future of banking",
       "blurb": "Disaster relief that began as cryptocurrency has exposed a policy blind spot. Nepal must tell crypto assets, tokenised money and payment rails apart.",
       "url": "https://kathmandupost.com/columns/2026/11/21/why-nepal-must-separate-crypto-from-the-future-of-banking"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "As e-bike battery fires mount, New York weighs tougher restrictions",
-      "blurb": "The deaths of 10 people in two recent New York ​fires prompted the New York City Council to hold ‌an emergency hearing on Friday on a raft of stricter rules for e-bike storage and battery safety.",
-      "url": "https://kathmandupost.com/world/2026/11/21/as-e-bike-battery-fires-mount-new-york-weighs-tougher-restrictions"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepse loses ground as trading slows and investors favour select stocks",
-      "blurb": "Banking and selected hydropower stocks show relative strength, but falling daily turnover and weak economic growth prospects limit the market’s recovery.",
-      "url": "https://kathmandupost.com/money/2026/11/21/nepse-loses-ground-as-trading-slows-and-investors-favour-select-stocks"
     }
   ]
 }

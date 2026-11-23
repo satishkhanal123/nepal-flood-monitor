@@ -1,8 +1,43 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-23T02:43:33.034281+00:00",
+  "updated_at": "2026-11-23T11:18:25.324650+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal and India PMs inaugurate 669MW Lower Arun project",
+      "blurb": "The Rs92.67 billion hydropower project will use water discharged from the 900MW Arun-3 plant to generate electricity, but financial closure is still pending.",
+      "url": "https://kathmandupost.com/money/2026/11/23/nepal-and-india-pms-inaugurate-669mw-lower-arun-project"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Nepal and India sign eight MoUs on cooperation in multiple sectors",
+      "blurb": "Agreements cover forensic science, police training, civil service capacity building, satellite communications, health, urban development and traditional medicine.",
+      "url": "https://kathmandupost.com/national/2026/11/23/nepal-and-india-sign-eight-mous-on-cooperation-in-multiple-sectors"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Shah and Modi inaugurate bridge, flag off Janakpur-Ayodhya train",
+      "blurb": "The two leaders inaugurate a motorable bridge linking Darchula with India and the second phase of a petroleum pipeline, and lay foundation stones for an integrated check post, oil terminal and hydropower project.",
+      "url": "https://kathmandupost.com/national/2026/11/23/shah-and-modi-inaugurate-bridge-flag-off-janakpur-ayodhya-train"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Indonesia says 24 killed in factory blaze as rescuers search for dozens missing",
+      "blurb": "Around 30 people remain missing as rescuers navigate unstable structures at the burned factory, with a possible air-conditioner short circuit suspected as the cause.",
+      "url": "https://kathmandupost.com/world/2026/11/23/indonesia-says-24-killed-in-factory-blaze-as-rescuers-search-for-dozens-missing"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Indian investors eye expansion in Nepal as Kathmandu courts fresh capital",
+      "blurb": "Finance Minister Swarnim Wagle urges Indian businesses to invest in technology, hydropower and connectivity, while the two countries’ private sectors agree to cooperate on flood recovery.",
+      "url": "https://kathmandupost.com/money/2026/11/23/indian-investors-eye-expansion-in-nepal-as-kathmandu-courts-fresh-capital"
+    },
     {
       "tag": "people",
       "date": "",
@@ -16,27 +51,6 @@
       "title": "Seven body bags recovered, 50 missing after Indonesian factory fire",
       "blurb": "The factory is part of Indonesia’s United Family Food company, founded in 1981.",
       "url": "https://kathmandupost.com/world/2026/11/22/seven-body-bags-recovered-50-missing-after-indonesian-factory-fire"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "What happens to passengers’ belongings after a road accident?",
-      "blurb": "Families repeatedly complain about missing cash, jewellery, and phones after crashes, exposing shortcomings in how victims’ possessions are collected, documented, and returned.",
-      "url": "https://kathmandupost.com/national/2026/11/22/what-happens-to-passengers-belongings-after-a-road-accident"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Government plans floodlit home grounds for all eight NPL clubs",
-      "blurb": "Prime Minister Balendra Shah announces stadium construction plans as part of preparations to introduce a home-and-away format from the league’s sixth edition.",
-      "url": "https://kathmandupost.com/national/2026/11/21/government-plans-floodlit-home-grounds-for-all-eight-npl-clubs"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Why Nepal must separate crypto from the future of banking",
-      "blurb": "Disaster relief that began as cryptocurrency has exposed a policy blind spot. Nepal must tell crypto assets, tokenised money and payment rails apart.",
-      "url": "https://kathmandupost.com/columns/2026/11/21/why-nepal-must-separate-crypto-from-the-future-of-banking"
     }
   ]
 }

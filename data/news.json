@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-23T22:48:32.254514+00:00",
+  "updated_at": "2026-11-24T06:43:39.730418+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Temporary cable crossings ease access to flood-hit villages in Gorkha",
+      "blurb": "Two suspension bridges were washed away by floods in the Budhigandaki river, leaving around 550 households struggling to access roads and transport essential supplies.",
+      "url": "https://kathmandupost.com/gandaki-province/2026/11/24/temporary-cable-crossings-ease-access-to-flood-hit-villages-in-gorkha"
+    },
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "India pledges Rs240 billion in fresh aid, but old loan remains a cautionary tale",
+      "blurb": "The package includes Rs56 billion in grants and Rs184 billion in concessional loans, but much of India’s previous earthquake reconstruction loan went unused due to restrictive conditions.",
+      "url": "https://kathmandupost.com/money/2026/11/24/india-pledges-rs240-billion-in-fresh-aid-but-old-loan-remains-a-cautionary-tale"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -23,34 +37,6 @@
       "title": "Shah and Modi inaugurate bridge, flag off Janakpur-Ayodhya train",
       "blurb": "The two leaders inaugurate a motorable bridge linking Darchula with India and the second phase of a petroleum pipeline, and lay foundation stones for an integrated check post, oil terminal and hydropower project.",
       "url": "https://kathmandupost.com/national/2026/11/23/shah-and-modi-inaugurate-bridge-flag-off-janakpur-ayodhya-train"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Indonesia says 24 killed in factory blaze as rescuers search for dozens missing",
-      "blurb": "Around 30 people remain missing as rescuers navigate unstable structures at the burned factory, with a possible air-conditioner short circuit suspected as the cause.",
-      "url": "https://kathmandupost.com/world/2026/11/23/indonesia-says-24-killed-in-factory-blaze-as-rescuers-search-for-dozens-missing"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Indian investors eye expansion in Nepal as Kathmandu courts fresh capital",
-      "blurb": "Finance Minister Swarnim Wagle urges Indian businesses to invest in technology, hydropower and connectivity, while the two countries’ private sectors agree to cooperate on flood recovery.",
-      "url": "https://kathmandupost.com/money/2026/11/23/indian-investors-eye-expansion-in-nepal-as-kathmandu-courts-fresh-capital"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Months after flood devastated families, survivors live in trauma",
-      "blurb": "Loss of loved ones, homes and livelihoods, coupled with uncertainty over the future, is taking a heavy toll on the people displaced by the Bhotekoshi disaster.",
-      "url": "https://kathmandupost.com/health/2026/11/23/months-after-flood-devastated-families-survivors-live-in-trauma"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Seven body bags recovered, 50 missing after Indonesian factory fire",
-      "blurb": "The factory is part of Indonesia’s United Family Food company, founded in 1981.",
-      "url": "https://kathmandupost.com/world/2026/11/22/seven-body-bags-recovered-50-missing-after-indonesian-factory-fire"
     }
   ]
 }

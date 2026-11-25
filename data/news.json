@@ -1,7 +1,7 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-25T11:44:54.896251+00:00",
+  "updated_at": "2026-11-25T20:41:09.251179+00:00",
   "items": [
     {
       "tag": "sitrep",
@@ -37,13 +37,6 @@
       "title": "Nepal forecast to receive above-normal precipitation this winter",
       "blurb": "ICIMOD warns of increased rainfall in the foothills and heavier snowfall at higher elevations, raising the risk of floods, landslides and avalanches in parts of the western Himalaya.",
       "url": "https://kathmandupost.com/climate-environment/2026/11/24/nepal-forecast-to-receive-above-normal-precipitation-this-winter"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Temporary cable crossings ease access to flood-hit villages in Gorkha",
-      "blurb": "Two suspension bridges were washed away by floods in the Budhigandaki river, leaving around 550 households struggling to access roads and transport essential supplies.",
-      "url": "https://kathmandupost.com/gandaki-province/2026/11/24/temporary-cable-crossings-ease-access-to-flood-hit-villages-in-gorkha"
     }
   ]
 }

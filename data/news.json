@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-24T18:22:00.529507+00:00",
+  "updated_at": "2026-11-25T02:41:51.732317+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "China’s Huawei convicted in sprawling US criminal trial over Iran business",
+      "blurb": "A New York jury finds the Chinese telecommunications giant guilty of 10 criminal counts, including bank fraud, sanctions violations and conspiring to steal trade secrets from US companies.",
+      "url": "https://kathmandupost.com/science-technology/2026/11/25/china-s-huawei-convicted-in-sprawling-us-criminal-trial-over-iran-business"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Three months on, flood-hit communities in Nuwakot remain cut off from district headquarters",
+      "blurb": "The delay in installing a Bailey bridge over the Trishuli river in Bidur has forced thousands to walk for hours to access government services.",
+      "url": "https://kathmandupost.com/province-no-3/2026/11/25/three-months-on-flood-hit-communities-in-nuwakot-remain-cut-off-from-district-headquarters"
+    },
     {
       "tag": "access",
       "date": "",
@@ -23,13 +37,6 @@
       "title": "Temporary cable crossings ease access to flood-hit villages in Gorkha",
       "blurb": "Two suspension bridges were washed away by floods in the Budhigandaki river, leaving around 550 households struggling to access roads and transport essential supplies.",
       "url": "https://kathmandupost.com/gandaki-province/2026/11/24/temporary-cable-crossings-ease-access-to-flood-hit-villages-in-gorkha"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "India pledges Rs240 billion in fresh aid, but old loan remains a cautionary tale",
-      "blurb": "The package includes Rs56 billion in grants and Rs184 billion in concessional loans, but much of India’s previous earthquake reconstruction loan went unused due to restrictive conditions.",
-      "url": "https://kathmandupost.com/money/2026/11/24/india-pledges-rs240-billion-in-fresh-aid-but-old-loan-remains-a-cautionary-tale"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-25T20:41:09.251179+00:00",
+  "updated_at": "2026-11-26T03:08:42.907373+00:00",
   "items": [
+    {
+      "tag": "ops",
+      "date": "",
+      "title": "Nepal’s fossil fuel push clashes with its clean energy ambitions",
+      "blurb": "As the country seeks climate finance and promotes hydropower exports, new petroleum pipeline projects risk locking it into decades of fossil fuel dependence.",
+      "url": "https://kathmandupost.com/money/2026/11/26/nepal-s-fossil-fuel-push-clashes-with-its-clean-energy-ambitions"
+    },
+    {
+      "tag": "warning",
+      "date": "",
+      "title": "Keep Himalayan settlements out of harm’s way",
+      "blurb": "Monitoring and early warnings alone are insufficient without context-sensitive settlement planning.",
+      "url": "https://kathmandupost.com/columns/2026/11/25/keep-himalayan-settlements-out-of-harm-s-way"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -30,13 +44,6 @@
       "title": "Seven takeaways from Prime Minister Balendra Shah’s India visit",
       "blurb": "From a two-way air route to an eight-MoU haul, here is what Kathmandu got from Delhi, what it left on the table and what went missing altogether.",
       "url": "https://kathmandupost.com/national/2026/11/24/seven-takeaways-from-prime-minister-balendra-shah-s-india-visit"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Nepal forecast to receive above-normal precipitation this winter",
-      "blurb": "ICIMOD warns of increased rainfall in the foothills and heavier snowfall at higher elevations, raising the risk of floods, landslides and avalanches in parts of the western Himalaya.",
-      "url": "https://kathmandupost.com/climate-environment/2026/11/24/nepal-forecast-to-receive-above-normal-precipitation-this-winter"
     }
   ]
 }

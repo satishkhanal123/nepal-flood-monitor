@@ -1,8 +1,29 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-26T21:51:29.042593+00:00",
+  "updated_at": "2026-11-27T03:55:37.201106+00:00",
   "items": [
+    {
+      "tag": "sitrep",
+      "date": "",
+      "title": "Where the August floods began",
+      "blurb": "A massive ice and rock avalanche from Langtang Lirung plunged into the Lhende river on August 26, triggering devastating floods that swept through Rasuwa, Nuwakot and Dhading.",
+      "url": "https://kathmandupost.com/visual-stories/2026/11/27/photos-where-the-august-floods-began"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Telecom regulator and operators face minister’s ire over poor service",
+      "blurb": "Communications Minister Bikram Timilsina warns of action against service providers that fail to meet licence conditions, and questions the need for a regulator unable to hold them accountable.",
+      "url": "https://kathmandupost.com/money/2026/11/27/telecom-regulator-and-operators-face-minister-s-ire-over-poor-service"
+    },
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Three months on, flood survivors still await government response",
+      "blurb": "With no resettlement plan, delayed rental assistance and relief running out, survivors face winter without secure shelter as aid organisations begin to withdraw.",
+      "url": "https://kathmandupost.com/national/2026/11/27/three-months-on-flood-survivors-still-await-government-response"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -16,20 +37,6 @@
       "title": "Keep Himalayan settlements out of harm’s way",
       "blurb": "Monitoring and early warnings alone are insufficient without context-sensitive settlement planning.",
       "url": "https://kathmandupost.com/columns/2026/11/25/keep-himalayan-settlements-out-of-harm-s-way"
-    },
-    {
-      "tag": "sitrep",
-      "date": "",
-      "title": "Clear skies reveal a sweep of Himalayan peaks from Namo Buddha",
-      "blurb": "Ganesh, Langtang, Jugal, Dorje Lakpa and Gaurishankar are among the ranges visible from the hilltop in Kavrepalanchok.",
-      "url": "https://kathmandupost.com/visual-stories/2026/11/25/clear-skies-reveal-a-sweep-of-himalayan-peaks-from-namo-buddha"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "China’s Huawei convicted in sprawling US criminal trial over Iran business",
-      "blurb": "A New York jury finds the Chinese telecommunications giant guilty of 10 criminal counts, including bank fraud, sanctions violations and conspiring to steal trade secrets from US companies.",
-      "url": "https://kathmandupost.com/science-technology/2026/11/25/china-s-huawei-convicted-in-sprawling-us-criminal-trial-over-iran-business"
     }
   ]
 }

@@ -1,8 +1,22 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-27T03:55:37.201106+00:00",
+  "updated_at": "2026-11-27T13:29:48.764425+00:00",
   "items": [
+    {
+      "tag": "people",
+      "date": "",
+      "title": "Bhotekoshi flood victims may get up to Rs800,000 for new homes",
+      "blurb": "The government plans to provide one-time housing grants based on geographical regions, while families who lost their land will be included in an integrated housing programme.",
+      "url": "https://kathmandupost.com/national/2026/11/27/bhotekoshi-flood-victims-may-get-up-to-rs800-000-for-new-homes"
+    },
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Residents threaten to shut Mahakali bridge over delay in rebuilding suspension bridge",
+      "blurb": "The bridge linking Dodhara Chandani to the rest of Kanchanpur was severed by floods two months ago, disrupting daily life and hitting local businesses.",
+      "url": "https://kathmandupost.com/national/2026/11/27/residents-threaten-to-shut-mahakali-bridge-over-delay-in-rebuilding-suspension-bridge"
+    },
     {
       "tag": "sitrep",
       "date": "",
@@ -23,20 +37,6 @@
       "title": "Three months on, flood survivors still await government response",
       "blurb": "With no resettlement plan, delayed rental assistance and relief running out, survivors face winter without secure shelter as aid organisations begin to withdraw.",
       "url": "https://kathmandupost.com/national/2026/11/27/three-months-on-flood-survivors-still-await-government-response"
-    },
-    {
-      "tag": "ops",
-      "date": "",
-      "title": "Nepal’s fossil fuel push clashes with its clean energy ambitions",
-      "blurb": "As the country seeks climate finance and promotes hydropower exports, new petroleum pipeline projects risk locking it into decades of fossil fuel dependence.",
-      "url": "https://kathmandupost.com/money/2026/11/26/nepal-s-fossil-fuel-push-clashes-with-its-clean-energy-ambitions"
-    },
-    {
-      "tag": "warning",
-      "date": "",
-      "title": "Keep Himalayan settlements out of harm’s way",
-      "blurb": "Monitoring and early warnings alone are insufficient without context-sensitive settlement planning.",
-      "url": "https://kathmandupost.com/columns/2026/11/25/keep-himalayan-settlements-out-of-harm-s-way"
     }
   ]
 }

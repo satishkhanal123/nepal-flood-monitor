@@ -1,8 +1,15 @@
 {
   "source": "The Kathmandu Post",
   "source_url": "https://kathmandupost.com/rss",
-  "updated_at": "2026-11-28T04:04:32.437753+00:00",
+  "updated_at": "2026-11-28T12:58:01.637182+00:00",
   "items": [
+    {
+      "tag": "access",
+      "date": "",
+      "title": "Election Commission begins review of polling stations ahead of local elections",
+      "blurb": "The review will assess voter numbers, accessibility, infrastructure and security, with alternative locations to be identified for polling stations damaged or rendered unusable by disasters.",
+      "url": "https://kathmandupost.com/national/2026/11/28/election-commission-begins-review-of-polling-stations-ahead-of-local-elections"
+    },
     {
       "tag": "ops",
       "date": "",
@@ -30,20 +37,6 @@
       "title": "Where the August floods began",
       "blurb": "A massive ice and rock avalanche from Langtang Lirung plunged into the Lhende river on August 26, triggering devastating floods that swept through Rasuwa, Nuwakot and Dhading.",
       "url": "https://kathmandupost.com/visual-stories/2026/11/27/photos-where-the-august-floods-began"
-    },
-    {
-      "tag": "access",
-      "date": "",
-      "title": "Telecom regulator and operators face minister’s ire over poor service",
-      "blurb": "Communications Minister Bikram Timilsina warns of action against service providers that fail to meet licence conditions, and questions the need for a regulator unable to hold them accountable.",
-      "url": "https://kathmandupost.com/money/2026/11/27/telecom-regulator-and-operators-face-minister-s-ire-over-poor-service"
-    },
-    {
-      "tag": "people",
-      "date": "",
-      "title": "Three months on, flood survivors still await government response",
-      "blurb": "With no resettlement plan, delayed rental assistance and relief running out, survivors face winter without secure shelter as aid organisations begin to withdraw.",
-      "url": "https://kathmandupost.com/national/2026/11/27/three-months-on-flood-survivors-still-await-government-response"
     }
   ]
 }
